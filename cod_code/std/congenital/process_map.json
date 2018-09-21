@@ -1,0 +1,71 @@
+{
+  "step2": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "/Users/USER/h/repos/syphilis_nhm/inputs/model_neonatal_deaths_OR.csv": "task_master.process_anchor.anchor.File"
+    },
+    "out": {
+      "/Users/USER/h/repos/syphilis_nhm/models/nn_death_by_treatment.csv": "task_master.process_anchor.anchor.File"
+    },
+    "callable": ""
+  },
+  "step3": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "57": "task_master.process_anchor.anchor.Covariate",
+      "208": "task_master.process_anchor.anchor.Covariate",
+      "/Users/USER/h/repos/syphilis_nhm/inputs/anc_syphilis_test_formatted.csv": "task_master.process_anchor.anchor.File"
+    },
+    "out": {
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_syph_test.csv": "task_master.process_anchor.anchor.File"
+    },
+    "callable": ""
+  },
+  "step4": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "57": "task_master.process_anchor.anchor.Covariate",
+      "/Users/USER/h/repos/syphilis_nhm/inputs/anc_syphilis_treament_formatted.csv": "task_master.process_anchor.anchor.File"
+    },
+    "out": {
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_syph_treatment.csv": "task_master.process_anchor.anchor.File"
+    },
+    "callable": ""
+  },
+  "step5": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "7": "task_master.process_anchor.anchor.Covariate",
+      "8": "task_master.process_anchor.anchor.Covariate"
+    },
+    "out": {
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_visit_props.csv": "task_master.process_anchor.anchor.File"
+    },
+    "callable": ""
+  },
+  "step6": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "393": "task_master.process_anchor.anchor.CodInputData"
+    },
+    "out": {
+      "/Users/USER/h/repos/syphilis_nhm/models/cod_data_prop.csv": "task_master.process_anchor.anchor.File"
+    },
+    "callable": ""
+  },
+  "step7": {
+    "class": "task_master.process_anchor.process.ShellProcess",
+    "in": {
+      "3948": "task_master.process_anchor.anchor.ModelableEntity",
+      "/Users/USER/h/repos/syphilis_nhm/models/cod_data_prop.csv": "task_master.process_anchor.anchor.File",
+      "/Users/USER/j/WORK/02_mortality/02_inputs/00_fertility/asfr_covariate/outputs/asfr_5_60.csv": "task_master.process_anchor.anchor.File",
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_visit_props.csv": "task_master.process_anchor.anchor.File",
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_syph_test.csv": "task_master.process_anchor.anchor.File",
+      "/Users/USER/h/repos/syphilis_nhm/models/anc_syph_treatment.csv": "task_master.process_anchor.anchor.File",
+      "/Users/USER/h/repos/syphilis_nhm/models/nn_death_by_treatment.csv": "task_master.process_anchor.anchor.File"
+    },
+    "out": {
+    },
+    "callable": ""
+  }
+}

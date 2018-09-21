@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+
+import argparse
+
+from como.pipelines import run_pipeline_nonfatal
+
+parser = argparse.ArgumentParser(
+    description="Compute nonfatal results for a country-year-sex combination")
+parser.add_argument(
+    "--como_dir",
+    type=str,
+    help="directory of como run")
+parser.add_argument(
+    "--location_id",
+    nargs='*',
+    type=int,
+    dUSERt=[],
+    help="location_ids to include in this run")
+parser.add_argument(
+    "--year_id",
+    nargs='*',
+    type=int,
+    dUSERt=[],
+    help="year_ids to include in this run")
+parser.add_argument(
+    "--sex_id",
+    nargs='*',
+    type=int,
+    dUSERt=[],
+    help="sex_ids to include in this run")
+parser.add_argument(
+    "--age_group_id",
+    nargs='*',
+    type=int,
+    dUSERt=[],
+    help="age_group_ids to include in this run")
+parser.add_argument(
+    "--n_processes",
+    type=int,
+    dUSERt=23,
+    help="how many simulants to include in this run")
+parser.add_argument(
+    "--n_simulants",
+    type=int,
+    dUSERt=40000,
+    help="how many simulants to include in this run")
+args = parser.parse_args()
+
+run_pipeline_nonfatal(
+    args.como_dir, args.location_id, args.year_id, args.sex_id,
+    args.age_group_id, [], args.n_processes, args.n_simulants)

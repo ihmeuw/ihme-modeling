@@ -1,0 +1,453 @@
+{
+  "primary_infert_env": {
+    "class": "__main__.Envelope",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "male_prop_id": "MODELABLE ENTITY ID",
+      "female_prop_id": "MODELABLE ENTITY ID",
+      "exp_id": "MODELABLE ENTITY ID",
+      "env_id": "MODELABLE ENTITY ID",
+      "male_env_id": "MODELABLE ENTITY ID",
+      "female_env_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "secondary_infert_env": {
+    "class": "__main__.Envelope",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "male_prop_id": "MODELABLE ENTITY ID",
+      "female_prop_id": "MODELABLE ENTITY ID",
+      "exp_id": "MODELABLE ENTITY ID",
+      "env_id": "MODELABLE ENTITY ID",
+      "male_env_id": "MODELABLE ENTITY ID",
+      "female_env_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "pid_split": {
+    "class": "__main__.PID",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "pid_env_id": "MODELABLE ENTITY ID",
+      "chlam_prop_id": "MODELABLE ENTITY ID",
+      "gono_prop_id": "MODELABLE ENTITY ID",
+      "other_prop_id": "MODELABLE ENTITY ID",
+      "chlam_id": "MODELABLE ENTITY ID",
+      "gono_id": "MODELABLE ENTITY ID",
+      "other_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "summarize_gonn_inc": {
+    "class": "__main__.Westrom",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "source_me_id": "MODELABLE ENTITY ID",
+      "target_me_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "summarize_chlam_inc": {
+    "class": "__main__.Westrom",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "source_me_id": "MODELABLE ENTITY ID",
+      "target_me_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "summarize_other_inc": {
+    "class": "__main__.Westrom",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "source_me_id": "MODELABLE ENTITY ID",
+      "target_me_id": "MODELABLE ENTITY ID"
+    },
+    "args": []
+  },
+  "female_cause_attribution": {
+    "class": "__main__.FemaleInfert",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [{
+      "env": {
+        "type": "envelope",
+        "srcs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "resid": {
+        "type": "residual",
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "excess": {
+        "type": "excess",
+        "trgs": {
+          "endo": "MODELABLE ENTITY ID",
+          "pcos": "MODELABLE ENTITY ID"
+        }
+              },
+      "cong_uro": {
+        "type": "locked",
+        "srcs": {
+          "inf_only": "MODELABLE ENTITY ID",
+          "ag": "MODELABLE ENTITY ID",
+          "uti": "MODELABLE ENTITY ID",
+          "imp": "MODELABLE ENTITY ID",
+          "ag_uti": "MODELABLE ENTITY ID",
+          "ag_imp": "MODELABLE ENTITY ID",
+          "imp_uti": "MODELABLE ENTITY ID",
+          "ag_imp_uti": "MODELABLE ENTITY ID"
+        }
+      },
+      "turner": {
+        "type": "locked",
+        "srcs": {
+          "nohf": "MODELABLE ENTITY ID",
+          "hf": "MODELABLE ENTITY ID"
+        }
+      },
+      "sepsis": {
+        "type": "sub_group",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "pcos_asymp": {
+        "type": "sub_group",
+        "excess": "pcos",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "pcos_disfig": {
+        "type": "sub_group",
+        "excess": "pcos",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "endo_asymp": {
+        "type": "sub_group",
+        "excess": "endo",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "endo_mild": {
+        "type": "sub_group",
+        "excess": "endo",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "endo_mod": {
+        "type": "sub_group",
+        "excess": "endo",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "endo_sev": {
+        "type": "sub_group",
+        "excess": "endo",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "gono": {
+        "type": "sub_group",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "chlam": {
+        "type": "sub_group",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "otherstd": {
+        "type": "sub_group",
+        "srcs": {
+          "tot": "MODELABLE ENTITY ID"
+        },
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      }
+    }],
+    "kwargs": {}
+  },
+  "male_cause_attribution": {
+    "class": "__main__.MaleInfert",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [{
+      "env": {
+        "srcs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "idio": {
+        "trgs": {
+          "prim": "MODELABLE ENTITY ID",
+          "sec": "MODELABLE ENTITY ID"
+        }
+      },
+      "kline": {
+        "srcs": {
+          "bord": "MODELABLE ENTITY ID",
+          "mild": "MODELABLE ENTITY ID",
+          "asym": "MODELABLE ENTITY ID"
+        }
+      },
+      "cong_uro": {
+        "srcs": {
+          "inf_only": "MODELABLE ENTITY ID",
+          "ag": "MODELABLE ENTITY ID",
+          "uti": "MODELABLE ENTITY ID",
+          "imp": "MODELABLE ENTITY ID",
+          "ag_uti": "MODELABLE ENTITY ID",
+          "ag_imp": "MODELABLE ENTITY ID",
+          "imp_uti": "MODELABLE ENTITY ID",
+          "ag_imp_uti": "MODELABLE ENTITY ID"
+        }
+      }
+    }],
+    "kwargs": {}
+  },
+  "pcos_excess": {
+    "class": "__main__.Excess",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs":{
+      "excess": "MODELABLE ENTITY ID",
+      "redist": {
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID",
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID"
+      }
+    },
+    "args": []
+  },
+  "endo_excess": {
+    "class": "__main__.Excess",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "excess": "MODELABLE ENTITY ID",
+      "redist": {
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID",
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID",
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID",
+        "MODELABLE ENTITY ID": "MODELABLE ENTITY ID"
+      }
+    },
+    "args": []
+  },
+    "process_hook": {
+    "class": "__main__.Hook",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {},
+    "kwargs": {
+    },
+    "args": []
+  }
+}

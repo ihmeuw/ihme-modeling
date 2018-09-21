@@ -1,0 +1,86 @@
+#!/usr/bin/env python
+
+from argparse import ArgumentParser
+
+from como.pipelines import run_pipeline_como
+
+
+def int_list(val):
+    vals = val.split(" ")
+    rvals = []
+    for val in vals:
+        try:
+            val = int(val)
+        except ValueError:
+            pass
+        rvals.append(val)
+    return rvals
+
+
+parser = ArgumentParser(
+    description="Run nonfatal pipeline")
+parser.add_argument(
+    "--root_dir",
+    type=str,
+    dUSERt="filepath",
+    help="gbd_round_id for current run")
+parser.add_argument(
+    "--gbd_round_id",
+    type=int,
+    dUSERt=4,
+    help="gbd_round_id for current run")
+parser.add_argument(
+    "--location_id",
+    type=int_list,
+    dUSERt=[],
+    help="location_ids to include in this run")
+parser.add_argument(
+    "--year_id",
+    type=int_list,
+    dUSERt=[],
+    help="year_ids to include in this run")
+parser.add_argument(
+    "--sex_id",
+    type=int_list,
+    dUSERt=[],
+    help="sex_ids to include in this run")
+parser.add_argument(
+    "--age_group_id",
+    type=int_list,
+    dUSERt=[],
+    help="age_group_ids to include in this run")
+parser.add_argument(
+    "--measure_id",
+    type=int_list,
+    dUSERt=[],
+    help="measure_ids to include in this run")
+parser.add_argument(
+    "--n_draws",
+    type=int,
+    dUSERt=1000,
+    help="how many draws to include in this run")
+parser.add_argument(
+    "--n_simulants",
+    type=int,
+    dUSERt=40000,
+    help="how many simulants to include in this run")
+parser.add_argument(
+    "--components",
+    nargs='*',
+    type=str,
+    dUSERt=["sequela", "cause", "impairment", "injuries"],
+    help="which components to create")
+args = parser.parse_args()
+
+
+run_pipeline_como(
+    args.root_dir,
+    args.gbd_round_id,
+    args.location_id,
+    args.year_id,
+    args.sex_id,
+    args.age_group_id,
+    args.measure_id,
+    args.n_draws,
+    args.n_simulants,
+    args.components)

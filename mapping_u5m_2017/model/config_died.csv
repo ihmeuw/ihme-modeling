@@ -1,0 +1,17 @@
+indicator,died
+indicator_family,binomial
+keep_inla_files,FALSE
+fixed_effects,unrakedmss + unrakedmsw + unrakedmatedu_yrs + access + evi + lights_new + LST_day + irrigation + total_pop + malaria_pfpr + fertility_infill + urban_rural + rates
+mbg_fixed_effects,edu_mean
+use_rate_cov,FALSE
+samples,1000
+time_stamp,TRUE
+use_inla_nugget,FALSE
+mesh_s_max_edge,"c(0.35, 5)"
+mesh_s_offset,"c(1, 5)"
+intercept_prior,0
+slots,10
+child_stacker_models,"list(gam[[2]], gbm[[2]], ridge[[2]], enet[[2]], lasso[[2]])"
+child_stacker_model_names,"c('gam', 'gbm', 'ridge', 'enet', 'lasso')"
+stacked_fixed_effects,stacked_results
+inla_cores,5

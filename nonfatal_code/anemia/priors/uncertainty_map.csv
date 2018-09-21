@@ -1,0 +1,112 @@
+,subtype,in_meid,use_incidence,report_group,out_meid,severity
+0,ckd_diabetes3,MODELABLE ENTITY ID,0,ckd_diabetes3,MODELABLE ENTITY ID,mild
+1,ckd_diabetes4,MODELABLE ENTITY ID,0,ckd_diabetes4,MODELABLE ENTITY ID,mild
+2,ckd_diabetes5,MODELABLE ENTITY ID,0,ckd_diabetes5,MODELABLE ENTITY ID,mild
+3,ckd_glomerulo3,MODELABLE ENTITY ID,0,ckd_glomerulo3,MODELABLE ENTITY ID,mild
+4,ckd_glomerulo4,MODELABLE ENTITY ID,0,ckd_glomerulo4,MODELABLE ENTITY ID,mild
+5,ckd_glomerulo5,MODELABLE ENTITY ID,0,ckd_glomerulo5,MODELABLE ENTITY ID,mild
+6,ckd_htn3,MODELABLE ENTITY ID,0,ckd_htn3,MODELABLE ENTITY ID,mild
+7,ckd_htn4,MODELABLE ENTITY ID,0,ckd_htn4,MODELABLE ENTITY ID,mild
+8,ckd_htn5,MODELABLE ENTITY ID,0,ckd_htn5,MODELABLE ENTITY ID,mild
+9,ckd_other3,MODELABLE ENTITY ID,0,ckd_other3,MODELABLE ENTITY ID,mild
+10,ckd_other4,MODELABLE ENTITY ID,0,ckd_other4,MODELABLE ENTITY ID,mild
+11,ckd_other5,MODELABLE ENTITY ID,0,ckd_other5,MODELABLE ENTITY ID,mild
+12,digest_gastrititis,MODELABLE ENTITY ID,0,digest_gastrititis,MODELABLE ENTITY ID,mild
+13,digest_pud,MODELABLE ENTITY ID,0,digest_pud,MODELABLE ENTITY ID,mild
+14,endo,RESIDUAL,0,endo,MODELABLE ENTITY ID,mild
+15,gyne_fibroids,RESIDUAL,0,gyne_fibroids,MODELABLE ENTITY ID,mild
+16,gyne_other,RESIDUAL,0,gyne_other,MODELABLE ENTITY ID,mild
+17,hemog_g6pd,MODELABLE ENTITY ID,0,hemog_g6pd,MODELABLE ENTITY ID,mild
+18,hemog_g6pd_hemi,MODELABLE ENTITY ID,0,hemog_g6pd_hemi,MODELABLE ENTITY ID,mild
+19,hemog_other,RESIDUAL,0,hemog_other,MODELABLE ENTITY ID,mild
+20,hemog_sickle_hscbt,MODELABLE ENTITY ID,0,hemog_sickle_hscbt,MODELABLE ENTITY ID,mild
+21,hemog_sickle_hscd,MODELABLE ENTITY ID,0,hemog_sickle_hscd,MODELABLE ENTITY ID,mild
+22,hemog_sickle_scbt,MODELABLE ENTITY ID,0,hemog_sickle_scbt,MODELABLE ENTITY ID,mild
+23,hemog_sickle_sct,MODELABLE ENTITY ID,0,hemog_sickle_sct,MODELABLE ENTITY ID,mild
+24,hemog_thalass_btm,MODELABLE ENTITY ID,0,hemog_thalass_btm,MODELABLE ENTITY ID,mild
+25,hemog_thalass_btt,MODELABLE ENTITY ID,0,hemog_thalass_btt,MODELABLE ENTITY ID,mild
+26,hemog_thalass_ett,MODELABLE ENTITY ID,0,hemog_thalass_ett,MODELABLE ENTITY ID,mild
+27,hemog_thalass_hebt,MODELABLE ENTITY ID,0,hemog_thalass_hebt,MODELABLE ENTITY ID,mild
+28,hemog_thalass_hhd,MODELABLE ENTITY ID,0,hemog_thalass_hhd,MODELABLE ENTITY ID,mild
+29,hiv,MODELABLE ENTITY ID,0,hiv,MODELABLE ENTITY ID,mild
+30,infectious,RESIDUAL,0,infectious,MODELABLE ENTITY ID,mild
+31,malaria,MODELABLE ENTITY ID,0,malaria,MODELABLE ENTITY ID,mild
+32,maternal_hem,MODELABLE ENTITY ID,1,maternal_hem,MODELABLE ENTITY ID,mild
+33,ntd_nema_hook,MODELABLE ENTITY ID,0,ntd_nema_hook,MODELABLE ENTITY ID,mild
+34,ntd_other,RESIDUAL,0,ntd_other,MODELABLE ENTITY ID,mild
+35,ntd_schisto,MODELABLE ENTITY ID,0,ntd_schisto,MODELABLE ENTITY ID,mild
+36,nutrition_iron,RESIDUAL,0,nutrition_iron,MODELABLE ENTITY ID,mild
+37,ckd_diabetes3,MODELABLE ENTITY ID,0,ckd_diabetes3,MODELABLE ENTITY ID,moderate
+38,ckd_diabetes4,MODELABLE ENTITY ID,0,ckd_diabetes4,MODELABLE ENTITY ID,moderate
+39,ckd_diabetes5,MODELABLE ENTITY ID,0,ckd_diabetes5,MODELABLE ENTITY ID,moderate
+40,ckd_glomerulo3,MODELABLE ENTITY ID,0,ckd_glomerulo3,MODELABLE ENTITY ID,moderate
+41,ckd_glomerulo4,MODELABLE ENTITY ID,0,ckd_glomerulo4,MODELABLE ENTITY ID,moderate
+42,ckd_glomerulo5,MODELABLE ENTITY ID,0,ckd_glomerulo5,MODELABLE ENTITY ID,moderate
+43,ckd_htn3,MODELABLE ENTITY ID,0,ckd_htn3,MODELABLE ENTITY ID,moderate
+44,ckd_htn4,MODELABLE ENTITY ID,0,ckd_htn4,MODELABLE ENTITY ID,moderate
+45,ckd_htn5,MODELABLE ENTITY ID,0,ckd_htn5,MODELABLE ENTITY ID,moderate
+46,ckd_other3,MODELABLE ENTITY ID,0,ckd_other3,MODELABLE ENTITY ID,moderate
+47,ckd_other4,MODELABLE ENTITY ID,0,ckd_other4,MODELABLE ENTITY ID,moderate
+48,ckd_other5,MODELABLE ENTITY ID,0,ckd_other5,MODELABLE ENTITY ID,moderate
+49,digest_gastrititis,MODELABLE ENTITY ID,0,digest_gastrititis,MODELABLE ENTITY ID,moderate
+50,digest_pud,MODELABLE ENTITY ID,0,digest_pud,MODELABLE ENTITY ID,moderate
+51,endo,RESIDUAL,0,endo,MODELABLE ENTITY ID,moderate
+52,gyne_fibroids,RESIDUAL,0,gyne_fibroids,MODELABLE ENTITY ID,moderate
+53,gyne_other,RESIDUAL,0,gyne_other,MODELABLE ENTITY ID,moderate
+54,hemog_g6pd,MODELABLE ENTITY ID,0,hemog_g6pd,MODELABLE ENTITY ID,moderate
+55,hemog_g6pd_hemi,MODELABLE ENTITY ID,0,hemog_g6pd_hemi,MODELABLE ENTITY ID,moderate
+56,hemog_other,RESIDUAL,0,hemog_other,MODELABLE ENTITY ID,moderate
+57,hemog_sickle_hscbt,MODELABLE ENTITY ID,0,hemog_sickle_hscbt,MODELABLE ENTITY ID,moderate
+58,hemog_sickle_hscd,MODELABLE ENTITY ID,0,hemog_sickle_hscd,MODELABLE ENTITY ID,moderate
+59,hemog_sickle_scbt,MODELABLE ENTITY ID,0,hemog_sickle_scbt,MODELABLE ENTITY ID,moderate
+60,hemog_sickle_sct,MODELABLE ENTITY ID,0,hemog_sickle_sct,MODELABLE ENTITY ID,moderate
+61,hemog_thalass_btm,MODELABLE ENTITY ID,0,hemog_thalass_btm,MODELABLE ENTITY ID,moderate
+62,hemog_thalass_btt,MODELABLE ENTITY ID,0,hemog_thalass_btt,MODELABLE ENTITY ID,moderate
+63,hemog_thalass_ett,MODELABLE ENTITY ID,0,hemog_thalass_ett,MODELABLE ENTITY ID,moderate
+64,hemog_thalass_hebt,MODELABLE ENTITY ID,0,hemog_thalass_hebt,MODELABLE ENTITY ID,moderate
+65,hemog_thalass_hhd,MODELABLE ENTITY ID,0,hemog_thalass_hhd,MODELABLE ENTITY ID,moderate
+66,hiv,MODELABLE ENTITY ID,0,hiv,MODELABLE ENTITY ID,moderate
+67,infectious,RESIDUAL,0,infectious,MODELABLE ENTITY ID,moderate
+68,malaria,MODELABLE ENTITY ID,0,malaria,MODELABLE ENTITY ID,moderate
+69,maternal_hem,MODELABLE ENTITY ID,1,maternal_hem,MODELABLE ENTITY ID,moderate
+70,ntd_nema_hook,MODELABLE ENTITY ID,0,ntd_nema_hook,MODELABLE ENTITY ID,moderate
+71,ntd_other,RESIDUAL,0,ntd_other,MODELABLE ENTITY ID,moderate
+72,ntd_schisto,MODELABLE ENTITY ID,0,ntd_schisto,MODELABLE ENTITY ID,moderate
+73,nutrition_iron,RESIDUAL,0,nutrition_iron,MODELABLE ENTITY ID,moderate
+74,ckd_diabetes3,MODELABLE ENTITY ID,0,ckd_diabetes3,MODELABLE ENTITY ID,severe
+75,ckd_diabetes4,MODELABLE ENTITY ID,0,ckd_diabetes4,MODELABLE ENTITY ID,severe
+76,ckd_diabetes5,MODELABLE ENTITY ID,0,ckd_diabetes5,MODELABLE ENTITY ID,severe
+77,ckd_glomerulo3,MODELABLE ENTITY ID,0,ckd_glomerulo3,MODELABLE ENTITY ID,severe
+78,ckd_glomerulo4,MODELABLE ENTITY ID,0,ckd_glomerulo4,MODELABLE ENTITY ID,severe
+79,ckd_glomerulo5,MODELABLE ENTITY ID,0,ckd_glomerulo5,MODELABLE ENTITY ID,severe
+80,ckd_htn3,MODELABLE ENTITY ID,0,ckd_htn3,MODELABLE ENTITY ID,severe
+81,ckd_htn4,MODELABLE ENTITY ID,0,ckd_htn4,MODELABLE ENTITY ID,severe
+82,ckd_htn5,MODELABLE ENTITY ID,0,ckd_htn5,MODELABLE ENTITY ID,severe
+83,ckd_other3,MODELABLE ENTITY ID,0,ckd_other3,MODELABLE ENTITY ID,severe
+84,ckd_other4,MODELABLE ENTITY ID,0,ckd_other4,MODELABLE ENTITY ID,severe
+85,ckd_other5,MODELABLE ENTITY ID,0,ckd_other5,MODELABLE ENTITY ID,severe
+86,digest_gastrititis,MODELABLE ENTITY ID,0,digest_gastrititis,MODELABLE ENTITY ID,severe
+87,digest_pud,MODELABLE ENTITY ID,0,digest_pud,MODELABLE ENTITY ID,severe
+88,endo,RESIDUAL,0,endo,MODELABLE ENTITY ID,severe
+89,gyne_fibroids,RESIDUAL,0,gyne_fibroids,MODELABLE ENTITY ID,severe
+90,gyne_other,RESIDUAL,0,gyne_other,MODELABLE ENTITY ID,severe
+91,hemog_g6pd,MODELABLE ENTITY ID,0,hemog_g6pd,MODELABLE ENTITY ID,severe
+92,hemog_g6pd_hemi,MODELABLE ENTITY ID,0,hemog_g6pd_hemi,MODELABLE ENTITY ID,severe
+93,hemog_other,RESIDUAL,0,hemog_other,MODELABLE ENTITY ID,severe
+94,hemog_sickle_hscbt,MODELABLE ENTITY ID,0,hemog_sickle_hscbt,MODELABLE ENTITY ID,severe
+95,hemog_sickle_hscd,MODELABLE ENTITY ID,0,hemog_sickle_hscd,MODELABLE ENTITY ID,severe
+96,hemog_sickle_scbt,MODELABLE ENTITY ID,0,hemog_sickle_scbt,MODELABLE ENTITY ID,severe
+97,hemog_sickle_sct,MODELABLE ENTITY ID,0,hemog_sickle_sct,MODELABLE ENTITY ID,severe
+98,hemog_thalass_btm,MODELABLE ENTITY ID,0,hemog_thalass_btm,MODELABLE ENTITY ID,severe
+99,hemog_thalass_btt,MODELABLE ENTITY ID,0,hemog_thalass_btt,MODELABLE ENTITY ID,severe
+100,hemog_thalass_ett,MODELABLE ENTITY ID,0,hemog_thalass_ett,MODELABLE ENTITY ID,severe
+101,hemog_thalass_hebt,MODELABLE ENTITY ID,0,hemog_thalass_hebt,MODELABLE ENTITY ID,severe
+102,hemog_thalass_hhd,MODELABLE ENTITY ID,0,hemog_thalass_hhd,MODELABLE ENTITY ID,severe
+103,hiv,MODELABLE ENTITY ID,0,hiv,MODELABLE ENTITY ID,severe
+104,infectious,RESIDUAL,0,infectious,MODELABLE ENTITY ID,severe
+105,malaria,MODELABLE ENTITY ID,0,malaria,MODELABLE ENTITY ID,severe
+106,maternal_hem,MODELABLE ENTITY ID,1,maternal_hem,MODELABLE ENTITY ID,severe
+107,ntd_nema_hook,MODELABLE ENTITY ID,0,ntd_nema_hook,MODELABLE ENTITY ID,severe
+108,ntd_other,RESIDUAL,0,ntd_other,MODELABLE ENTITY ID,severe
+109,ntd_schisto,MODELABLE ENTITY ID,0,ntd_schisto,MODELABLE ENTITY ID,severe
+110,nutrition_iron,RESIDUAL,0,nutrition_iron,MODELABLE ENTITY ID,severe

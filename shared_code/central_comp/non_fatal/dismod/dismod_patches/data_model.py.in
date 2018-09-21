@@ -1,0 +1,485 @@
+# $Id$
+#  --------------------------------------------------------------------------
+# dismod_ode: MCMC Estimation of Disease Rates as Functions of Age
+#           Copyright (C) 2013 University of Washington
+#              (Bradley M. Bell USER@uw.edu)
+#
+# This program is distributed under the terms of the
+#          GNU Affero General Public License version 3.0 or later
+# see http://www.gnu.org/licenses/agpl.txt
+# -------------------------------------------------------------------------- */
+# $begin data_model.py$$ $newlinech #$$
+# $spell
+#    relrisk
+#    mtall
+#    mtstandard
+#    mtspecific
+#    mtwith
+#    mtother
+#    mtexcess
+#    py
+#    monotonic
+#    interpolant
+# $$
+#
+# $section Slow Computation of Data Model for Correctness Testing$$
+# $index data, model python$$
+# $index model, data python$$
+# $index python, data model$$
+#
+# $head Syntax$$
+# $codei%import data_model
+# %$$
+# $codei%data_model.set_rate(%rate%, %age%, %value%)
+# %$$
+# $icode%r% = data_model.%rate%(%a%)
+# %$$
+# $icode%I_bar% = data_model.average(
+#    %S_0%, %C_0%, %integrand%, %lower%, %upper%, %age_step%
+# )%$$
+#
+# $head Integrand Age Average$$
+# $index integrand, age average$$
+# $index age, integrand average$$
+# $index average, age integrand$$
+# The data model, not counting random effects, is
+# $latex \[
+#    \bar{I} = \frac{1}{ \upsilon - \lambda }
+#        \int_{\lambda}^{\upsilon} I(a) \; \B{d} a
+# \] $$
+# Given the rate functions $latex \iota(a)$$, $latex \rho(a)$$,
+# $latex \chi(a)$$ and $latex \omega(a)$$ for $latex a \in [ a_0 , a_{-1} ]$$,
+# and the value $latex S( a_0 )$$ and $latex C( a_0 )$$,
+# a numerical ODE integration technique is used to compute
+# the integrate above and then the average is returned.
+#
+# $head set_rate$$
+#
+# $subhead rate$$
+# The $code set_rate$$ argument $icode rate$$
+# is a string equal that specifies
+# which of the rate functions is being defined:
+# $table
+# $code rate$$   $pre $$ $cnext function           $rnext
+# $code iota$$   $pre $$ $cnext $latex \iota(a)$$  $rnext
+# $code rho$$    $pre $$ $cnext $latex \rho(a)$$   $rnext
+# $code chi$$    $pre $$ $cnext $latex \chi(a)$$   $rnext
+# $code omega$$  $pre $$ $cnext $latex \omega(a)$$
+# $tend
+#
+# $subhead age$$
+# The $code set_rate$$ argument $icode age$$
+# is a list that specifies the ages for the piecewise linear
+# interpolation that defines the corresponding rate function.
+# The values must be monotonic increasing with index.
+# The corresponding function is defined for
+# $pre
+#    $$ $icode%age%[0]%$$ $latex \leq a \leq$$ $icode%age%[-1]%$$.
+#
+# $subhead value$$
+# The $code set_rate$$ argument $icode value$$
+# is a list that specifies the function values
+# (at the corresponding ages) for the piecewise linear
+# interpolation that defines the corresponding rate function.
+# The length of $icode value$$ must be the same as the length of $icode age$$.
+#
+# $head rate$$
+# For $icode rate$$ equal to
+# $code iota$$, $code rho$$, $code chi$$, and $code omega$$,
+# $codei%
+#    %r% = data_model.%rate%(%a%)
+# %$$
+# set $icode r$$ to the value of the piecewise linear interpolant
+# at age $icode a$$ where $icode a$$ and $icode r$$ are scalar values.
+#
+# $head average$$
+#
+# $subhead set_rate$$
+# When the function $code average$$ is called,
+# it is assumed that all the rate functions
+# have been set using the $code set_rate$$ function described above.
+# In addition, it is assumed that the first age
+# $icode%age%[0]%$$ and the last age $icode%age%[1]%$$ are the same for
+# all these settings.
+# These age values are referred to as $latex a_0$$ and
+# $latex a_{-1}$$ below.
+#
+# $subhead ODE$$
+# $index model, ode$$
+# $index ode, model$$
+# Given $latex S( a_0 )$$ and $latex C( a_0 )$$,
+# we define $latex S( a ) $$ and $latex C( a )$$
+# on the interval $latex [ a_0 , a_{-1} ]$$ as the solution of the ODE
+# $latex \[
+# \begin{array}{rr}
+# \left( \begin{array}{c}
+#     S'(a) \\
+#     C'(a)
+# \end{array} \right)
+# = &
+# \left( \begin{array}{cc}
+# - [ \iota(a) + \omega (a) ] & + \rho(a)
+# \\
+# + \iota(a)  & - [ \rho(a) + \chi(a) + \omega(a) ]
+# \end{array} \right)
+# \left( \begin{array}{c}
+#     S(a) \\
+#     C(a)
+# \end{array} \right)
+# \end{array}
+# \] $$
+#
+# $subhead S_0$$
+# The $code average$$ argument $icode S_0$$
+# is a scalar that specifies
+# the value used for $latex S( a_0 )$$ in the ODE defined above.
+#
+# $subhead C_0$$
+# The $code average$$ argument $icode C_0$$
+# is a scalar that specifies
+# the value used for $latex S( a_0 )$$ in the ODE defined above.
+#
+# $subhead integrand$$
+# $index integrand$$
+# The $code average$$ argument $icode integrand$$
+# is a string that specifies
+# the integrand function $latex I(a)$$
+# $latex I(a)$$ in the
+# $cref/integrand age average/data_model.py/Integrand Age Average/$$.
+# $table
+# $icode integrand$$
+#     $cnext $pre  $$ Description
+#     $cnext $pre  $$ $latex I(a)$$
+# $rnext
+# $code incidence$$
+#     $cnext $pre  $$ incidence rate
+#    $cnext $pre  $$ $latex \iota(a)$$
+#
+# $rnext
+# $code remission$$
+#     $cnext $pre  $$ remission rate
+#    $cnext $pre  $$ $latex \rho(a)$$
+#
+# $rnext
+# $code mtexcess$$
+#     $cnext $pre  $$ excess mortality rate
+#    $cnext $pre  $$ $latex \chi(a)$$
+#
+# $rnext
+# $code mtother$$
+#     $cnext $pre  $$ other cause mortality rate
+#    $cnext $pre  $$ $latex \omega(a) $$
+#
+# $rnext
+# $code mtwith$$
+#     $cnext $pre  $$ with condition mortality rate
+#    $cnext $pre  $$ $latex \omega(a) + \chi(a)$$
+#
+# $rnext
+# $code relrisk$$
+#     $cnext $pre  $$ relative risk ratio
+#    $cnext $pre  $$ $latex ( \omega + \chi ) / \omega$$
+#
+# $rnext
+# $code prevalence$$
+#     $cnext $pre  $$ prevalence
+#    $cnext $pre  $$ $latex C(a) / [ S(a) + C(a) ]$$
+#
+# $rnext
+# $code mtspecific$$
+#     $cnext $pre  $$ cause specific mortality rate
+#    $cnext $pre  $$ $latex \chi(a) C(a) / [ S(a) + C(a) ]$$
+#
+# $rnext
+# $code mtall$$
+#     $cnext $pre  $$ all cause mortality rate
+#    $cnext $pre  $$ $latex \omega(a) + \chi(a) C(a) / [ S(a) + C(a) ]$$
+#
+# $rnext
+# $code mtstandard$$
+#     $cnext $pre  $$ standardized mortality ratio
+#    $cnext $pre  $$ $latex [ \omega(a) + \chi(a) ]
+#             / \{  \omega(a) + \chi(a) C(a) / [ S(a) + C(a) ] \}$$
+# $tend
+#
+# $subhead lower$$
+# The $code average$$ argument $icode lower$$
+# is a scalar that specifies the lower limit for the average; i.e.
+# $latex \lambda$$ in the
+# $cref/integrand age average/data_model.py/Integrand Age Average/$$.
+#
+# $subhead upper$$
+# The $code average$$ argument $icode upper$$
+# is a scalar that specifies the upper limit for the average; i.e.
+# $latex \upsilon$$ in the
+# $cref/integrand age average/data_model.py/Integrand Age Average/$$.
+#
+# $subhead age_step$$
+# The age step size that the integrator will use.
+# Must be greater than zero.
+#
+# $children%
+#    example/data_model.py.in
+# %$$
+# $head Example$$
+# The file $cref%example/data_model.py%data_model_xam.py%$$
+# is an example and test of using $code data_model$$.
+#
+# $end
+#
+# ------------------------------------------------------------------
+import numpy
+import math
+import sys
+# ------------------------------------------------------------------
+# The functions iota(a), rho(a), chi(a), and omega(a)
+rate_age   = { 'iota' : None , 'rho' : None , 'chi' : None , 'omega' : None }
+rate_value = { 'iota' : None , 'rho' : None , 'chi' : None , 'omega' : None }
+def get_rate(name, a) :
+    j = 0
+    while rate_age[name][j+1] < a and j+2 < len( rate_age[name] ) :
+        j = j + 1
+    a_j  = rate_age[name][j]
+    r_j  = rate_value[name][j]
+    a_jp = rate_age[name][j+1]
+    r_jp = rate_value[name][j+1]
+    r    = (r_j * (a_jp - a) + r_jp * (a - a_j) ) / (a_jp - a_j)
+    return r
+#
+def set_rate(name, age, value) :
+    rate_age[name]   = age
+    rate_value[name] = value
+#
+def iota(a) :
+    return get_rate('iota', a)
+#
+def rho(a) :
+    return get_rate('rho', a)
+#
+def chi(a) :
+    return get_rate('chi', a)
+#
+def omega(a) :
+    return get_rate('omega', a)
+# --------------------------------------------------------------------------
+def incidence(S, C, a) :
+    return iota(a)
+#
+def incidence_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+def remission(S, C, a) :
+    return rho(a)
+#
+def remission_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+def mtexcess(S, C, a) :
+    return chi(a)
+#
+def mtexcess_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+def mtother(S, C, a) :
+    return chi(a)
+#
+def mtother_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+def mtwith(S, C, a) :
+    return omega(a) + chi(a)
+#
+def mtwith_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+def prevalence(S, C, a) :
+    return C / (S + C)
+#
+def prevalence_SC(S, C, a) :
+    p_S = - C / ( (S + C) * (S + C) )
+    p_C = 1.0 / (S + C) + p_S
+    return [p_S, p_C]
+# --------------------------------------------------------------------------
+def mtspecific(S, C, a) :
+    return chi(a) * prevalence(S, C, a)
+#
+def mtspecific_SC(S, C, a) :
+    p_SC = prevalence_SC(S, C, a)
+    return [ chi(a) * p_SC[0], chi(a) * p_SC[1] ]
+# --------------------------------------------------------------------------
+def mtall(S, C, a) :
+    return omega(a) + mtspecific(S, C, a)
+#
+def mtall_SC(S, C, a) :
+    return mtspecific_SC(S, C, a)
+# --------------------------------------------------------------------------
+def mtstandard(S, C, a) :
+    return (omega(a) + chi(a)) / mtall(S, C, a)
+#
+def mtstandard_SC(S, C, a) :
+    term   = mtall(S, C, a)
+    factor = - (omega(a) + chi(a)) / (term * term)
+    all_SC = mtall_SC(S, C, a)
+    return [ factor * all_SC[0], factor * all_SC[1] ]
+# --------------------------------------------------------------------------
+def relrisk(S, C, a) :
+    return (omega(a) + chi(a)) / omega(a)
+#
+def relrisk_SC(S, C, a) :
+    return [0.0, 0.0]
+# --------------------------------------------------------------------------
+list_integrand = {
+'incidence'     : incidence      ,
+'remission'     : remission      ,
+'mtexcess'      : mtexcess       ,
+'mtother'       : mtother        ,
+'mtwith'        : mtwith         ,
+'prevalence'    : prevalence     ,
+'mtspecific'    : mtspecific     ,
+'mtall'         : mtall          ,
+'mtstandard'    : mtstandard     ,
+'relrisk'       : relrisk
+}
+list_integrand_SC = {
+'incidence'     : incidence_SC      ,
+'remission'     : remission_SC      ,
+'mtexcess'      : mtexcess_SC       ,
+'mtother'       : mtother_SC        ,
+'mtwith'        : mtwith_SC         ,
+'prevalence'    : prevalence_SC     ,
+'mtspecific'    : mtspecific_SC     ,
+'mtall'         : mtall_SC          ,
+'mtstandard'    : mtstandard_SC     ,
+'relrisk'       : relrisk_SC
+}
+# -----------------------------------------------------------------------------
+# The Dismod ODE
+def func(SCI, a, integrand) :
+    S    = SCI[0]
+    C    = SCI[1]
+    I    = SCI[2]
+    dS   = - ( iota(a) + omega(a) ) * S  + rho(a) * C
+    dC   = + iota(a) * S - ( rho(a) + chi(a) + omega(a) ) * C
+    dI   = list_integrand[integrand](S, C, a)
+    try:
+        dS = dS.squeeze()
+    except:
+        pass
+    try:
+        dC = dC.squeeze()
+    except:
+        pass
+    return [dS, dC, dI]
+
+# The Jacobian of func
+def Dfun(SCI, a, integrand) :
+    S      = SCI[0]
+    C      = SCI[1]
+    I      = SCI[2]
+    dS_S   = - ( iota(a) + omega(a) )
+    dS_C   = rho(a)
+    dC_S   = + iota(a)
+    dC_C   = - ( rho(a) + chi(a) + omega(a) )
+    dI_SC  = list_integrand_SC[integrand](S, C, a)
+    return [
+        [dS_S,     dS_C,     0.] ,
+        [dC_S,     dC_C,     0.] ,
+        [dI_SC[0], dI_SC[1], 0.]
+    ]
+
+def trapezoidal(SCI_start, age_start, age_end, age_step, integrand) :
+    SCI  = numpy.array( SCI_start )
+    SCI  = SCI.reshape( (3, 1) )
+    age  = age_start
+    more = True
+    while more  :
+        # next age step
+        age_next = age + age_step
+        if age_next >= age_end :
+            age_next = age_end
+            more     = False
+        step_next = age_next - age
+        #
+        # derivative of SCI w.r.t. age
+        f = numpy.array( func(SCI, age, integrand) )
+        f = f.reshape( (3,1) )
+        #
+        # defivative of f w.r.t SCI
+        df = numpy.array( Dfun(SCI, age + 0.5 * age_step, integrand) )
+        df = df.reshape( (3,3) )
+        #
+        # (SCI_next - SCI)/ step_next = f + df * (SCI_next - SCI) / 2
+        #
+        # (I - step_next * df / 2) * (SCI_next - SCI) = step_next * f
+        a = numpy.identity(3) - 0.5 * step_next * df
+        b = step_next * f
+        x = numpy.linalg.solve(a, b)
+        #
+        # advance next age
+        age = age_next
+        for i in range(3) :
+            SCI[i] = SCI[i] + x[i,0]
+    return [ SCI[0,0], SCI[1,0], SCI[2,0] ]
+
+def average(S_0, C_0, integrand, lower, upper, age_step) :
+    age_min  = rate_age['iota'][0]
+    age_max  = rate_age['iota'][-1]
+
+    # check assumptions
+    for name in [ 'rho', 'chi', 'omega' ] :
+        assert age_min == rate_age[name][0]
+        assert age_max == rate_age[name][-1]
+    assert( age_min   <= lower )
+    assert( lower <= upper )
+    assert( upper <= age_max )
+    assert( age_step > 0.0 )
+
+    # age values where the functions are not smooth
+    # plus the lower and upper integration limits
+    age_break = [ lower , upper ]
+    for name in [ 'iota', 'rho', 'chi', 'omega' ]:
+        age_break = age_break + rate_age[name]
+    age_break = sorted( age_break )
+    keep     = [ age_break[0] ]
+    for i in range( len(age_break) - 1 ) :
+        if( age_break[i+1] <= upper and age_break[i+1] != age_break[i] ) :
+            keep.append( age_break[i+1] )
+    age_break = keep
+    i_lower   = None
+    i_upper   = None
+    for i in range( len(age_break) ) :
+        if age_break[i] == lower :
+            i_lower = i
+        if age_break[i] == upper :
+            i_upper = i
+
+    # initial conditions
+    SCI   = [S_0, C_0, 0.0]
+
+    # solve for S, C at a = lower
+    for i in range(i_lower) :
+        age_start = age_break[i]
+        age_end   = age_break[i + 1]
+        SCI = trapezoidal(
+            SCI, age_start, age_end, age_step, integrand
+        )
+        SCI[2] = 0.0
+    assert( age_break[i_lower] == lower )
+
+    # integrate the integrand from lower to upper
+    for i in range(i_upper - i_lower) :
+        age_start = age_break[i_lower + i]
+        age_end   = age_break[i_lower + i + 1]
+        SCI = trapezoidal(
+            SCI, age_start, age_end, age_step, integrand
+        )
+    assert( age_break[i_upper] == upper )
+
+    if i_lower == i_upper :
+        a     = lower
+        S     = SCI[0]
+        C     = SCI[1]
+        I_bar  = list_integrand[integrand](S, C, a)
+    else :
+        I_bar = SCI[2] / (upper - lower)
+    return I_bar

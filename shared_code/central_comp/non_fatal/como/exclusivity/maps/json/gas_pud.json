@@ -1,0 +1,92 @@
+{
+  "peptic_ulcer_asymp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "9314": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16219": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "9314",
+        "resid": "16219",
+        "sub": {
+          "16216": {},
+          "16217": {},
+          "16218": {}
+        }
+      }
+    }
+  },
+  "peptic_ulcer_symp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1924": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16213": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "1924",
+        "resid": "16213",
+        "sub": {
+          "16205": {},
+          "16206": {},
+          "16208": {},
+          "16209": {},
+          "16211": {},
+          "16212": {}
+        }
+      }
+    }
+  },
+  "gastritis_asymp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "9528": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16235": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "9528",
+        "resid": "16235",
+        "sub": {
+          "16232": {},
+          "16233": {},
+          "16234": {}
+        }
+      }
+    }
+  },
+  "gastritis_symp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1928": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16229": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "1928",
+        "resid": "16229",
+        "sub": {
+          "16221": {},
+          "16222": {},
+          "16224": {},
+          "16225": {},
+          "16227": {},
+          "16228": {}
+        }
+      }
+    }
+  }
+}

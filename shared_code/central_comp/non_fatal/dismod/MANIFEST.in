@@ -1,0 +1,6 @@
+include README.rst
+include build/*.R
+include build/*.ado
+include versioneer.py
+include autowrap.cfg
+include cascade_ode/_version.py

@@ -1,0 +1,42 @@
+source_id,source_type,target_id,target_type,step,target_note,logic
+2526,modelable_entity,7241,modelable_entity,1,maternal hemorrhage,"if the most recent dismod model version for this modelable entity is younger than the scaled-model-version for this modelable entity, we need to rerun"
+2527,modelable_entity,7244,modelable_entity,1,maternal sepsis,
+2528,modelable_entity,7247,modelable_entity,1,maternal hypertension,
+2529,modelable_entity,7250,modelable_entity,1,obstructed labor,
+2530,modelable_entity,7253,modelable_entity,1,complications of abortion,
+2606,modelable_entity,7256,modelable_entity,1,indirect maternal deaths,
+2531,modelable_entity,7259,modelable_entity,1,other maternal disorders,
+2519,modelable_entity,7262,modelable_entity,1,late maternal death ,
+9015,modelable_entity,7265,modelable_entity,1,hiv maternal death,
+7262,modelable_entity,366,cause,2,parent adjustment,
+7241,modelable_entity,367,cause,3,maternal hemorrhage,"if the scaled_me_id is younger than the last codcorrect run, have to re-run multiplying cfs by the pre-cod-correct envelope and uploading to codcorrect for squeezing"
+7244,modelable_entity,368,cause,3,maternal sepsis,
+7247,modelable_entity,369,cause,3,maternal hypertension,
+7250,modelable_entity,370,cause,3,obstructed labor,
+7253,modelable_entity,371,cause,3,complications of abortion,
+7256,modelable_entity,375,cause,3,indirect maternal deaths,
+7259,modelable_entity,379,cause,3,other maternal disorders,
+7262,modelable_entity,376,cause,3,late maternal death ,
+7265,modelable_entity,741,cause,3,hiv maternal death,
+366,cause,367,cause,3,maternal hemorrhage,"if the codem model is ever younger than the subcause cause_ids that THIS process outputs, then we need to re-multiply the cfs from the last step by this new envelope"
+366,cause,368,cause,3,maternal sepsis,
+366,cause,369,cause,3,maternal hypertension,
+366,cause,370,cause,3,obstructed labor,
+366,cause,371,cause,3,complications of abortion,
+366,cause,375,cause,3,indirect maternal deaths,
+366,cause,379,cause,3,other maternal disorders,
+366,cause,376,cause,3,late maternal death ,
+366,cause,741,cause,3,hiv maternal death,
+366,cause,codcorrect,codcorrect,3,hiv_corrected_envelope,"if the hiv corrected pre-codcorrect envelope is younger than the last codcorrect run, have to re-run multiplying cfs by the pre-cod-correct envelope and uploading to codcorrect for squeezing"
+codcorrect,codcorrect,9014,modelable_entity,4,late maternal death ,
+codcorrect,codcorrect,7268,modelable_entity,4,antepartum maternal death,
+codcorrect,codcorrect,7271,modelable_entity,4,intrapartum maternal death,
+codcorrect,codcorrect,7274,modelable_entity,4,postpartum maternal death,
+376,codcorrect,9014,modelable_entity,4,late maternal death ,ONLY want to base dependencies off of 376 (late) if it's coming out of codcorrect.
+2516,modelable_entity,7268,modelable_entity,4,antepartum maternal death,
+2517,modelable_entity,7271,modelable_entity,4,intrapartum maternal death,
+2518,modelable_entity,7274,modelable_entity,4,postpartum maternal death,
+9014,modelable_entity,7286,modelable_entity,5,antepartum maternal death,if the most recent codcorrect run is younger than the timings final_me_id
+7268,modelable_entity,7283,modelable_entity,5,intrapartum maternal death,
+7271,modelable_entity,7280,modelable_entity,5,postpartum maternal death,
+7274,modelable_entity,7277,modelable_entity,5,late maternal death ,

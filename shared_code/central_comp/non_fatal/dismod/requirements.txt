@@ -1,0 +1,7 @@
+hierarchies
+pandas
+sqlalchemy
+hierarchies
+pytest
+ipython
+jobmon==0.1.0.post0.dev6

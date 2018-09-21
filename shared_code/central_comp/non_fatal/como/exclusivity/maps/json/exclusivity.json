@@ -1,0 +1,1712 @@
+{
+  "peptic_ulcer_asymp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "9314": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16219": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "9314",
+        "resid": "16219",
+        "sub": {
+          "16216": {},
+          "16217": {},
+          "16218": {}
+        }
+      }
+    }
+  },
+  "peptic_ulcer_symp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1924": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16213": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "1924",
+        "resid": "16213",
+        "sub": {
+          "16205": {},
+          "16206": {},
+          "16208": {},
+          "16209": {},
+          "16211": {},
+          "16212": {}
+        }
+      }
+    }
+  },
+  "gastritis_asymp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "9528": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16235": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "9528",
+        "resid": "16235",
+        "sub": {
+          "16232": {},
+          "16233": {},
+          "16234": {}
+        }
+      }
+    }
+  },
+  "gastritis_symp_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1928": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16229": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "1928",
+        "resid": "16229",
+        "sub": {
+          "16221": {},
+          "16222": {},
+          "16224": {},
+          "16225": {},
+          "16227": {},
+          "16228": {}
+        }
+      }
+    }
+  },
+  "resp_pneum_other_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3168",
+        "sub": {
+          "1906": {
+            "squeeze": "3167"
+          },
+          "1904": {
+            "squeeze": "3165"
+          },
+          "1905": {
+            "squeeze": "3166"
+          }
+        },
+        "env": "1903"
+      }
+    },
+    "out": {
+      "3166": "__main__.ModelableEntity",
+      "3167": "__main__.ModelableEntity",
+      "3165": "__main__.ModelableEntity",
+      "3168": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1906": "__main__.ModelableEntity",
+      "1904": "__main__.ModelableEntity",
+      "1905": "__main__.ModelableEntity",
+      "1903": "__main__.ModelableEntity"
+    }
+  },
+  "gyne_fibroids_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3331",
+        "sub": {
+          "2065": {
+            "squeeze": "3328"
+          },
+          "2066": {
+            "squeeze": "3329"
+          },
+          "2067": {
+            "squeeze": "3330"
+          }
+        },
+        "env": "3122"
+      }
+    },
+    "out": {
+      "3328": "__main__.ModelableEntity",
+      "3329": "__main__.ModelableEntity",
+      "3331": "__main__.ModelableEntity",
+      "3330": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3122": "__main__.ModelableEntity",
+      "2065": "__main__.ModelableEntity",
+      "2066": "__main__.ModelableEntity",
+      "2067": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickletrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3257",
+        "sub": {
+          "2504": {},
+          "2503": {},
+          "2502": {}
+        },
+        "env": "2501"
+      }
+    },
+    "out": {
+      "3257": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2504": "__main__.ModelableEntity",
+      "2503": "__main__.ModelableEntity",
+      "2502": "__main__.ModelableEntity",
+      "2501": "__main__.ModelableEntity"
+    }
+  },
+  "iodine_no_id": {
+    "args": [],
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1610": "__main__.ModelableEntity",
+      "9935": "__main__.ModelableEntity",
+      "9936": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "me_map": {
+        "env": "1610",
+        "resid": "15813",
+        "sub": {
+          "9935": {
+            "squeeze": "15814"
+          },
+          "9936": {
+            "squeeze": "15815"
+          }
+        }
+      }
+    },
+    "out": {
+      "15813": "__main__.ModelableEntity",
+      "15814": "__main__.ModelableEntity",
+      "15815": "__main__.ModelableEntity"
+    }
+  },
+  "iodine_prof_id_hf": {
+    "args": [],
+    "class": "__main__.Exclusivity",
+    "in": {
+      "15815": "__main__.ModelableEntity",
+      "1614": "__main__.ModelableEntity",
+      "1615": "__main__.ModelableEntity",
+      "1616": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "me_map": {
+        "env": "15815",
+        "resid": "3144",
+        "sub": {
+          "1614": {
+            "squeeze": "3141"
+          },
+          "1615": {
+            "squeeze": "3142"
+          },
+          "1616": {
+            "squeeze": "3143"
+          }
+        }
+      }
+    },
+    "out": {
+      "3144": "__main__.ModelableEntity",
+      "3141": "__main__.ModelableEntity",
+      "3142": "__main__.ModelableEntity",
+      "3143": "__main__.ModelableEntity"
+    }
+  },
+  "nutrition_vitamina": {
+    "kwargs": {
+      "me_map": {
+        "env": "2510",
+        "resid": "11610",
+        "sub": {
+          "1618": {},
+          "1619": {},
+          "1620": {}
+        }
+      }
+    },
+    "out": {
+      "11610": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1618": "__main__.ModelableEntity",
+      "1619": "__main__.ModelableEntity",
+      "1620": "__main__.ModelableEntity",
+      "2510": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_g6pd_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3356",
+        "sub": {
+          "2118": {
+            "squeeze": "3355"
+          },
+          "2113": {
+            "squeeze": "3350"
+          },
+          "2114": {
+            "squeeze": "3351"
+          },
+          "2115": {
+            "squeeze": "3352"
+          },
+          "2116": {
+            "squeeze": "3353"
+          },
+          "2117": {
+            "squeeze": "3354"
+          }
+        },
+        "env": "2112"
+      }
+    },
+    "out": {
+      "3355": "__main__.ModelableEntity",
+      "3354": "__main__.ModelableEntity",
+      "3356": "__main__.ModelableEntity",
+      "3351": "__main__.ModelableEntity",
+      "3350": "__main__.ModelableEntity",
+      "3353": "__main__.ModelableEntity",
+      "3352": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2118": "__main__.ModelableEntity",
+      "2112": "__main__.ModelableEntity",
+      "2113": "__main__.ModelableEntity",
+      "2114": "__main__.ModelableEntity",
+      "2115": "__main__.ModelableEntity",
+      "2116": "__main__.ModelableEntity",
+      "2117": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_g6pdtrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3258",
+        "sub": {
+          "2507": {},
+          "2506": {},
+          "2508": {}
+        },
+        "env": "2505"
+      }
+    },
+    "out": {
+      "3258": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2507": "__main__.ModelableEntity",
+      "2506": "__main__.ModelableEntity",
+      "2505": "__main__.ModelableEntity",
+      "2508": "__main__.ModelableEntity"
+    }
+  },
+  "nutrition_pem_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3140",
+        "sub": {
+          "1607": {},
+          "1606": {}
+        },
+        "env": "1608"
+      }
+    },
+    "out": {
+      "3140": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1608": "__main__.ModelableEntity",
+      "1607": "__main__.ModelableEntity",
+      "1606": "__main__.ModelableEntity"
+    }
+  },
+  "malaria_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "3055": "__main__.ModelableEntity",
+      "1447": "__main__.ModelableEntity",
+      "1448": "__main__.ModelableEntity",
+      "1449": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16380": "__main__.ModelableEntity",
+      "16381": "__main__.ModelableEntity",
+      "16382": "__main__.ModelableEntity",
+      "16383": "__main__.ModelableEntity",
+      "3267": "__main__.ModelableEntity",
+      "3268": "__main__.ModelableEntity",
+      "3269": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "3055",
+        "resid": "16380",
+        "sub": {
+          "1447": {
+            "squeeze": "16381",
+            "excess": "3267"
+          },
+          "1448": {
+            "squeeze": "16382",
+            "excess": "3268"
+          },
+          "1449": {
+            "squeeze": "16383",
+            "excess": "3269"
+          }
+        }
+      }
+    }
+  },
+  "malaria_asymp": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "3263": "__main__.ModelableEntity",
+      "16380": "__main__.ModelableEntity",
+      "16381": "__main__.ModelableEntity",
+      "16382": "__main__.ModelableEntity",
+      "16383": "__main__.ModelableEntity",
+      "3267": "__main__.ModelableEntity",
+      "3268": "__main__.ModelableEntity",
+      "3269": "__main__.ModelableEntity"
+    },
+    "out": {
+      "3266": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "3263",
+        "resid": "3266",
+        "sub": {
+          "16380": {},
+          "16381": {},
+          "16382": {},
+          "16383": {},
+          "3267": {},
+          "3268": {},
+          "3269": {}
+        }
+      }
+    }
+  },
+  "hemog_thalasstrait_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3256",
+        "sub": {
+          "2491": {},
+          "2490": {},
+          "2489": {}
+        },
+        "env": "2488"
+      }
+    },
+    "out": {
+      "3256": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2491": "__main__.ModelableEntity",
+      "2490": "__main__.ModelableEntity",
+      "2488": "__main__.ModelableEntity",
+      "2489": "__main__.ModelableEntity"
+    }
+  },
+  "otitis_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3261",
+        "sub": {
+          "3094": {
+            "squeeze": "3137"
+          }
+        },
+        "env": "1284"
+      }
+    },
+    "out": {
+      "3261": "__main__.ModelableEntity",
+      "3137": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1284": "__main__.ModelableEntity",
+      "3094": "__main__.ModelableEntity"
+    }
+  },
+  "resp_copd_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3152",
+        "sub": {
+          "1876": {
+            "squeeze": "3149"
+          },
+          "1877": {
+            "squeeze": "3150"
+          },
+          "1878": {
+            "squeeze": "3151"
+          }
+        },
+        "env": "1875"
+      }
+    },
+    "out": {
+      "3152": "__main__.ModelableEntity",
+      "3151": "__main__.ModelableEntity",
+      "3150": "__main__.ModelableEntity",
+      "3149": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1876": "__main__.ModelableEntity",
+      "1877": "__main__.ModelableEntity",
+      "1875": "__main__.ModelableEntity",
+      "1878": "__main__.ModelableEntity"
+    }
+  },
+  "otitis_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3326",
+        "sub": {
+          "3094": {
+            "squeeze": "3324"
+          }
+        },
+        "env": "1286"
+      }
+    },
+    "out": {
+      "3324": "__main__.ModelableEntity",
+      "3326": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1286": "__main__.ModelableEntity",
+      "3094": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3344",
+        "sub": {
+          "9384": {
+            "squeeze": "3273"
+          },
+          "2476": {
+            "squeeze": "3272"
+          },
+          "2475": {
+            "squeeze": "3271"
+          }
+        },
+        "env": "3039"
+      }
+    },
+    "out": {
+      "3272": "__main__.ModelableEntity",
+      "3273": "__main__.ModelableEntity",
+      "3344": "__main__.ModelableEntity",
+      "3271": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9384": "__main__.ModelableEntity",
+      "2476": "__main__.ModelableEntity",
+      "2475": "__main__.ModelableEntity",
+      "3039": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9384",
+        "sub": {
+          "2086": {
+            "squeeze": "3270"
+          }
+        },
+        "env": "2477"
+      }
+    },
+    "out": {
+      "9384": "__main__.ModelableEntity",
+      "3270": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2477": "__main__.ModelableEntity",
+      "2086": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_3_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3314",
+        "sub": {
+          "2499": {
+            "squeeze": "3322"
+          },
+          "2498": {
+            "squeeze": "3321"
+          },
+          "3038": {
+            "squeeze": "3359"
+          },
+          "9403": {
+            "squeeze": "3317"
+          },
+          "9402": {
+            "squeeze": "3316"
+          },
+          "9401": {
+            "squeeze": "3315"
+          },
+          "9407": {
+            "squeeze": "3323"
+          },
+          "9406": {
+            "squeeze": "3320"
+          },
+          "9405": {
+            "squeeze": "3319"
+          },
+          "9404": {
+            "squeeze": "3318"
+          }
+        },
+        "env": "2103"
+      }
+    },
+    "out": {
+      "3319": "__main__.ModelableEntity",
+      "3318": "__main__.ModelableEntity",
+      "3359": "__main__.ModelableEntity",
+      "3320": "__main__.ModelableEntity",
+      "3321": "__main__.ModelableEntity",
+      "3322": "__main__.ModelableEntity",
+      "3323": "__main__.ModelableEntity",
+      "3315": "__main__.ModelableEntity",
+      "3314": "__main__.ModelableEntity",
+      "3317": "__main__.ModelableEntity",
+      "3316": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2499": "__main__.ModelableEntity",
+      "2498": "__main__.ModelableEntity",
+      "3038": "__main__.ModelableEntity",
+      "9403": "__main__.ModelableEntity",
+      "9402": "__main__.ModelableEntity",
+      "9401": "__main__.ModelableEntity",
+      "9407": "__main__.ModelableEntity",
+      "9406": "__main__.ModelableEntity",
+      "9405": "__main__.ModelableEntity",
+      "9404": "__main__.ModelableEntity",
+      "2103": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_2_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3304",
+        "sub": {
+          "9397": {
+            "squeeze": "3308"
+          },
+          "9396": {
+            "squeeze": "3307"
+          },
+          "9395": {
+            "squeeze": "3306"
+          },
+          "9394": {
+            "squeeze": "3305"
+          },
+          "3037": {
+            "squeeze": "3358"
+          },
+          "2495": {
+            "squeeze": "3311"
+          },
+          "9399": {
+            "squeeze": "3310"
+          },
+          "2496": {
+            "squeeze": "3312"
+          },
+          "9400": {
+            "squeeze": "3313"
+          },
+          "9398": {
+            "squeeze": "3309"
+          }
+        },
+        "env": "2100"
+      }
+    },
+    "out": {
+      "3305": "__main__.ModelableEntity",
+      "3309": "__main__.ModelableEntity",
+      "3358": "__main__.ModelableEntity",
+      "3306": "__main__.ModelableEntity",
+      "3308": "__main__.ModelableEntity",
+      "3310": "__main__.ModelableEntity",
+      "3311": "__main__.ModelableEntity",
+      "3307": "__main__.ModelableEntity",
+      "3304": "__main__.ModelableEntity",
+      "3312": "__main__.ModelableEntity",
+      "3313": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9397": "__main__.ModelableEntity",
+      "9396": "__main__.ModelableEntity",
+      "9395": "__main__.ModelableEntity",
+      "9394": "__main__.ModelableEntity",
+      "2100": "__main__.ModelableEntity",
+      "3037": "__main__.ModelableEntity",
+      "2495": "__main__.ModelableEntity",
+      "9399": "__main__.ModelableEntity",
+      "2496": "__main__.ModelableEntity",
+      "9400": "__main__.ModelableEntity",
+      "9398": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9400",
+        "sub": {
+          "2102": {
+            "squeeze": "9396",
+            "excess": "9397"
+          },
+          "2101": {
+            "squeeze": "9394",
+            "excess": "9395"
+          },
+          "3009": {
+            "squeeze": "9398",
+            "excess": "9399"
+          }
+        },
+        "env": "2497"
+      }
+    },
+    "out": {
+      "9397": "__main__.ModelableEntity",
+      "9396": "__main__.ModelableEntity",
+      "9395": "__main__.ModelableEntity",
+      "9394": "__main__.ModelableEntity",
+      "9399": "__main__.ModelableEntity",
+      "9398": "__main__.ModelableEntity",
+      "9400": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2102": "__main__.ModelableEntity",
+      "2101": "__main__.ModelableEntity",
+      "3009": "__main__.ModelableEntity",
+      "2497": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9407",
+        "sub": {
+          "3010": {
+            "squeeze": "9405",
+            "excess": "9406"
+          },
+          "2105": {
+            "squeeze": "9403",
+            "excess": "9404"
+          },
+          "2104": {
+            "squeeze": "9401",
+            "excess": "9402"
+          }
+        },
+        "env": "2500"
+      }
+    },
+    "out": {
+      "9403": "__main__.ModelableEntity",
+      "9402": "__main__.ModelableEntity",
+      "9401": "__main__.ModelableEntity",
+      "9407": "__main__.ModelableEntity",
+      "9406": "__main__.ModelableEntity",
+      "9405": "__main__.ModelableEntity",
+      "9404": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3010": "__main__.ModelableEntity",
+      "2500": "__main__.ModelableEntity",
+      "2105": "__main__.ModelableEntity",
+      "2104": "__main__.ModelableEntity"
+    }
+  },
+  "otitis_4_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3327",
+        "sub": {
+          "3094": {
+            "squeeze": "3325"
+          }
+        },
+        "env": "1287"
+      }
+    },
+    "out": {
+      "3325": "__main__.ModelableEntity",
+      "3327": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1287": "__main__.ModelableEntity",
+      "3094": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_coal_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3164",
+        "sub": {
+          "1897": {
+            "squeeze": "3161"
+          },
+          "1898": {
+            "squeeze": "3162"
+          },
+          "1899": {
+            "squeeze": "3163"
+          }
+        },
+        "env": "1896"
+      }
+    },
+    "out": {
+      "3164": "__main__.ModelableEntity",
+      "3162": "__main__.ModelableEntity",
+      "3163": "__main__.ModelableEntity",
+      "3161": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1896": "__main__.ModelableEntity",
+      "1897": "__main__.ModelableEntity",
+      "1898": "__main__.ModelableEntity",
+      "1899": "__main__.ModelableEntity"
+    }
+  },
+  "resp_interstitial_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3172",
+        "sub": {
+          "1915": {
+            "squeeze": "3169"
+          },
+          "1917": {
+            "squeeze": "3171"
+          },
+          "1916": {
+            "squeeze": "3170"
+          }
+        },
+        "env": "1914"
+      }
+    },
+    "out": {
+      "3171": "__main__.ModelableEntity",
+      "3170": "__main__.ModelableEntity",
+      "3172": "__main__.ModelableEntity",
+      "3169": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1915": "__main__.ModelableEntity",
+      "1914": "__main__.ModelableEntity",
+      "1917": "__main__.ModelableEntity",
+      "1916": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3294",
+        "sub": {
+          "9387": {
+            "squeeze": "3295"
+          },
+          "9393": {
+            "squeeze": "3303"
+          },
+          "9392": {
+            "squeeze": "3300"
+          },
+          "9391": {
+            "squeeze": "3299"
+          },
+          "9390": {
+            "squeeze": "3298"
+          },
+          "2493": {
+            "squeeze": "3302"
+          },
+          "2492": {
+            "squeeze": "3301"
+          },
+          "9388": {
+            "squeeze": "3296"
+          },
+          "9389": {
+            "squeeze": "3297"
+          },
+          "3036": {
+            "squeeze": "3357"
+          }
+        },
+        "env": "2097"
+      }
+    },
+    "out": {
+      "3357": "__main__.ModelableEntity",
+      "3298": "__main__.ModelableEntity",
+      "3299": "__main__.ModelableEntity",
+      "3294": "__main__.ModelableEntity",
+      "3295": "__main__.ModelableEntity",
+      "3296": "__main__.ModelableEntity",
+      "3297": "__main__.ModelableEntity",
+      "3302": "__main__.ModelableEntity",
+      "3303": "__main__.ModelableEntity",
+      "3300": "__main__.ModelableEntity",
+      "3301": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9387": "__main__.ModelableEntity",
+      "9393": "__main__.ModelableEntity",
+      "9392": "__main__.ModelableEntity",
+      "9391": "__main__.ModelableEntity",
+      "9390": "__main__.ModelableEntity",
+      "2493": "__main__.ModelableEntity",
+      "2492": "__main__.ModelableEntity",
+      "9388": "__main__.ModelableEntity",
+      "9389": "__main__.ModelableEntity",
+      "2097": "__main__.ModelableEntity",
+      "3036": "__main__.ModelableEntity"
+    }
+  },
+  "otitis_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3262",
+        "sub": {
+          "3094": {
+            "squeeze": "3138"
+          }
+        },
+        "env": "1285"
+      }
+    },
+    "out": {
+      "3262": "__main__.ModelableEntity",
+      "3138": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1285": "__main__.ModelableEntity",
+      "3094": "__main__.ModelableEntity"
+    }
+  },
+  "cvd_rhd_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3346",
+        "sub": {
+          "1811": {
+            "squeeze": "3347"
+          },
+          "1812": {
+            "squeeze": "3348"
+          },
+          "1813": {
+            "squeeze": "3349"
+          }
+        },
+        "env": "1810"
+      }
+    },
+    "out": {
+      "3348": "__main__.ModelableEntity",
+      "3349": "__main__.ModelableEntity",
+      "3346": "__main__.ModelableEntity",
+      "3347": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1810": "__main__.ModelableEntity",
+      "1811": "__main__.ModelableEntity",
+      "1812": "__main__.ModelableEntity",
+      "1813": "__main__.ModelableEntity"
+    }
+  },
+  "ntd_nema_hook_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3139",
+        "sub": {
+          "1524": {},
+          "1522": {},
+          "1523": {}
+        },
+        "env": "3111"
+      }
+    },
+    "out": {
+      "3139": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1524": "__main__.ModelableEntity",
+      "3111": "__main__.ModelableEntity",
+      "1522": "__main__.ModelableEntity",
+      "1523": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9386",
+        "sub": {
+          "2090": {
+            "squeeze": "3284"
+          }
+        },
+        "env": "2483"
+      }
+    },
+    "out": {
+      "9386": "__main__.ModelableEntity",
+      "3284": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2090": "__main__.ModelableEntity",
+      "2483": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_3_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3343",
+        "sub": {
+          "9386": {
+            "squeeze": "3287"
+          },
+          "2482": {
+            "squeeze": "3286"
+          },
+          "2481": {
+            "squeeze": "3285"
+          }
+        },
+        "env": "3041"
+      }
+    },
+    "out": {
+      "3287": "__main__.ModelableEntity",
+      "3343": "__main__.ModelableEntity",
+      "3285": "__main__.ModelableEntity",
+      "3286": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3041": "__main__.ModelableEntity",
+      "9386": "__main__.ModelableEntity",
+      "2482": "__main__.ModelableEntity",
+      "2481": "__main__.ModelableEntity"
+    }
+  },
+  "diabetes_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3218",
+        "sub": {
+          "3048": {
+            "squeeze": "3217"
+          },
+          "2011": {
+            "squeeze": "3219"
+          },
+          "2012": {
+            "squeeze": "3220"
+          }
+        },
+        "env": "3049"
+      }
+    },
+    "out": {
+      "3217": "__main__.ModelableEntity",
+      "3218": "__main__.ModelableEntity",
+      "3219": "__main__.ModelableEntity",
+      "3220": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3049": "__main__.ModelableEntity",
+      "3048": "__main__.ModelableEntity",
+      "2011": "__main__.ModelableEntity",
+      "2012": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9385",
+        "sub": {
+          "2088": {
+            "squeeze": "3277"
+          }
+        },
+        "env": "2480"
+      }
+    },
+    "out": {
+      "9385": "__main__.ModelableEntity",
+      "3277": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2088": "__main__.ModelableEntity",
+      "2480": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_2_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3345",
+        "sub": {
+          "9385": {
+            "squeeze": "3280"
+          },
+          "2479": {
+            "squeeze": "3279"
+          },
+          "2478": {
+            "squeeze": "3278"
+          }
+        },
+        "env": "3040"
+      }
+    },
+    "out": {
+      "3280": "__main__.ModelableEntity",
+      "3279": "__main__.ModelableEntity",
+      "3278": "__main__.ModelableEntity",
+      "3345": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9385": "__main__.ModelableEntity",
+      "3040": "__main__.ModelableEntity",
+      "2479": "__main__.ModelableEntity",
+      "2478": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9393",
+        "sub": {
+          "2099": {
+            "squeeze": "9389",
+            "excess": "9390"
+          },
+          "2098": {
+            "squeeze": "9388",
+            "excess": "9387"
+          },
+          "3008": {
+            "squeeze": "9391",
+            "excess": "9392"
+          }
+        },
+        "env": "2494"
+      }
+    },
+    "out": {
+      "9387": "__main__.ModelableEntity",
+      "9393": "__main__.ModelableEntity",
+      "9392": "__main__.ModelableEntity",
+      "9391": "__main__.ModelableEntity",
+      "9390": "__main__.ModelableEntity",
+      "9388": "__main__.ModelableEntity",
+      "9389": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2494": "__main__.ModelableEntity",
+      "2099": "__main__.ModelableEntity",
+      "2098": "__main__.ModelableEntity",
+      "3008": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_silico_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3156",
+        "sub": {
+          "1885": {
+            "squeeze": "3155"
+          },
+          "1884": {
+            "squeeze": "3154"
+          },
+          "1883": {
+            "squeeze": "3153"
+          }
+        },
+        "env": "1882"
+      }
+    },
+    "out": {
+      "3153": "__main__.ModelableEntity",
+      "3156": "__main__.ModelableEntity",
+      "3155": "__main__.ModelableEntity",
+      "3154": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1885": "__main__.ModelableEntity",
+      "1884": "__main__.ModelableEntity",
+      "1883": "__main__.ModelableEntity",
+      "1882": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalasstrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3255",
+        "sub": {
+          "2486": {},
+          "2487": {},
+          "2485": {}
+        },
+        "env": "2484"
+      }
+    },
+    "out": {
+      "3255": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2486": "__main__.ModelableEntity",
+      "2487": "__main__.ModelableEntity",
+      "2484": "__main__.ModelableEntity",
+      "2485": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_asbest_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3160",
+        "sub": {
+          "1890": {
+            "squeeze": "3157"
+          },
+          "1891": {
+            "squeeze": "3158"
+          },
+          "1892": {
+            "squeeze": "3159"
+          }
+        },
+        "env": "1889"
+      }
+    },
+    "out": {
+      "3159": "__main__.ModelableEntity",
+      "3158": "__main__.ModelableEntity",
+      "3157": "__main__.ModelableEntity",
+      "3160": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1889": "__main__.ModelableEntity",
+      "1890": "__main__.ModelableEntity",
+      "1891": "__main__.ModelableEntity",
+      "1892": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_diabetes_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3183",
+        "sub": {
+          "2028": {
+            "squeeze": "3180"
+          },
+          "2029": {
+            "squeeze": "3181"
+          },
+          "2030": {
+            "squeeze": "3182"
+          }
+        },
+        "env": "3029"
+      }
+    },
+    "out": {
+      "3180": "__main__.ModelableEntity",
+      "3181": "__main__.ModelableEntity",
+      "3182": "__main__.ModelableEntity",
+      "3183": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2028": "__main__.ModelableEntity",
+      "2029": "__main__.ModelableEntity",
+      "3029": "__main__.ModelableEntity",
+      "2030": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_glomerulo_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3194",
+        "sub": {
+          "2046": {
+            "squeeze": "3204"
+          },
+          "2044": {
+            "squeeze": "3202"
+          },
+          "2045": {
+            "squeeze": "3203"
+          }
+        },
+        "env": "3031"
+      }
+    },
+    "out": {
+      "3204": "__main__.ModelableEntity",
+      "3194": "__main__.ModelableEntity",
+      "3203": "__main__.ModelableEntity",
+      "3202": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2046": "__main__.ModelableEntity",
+      "2044": "__main__.ModelableEntity",
+      "2045": "__main__.ModelableEntity",
+      "3031": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_htn_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3205",
+        "sub": {
+          "2037": {
+            "squeeze": "3192"
+          },
+          "2036": {
+            "squeeze": "3191"
+          },
+          "2038": {
+            "squeeze": "3193"
+          }
+        },
+        "env": "3030"
+      }
+    },
+    "out": {
+      "3205": "__main__.ModelableEntity",
+      "3193": "__main__.ModelableEntity",
+      "3192": "__main__.ModelableEntity",
+      "3191": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2037": "__main__.ModelableEntity",
+      "2036": "__main__.ModelableEntity",
+      "3030": "__main__.ModelableEntity",
+      "2038": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_other_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3216",
+        "sub": {
+          "2053": {
+            "squeeze": "3214"
+          },
+          "2052": {
+            "squeeze": "3213"
+          },
+          "2054": {
+            "squeeze": "3215"
+          }
+        },
+        "env": "3032"
+      }
+    },
+    "out": {
+      "3214": "__main__.ModelableEntity",
+      "3215": "__main__.ModelableEntity",
+      "3216": "__main__.ModelableEntity",
+      "3213": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2053": "__main__.ModelableEntity",
+      "2052": "__main__.ModelableEntity",
+      "2054": "__main__.ModelableEntity",
+      "3032": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_diabetes_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10893",
+        "sub": {
+          "10881": {
+            "squeeze": "10894"
+          },
+          "10885": {
+            "squeeze": "10895"
+          },
+          "10889": {
+            "squeeze": "10896"
+          }
+        },
+        "env": "11595"
+      }
+    },
+    "out": {
+      "10893": "__main__.ModelableEntity",
+      "10894": "__main__.ModelableEntity",
+      "10895": "__main__.ModelableEntity",
+      "10896": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10881": "__main__.ModelableEntity",
+      "10885": "__main__.ModelableEntity",
+      "10889": "__main__.ModelableEntity",
+      "11595": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_glomerulo_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10901",
+        "sub": {
+          "10883": {
+            "squeeze": "10902"
+          },
+          "10887": {
+            "squeeze": "10903"
+          },
+          "10891": {
+            "squeeze": "10904"
+          }
+        },
+        "env": "11599"
+      }
+    },
+    "out": {
+      "10901": "__main__.ModelableEntity",
+      "10902": "__main__.ModelableEntity",
+      "10903": "__main__.ModelableEntity",
+      "10904": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10883": "__main__.ModelableEntity",
+      "10887": "__main__.ModelableEntity",
+      "10891": "__main__.ModelableEntity",
+      "11599": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_htn_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10897",
+        "sub": {
+          "10882": {
+            "squeeze": "10898"
+          },
+          "10886": {
+            "squeeze": "10899"
+          },
+          "10890": {
+            "squeeze": "10900"
+          }
+        },
+        "env": "11597"
+      }
+    },
+    "out": {
+      "10898": "__main__.ModelableEntity",
+      "10899": "__main__.ModelableEntity",
+      "10900": "__main__.ModelableEntity",
+      "10897": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10882": "__main__.ModelableEntity",
+      "10886": "__main__.ModelableEntity",
+      "10890": "__main__.ModelableEntity",
+      "11597": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_other_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10905",
+        "sub": {
+          "10884": {
+            "squeeze": "10906"
+          },
+          "10888": {
+            "squeeze": "10907"
+          },
+          "10892": {
+            "squeeze": "10908"
+          }
+        },
+        "env": "11601"
+      }
+    },
+    "out": {
+      "10906": "__main__.ModelableEntity",
+      "10907": "__main__.ModelableEntity",
+      "10908": "__main__.ModelableEntity",
+      "10905": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10884": "__main__.ModelableEntity",
+      "10888": "__main__.ModelableEntity",
+      "10892": "__main__.ModelableEntity",
+      "11601": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_diabetes_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10865",
+        "sub": {
+          "10853": {
+            "squeeze": "10866"
+          },
+          "10857": {
+            "squeeze": "10867"
+          },
+          "10861": {
+            "squeeze": "10868"
+          }
+        },
+        "env": "11596"
+      }
+    },
+    "out": {
+      "10866": "__main__.ModelableEntity",
+      "10867": "__main__.ModelableEntity",
+      "10868": "__main__.ModelableEntity",
+      "10865": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10853": "__main__.ModelableEntity",
+      "10857": "__main__.ModelableEntity",
+      "10861": "__main__.ModelableEntity",
+      "11596": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_glomerulo_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10873",
+        "sub": {
+          "10855": {
+            "squeeze": "10874"
+          },
+          "10859": {
+            "squeeze": "10875"
+          },
+          "10863": {
+            "squeeze": "10876"
+          }
+        },
+        "env": "11600"
+      }
+    },
+    "out": {
+      "10874": "__main__.ModelableEntity",
+      "10875": "__main__.ModelableEntity",
+      "10876": "__main__.ModelableEntity",
+      "10873": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10855": "__main__.ModelableEntity",
+      "10859": "__main__.ModelableEntity",
+      "10863": "__main__.ModelableEntity",
+      "11600": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_htn_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10869",
+        "sub": {
+          "10854": {
+            "squeeze": "10870"
+          },
+          "10858": {
+            "squeeze": "10871"
+          },
+          "10862": {
+            "squeeze": "10872"
+          }
+        },
+        "env": "11598"
+      }
+    },
+    "out": {
+      "10870": "__main__.ModelableEntity",
+      "10871": "__main__.ModelableEntity",
+      "10872": "__main__.ModelableEntity",
+      "10869": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10854": "__main__.ModelableEntity",
+      "10858": "__main__.ModelableEntity",
+      "10862": "__main__.ModelableEntity",
+      "11598": "__main__.ModelableEntity"
+    }
+  },
+  "ckd_other_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "10877",
+        "sub": {
+          "10856": {
+            "squeeze": "10878"
+          },
+          "10860": {
+            "squeeze": "10879"
+          },
+          "10864": {
+            "squeeze": "10880"
+          }
+        },
+        "env": "11602"
+      }
+    },
+    "out": {
+      "10878": "__main__.ModelableEntity",
+      "10879": "__main__.ModelableEntity",
+      "10880": "__main__.ModelableEntity",
+      "10877": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "10856": "__main__.ModelableEntity",
+      "10860": "__main__.ModelableEntity",
+      "10864": "__main__.ModelableEntity",
+      "11602": "__main__.ModelableEntity"
+    }
+  }
+}

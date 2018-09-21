@@ -1,0 +1,4 @@
+versioneer.py
+MAKEFILE
+cascade_ode/_version.py
+docsource/conf.py

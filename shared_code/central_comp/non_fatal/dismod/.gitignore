@@ -1,0 +1,39 @@
+# python compilation files
+*.pyc
+# vi swap files
+*.swp
+# log files
+*.log
+# temporary files
+junk
+junk.sh
+# the build subdirectory
+build
+# all the new subdirectories
+new
+# directory and manifest created by setup.py for distribution
+dist
+MANIFEST
+# the doc subbdirectory and its tarball
+doc
+doc.tgz
+# temporary commit script
+git_commit.sh
+# machine-specific config file
+config.local*
+# emacs backups
+*.~*~
+\#*\#
+.\#*
+# emacs TAGS
+TAGS
+# Mac infrastructure
+.DS_Store
+._.DS_Store
+# PDF diagnostic files
+*.pdf
+# Rhistories
+.Rhistory
+.odbc.ini
+.cache
+*.egg-info

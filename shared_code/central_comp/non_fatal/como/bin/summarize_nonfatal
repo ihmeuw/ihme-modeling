@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import argparse
+
+from como.pipelines import run_pipeline_summarize
+
+
+parser = argparse.ArgumentParser(
+    description="Compute nonfatal aggregate for a year-sex-measure combination"
+)
+parser.add_argument(
+    "--como_dir",
+    type=str,
+    help="directory of como run")
+parser.add_argument(
+    "--component",
+    type=str,
+    help="which component to summarize")
+parser.add_argument(
+    "--location_id",
+    type=int,
+    help="location_id to summarize")
+args = parser.parse_args()
+
+run_pipeline_summarize(args.como_dir, args.component, args.location_id)

@@ -1,0 +1,74 @@
+{
+  "malaria_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "3055": "__main__.ModelableEntity",
+      "1447": "__main__.ModelableEntity",
+      "1448": "__main__.ModelableEntity",
+      "1449": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16380": "__main__.ModelableEntity",
+      "16381": "__main__.ModelableEntity",
+      "16382": "__main__.ModelableEntity",
+      "16383": "__main__.ModelableEntity",
+      "3267": "__main__.ModelableEntity",
+      "3268": "__main__.ModelableEntity",
+      "3269": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "3055",
+        "resid": "16380",
+        "sub": {
+          "1447": {
+            "squeeze": "16381",
+            "excess": "3267"
+          },
+          "1448": {
+            "squeeze": "16382",
+            "excess": "3268"
+          },
+          "1449": {
+            "squeeze": "16383",
+            "excess": "3269"
+          }
+        }
+      }
+    }
+  },
+  "malaria_asymp": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "3263": "__main__.ModelableEntity",
+      "16380": "__main__.ModelableEntity",
+      "16381": "__main__.ModelableEntity",
+      "16382": "__main__.ModelableEntity",
+      "16383": "__main__.ModelableEntity",
+      "3267": "__main__.ModelableEntity",
+      "3268": "__main__.ModelableEntity",
+      "3269": "__main__.ModelableEntity"
+    },
+    "out": {
+      "3266": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "3263",
+        "resid": "3266",
+        "sub": {
+          "3263": {},
+          "16380": {},
+          "16381": {},
+          "16382": {},
+          "16383": {},
+          "3267": {},
+          "3268": {},
+          "3269": {}
+        }
+      }
+    }
+  }
+}

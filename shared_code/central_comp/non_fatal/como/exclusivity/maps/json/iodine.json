@@ -1,0 +1,63 @@
+{
+  "iodine_no_id": {
+    "args": [],
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1610": "__main__.ModelableEntity",
+      "9935": "__main__.ModelableEntity",
+      "9936": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "me_map": {
+        "env": "1610",
+        "resid": "15813",
+        "sub": {
+          "9935": {
+            "squeeze": "15814"
+          },
+          "9936": {
+            "squeeze": "15815"
+          }
+        }
+      }
+    },
+    "out": {
+      "15813": "__main__.ModelableEntity",
+      "15814": "__main__.ModelableEntity",
+      "15815": "__main__.ModelableEntity"
+    }
+  },
+  "iodine_prof_id_hf": {
+    "args": [],
+    "class": "__main__.Exclusivity",
+    "in": {
+      "15815": "__main__.ModelableEntity",
+      "1614": "__main__.ModelableEntity",
+      "1615": "__main__.ModelableEntity",
+      "1616": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "me_map": {
+        "env": "15815",
+        "resid": "3144",
+        "sub": {
+          "1614": {
+            "squeeze": "3141"
+          },
+          "1615": {
+            "squeeze": "3142"
+          },
+          "1616": {
+            "squeeze": "3143"
+          }
+        }
+      }
+    },
+    "out": {
+      "3144": "__main__.ModelableEntity",
+      "3141": "__main__.ModelableEntity",
+      "3142": "__main__.ModelableEntity",
+      "3143": "__main__.ModelableEntity"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+#$ -S /bin/sh
+
+PYTHON_PATH FAILED_MODEL_EMAIL_SCRIPT_PATH $1 $2 $3

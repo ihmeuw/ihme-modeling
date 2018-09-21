@@ -1,0 +1,5 @@
+parent_id,prev_me,proportion_me,description
+{MODELABLE ENTITY ID},{MODELABLE ENTITY ID},{MODELABLE ENTITY ID},hiv with mild anemia
+,{MODELABLE ENTITY ID},{MODELABLE ENTITY ID},hiv with moderate anemia
+,{MODELABLE ENTITY ID},{MODELABLE ENTITY ID},hiv with severe anemia
+,,{MODELABLE ENTITY ID},hiv with no anemia

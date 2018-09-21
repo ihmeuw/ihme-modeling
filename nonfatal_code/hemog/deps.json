@@ -1,0 +1,74 @@
+{
+  "hemog_thalas__btm_btt": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "btt",
+      "btm_id": "MODELABLE ENTITY ID",
+      "save_id": "MODELABLE ENTITY ID"
+    }
+  },
+  "hemog_thalas__hbebt_ett": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "ett",
+      "hbebt_id": "MODELABLE ENTITY ID",
+      "save_id": "MODELABLE ENTITY ID"
+    }
+  },
+  "hemog_sickle": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "sct",
+      "hscbt_id": "MODELABLE ENTITY ID",
+      "scbt_id": "MODELABLE ENTITY ID",
+      "save_id": "MODELABLE ENTITY ID"
+    }
+  },
+  "hemog_g6pd": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "hemi",
+      "cases_id": "MODELABLE ENTITY ID",
+      "save_id": "MODELABLE ENTITY ID"
+    }
+  },
+  "process_hook": {
+    "class": "__main__.Hook",
+    "in": {
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity",
+      "MODELABLE ENTITY ID": "__main__.ModelableEntity"
+    },
+    "out": {}
+  }
+}

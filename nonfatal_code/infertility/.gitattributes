@@ -1,0 +1,15 @@
+# Basic .gitattributes for a python repo.
+
+* text
+
+# Source files
+# ============
+*.py        text
+*.sh        text eol=lf
+*.cfg       text eol=lf
+*.json      text eol=lf
+
+# Binary files
+# ============
+*.pyc       binary
+*.xlsx      binary

@@ -1,0 +1,11 @@
+input_me,output_mes,class_name
+1552,16535,Zero_Fistula
+1555,3644,Abortion
+1535,3620;1536;1537,Hemorrhage
+1543; 10504,3629;2625;1542;3928,Hypertension
+1544,3635;3931,Eclampsia
+1550,3641,Obstruct
+16535,1553;1554,Fistula
+3085,3623;2624,Sepsis
+3086,3626,SepsisOther
+10484,10485,Eptopic

@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import argparse
+
+from como.pipelines import run_pipeline_upload
+
+
+def int_list(val):
+    vals = val.split(" ")
+    rvals = []
+    for val in vals:
+        try:
+            val = int(val)
+        except ValueError:
+            pass
+        rvals.append(val)
+    return rvals
+
+
+parser = argparse.ArgumentParser(description="""
+    Upload summaries""")
+parser.add_argument(
+    '--como_dir', type=str, help='como version id')
+parser.add_argument(
+    '--component', type=str, help='cause/sequela')
+parser.add_argument(
+    "--location_id",
+    type=int_list,
+    help="location_ids to include in this run")
+args = parser.parse_args()
+
+run_pipeline_upload(args.como_dir, args.component, args.location_id)

@@ -1,0 +1,3 @@
+[submodule "lib/job_utils"]
+	path = lib/job_utils
+	url = ssh://git@stash.ihme.washington.edu:7999/~mlsandar/job_utils.git
