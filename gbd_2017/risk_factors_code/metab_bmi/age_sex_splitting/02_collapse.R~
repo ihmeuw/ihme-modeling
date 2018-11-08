@@ -1,0 +1,88 @@
+# source('/homes/htran3/WORK/GBD2017/Data_extraction/Data_preparation/collapse/collapse.r')
+
+# Set path to j drive
+os <- .Platform$OS.type
+if (os=="windows") {
+  lib_path <- "J:/WORK/01_covariates/common/lib/"
+  jpath_01 <- "J:/"
+} else {
+  lib_path <- "/home/j/WORK/01_covariates/common/lib/"
+  jpath_01 <- "/home/j/"
+}
+
+# define args and i_iso3, when submitting job to cluster, these will be defined in submit_run_gpr script
+args <- commandArgs(trailingOnly = TRUE)
+loc <- args[1]
+date <- args[2]
+
+print(.libPaths())
+
+#Load libraries using pacman 
+package_lib <- '/snfs1/WORK/01_covariates/05_ubcov_R_libraries'
+library(dplyr)
+library(plyr)
+library(data.table)
+library(survey)
+library(readstata13)
+#library(RMySQL, lib.loc = "/home/j/WORK/05_risk/risks/metab_bmi/r_libs")
+library(binom, lib.loc = package_lib)
+library(Hmisc)
+source("/home/j/WORK/01_covariates/common/ubcov_central/functions/utilitybelt/db_tools.r")
+
+## Set root filepaths
+input_root <- paste0(jpath_01, "WORK/05_risk/risks/metab_bmi/pipeline/datasets/", date, "/precollapse/", loc)
+output_root <- paste0(jpath_01, "WORK/05_risk/risks/metab_bmi/pipeline/datasets/", date, "/collapse/", loc)
+
+
+# List files to loop through
+files <- list.files(input_root)
+
+dir.create(output_root, showWarnings = FALSE)
+  
+######################################################################################################################
+
+## Load config
+config_master <- list(
+  ## Collapse vars
+  vars = c("bmi", "obese", "overweight", "bmi_rep", "obese_rep", "overweight_rep"), ## Variables to collapse options
+  calc.sd = TRUE,                    ## Whether to calculate standard deviation
+  ## Collapse over
+  cv.manual = NULL,                   ## List of other variables to collapse by
+  cv.detect = TRUE,                   ## if TRUE, detects columns with cv_* to collapse by
+  ## Demographics
+  by_sex = TRUE,                      ## if TRUE, collapses by vars.sex
+  by_age = TRUE,                      ## if TRUE, collapses by vars.age
+  gbd_age_cuts = FALSE,                ## if TRUE, uses default GBD age cuts 
+  aggregate_under1 = FALSE,            ## if TRUE, aggregates < 1
+  custom_age_cuts = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 125),             ## List of custom age cuts
+  cond_age_cuts = NULL,               ## List of conditional custom age cuts eg: list(list("cv_pregnant==1", c(0, 15, 49, 125)), list("cv_test==2", c(0, 12, 19, 140)))
+  ## Settings
+  sample_threshold = 10,              ## Minimum sample size threshold, drops result if sample_size < sample_threshold
+  quiet = FALSE,
+  ## Meta vars
+  vars.meta = c("nid", "survey_name",           ## Default meta variables
+                "ihme_loc_id", "year_start",    
+                "year_end", "survey_module", 
+                "file_path"),
+  ## Subnational vars
+  vars.subnat = c("admin_1_id", "admin_2_id"),  ## Default subnational vars
+  ## Sex variable
+  vars.sex = c("sex_id"),                     ## Default sex variable
+  ## Age variable
+  vars.age = c("age_year"),                       ## Default age variable
+  ## Design vars
+  vars.design = c("strata", "psu", "pweight") ## Default survey design variables
+)
+
+#if (!is.null(custom_age_cuts)) age_cuts <- custom_age_cuts
+
+#Load functions
+source("/home/j/WORK/01_covariates/common/ubcov_central/modules/collapse/collapse.r")
+
+for (f in files) {
+  #Call function
+  print(f)
+  data<-fread(paste0(input_root, "/", f))
+  out <- collapse.run(df = data, config = config_master)
+  write.csv(out, paste0(output_root, "/", f), na="", row.names = FALSE)
+}

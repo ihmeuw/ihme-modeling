@@ -1,0 +1,84 @@
+import os
+import sys
+
+import pandas as pd
+
+
+def backtransform(loc_id, ow_run_id, ob_run_id, date):
+    ow = pd.read_csv(os.path.join("/share/covariates/ubcov/model/output/", str(ow_run_id),
+                                  "draws_temp_1/", "{}.csv".format(loc_id)))
+    ob = pd.read_csv(os.path.join("/share/covariates/ubcov/model/output/", str(ob_run_id),
+                                  "draws_temp_1/", "{}.csv".format(loc_id)))
+
+    ow_dfs = []
+    ob_dfs = []
+    for ages in [30, 31, 32, 235]:
+        temp_ow = ow.query('age_group_id == {}'.format(21))
+        temp_ow['age_group_id'] = ages
+        temp_ob = ob.query('age_group_id == {}'.format(21))
+        temp_ob['age_group_id'] = ages
+
+        ow_dfs.append(temp_ow)
+        ob_dfs.append(temp_ob)
+
+    ow_dfs.append(ow)
+    ow = pd.concat(ow_dfs)
+    ob_dfs.append(ob)
+    ob = pd.concat(ob_dfs)
+
+    ow = ow[~ow['age_group_id'].isin([21])]
+    ob = ob[~ob['age_group_id'].isin([21])]
+
+    if not os.path.exists(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws_ow")):
+        os.mkdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws_ow"))
+    os.chdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws_ow"))
+    ow[ow['age_group_id'].isin([5, 6, 7, 8])].to_csv('{}.csv'.format(loc_id))
+
+    if not os.path.exists(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "expanded_adult_draws_ow")):
+        os.mkdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "expanded_adult_draws_ow"))
+    os.chdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "expanded_adult_draws_ow"))
+    ow[~ow['age_group_id'].isin([5, 6, 7, 8])].to_csv('{}.csv'.format(loc_id))
+
+    merged = ow.merge(ob, on=['location_id', 'year_id', 'age_group_id', 'sex_id'],
+                      suffixes=("_ow", "_ob"))
+
+    for x in range(1000):
+        merged['draw_{}'.format(x)] = merged['draw_{}_ow'.format(x)] * merged['draw_{}_ob'.format(x)]
+
+    specific = merged[['location_id', 'year_id', 'age_group_id', 'sex_id'] +
+                      ['draw_{}'.format(x) for x in range(1000)]]
+    if not os.path.exists(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws")):
+        os.mkdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws"))
+    os.chdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_draws"))
+    specific = specific.set_index(['location_id', 'year_id', 'age_group_id', 'sex_id'])
+    specific[specific > .99] = .99
+    specific.reset_index(inplace=True)
+    specific[specific['age_group_id'].isin([5, 6, 7, 8])].to_csv('{}.csv'.format(loc_id))
+
+    if not os.path.exists(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "draws_transformed_adult")):
+        os.mkdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "draws_transformed_adult"))
+    os.chdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "draws_transformed_adult"))
+    specific[~specific['age_group_id'].isin([5, 6, 7, 8])].to_csv('{}.csv'.format(loc_id))
+
+    child_paf = merged[merged['age_group_id'].isin([5, 6, 7, 8])]
+    for x in range(1000):
+        child_paf['draw_{}'.format(x)] = child_paf['draw_{}_ow'.format(x)] - child_paf['draw_{}'.format(x)]
+
+    child_paf[child_paf < 0] = 0
+    if not os.path.exists(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_ow_not_ob")):
+        os.mkdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_ow_not_ob"))
+    os.chdir(os.path.join("/share/gbd/WORK/05_risk/temp/bmi/", date, "child_ow_not_ob"))
+    child_paf = child_paf[['location_id', 'year_id', 'age_group_id', 'sex_id'] +
+                          ['draw_{}'.format(x) for x in range(1000)]]
+    child_paf.to_csv('{}.csv'.format(loc_id))
+
+
+if __name__ == "__main__":
+    args = sys.argv[1:]
+    loc_id = int(args[0])
+    ow_id = int(args[1])
+    ob_id = int(args[2])
+    date = str(args[3])
+
+    backtransform(loc_id, ow_id, ob_id, date)
+

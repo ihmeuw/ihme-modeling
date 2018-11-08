@@ -1,0 +1,67 @@
+This is not really a full look at the on art model. Just gives the bare minimum to run it, with some tips. Will expand when the model is more finalized. 
+
+Two sets of toggles in the master.do, find these on line 31-41. 
+
+1. No HRs: Run when there is no new data but there is new hiv free lts  
+
+	global km_pre = 1				
+	global km_id_brad = 0			
+	global km_id_post = 0			
+	global km_full_brad = 1		
+	global km_full_post = 0	
+	global hr_pre = 0		
+	global hr_brad = 0		
+	global hr_post = 0				
+	global final_analysis = 0 		
+	global study_level = 1			
+	global study_level_final = 1    
+
+run order: 
+	00 - preps the input excel sheets, can be run locally
+	01 - further preps the km data for sex age splitting, assigns super regions (make sure to check every cohort gets assigned correctly)
+	     , assigns cd4 ranges to each cohort data point based on year and region , applies ltfu correction
+	     , calculates weighted median age and proportion male for each region. Can be run locally 
+	01b- sex age splits the cohort data, will sex-age split any cohort data that is not sex or age specific using the HRs from the meta analysis. 
+	     Important to make sure that the cohorts it is splitting are representative of the median age of the region (around 34-38). Can be run locally
+	01c- subtracts background mortality. Also reassigns cd4 end to cohorts that exceed a country year specific threshold outside of high income 
+	     and outliers some cd4 specific cohorts that are outside of the threshold.  
+	01d-  creates variables needed for bradmod  
+	03- creates the bradmod excels 
+	now the master launches the 30 bradmod models (2 sex, 3 durations and 5 age groups) 
+	10b2- takes bradmod output and saves it for spectrum. 
+		
+2. HRs: run whenever new data is added to model (even just new km data as its used in hr), it does everything the first set does but incorporates new data into the hr meta analysis 
+
+	global km_pre = 1				
+	global km_id_brad = 0			
+	global km_id_post = 0			
+	global km_full_brad = 1		
+	global km_full_post = 0	
+	global hr_pre = 1		
+	global hr_brad = 1		
+	global hr_post = 1				
+	global final_analysis = 0 		
+	global study_level = 1			
+	global study_level_final = 1 
+
+
+run order: 
+	00 - preps the input excel sheets, can be run locally
+	01 - further preps the km data for sex age splitting, assigns super regions (make sure to check every cohort gets assigned correctly)
+	     , assigns cd4 ranges to each cohort data point based on year and region , applies ltfu correction
+	     , calculates weighted median age and proportion male for each region. Can be run locally 
+	05- preforms the sex hr metanalysis using metan. Graphs need to be run locally 
+	06- preps the age hr meta analysis which is run in bradmod  
+	now master launches 3 bradmodel models (3 super regions) 
+	07- grabs age hrs from bradmod, refrences to median age of region and preps for further use.
+	01b- sex age splits the cohort data, will sex-age split any cohort data that is not sex or age specific using the HRs from the meta analysis. 
+	     Important to make sure that the cohorts it is splitting are representative of the median age of the region (around 34-38). Can be run locally
+	01c- subtracts background mortality. Also reassigns cd4 end to cohorts that exceed a country year specific threshold outside of high income 
+	     and outliers some cd4 specific cohorts that are outside of the threshold.  
+	01d-  creates variables needed for bradmod  
+	03- creates the bradmod excels 
+	now the master launches the 30 bradmod models (2 sex, 3 durations and 5 age groups) 
+	10b2- takes bradmod output and saves it for spectrum. 
+
+
+-graph 2017 will compare results to previous runs and unaids. Make sure to put correct compare date.

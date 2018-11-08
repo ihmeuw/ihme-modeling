@@ -1,0 +1,359 @@
+location_id,location_name,year_to_start
+8,Taiwan,2016
+18,Thailand,2015
+35,Georgia,1998
+37,Kyrgyzstan,2008
+41,Uzbekistan,2012
+45,Bulgaria,2014
+47,Czech Republic,2011
+51,Poland,2009
+52,Romania,2011
+53,Serbia,2011
+54,Slovakia,2004
+59,Latvia,2000
+61,Moldova,2011
+63,Ukraine,2016
+66,Brunei,2015
+68,South Korea,2011
+71,Australia,2013
+76,Belgium,1998
+80,France,2013
+81,Germany,2011
+85,Israel,2014
+87,Luxembourg,2014
+89,Netherlands,2003
+91,Portugal,2004
+94,Switzerland,2013
+97,Argentina,2008
+98,Chile,2006
+101,Canada,2000
+109,Cuba,2008
+111,Dominican Republic,2013
+122,Ecuador,2015
+123,Peru,2015
+125,Colombia,2005
+126,Costa Rica,2011
+128,Guatemala,2013
+130,Mexico,2010
+131,Nicaragua,2008
+133,Venezuela,2010
+135,Brazil,2012
+136,Paraguay,2009
+149,Palestine,2014
+151,Qatar,2016
+153,Syria,2010
+155,Turkey,2011
+183,Mauritius,2015
+385,Puerto Rico,2004
+433,Northern Ireland,2015
+492,Beijing,2012
+514,Shanghai,2010
+523,Alabama,2014
+524,Alaska,2015
+525,Arizona,2014
+526,Arkansas,2013
+527,California,2009
+528,Colorado,2012
+529,Connecticut,2005
+530,Delaware,2015
+531,District of Columbia,2015
+532,Florida,2003
+534,Hawaii,2003
+535,Idaho,2004
+536,Illinois,2010
+537,Indiana,2014
+538,Iowa,2011
+539,Kansas,2006
+540,Kentucky,2010
+541,Louisiana,2008
+543,Maryland,2009
+544,Massachusetts,2015
+545,Michigan,2015
+546,Minnesota,2008
+547,Mississippi,2003
+548,Missouri,2009
+549,Montana,2006
+550,Nebraska,2008
+551,Nevada,2013
+552,New Hampshire,2008
+553,New Jersey,2005
+554,New Mexico,2010
+555,New York,2002
+556,North Carolina,2013
+557,North Dakota,2012
+558,Ohio,2010
+559,Oklahoma,2009
+560,Oregon,2004
+561,Pennsylvania,2007
+562,Rhode Island,2008
+563,South Carolina,2006
+564,South Dakota,2015
+565,Tennessee,2014
+566,Texas,2009
+567,Utah,2008
+568,Vermont,2005
+569,Virginia,2000
+570,Washington,2012
+571,West Virginia,2006
+572,Wisconsin,2008
+573,Wyoming,2013
+4643,Aguascalientes,2001
+4644,Baja California,2011
+4645,Baja California Sur,2006
+4646,Campeche,2006
+4647,Coahuila,2005
+4648,Colima,2012
+4649,Chiapas,2014
+4650,Chihuahua,2007
+4651,Mexico City,2015
+4652,Durango,2009
+4653,Guanajuato,2006
+4654,Guerrero,2012
+4655,Hidalgo,2005
+4656,Jalisco,2014
+4657,México,2000
+4658,Michoacán de Ocampo,2015
+4659,Morelos,2009
+4660,Nayarit,2012
+4661,Nuevo León,2015
+4662,Oaxaca,2009
+4663,Puebla,2014
+4664,Querétaro,2007
+4665,Quintana Roo,2016
+4666,San Luis Potosí,2013
+4667,Sinaloa,2003
+4668,Sonora,2007
+4669,Tabasco,2000
+4670,Tamaulipas,2013
+4671,Tlaxcala,2011
+4672,Veracruz de Ignacio de la Llave,2003
+4673,Yucatán,2008
+4674,Zacatecas,2013
+4750,Acre,2011
+4751,Alagoas,2011
+4752,Amazonas,2012
+4753,Amapá,2015
+4754,Bahia,2015
+4755,Ceará,2011
+4757,Espírito Santo,2007
+4758,Goiás,2005
+4759,Maranhão,2014
+4760,Minas Gerais,2009
+4761,Mato Grosso do Sul,2014
+4762,Mato Grosso,2005
+4763,Pará,2014
+4764,Paraíba,2004
+4765,Paraná,2000
+4766,Pernambuco,2012
+4767,Piaui,2014
+4768,Rio de Janeiro,2011
+4769,Rio Grande do Norte,2011
+4770,Rondônia,2016
+4771,Roraima,2016
+4772,Rio Grande do Sul,2013
+4773,Santa Catarina,2015
+4774,Sergipe,2003
+4775,São Paulo,2014
+4776,Tocantins,2015
+4940,Sweden except Stockholm,2005
+35424,Hokkaido,2010
+35425,Aomori,2008
+35426,Iwate,2014
+35427,Miyagi,2011
+35428,Akita,2001
+35429,Yamagata,2005
+35430,Fukushima,2000
+35431,Ibaraki,2000
+35432,Tochigi,1995
+35433,Gunma,1996
+35434,Saitama,2013
+35435,Chiba,2006
+35436,Tokyo,2000
+35437,Kanagawa,2004
+35438,Niigata,2011
+35439,Toyama,1999
+35440,Ishikawa,2015
+35441,Fukui,2010
+35442,Yamanashi,1997
+35443,Nagano,2009
+35444,Gifu,2001
+35445,Shizuoka,2011
+35446,Aichi,1996
+35447,Mie,2003
+35448,Shiga,1995
+35449,Kyoto,1998
+35450,Osaka,2000
+35451,Hyogo,1997
+35452,Nara,2007
+35453,Wakayama,1998
+35454,Tottori,1998
+35455,Shimane,2008
+35456,Okayama,2010
+35457,Hiroshima,2010
+35458,Yamaguchi,2008
+35459,Tokushima,2011
+35460,Kagawa,2012
+35461,Ehime,1996
+35462,Kochi,2011
+35463,Fukuoka,1999
+35464,Saga,1998
+35465,Nagasaki,1995
+35466,Kumamoto,2003
+35467,Oita,2004
+35468,Miyazaki,2013
+35469,Kagoshima,1997
+35470,Okinawa,2012
+44643,Darlington,2006
+44644,Northumberland,2016
+44645,Stockton-on-Tees,2016
+44646,Newcastle upon Tyne,2016
+44647,North Tyneside,2008
+44648,Redcar and Cleveland,2016
+44649,County Durham,2007
+44650,Gateshead,2010
+44651,Middlesbrough,2015
+44652,South Tyneside,2009
+44653,Sunderland,2007
+44655,Cheshire East,2016
+44656,Stockport,2016
+44657,Trafford,2014
+44658,Cheshire West and Chester,2011
+44660,Lancashire,2015
+44661,Cumbria,2016
+44662,Bolton,2014
+44663,Wirral,2009
+44664,Bury,2008
+44665,St Helens,2013
+44666,Warrington,2013
+44667,Oldham,2016
+44668,Rochdale,2010
+44669,Wigan,2012
+44671,Liverpool,2013
+44672,Tameside,2011
+44673,Salford,2013
+44674,Blackburn with Darwen,2010
+44676,Blackpool,2006
+44677,Manchester,2009
+44678,North Yorkshire,2010
+44679,East Riding of Yorkshire,2007
+44683,North Lincolnshire,2014
+44684,Bradford,2014
+44685,Kirklees,2010
+44686,Leeds,2012
+44687,Sheffield,2015
+44688,Wakefield,2010
+44689,Rotherham,2012
+44690,Doncaster,2012
+44691,"Kingston upon Hull, City of",2010
+44692,Barnsley,2006
+44693,Northamptonshire,2008
+44694,Leicestershire,2016
+44695,Lincolnshire,2014
+44697,Derby,2013
+44698,Derbyshire,2011
+44699,Nottinghamshire,2011
+44700,Nottingham,2012
+44701,Leicester,2013
+44702,Warwickshire,2007
+44703,"Herefordshire, County of",2013
+44704,Solihull,2008
+44705,Shropshire,2013
+44706,Worcestershire,2009
+44707,Staffordshire,2006
+44708,Dudley,2014
+44709,Coventry,2014
+44710,Telford and Wrekin,2012
+44711,Stoke-on-Trent,2016
+44712,Walsall,2006
+44713,Wolverhampton,2009
+44714,Birmingham,2009
+44715,Sandwell,2012
+44716,Bedford,2015
+44717,Central Bedfordshire,2011
+44718,Suffolk,2012
+44719,Hertfordshire,2008
+44720,Essex,2014
+44721,Cambridgeshire,2010
+44722,Thurrock,2006
+44723,Norfolk,2013
+44725,Peterborough,2012
+44726,Luton,2007
+44727,Richmond upon Thames,2016
+44729,Barnet,2012
+44730,Westminster,2011
+44731,Bromley,2012
+44732,Bexley,2014
+44733,Redbridge,2008
+44734,Merton,2011
+44735,Brent,2009
+44736,Hillingdon,2007
+44737,Havering,2014
+44738,Kingston upon Thames,2012
+44740,Harrow,2014
+44741,Enfield,2006
+44742,Croydon,2013
+44743,Hammersmith and Fulham,2008
+44744,Ealing,2008
+44745,Greenwich,2006
+44746,Wandsworth,2006
+44747,Waltham Forest,2008
+44748,Camden,2014
+44749,Lambeth,2011
+44750,Lewisham,2013
+44751,Hounslow,2006
+44752,Southwark,2011
+44753,Newham,2010
+44754,Barking and Dagenham,2013
+44755,Haringey,2008
+44756,Hackney,2015
+44757,Islington,2010
+44758,Tower Hamlets,2016
+44759,Wokingham,2010
+44760,Buckinghamshire,2016
+44761,Surrey,2010
+44762,Windsor and Maidenhead,2011
+44763,West Berkshire,2016
+44764,Hampshire,2007
+44765,Bracknell Forest,2006
+44766,West Sussex,2011
+44767,Oxfordshire,2008
+44768,Reading,2013
+44769,Kent,2015
+44770,Brighton and Hove,2008
+44771,Medway,2007
+44772,East Sussex,2016
+44775,Milton Keynes,2012
+44776,Southampton,2010
+44777,Slough,2008
+44778,South Gloucestershire,2016
+44779,Dorset,2006
+44780,Wiltshire,2016
+44781,North Somerset,2010
+44782,Devon,2006
+44783,Poole,2015
+44784,Bath and North East Somerset,2011
+44785,Gloucestershire,2011
+44786,Somerset,2011
+44787,Swindon,2006
+44789,"Bristol, City of",2014
+44790,Bournemouth,2006
+44791,Cornwall,2014
+44792,Plymouth,2010
+44850,New Zealand Maori population,2008
+44851,New Zealand non-Maori population,2011
+44866,East Azarbayejan,2015
+44867,West Azarbayejan,2014
+44868,Bushehr,2015
+44879,North Khorasan,2015
+44880,Khorasan-e-Razavi,2015
+44891,Sistan and Baluchistan,2013
+44920,Moscow City,1996
+44922,Komi Republic,2010
+44925,Vologda oblast,1997
+44929,Novgorod oblast,1992
+44942,Kabardian-Balkar Republic,2003
+44962,Sverdlovsk oblast,1996
+44964,Yamalo-Nenets autonomous area,2015
+44979,Republic of Sakha (Yakutia),2006
+44985,Sakhalin oblast,2016
+50559,Ukraine (without Crimea & Sevastopol),2015

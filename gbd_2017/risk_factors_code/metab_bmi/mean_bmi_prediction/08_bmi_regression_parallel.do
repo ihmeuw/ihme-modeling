@@ -1,0 +1,62 @@
+/***********************************************************************************************************
+ Date: 8/8/2016
+ Project: GBD Risk Factors: High Body-Mass Index
+ Purpose: Apply regression coefficients to produce mean BMI draws from modeled overweight and obesity draws
+
+***********************************************************************************************************/
+
+****************************
+**** 	1. Set Up		****
+****************************
+
+clear all
+set more off
+set maxvar 20000
+
+
+if c(os) == "Unix" {
+    local prefix "/home/j"
+    set more off
+    set odbcmgr unixodbc
+}
+else if c(os) == "Windows" {
+    local prefix "J:"
+}
+
+local loc_id `1'
+local date `2'
+
+import delimited using "FILEPATH", clear
+tempfile coefficients
+save `coefficients', replace
+
+import delimited using "FILEPATH", clear
+
+forvalues x=0/999 {
+    rename draw_`x' overweight_`x'
+}
+
+tempfile overweight
+save `overweight', replace
+
+import delimited using "FILEPATH", clear
+
+forvalues x=0/999 {
+    rename draw_`x' obesity_`x'
+}
+
+merge 1:1 location_id year_id age_group_id sex_id using `overweight', nogen keep(3)
+merge m:1 location_id age_group_id sex_id using `coefficients', nogen keep(3)
+
+* Run prediction
+* Best equation: mixed bmi_mean overweight_mean obese_mean i.age_start i.sex_id || super_region_name: overweight_mean obese_mean || region_name: overweight_mean obese_mean || ihme_loc_id: overweight_mean obese_mean, reml
+forvalues x=0/999 {
+gen draw_`x' = intercept`x' + (overweight_`x'*ow_coeff`x') + (obesity_`x'*ob_coeff`x') + (re1*overweight_`x') + (re2*obesity_`x') + re3 + (re4*overweight_`x') + (re5*obesity_`x') + re6 + (re7*overweight_`x') + (re8*obesity_`x') + re9
+replace draw_`x' = exp(draw_`x')
+}
+
+keep location_id year_id sex_id age_group_id draw_*
+gen measure_id = 19
+
+* Save draw files
+export delimited using "FILEPATH", replace
