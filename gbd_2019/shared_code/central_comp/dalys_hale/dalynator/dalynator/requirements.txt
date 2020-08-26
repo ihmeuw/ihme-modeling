@@ -16,7 +16,7 @@ chardet==3.0.4
 cloudpickle==0.5.3
 cluster-utils>=0.0.8
 core-maths==0.0.5
-cryptography==2.2.2
+cryptography==2.3
 Cython==0.28.4
 dask==0.18.1
 dataframe-io==0.2.9
