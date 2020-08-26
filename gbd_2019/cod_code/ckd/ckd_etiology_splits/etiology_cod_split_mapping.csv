@@ -1,0 +1,6 @@
+source_me_name,source_me_id,proportion_name,proportion_me_id,measure_id,target_me_name,target_me_id,measure_id,directory_to_save,decomp_step,gbd_round_id,project
+Chronic kidney disease,589,CKD YLD Glom,9972,18,CKD due to hypertension,591,None,FILEPATH,step2,7,proj_yld
+Chronic kidney disease,589,CKD YLD Hypertension,9973,18,CKD due to hypertension,592,None,FILEPATH,step2,7,proj_yld
+Chronic kidney disease,589,CKD YLD Other,9974,18,CKD due to other causes,593,None,FILEPATH,step2,7,proj_yld
+Chronic kidney disease,589,CKD Type 1 Diabetes Squeezed,18725,18,CKD due to type 1 diabetes,997,None,FILEPATH,step2,7,proj_yld
+Chronic kidney disease,589,CKD Type 2 Diabetes Squeezed,18726,18,CKD due to type 2 diabetes,998,None,FILEPATH,step2,7,proj_yld

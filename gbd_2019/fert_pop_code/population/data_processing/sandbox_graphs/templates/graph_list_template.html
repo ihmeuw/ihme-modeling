@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Census Processing Diagnostics {{ version_id }}</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <style>
+      #graphTitleContainer {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      #searchBoxContainer {
+        margin: 12px 0;
+      }
+
+      .process-graphs {
+        margin-bottom: 30px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row justify-content-md-center">
+        <div id= "graphTitleContainer" class="col-lg-auto">
+          <h1>Census Processing Diagnostics</h1>
+          <h4>Version ID: {{ version_id }}</h4>
+          <h4>Version description: {{ version_description }}</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div>
+            <h3>Overall diagnostics</h3>
+          </div>
+          <div class="list-group">
+            {% for diagnostic in overall_diagnostics %}
+            <a href="./{{ diagnostic }}.pdf" target="_blank" class="list-group-item list-group-item-action">{{ diagnostic }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div>
+            <h3>Location-specific diagnostics</h3>
+          </div>
+          <div id="searchBoxContainer">
+            <input type="text" class="form-control" id="searchList3" onkeyup="searchList3()" placeholder="Search for location">
+          </div>
+          <div class="list-group">
+            {% for ihme_loc_id in ihme_loc_ids %}
+            <a href="./{{ ihme_loc_id }}.pdf" target="_blank" class="location-specific-graph3 list-group-item list-group-item-action">{{ ihme_loc_id }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bootstrap-related JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+    <script>
+      function searchList1() {
+          // Declare variables
+          var input, filter, ul, li, a, i;
+          input = document.getElementById('searchList1');
+          filter = input.value.toUpperCase();
+          li = document.getElementsByClassName('location-specific-graph1');
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            console.log(li[i].innerHTML.toUpperCase());
+              if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      }
+    </script>
+
+        <script>
+      function searchList2() {
+          // Declare variables
+          var input, filter, ul, li, a, i;
+          input = document.getElementById('searchList2');
+          filter = input.value.toUpperCase();
+          li = document.getElementsByClassName('location-specific-graph2');
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            console.log(li[i].innerHTML.toUpperCase());
+              if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      }
+    </script>
+
+        <script>
+      function searchList3() {
+          // Declare variables
+          var input, filter, ul, li, a, i;
+          input = document.getElementById('searchList3');
+          filter = input.value.toUpperCase();
+          li = document.getElementsByClassName('location-specific-graph3');
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            console.log(li[i].innerHTML.toUpperCase());
+              if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      }
+    </script>
+  </body>
+</html>

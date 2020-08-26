@@ -1,0 +1,39 @@
+rei_id,cause_id,rei_name,cause_name
+94,387,Child underweight,Protein-energy malnutrition
+95,390,Iron deficiency,Iron-deficiency anemia
+102,420,Alcohol use,Liver cancer due to alcohol use
+102,524,Alcohol use,Cirrhosis and other chronic liver diseases due to alcohol use
+102,560,Alcohol use,Alcohol use disorders
+102,938,Alcohol use,Alcoholic cardiomyopathy
+107,498,High systolic blood pressure,Hypertensive heart disease
+107,591,High systolic blood pressure,Chronic kidney disease due to hypertension
+129,513,"Occupational particulate matter, gases, and fumes",Coal workers pneumoconiosis
+129,514,"Occupational particulate matter, gases, and fumes",Other pneumoconiosis
+138,562,Drug use dependence and blood borne viruses,Opioid use disorders
+138,563,Drug use dependence and blood borne viruses,Cocaine use disorders
+138,564,Drug use dependence and blood borne viruses,Amphetamine use disorders
+138,565,Drug use dependence and blood borne viruses,Cannabis use disorders
+138,566,Drug use dependence and blood borne viruses,Other drug use disorders
+141,997,High fasting plasma glucose,Chronic kidney disease due to diabetes mellitus type 1
+141,998,High fasting plasma glucose,Chronic kidney disease due to diabetes mellitus type 2
+141,975,High fasting plasma glucose (continuous),Diabetes mellitus type 1
+141,976,High fasting plasma glucose (continuous),Diabetes mellitus type 2
+150,512,Occupational exposure to asbestos,Asbestosis
+161,511,Occupational exposure to silica,Silicosis
+170,394,Unsafe sex,Syphilis
+170,395,Unsafe sex,Chlamydial infection
+170,396,Unsafe sex,Gonococcal infection
+170,397,Unsafe sex,Trichomoniasis
+170,398,Unsafe sex,Genital herpes
+170,399,Unsafe sex,Other sexually transmitted diseases
+170,432,Unsafe sex,Cervical cancer
+240,387,Child wasting,Protein-energy malnutrition
+339,381,Low birth weight and short gestation,Neonatal preterm birth complications
+334,381,Short gestation for birth weight,Neonatal preterm birth complications
+335,381,Low birth weight for gestation,Neonatal preterm birth complications
+341,997,Impaired kidney function,Chronic kidney disease due to diabetes mellitus type 1
+341,998,Impaired kidney function,Chronic kidney disease due to diabetes mellitus type 2
+341,591,Impaired kidney function,Chronic kidney disease due to hypertension
+341,592,Impaired kidney function,Chronic kidney disease due to glomerulonephritis
+341,593,Impaired kidney function,Chronic kidney disease due to other causes
+96,389,Vitamin A deficiency,Vitamin A deficiency

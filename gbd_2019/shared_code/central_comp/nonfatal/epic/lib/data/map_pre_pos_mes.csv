@@ -1,0 +1,412 @@
+modelable_entity_id_source,modelable_entity_name,modelable_entity_id_target
+1504,Blindness due to trachoma,3614
+1530,Cerebral paragonimiasis,3617
+1582,Mild motor plus cognitive impairments due to neonatal encephalopathy due to birth asphyxia and trauma,3794
+1583,Mild motor impairment due to neonatal encephalopathy due to birth asphyxia and trauma,3797
+1620,Blindness due to vitamin A deficiency,3887
+1972,,9970
+1973,Moderate fetal alcohol syndrome,3905
+1974,Severe fetal alcohol syndrome,3908
+2295,Blindness due to glaucoma,3917
+2300,Blindness due to cataract,3920
+2305,Blindness due to macular degeneration,3923
+2329,Blindness due to other vision loss,3926
+2656,Neurocysticercosis with epilepsy,3605
+2677,Moderate motor plus cognitive impairment with blindness due to hemolytic disease and other neonatal jaundice,3854
+2678,Moderate motor plus cognitive impairment with blindness due to neonatal preterm birth complications 28-32wks,3722
+2679,Moderate motor plus cognitive impairment with blindness due to neonatal preterm birth complications <28wks,3680
+2680,Moderate motor plus cognitive impairment with blindness due to neonatal preterm birth complications 32-36wks,3764
+2681,Moderate motor plus cognitive impairment with blindness due to neonatal encephalopathy due to birth asphyxia and trauma,3812
+2682,Moderate motor plus cognitive impairment with blindness due to neonatal tetanus,3530
+2683,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications 32-36wks,3770
+2684,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications <28wks,3686
+2685,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications 28-32wks,3728
+2686,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal tetanus,3536
+2687,Moderate motor plus cognitive impairment with blindness and epilepsy due to hemolytic disease and other neonatal jaundice,3860
+2688,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3818
+2689,Moderate motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications 32-36wks,3767
+2690,Moderate motor plus cognitive impairment with epilepsy due to neonatal tetanus,3533
+2691,Moderate motor plus cognitive impairment with epilepsy due to hemolytic disease and other neonatal jaundice,3857
+2692,Moderate motor plus cognitive impairment with epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3815
+2693,Moderate motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications <28wks,3683
+2694,Moderate motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications 28-32wks,3725
+2696,Severe motor plus cognitive impairment with blindness due to neonatal tetanus,3551
+2697,Severe motor plus cognitive impairment with blindness due to neonatal preterm birth complications 28-32wks,3743
+2698,Severe motor plus cognitive impairment with blindness due to neonatal preterm birth complications 32-36wks,3785
+2699,Severe motor plus cognitive impairment with blindness due to hemolytic disease and other neonatal jaundice,3875
+2700,Severe motor plus cognitive impairment with blindness due to neonatal encephalopathy due to birth asphyxia and trauma,3833
+2701,Severe motor plus cognitive impairment with blindness due to neonatal preterm birth complications <28wks,3701
+2702,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications 28-32wks,3749
+2703,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications <28wks,3707
+2704,Severe motor plus cognitive impairment with blindness and epilepsy due to hemolytic disease and other neonatal jaundice,3881
+2705,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3839
+2706,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal preterm birth complications 32-36wks,3791
+2707,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal tetanus,3557
+2708,Severe motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications <28wks,3704
+2709,Severe motor plus cognitive impairment with epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3836
+2710,Severe motor plus cognitive impairment with epilepsy due to hemolytic disease and other neonatal jaundice,3878
+2711,Severe motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications 32-36wks,3788
+2712,Severe motor plus cognitive impairment with epilepsy due to neonatal preterm birth complications 28-32wks,3746
+2713,Severe motor plus cognitive impairment with epilepsy due to neonatal tetanus,3554
+2714,Moderate motor impairment due to neonatal tetanus,3518
+2716,Moderate motor impairment due to hemolytic disease and other neonatal jaundice,3842
+2717,Moderate motor impairment due to neonatal preterm birth complications 28-32wks,3710
+2718,Moderate motor impairment due to neonatal encephalopathy due to birth asphyxia and trauma,3800
+2719,Moderate motor impairment due to neonatal preterm birth complications <28wks,3668
+2720,Moderate motor impairment due to neonatal preterm birth complications 32-36wks,3752
+2721,Moderate motor impairment with blindness due to neonatal preterm birth complications <28wks,3671
+2722,Moderate motor impairment with blindness due to neonatal preterm birth complications 28-32wks,3713
+2723,Moderate motor impairment with blindness due to neonatal preterm birth complications 32-36wks,3755
+2724,Moderate motor impairment with blindness due to neonatal tetanus,3521
+2725,Moderate motor impairment with blindness due to neonatal encephalopathy due to birth asphyxia and trauma,3803
+2726,Moderate motor impairment with blindness due to hemolytic disease and other neonatal jaundice,3845
+2727,Moderate motor impairment with blindness and epilepsy due to hemolytic disease and other neonatal jaundice,3851
+2728,Moderate motor impairment with blindness and epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3809
+2729,Moderate motor impairment with blindness and epilepsy due to neonatal preterm birth complications 32-36wks,3761
+2730,Moderate motor impairment with blindness and epilepsy due to neonatal preterm birth complications 28-32wks,3719
+2731,Moderate motor impairment with blindness and epilepsy due to neonatal preterm birth complications <28wks,3677
+2732,Moderate motor impairment with blindness and epilepsy due to neonatal tetanus,3527
+2733,Moderate motor impairment with epilepsy due to neonatal preterm birth complications 32-36wks,3758
+2734,Moderate motor impairment with epilepsy due to neonatal tetanus,3524
+2735,Moderate motor impairment with epilepsy due to neonatal preterm birth complications 28-32wks,3716
+2736,Moderate motor impairment with epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3806
+2737,Moderate motor impairment with epilepsy due to neonatal preterm birth complications <28wks,3674
+2738,Moderate motor impairment with epilepsy due to hemolytic disease and other neonatal jaundice,3848
+2739,Severe motor impairment due to neonatal encephalopathy due to birth asphyxia and trauma,3821
+2740,Severe motor impairment severe due to hemolytic disease and other neonatal jaundice,3863
+2742,Severe motor impairment due to neonatal preterm birth complications <28wks,3689
+2743,Severe motor impairment due to neonatal preterm birth complications 32-36wks,3773
+2744,Severe motor impairment due to neonatal preterm birth complications 28-32wks,3731
+2745,Severe motor impairment due to neonatal tetanus,3539
+2746,Severe motor impairment with blindness due to neonatal preterm birth complications 28-32wks,3734
+2747,Severe motor impairment with blindness due to neonatal tetanus,3542
+2748,Severe motor impairment with blindness due to hemolytic disease and other neonatal jaundice,3866
+2749,Severe motor impairment with blindness due to neonatal preterm birth complications <28wks,3692
+2750,Severe motor impairment with blindness due to neonatal preterm birth complications 32-36wks,3776
+2751,Severe motor impairment with blindness due to neonatal encephalopathy due to birth asphyxia and trauma,3824
+2752,Severe motor impairment with blindness and epilepsy due to neonatal tetanus,3548
+2753,Severe motor impairment with blindness and epilepsy due to neonatal preterm birth complications <28wks,3698
+2754,Severe motor impairment with blindness and epilepsy due to neonatal preterm birth complications 28-32wks,3740
+2755,Severe motor impairment with blindness and epilepsy due to hemolytic disease and other neonatal jaundice,3872
+2756,Severe motor impairment with blindness and epilepsy due to neonatal preterm birth complications 32-36wks,3782
+2757,Severe motor impairment with blindness and epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3830
+2758,Severe motor impairment with epilepsy due to neonatal encephalopathy due to birth asphyxia and trauma,3827
+2759,Severe motor impairment with epilepsy due to neonatal preterm birth complications 32-36wks,3779
+2760,Severe motor impairment with epilepsy due to neonatal tetanus,3545
+2761,Severe motor impairment with epilepsy due to neonatal preterm birth complications <28wks,3695
+2762,Severe motor impairment with epilepsy due to neonatal preterm birth complications 28-32wks,3737
+2763,Severe motor impairment with epilepsy due to hemolytic disease and other neonatal jaundice,3869
+2772,Mild motor impairment due to neonatal tetanus,3512
+2773,Mild motor plus cognitive impairments due to neonatal tetanus,3515
+2796,Epilepsy due to echinococcosis,3608
+2811,Mild motor impairment due to long term due to encephalitis,3482
+2812,Mild motor plus cognitive impairments due to encephalitis,3485
+2813,Borderline intellectual disability due to encephalitis,3488
+2816,Mild intellectual disability due to encephalitis,3491
+2817,Moderate motor impairment due to encephalitis,3494
+2818,Severe motor impairment due to encephalitis,3497
+2819,Moderate motor plus cognitive impairments due to encephalitis,3500
+2820,Severe motor plus cognitive impairments due to encephalitis,3503
+2821,Epilepsy due to encephalitis,3506
+2907,,9830
+2948,,3647
+2949,Mild motor impairment due to neonatal preterm birth complications <28wks,3650
+2950,Mild motor impairment due to neonatal preterm birth complications 28-32wks,3656
+2951,Mild motor impairment due to neonatal preterm birth complications 32-36wks,3662
+2952,Mild motor plus cognitive impairments due to neonatal preterm birth complications <28wks,3653
+2953,Mild motor plus cognitive impairments due to neonatal preterm birth complications 28-32wks,3659
+2954,Mild motor plus cognitive impairments due to neonatal preterm birth complications 32-36wks,3665
+2955,Blindness due to encephalitis,3509
+2956,Blindness due to onchocerciasis,3611
+2967,Moderate motor impairment due to malaria,3560
+2968,Moderate motor impairment with blindness due to malaria,3563
+2969,Moderate motor impairment with epilepsy due to malaria,3566
+2970,Moderate motor impairment with blindness and epilepsy due to malaria,3569
+2971,Moderate motor plus cognitive impairment with blindness due to malaria,3572
+2972,Moderate motor plus cognitive impairment with epilepsy due to malaria,3575
+2973,Moderate motor plus cognitive impairment with blindness and epilepsy due to malaria,3578
+2974,Severe motor impairment due to malaria,3581
+2975,Severe motor impairment with blindness due to malaria,3584
+2976,Severe motor impairment with epilepsy due to malaria,3587
+2977,Severe motor impairment with blindness and epilepsy due to malaria,3590
+2978,Severe motor plus cognitive impairment with blindness due to malaria,3593
+2979,Severe motor plus cognitive impairment with epilepsy due to malaria,3596
+2980,Severe motor plus cognitive impairment with blindness and epilepsy due to malaria,3599
+3067,,9829
+3068,,9854
+3071,,9855
+9601,,9617
+9602,,9618
+9603,,9623
+9604,,9625
+9605,,9624
+9606,,9630
+9607,,9632
+9608,,9631
+9609,,9619
+9610,,9620
+9611,,9622
+9612,,9621
+9613,,9626
+9614,,9627
+9615,,9629
+9616,,9628
+9808,,9819
+9809,,9820
+9810,,9821
+9811,,9822
+9812,,9823
+9813,,9824
+9814,,9825
+9815,,9826
+9816,,9827
+9817,,9828
+9818,,9831
+9832,,9843
+9833,,9844
+9834,,9845
+9835,,9846
+9836,,9847
+9837,,9848
+9838,,9849
+9839,,9850
+9840,,9851
+9841,,9852
+9842,,9853
+9938,,9941
+9939,,9942
+9940,,9943
+9944,,9946
+9945,,9947
+9948,,9951
+9949,,9952
+9950,,9953
+9954,,9956
+9955,,9957
+10142,,10157
+10143,,10158
+10144,,10159
+10145,,10160
+10146,,10161
+10147,,10162
+10148,,10163
+10149,,10164
+10150,,10165
+10151,,10166
+10152,,10167
+10153,,10168
+10154,,10169
+10155,,10170
+10156,,10171
+10172,,10187
+10173,,10188
+10174,,10189
+10175,,10190
+10176,,10191
+10177,,10192
+10178,,10193
+10179,,10194
+10180,,10195
+10181,,10196
+10182,,10197
+10183,,10198
+10184,,10199
+10185,,10200
+10186,,10201
+10233,,10248
+10234,,10249
+10235,,10250
+10236,,10251
+10237,,10252
+10238,,10253
+10239,,10254
+10240,,10255
+10241,,10256
+10242,,10257
+10243,,10258
+10244,,10259
+10245,,10260
+10246,,10261
+10247,,10262
+10263,,10278
+10264,,10279
+10265,,10280
+10266,,10281
+10267,,10282
+10268,,10283
+10269,,10284
+10270,,10285
+10271,,10286
+10272,,10287
+10273,,10288
+10274,,10289
+10275,,10290
+10276,,10291
+10277,,10292
+11077,Asymptomatic congenital diaphragmatic hernia before supersqueeze,16074
+11078,Chronic abdominal pain due to congenital diaphragmatic hernia before supersqueeze,16075
+11079,Disfigurement due to congenital diaphragmatic hernia before supersqueeze,16076
+11080,Mild chronic respiratory problems and breathlessness due to congenital diaphragmatic hernia before supersqueeze,16077
+11082,Chronic abdominal pain and disfigurement due to congenital diaphragmatic hernia before supersqueeze,16079
+11083,Chronic abdominal pain and mild chronic respiratory problems due to congenital diaphragmatic hernia before supersqueeze,16080
+11085,Disfigurement and mild chronic respiratory problems due to congenital diaphragmatic hernia before supersqueeze,16082
+11088,"Chronic abdominal pain, disfigurement and _chronic respiratory problems due to congenital diaphragmatic hernia before supersqueeze",16085
+11185,Congenital heart disease due to other congenital cardiovascular anomalies before supersqueeze,15820
+11189,,15821
+11190,,15822
+11191,,15823
+11192,,15824
+11193,,15825
+11268,Asymptomatic encephalocele before supersqueeze,16090
+11274,Incontinence due to encephalocele before supersqueeze,16096
+11280,Mild motor impairment due to spina bifida before supersqueeze,16138
+11281,Moderate motor impairment due to spina bifida before supersqueeze,16139
+11282,Severe motor impairment due to spina bifida before supersqueeze,16140
+11307,Mild motor impairment and incontinence due to spina bifida before supersqueeze,16165
+11308,Moderate motor impairment and incontinence due to spina bifida before supersqueeze,16166
+11309,Severe motor impairment and incontinence due to spina bifida before supersqueeze,16167
+11393,Congenital heart disease due to VSD/ASD before supersqueeze,15916
+11394,Congenital heart disease and mild heart failure due to VSD/ASD before supersqueeze,15922
+11395,Congenital heart disease and moderate heart failure due to VSD/ASD before supersqueeze,15928
+11396,Congenital heart disease and severe heart failure due to VSD/ASD before supersqueeze,15934
+11397,,15917
+11398,,15918
+11399,,15919
+11400,,15920
+11401,,15921
+11402,,15923
+11403,,15929
+11404,,15935
+11405,,15924
+11406,,15930
+11407,,15936
+11408,,15925
+11409,,15931
+11410,,15937
+11411,,15926
+11412,,15932
+11413,,15938
+11414,,15927
+11415,,15933
+11416,,15939
+11417,"Congenital heart disease due to critical malformations of great vessels, congenital valvular heart disease and PDA before supersqueeze",15892
+11418,"Congenital heart disease and mild heart failure due to critical malformations of great vessels, congenital valvular heart disease and PDA before supersqueeze",15898
+11419,"Congenital heart disease and moderate heart failure due to critical malformations of great vessels, congenital valvular heart disease and PDA before supersqueeze",15904
+11420,"Congenital heart disease and severe heart failure due to critical malformations of great vessels, congenital valvular heart disease and PDA before supersqueeze",15910
+11421,,15893
+11422,,15894
+11423,,15895
+11424,,15896
+11425,,15897
+11426,,15899
+11427,,15905
+11428,,15911
+11429,,15900
+11430,,15906
+11431,,15912
+11432,,15901
+11433,,15907
+11434,,15913
+11435,,15902
+11436,,15908
+11437,,15914
+11438,,15903
+11439,,15909
+11440,,15915
+11441,Congenital heart disease due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze,15868
+11442,Congenital heart disease and mild heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze,15874
+11443,Congenital heart disease and moderate heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze,15880
+11444,Congenital heart disease and severe heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze,15886
+11445,,15869
+11446,,15870
+11447,,15871
+11448,,15872
+11449,,15873
+11450,,15875
+11451,,15881
+11452,,15887
+11453,,15876
+11454,,15882
+11455,,15888
+11456,,15877
+11457,,15883
+11458,,15889
+11459,,15878
+11460,,15884
+11461,,15890
+11462,,15879
+11463,,15885
+11464,,15891
+11465,Congenital heart disease due to single ventricle and single ventricle pathway heart defects before supersqueeze,15844
+11466,Congenital heart disease and mild heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze,15850
+11467,Congenital heart disease and moderate heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze,15856
+11468,Congenital heart disease and severe heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze,15862
+11469,,15845
+11470,,15846
+11471,,15847
+11472,,15848
+11473,,15849
+11474,,15851
+11475,,15857
+11476,,15863
+11477,,15852
+11478,,15858
+11479,,15864
+11480,,15853
+11481,,15859
+11482,,15865
+11483,,15854
+11484,,15860
+11485,,15866
+11486,,15855
+11487,,15861
+11488,,15867
+11530,Mild motor impairment due to encephalocele before supersqueeze,16102
+11536,Moderate motor impairment due to encephalocele before supersqueeze,16108
+11542,Severe motor impairment due to encephalocele before supersqueeze,16114
+11548,Mild motor impairment and incontinence due to encephalocele before supersqueeze,16120
+11554,Moderate motor impairment and incontinence due to encephalocele before supersqueeze,16126
+11560,Severe motor impairment and incontinence due to encephalocele before supersqueeze,16132
+15814,,1612
+15815,,1613
+19718,,19719
+19732,,19733
+19782,,19788
+19783,,19789
+19784,,19790
+19785,,19791
+19786,,19792
+20093,"Congenital heart disease and asymptomatic heart failure without intellectual disability due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20042
+20096,Congenital heart disease and asymptomatic heart failure without intellectual disability due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze,20043
+20099,Congenital heart disease and asymptomatic heart failure without intellectual disability due to single ventricle and single ventricle pathway heart defects before supersqueeze,20044
+20102,Congenital heart disease and asymptomatic heart failure without intellectual disability due to ventricular septal defect and atrial septal defect before supersqueeze,20045
+20105,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20046
+20108,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze",20047
+20111,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze",20048
+20114,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze",20049
+20117,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20050
+20120,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze",20051
+20123,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze",20052
+20126,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze",20053
+20129,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20054
+20132,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze",20055
+20135,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze",20056
+20138,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze",20057
+20141,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze",20058
+20144,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze",20059
+20147,"Congenital heart disease, profound intellectual disability and asymptomaticd heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20060
+20153,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze",20061
+20156,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze",20062
+20159,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze",20063
+20162,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze",20064
+20165,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze",20065
+24037,Severe motor plus cognitive impairments due to meningitis,24058
+24041,Borderline intellectual disability due to meningitis,24055
+24042,Blindness due to meningitis,24043
+24044,Moderate motor plus cognitive impairments due to meningitis,24065
+24048,Mild motor plus cognitive impairments due to meningitis,24036
+24051,Severe motor impairment due to meningitis,24071
+24052,Epilepsy due to meningitis,24050
+24056,Mild motor impairment due to long term due to meningitis,24061
+24059,Moderate motor impairment due to meningitis,24040
+24066,Mild intellectual disability due to meningitis,24047

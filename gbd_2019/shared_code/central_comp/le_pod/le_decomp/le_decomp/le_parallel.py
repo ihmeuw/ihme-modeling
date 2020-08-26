@@ -1,0 +1,333 @@
+import pandas as pd
+import numpy as np
+import xarray as xr
+import itertools
+import os
+from typing import List, Dict
+
+from fbd_research.lex_decomps import andreev
+from fbd_research.lex_decomps import das_gupta
+from db_queries import (get_outputs,
+                        get_life_table_with_shock)
+
+from le_decomp import validations
+from le_decomp.helper_functions import (reshape_lt_wide, dataframe_to_xarray,
+                                        life_exp_at_birth)
+from le_decomp.constants import AgeGroup, LifeTable, Demographics
+
+
+class LEDecomp:
+
+    def __init__(self, location_id, sex_id, year_start_ids,
+                 year_end_ids, cause_list, compare_version_id,
+                 gbd_round_id, decomp_step):
+
+        self.location_id: int = location_id
+        self.sex_id: int = sex_id
+        self.year_start_ids: List[int] = list(
+            np.atleast_1d(year_start_ids))
+        self.year_end_ids: List[int] = list(
+            np.atleast_1d(year_end_ids))
+        self.all_years: List[int] = list(
+            set(year_start_ids + year_end_ids))
+        self.cause_list: List[int] = cause_list
+        self.compare_version_id: int = compare_version_id
+        self.gbd_round_id: int = gbd_round_id
+        self.decomp_step: str = decomp_step
+        self._life_table: pd.DataFrame = None
+        self._life_ex_at_birth: Dict[int, float] = None
+        self._deaths_df: pd.DataFrame = None
+        self._demographic_template: pd.DataFrame = None
+
+    @property
+    def life_table(self):
+        if self._life_table is None:
+            self._life_table = self.get_life_table()
+        return self._life_table
+
+    @property
+    def life_ex_at_birth(self):
+        """
+        Sets up a dictionary with year_ids as the keys
+        and life expectancy for the youngest age group
+        for that year as the values. Used to validate results.
+        """
+        if self._life_ex_at_birth is None:
+            self._life_ex_at_birth = life_exp_at_birth(
+                self.life_table).to_dict()[
+            LifeTable.LIFE_EXPECTANCY_ABBR]
+        return self._life_ex_at_birth
+
+    @property
+    def deaths_df(self):
+        if self._deaths_df is None:
+            self._deaths_df = self.get_deaths()
+        return self._deaths_df
+
+    @property
+    def demographic_template(self):
+        if self._demographic_template is None:
+            self._demographic_template = self.get_demographic_template()
+        return self._demographic_template
+
+    def get_life_table(self):
+        """
+        Retrieves a life table (with shock) from the database
+        for a given location and sex and returns it in 'wide' format,
+        ie with separate columns for life expectancy, mortality rate, etc.
+        """
+        life_table_parameters = pd.DataFrame(
+            LifeTable.LIFE_TABLE_PARAMETERS,
+            columns=[LifeTable.PARAMETER_NAME])
+        life_table_parameters[LifeTable.LIFE_TABLE_PARAMETER_ID] = (
+            life_table_parameters.index + 1)
+        life_table = get_life_table_with_shock(
+            location_id=self.location_id,
+            year_id=self.all_years,
+            sex_id=self.sex_id,
+            age_group_id=AgeGroup.INPUT_AGE_GROUP_IDS,
+            gbd_round_id=self.gbd_round_id,
+            decomp_step=self.decomp_step)
+        # swap the max life table age group id with the terminal age group id
+        life_table.loc[
+            (life_table['age_group_id'] == AgeGroup.OLDEST_LIFE_TABLE_AGE_ID),
+             'age_group_id'] = AgeGroup.OLDEST_OUTPUT_AGE_ID
+        life_table = pd.merge(life_table, life_table_parameters,
+                              on=[LifeTable.LIFE_TABLE_PARAMETER_ID],
+                              how='left')
+        return reshape_lt_wide(life_table)
+
+    def get_deaths(self):
+        """
+        Retrieves a dataframe of death data in rate space
+        from the database for a given location and sex for
+        all causes considered in the decomposition.
+        """
+        causes = self.cause_list + [Demographics.ALL_CAUSE_ID]
+        deaths = get_outputs("cause", location_id=self.location_id,
+                             measure_id=Demographics.DEATH,
+                             metric_id=Demographics.RATE,
+                             year_id=self.all_years,
+                             cause_id=causes,
+                             sex_id=self.sex_id,
+                             age_group_id=AgeGroup.OUTPUT_AGE_GROUP_IDS,
+                             compare_version_id=self.compare_version_id,
+                             gbd_round_id=self.gbd_round_id,
+                             decomp_step=self.decomp_step)
+        return deaths.loc[deaths['val'].notnull()]
+
+    def prep_deaths(self, year_id: int):
+        """
+        Munging of deaths dataframe for a single year.
+        Causes included in self.cause_list but missing from
+        the output generated by get_outputs are assumed to have
+        rates of 0.
+        """
+        keep_cols = Demographics.DEMOGRAPHIC_TEMPLATE_COLUMNS + ['val']
+        deaths = self.deaths_df.loc[
+            (self.deaths_df['year_id'] == year_id), keep_cols]
+        deaths = pd.concat([deaths, self.demographic_template.loc[
+            (self.demographic_template['year_id'] == year_id)]])
+        deaths = deaths.groupby(
+            Demographics.DEMOGRAPHIC_TEMPLATE_COLUMNS).sum().reset_index()
+        # check that there are no duplicate rows after merging on the
+        # demographic template
+        validations.no_dups(deaths, Demographics.DEMOGRAPHIC_TEMPLATE_COLUMNS)
+        return deaths
+
+    def get_demographic_template(self):
+        """
+        Produces a template for deaths data. Helps with column consistency
+        and ensures that all causes in self.cause_list are included in
+        in the decomposition analysis.
+        """
+        demographics_list = [[self.location_id],
+                             self.all_years,
+                             [self.sex_id],
+                             AgeGroup.OUTPUT_AGE_GROUP_IDS,
+                             self.cause_list]
+        demographic_template = pd.DataFrame(
+            list(itertools.product(*demographics_list)),
+            columns=Demographics.DEMOGRAPHIC_TEMPLATE_COLUMNS)
+        demographic_template['val'] = 0.0
+        return demographic_template
+
+    def life_table_to_xarray(self, year_id: int):
+        keep_cols = (['age_group_id'] +
+                     list(set(self.life_table.columns) -
+                          set(Demographics.INDEX_COLUMNS)))
+        return dataframe_to_xarray(self.life_table, 'age_group_id',
+                                   filters={'year_id': year_id},
+                                   keep_columns=keep_cols)
+
+    @staticmethod
+    def age_decomposition(life_table_start_year: xr.core.dataset.Dataset,
+                          life_table_end_year: xr.core.dataset.Dataset):
+        """
+        Decomposes the difference between life expectancy at
+        life_table_start_year and life_table_end_year by age_group.
+        This operation is asymmetrical depending on which year is
+        considered 'start' and which 'end', so we return the
+        average of decompositions where the two are interchanged.
+        """
+        delta_x_2_1 = age_decomposition(
+            AgeGroup.OUTPUT_AGE_GROUP_IDS,
+            life_table_start_year, life_table_end_year)
+        delta_x_1_2 = age_decomposition(
+            AgeGroup.OUTPUT_AGE_GROUP_IDS,
+            life_table_end_year, life_table_start_year)
+        return (delta_x_2_1 - delta_x_1_2) / 2
+
+    @staticmethod
+    def deaths_to_xarray(deaths_df: pd.DataFrame, cause_id: int):
+        keep_cols = ['age_group_id', 'val']
+        return dataframe_to_xarray(deaths_df, 'age_group_id',
+                                   filters={'cause_id': cause_id},
+                                   keep_columns=keep_cols)
+
+    def single_cause_decomposition(self, cause_id: int,
+                                   deaths_df_start: pd.DataFrame,
+                                   all_deaths_start: xr.core.dataset.Dataset,
+                                   deaths_df_end: pd.DataFrame,
+                                   all_deaths_end: xr.core.dataset.Dataset,
+                                   age_decomp_lt: xr.core.dataset.Dataset):
+        """
+        Performs cause decomposition for a single cause, over one time
+        interval.
+        """
+        start_deaths = self.deaths_to_xarray(deaths_df_start, cause_id)
+        end_deaths = self.deaths_to_xarray(deaths_df_end, cause_id)
+        cause_decomp = das_gupta.single_additive(
+            age_decomp_lt, start_deaths, end_deaths,
+            all_deaths_start, all_deaths_end)
+        cause_decomp['cause_id'] = cause_id
+        return cause_decomp
+
+    def run_year_pair(self, year_start: int, year_end: int):
+        """
+        Runs cause decomposition for all causes in self.cause_list
+        for one time interval and returns the results as a data frame
+        in a format matching the gbd.output_le_decomp_v{process_verison_id}
+        table.
+        """
+        deaths_start = self.prep_deaths(year_start)
+        deaths_end = self.prep_deaths(year_end)
+        life_table_xr_start = self.life_table_to_xarray(year_start)
+        life_table_xr_end = self.life_table_to_xarray(year_end)
+        all_cause_start = self.deaths_to_xarray(
+            deaths_start, Demographics.ALL_CAUSE_ID)
+        all_cause_end = self.deaths_to_xarray(
+            deaths_end, Demographics.ALL_CAUSE_ID)
+        age_decomp_lt = self.age_decomposition(
+            life_table_xr_start,
+            life_table_xr_end)
+        cause_decomps = []
+        for cause in self.cause_list:
+            cause_decomp = self.single_cause_decomposition(
+                cause, deaths_start, all_cause_start,
+                deaths_end, all_cause_end, age_decomp_lt)
+            cause_decomps.append(cause_decomp)
+        decomp_array = xr.concat(cause_decomps, dim="cause_id")
+        decomp_array = decomp_array.to_dataframe().reset_index()
+        decomp_array = decomp_array.drop(columns='age_group_id')
+        decomp_array = decomp_array.groupby(
+            ['cause_id']).sum().reset_index()
+        decomp_array['location_id'] = self.location_id
+        decomp_array['sex_id'] = self.sex_id
+        decomp_array['year_start'] = year_start
+        decomp_array['year_end'] = year_end
+        decomp_array['age_group_id'] = AgeGroup.YOUNGEST_AGE_ID
+        decomp_array['measure_id'] = Demographics.LE_DECOMP_ID
+        decomp_array['metric_id'] = Demographics.METRIC_YEARS
+        validations.check_decomp_result(decomp_array,
+                                        self.life_ex_at_birth,
+                                        year_start,
+                                        year_end,
+                                        'val',
+                                        self.location_id,
+                                        self.sex_id)
+        return decomp_array
+
+    def run_all(self):
+        """
+        Runs cause decomposition for all causes and time intervals,
+        and returns a dataframe of the result.
+        """
+        decomp_df_list = []
+        for ind in range(len(self.year_start_ids)):
+            decomp_df_list.append(
+               self.run_year_pair(self.year_start_ids[ind],
+                                  self.year_end_ids[ind]))
+        return pd.concat(decomp_df_list)
+
+
+def run_le_parallel(output_dir: str,
+                    location_id: int,
+                    sex_id: int,
+                    year_start_ids: List[int],
+                    year_end_ids: List[int],
+                    cause_list: List[int],
+                    compare_version_id: int,
+                    gbd_round_id: int,
+                    decomp_step: str):
+    """
+    Entry point for running a single location-sex specific
+    life expectancy decomposition by cause.
+    Initializes an LEDecomp object, runs decomposition
+    and saves the results to file.
+
+    Args:
+        output_dir (str): Directory where .csv files will be
+            saved. If using the upload method from LEMaster it
+            will attempt to upload all .csv files found in this
+            directory, so logs, etc should be saved in a subdirectory.
+        location_id (int): location id, should be a single location
+        sex_id (int): sex_id, should be a single sex
+        year_start_ids (List[int]): List of year ids that comprise
+            the start of each time period to run decomp on.  Should
+            be the same length as year_end_ids.  Example:
+            year_start_ids = [1990, 1990, 2010] and year_end_ids
+            = [2010, 2019, 2019] will calculate decomp for the
+            time periods 1990 - 2010, 1990 - 2019 and 2010 - 2019
+        year_end_ids (List[int]): List of year ids that comprise
+            the end of each time period to run decomp on.
+        cause_list (List[int]): List of cause_ids to run decomp on.
+        gbd_round_id (int): gbd_round_id used to pull death data
+            and life tables.
+        decomp_step (str): string identifier for the gdb decomp
+            step to pull data for.
+    """
+    led = LEDecomp(location_id, sex_id, year_start_ids,
+                   year_end_ids, cause_list, compare_version_id,
+                   gbd_round_id, decomp_step)
+    led_df = led.run_all()
+    led_df = led_df.sort_values(
+        by=['measure_id', 'year_start', 'year_end',
+            'location_id', 'age_group_id', 'cause_id']).reset_index(drop=True)
+    filename = f"{location_id}_{sex_id}.csv"
+    led_df.to_csv(os.path.join(output_dir, filename), index=False)
+
+
+def age_decomposition(age_group_ids: List[int],
+                      life_table_1: xr.Dataset,
+                      life_table_2: xr.Dataset):
+    """
+    Returns the decomposition by age group for the difference
+    in life expectancy for a given time period. Life_table_1
+    should be specific a single year and life_table_2 should
+    be specific to a different year, defining the time period
+    for which to run decomp.  Both xarray Datasets should
+    have dimension 'age_group_id' (at minimum)
+    and data_variable 'val'.
+    """
+    age_pairs = [
+        (age_group_ids[i], age_group_ids[i + 1])
+        for i in range(len(age_group_ids) - 1)]
+    age_pairs.append((age_group_ids[-1], -1))
+    # Run decomp
+    delta_xs = []
+    for p in age_pairs:
+        delta_xs.append(
+            andreev.delta_x(p[0], p[1], life_table_1, life_table_2))
+    delta_x = xr.concat(delta_xs, dim="age_group_id")
+    return delta_x

@@ -1,0 +1,1283 @@
+{
+  "mentrual_no_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "18741": "__main__.ModelableEntity",
+      "2082": "__main__.ModelableEntity",
+      "2083": "__main__.ModelableEntity",
+      "2084": "__main__.ModelableEntity"
+    },
+    "out": {
+      "19806": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "18741",
+        "resid": "19806",
+        "sub": {
+          "2082": {},
+          "2083": {},
+          "2084": {}
+        }
+      },
+      "copy_env_inc": true
+    }
+  },
+  "neonatal_kern": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "19812": "__main__.ModelableEntity",
+      "3962": "__main__.ModelableEntity"
+    },
+    "out": {
+      "19813": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "19812",
+        "resid": "19813",
+        "sub": {
+          "3962": {}
+        }
+      }
+    }
+  },
+  "chonic_hep_b_no_cirr": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "2993": "__main__.ModelableEntity",
+      "2892": "__main__.ModelableEntity",
+      "11655": "__main__.ModelableEntity"
+    },
+    "out": {
+      "20169": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "2993",
+        "resid": "20169",
+        "sub": {
+          "2892": {},
+          "11655": {}
+        }
+      }
+    }
+  },
+  "chonic_hep_c_no_cirr": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "2994": "__main__.ModelableEntity",
+      "2893": "__main__.ModelableEntity",
+      "11656": "__main__.ModelableEntity"
+    },
+    "out": {
+      "20170": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "2994",
+        "resid": "20170",
+        "sub": {
+          "2893": {},
+          "11656": {}
+        }
+      }
+    }
+  },
+  "ulcerative_colitis_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "16290": "__main__.ModelableEntity",
+      "18861": "__main__.ModelableEntity",
+      "18862": "__main__.ModelableEntity",
+      "18863": "__main__.ModelableEntity"
+    },
+    "out": {
+      "19990": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "16290",
+        "resid": "19990",
+        "sub": {
+          "18861": {},
+          "18862": {},
+          "18863": {}
+        }
+      }
+    }
+  },
+  "crohns_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "16292": "__main__.ModelableEntity",
+      "18864": "__main__.ModelableEntity",
+      "18865": "__main__.ModelableEntity",
+      "18866": "__main__.ModelableEntity"
+    },
+    "out": {
+      "19991": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "16292",
+        "resid": "19991",
+        "sub": {
+          "18864": {},
+          "18865": {},
+          "18866": {}
+        }
+      }
+    }
+  },
+  "resp_pneum_other_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3168",
+        "sub": {
+          "1906": {
+            "squeeze": "3167"
+          },
+          "1904": {
+            "squeeze": "3165"
+          },
+          "1905": {
+            "squeeze": "3166"
+          },
+          "20036": {
+            "squeeze": "20178"
+          }
+        },
+        "env": "1903"
+      }
+    },
+    "out": {
+      "20178": "__main__.ModelableEntity",
+      "3166": "__main__.ModelableEntity",
+      "3167": "__main__.ModelableEntity",
+      "3165": "__main__.ModelableEntity",
+      "3168": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "20036": "__main__.ModelableEntity",
+      "1906": "__main__.ModelableEntity",
+      "1904": "__main__.ModelableEntity",
+      "1905": "__main__.ModelableEntity",
+      "1903": "__main__.ModelableEntity"
+    }
+  },
+  "gyne_fibroids_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "env": "2064",
+        "resid": "3331",
+        "sub": {
+          "2065": {},
+          "2066": {},
+          "2067": {}
+        }
+      }
+    },
+    "out": {
+      "3331": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2064": "__main__.ModelableEntity",
+      "2065": "__main__.ModelableEntity",
+      "2066": "__main__.ModelableEntity",
+      "2067": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickletrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3257",
+        "sub": {
+          "2504": {},
+          "2503": {},
+          "2502": {}
+        },
+        "env": "2501"
+      }
+    },
+    "out": {
+      "3257": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2504": "__main__.ModelableEntity",
+      "2503": "__main__.ModelableEntity",
+      "2502": "__main__.ModelableEntity",
+      "2501": "__main__.ModelableEntity"
+    }
+  },
+  "iodine_no_id": {
+    "args": [],
+    "class": "__main__.Exclusivity",
+    "in": {
+      "1610": "__main__.ModelableEntity",
+      "9935": "__main__.ModelableEntity",
+      "9936": "__main__.ModelableEntity"
+    },
+    "kwargs": {
+      "me_map": {
+        "env": "1610",
+        "resid": "15813",
+        "sub": {
+          "9935": {
+            "squeeze": "15814"
+          },
+          "9936": {
+            "squeeze": "15815"
+          }
+        }
+      }
+    },
+    "out": {
+      "15813": "__main__.ModelableEntity",
+      "15814": "__main__.ModelableEntity",
+      "15815": "__main__.ModelableEntity"
+    }
+  },
+  "vitamin_a_anemia": {
+    "kwargs": {
+      "me_map": {
+        "env": "2510",
+        "resid": "11610",
+        "sub": {
+          "19737": {},
+          "19738": {},
+          "19739": {},
+          "1618": {},
+          "1619": {},
+          "1620": {}
+        }
+      },
+      "copy_env_inc": true
+    },
+    "out": {
+      "11610": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "19737": "__main__.ModelableEntity",
+      "19738": "__main__.ModelableEntity",
+      "19739": "__main__.ModelableEntity",
+      "2510": "__main__.ModelableEntity",
+      "1618": "__main__.ModelableEntity",
+      "1619": "__main__.ModelableEntity",
+      "1620": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_g6pd_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3356",
+        "sub": {
+          "2118": {
+            "squeeze": "3355"
+          },
+          "2113": {
+            "squeeze": "3350"
+          },
+          "2114": {
+            "squeeze": "3351"
+          },
+          "2115": {
+            "squeeze": "3352"
+          },
+          "2116": {
+            "squeeze": "3353"
+          },
+          "2117": {
+            "squeeze": "3354"
+          }
+        },
+        "env": "2112"
+      }
+    },
+    "out": {
+      "3355": "__main__.ModelableEntity",
+      "3354": "__main__.ModelableEntity",
+      "3356": "__main__.ModelableEntity",
+      "3351": "__main__.ModelableEntity",
+      "3350": "__main__.ModelableEntity",
+      "3353": "__main__.ModelableEntity",
+      "3352": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2118": "__main__.ModelableEntity",
+      "2112": "__main__.ModelableEntity",
+      "2113": "__main__.ModelableEntity",
+      "2114": "__main__.ModelableEntity",
+      "2115": "__main__.ModelableEntity",
+      "2116": "__main__.ModelableEntity",
+      "2117": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_g6pdtrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3258",
+        "sub": {
+          "2507": {},
+          "2506": {},
+          "2508": {}
+        },
+        "env": "2505"
+      }
+    },
+    "out": {
+      "3258": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2507": "__main__.ModelableEntity",
+      "2506": "__main__.ModelableEntity",
+      "2505": "__main__.ModelableEntity",
+      "2508": "__main__.ModelableEntity"
+    }
+  },
+  "nutrition_pem_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3140",
+        "sub": {
+          "1607": {},
+          "1606": {}
+        },
+        "env": "1608"
+      }
+    },
+    "out": {
+      "3140": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1608": "__main__.ModelableEntity",
+      "1607": "__main__.ModelableEntity",
+      "1606": "__main__.ModelableEntity"
+    }
+  },
+  "malaria_vivax_asymp": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "19394": "__main__.ModelableEntity",
+      "19395": "__main__.ModelableEntity",
+      "19396": "__main__.ModelableEntity",
+      "19397": "__main__.ModelableEntity"
+    },
+    "out": {
+      "19398": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "19394",
+        "resid": "19398",
+        "sub": {
+          "19395": {},
+          "19396": {},
+          "19397": {}
+        }
+      }
+    }
+  },
+  "malaria_anemia": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "3055": "__main__.ModelableEntity",
+      "19399": "__main__.ModelableEntity",
+      "19400": "__main__.ModelableEntity",
+      "19401": "__main__.ModelableEntity"
+    },
+    "out": {
+      "16380": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "3055",
+        "resid": "16380",
+        "sub": {
+          "19399": {},
+          "19400": {},
+          "19401": {}
+        }
+      },
+      "copy_env_inc": true
+    }
+  },
+  "malaria_asymp": {
+    "class": "__main__.Exclusivity",
+    "in": {
+      "19390": "__main__.ModelableEntity",
+      "19391": "__main__.ModelableEntity",
+      "19392": "__main__.ModelableEntity",
+      "19393": "__main__.ModelableEntity"
+    },
+    "out": {
+      "3266": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "me_map": {
+        "env": "19390",
+        "resid": "3266",
+        "sub": {
+          "19391": {},
+          "19392": {},
+          "19393": {}
+        }
+      }
+    }
+  },
+  "hemog_thalasstrait_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3256",
+        "sub": {
+          "2491": {},
+          "2490": {},
+          "2489": {}
+        },
+        "env": "2488"
+      }
+    },
+    "out": {
+      "3256": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2491": "__main__.ModelableEntity",
+      "2490": "__main__.ModelableEntity",
+      "2488": "__main__.ModelableEntity",
+      "2489": "__main__.ModelableEntity"
+    }
+  },
+  "resp_copd_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3152",
+        "sub": {
+          "1876": {
+            "squeeze": "3149"
+          },
+          "1877": {
+            "squeeze": "3150"
+          },
+          "1878": {
+            "squeeze": "3151"
+          },
+          "20032": {
+            "squeeze": "20174"
+          }
+        },
+        "env": "1875"
+      }
+    },
+    "out": {
+      "20174": "__main__.ModelableEntity",
+      "3152": "__main__.ModelableEntity",
+      "3151": "__main__.ModelableEntity",
+      "3150": "__main__.ModelableEntity",
+      "3149": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "20032": "__main__.ModelableEntity",
+      "1876": "__main__.ModelableEntity",
+      "1877": "__main__.ModelableEntity",
+      "1875": "__main__.ModelableEntity",
+      "1878": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3344",
+        "sub": {
+          "9384": {
+            "squeeze": "3273"
+          },
+          "2476": {
+            "squeeze": "3272"
+          },
+          "2475": {
+            "squeeze": "3271"
+          }
+        },
+        "env": "3039"
+      }
+    },
+    "out": {
+      "3272": "__main__.ModelableEntity",
+      "3273": "__main__.ModelableEntity",
+      "3344": "__main__.ModelableEntity",
+      "3271": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9384": "__main__.ModelableEntity",
+      "2476": "__main__.ModelableEntity",
+      "2475": "__main__.ModelableEntity",
+      "3039": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9384",
+        "sub": {
+          "2086": {
+            "squeeze": "3270"
+          }
+        },
+        "env": "2477"
+      }
+    },
+    "out": {
+      "9384": "__main__.ModelableEntity",
+      "3270": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2477": "__main__.ModelableEntity",
+      "2086": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_3_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3314",
+        "sub": {
+          "2499": {
+            "squeeze": "3322"
+          },
+          "2498": {
+            "squeeze": "3321"
+          },
+          "3038": {
+            "squeeze": "3359"
+          },
+          "9403": {
+            "squeeze": "3317"
+          },
+          "9402": {
+            "squeeze": "3316"
+          },
+          "9401": {
+            "squeeze": "3315"
+          },
+          "9407": {
+            "squeeze": "3323"
+          },
+          "9406": {
+            "squeeze": "3320"
+          },
+          "9405": {
+            "squeeze": "3319"
+          },
+          "9404": {
+            "squeeze": "3318"
+          }
+        },
+        "env": "2103"
+      }
+    },
+    "out": {
+      "3319": "__main__.ModelableEntity",
+      "3318": "__main__.ModelableEntity",
+      "3359": "__main__.ModelableEntity",
+      "3320": "__main__.ModelableEntity",
+      "3321": "__main__.ModelableEntity",
+      "3322": "__main__.ModelableEntity",
+      "3323": "__main__.ModelableEntity",
+      "3315": "__main__.ModelableEntity",
+      "3314": "__main__.ModelableEntity",
+      "3317": "__main__.ModelableEntity",
+      "3316": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2499": "__main__.ModelableEntity",
+      "2498": "__main__.ModelableEntity",
+      "3038": "__main__.ModelableEntity",
+      "9403": "__main__.ModelableEntity",
+      "9402": "__main__.ModelableEntity",
+      "9401": "__main__.ModelableEntity",
+      "9407": "__main__.ModelableEntity",
+      "9406": "__main__.ModelableEntity",
+      "9405": "__main__.ModelableEntity",
+      "9404": "__main__.ModelableEntity",
+      "2103": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_2_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3304",
+        "sub": {
+          "9397": {
+            "squeeze": "3308"
+          },
+          "9396": {
+            "squeeze": "3307"
+          },
+          "9395": {
+            "squeeze": "3306"
+          },
+          "9394": {
+            "squeeze": "3305"
+          },
+          "3037": {
+            "squeeze": "3358"
+          },
+          "2495": {
+            "squeeze": "3311"
+          },
+          "9399": {
+            "squeeze": "3310"
+          },
+          "2496": {
+            "squeeze": "3312"
+          },
+          "9400": {
+            "squeeze": "3313"
+          },
+          "9398": {
+            "squeeze": "3309"
+          }
+        },
+        "env": "2100"
+      }
+    },
+    "out": {
+      "3305": "__main__.ModelableEntity",
+      "3309": "__main__.ModelableEntity",
+      "3358": "__main__.ModelableEntity",
+      "3306": "__main__.ModelableEntity",
+      "3308": "__main__.ModelableEntity",
+      "3310": "__main__.ModelableEntity",
+      "3311": "__main__.ModelableEntity",
+      "3307": "__main__.ModelableEntity",
+      "3304": "__main__.ModelableEntity",
+      "3312": "__main__.ModelableEntity",
+      "3313": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9397": "__main__.ModelableEntity",
+      "9396": "__main__.ModelableEntity",
+      "9395": "__main__.ModelableEntity",
+      "9394": "__main__.ModelableEntity",
+      "2100": "__main__.ModelableEntity",
+      "3037": "__main__.ModelableEntity",
+      "2495": "__main__.ModelableEntity",
+      "9399": "__main__.ModelableEntity",
+      "2496": "__main__.ModelableEntity",
+      "9400": "__main__.ModelableEntity",
+      "9398": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9400",
+        "sub": {
+          "2102": {
+            "squeeze": "9396",
+            "excess": "9397"
+          },
+          "2101": {
+            "squeeze": "9394",
+            "excess": "9395"
+          },
+          "3009": {
+            "squeeze": "9398",
+            "excess": "9399"
+          }
+        },
+        "env": "2497"
+      }
+    },
+    "out": {
+      "9397": "__main__.ModelableEntity",
+      "9396": "__main__.ModelableEntity",
+      "9395": "__main__.ModelableEntity",
+      "9394": "__main__.ModelableEntity",
+      "9399": "__main__.ModelableEntity",
+      "9398": "__main__.ModelableEntity",
+      "9400": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2102": "__main__.ModelableEntity",
+      "2101": "__main__.ModelableEntity",
+      "3009": "__main__.ModelableEntity",
+      "2497": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9407",
+        "sub": {
+          "3010": {
+            "squeeze": "9405",
+            "excess": "9406"
+          },
+          "2105": {
+            "squeeze": "9403",
+            "excess": "9404"
+          },
+          "2104": {
+            "squeeze": "9401",
+            "excess": "9402"
+          }
+        },
+        "env": "2500"
+      }
+    },
+    "out": {
+      "9403": "__main__.ModelableEntity",
+      "9402": "__main__.ModelableEntity",
+      "9401": "__main__.ModelableEntity",
+      "9407": "__main__.ModelableEntity",
+      "9406": "__main__.ModelableEntity",
+      "9405": "__main__.ModelableEntity",
+      "9404": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3010": "__main__.ModelableEntity",
+      "2500": "__main__.ModelableEntity",
+      "2105": "__main__.ModelableEntity",
+      "2104": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_coal_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3164",
+        "sub": {
+          "1897": {
+            "squeeze": "3161"
+          },
+          "1898": {
+            "squeeze": "3162"
+          },
+          "1899": {
+            "squeeze": "3163"
+          },
+          "20035": {
+            "squeeze": "20177"
+          }
+        },
+        "env": "1896"
+      }
+    },
+    "out": {
+      "3164": "__main__.ModelableEntity",
+      "20177": "__main__.ModelableEntity",
+      "3162": "__main__.ModelableEntity",
+      "3163": "__main__.ModelableEntity",
+      "3161": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "20035": "__main__.ModelableEntity",
+      "1896": "__main__.ModelableEntity",
+      "1897": "__main__.ModelableEntity",
+      "1898": "__main__.ModelableEntity",
+      "1899": "__main__.ModelableEntity"
+    }
+  },
+  "resp_interstitial_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3172",
+        "sub": {
+          "1915": {
+            "squeeze": "3169"
+          },
+          "1917": {
+            "squeeze": "3171"
+          },
+          "1916": {
+            "squeeze": "3170"
+          },
+          "20037": {
+            "squeeze": "20179"
+          }
+        },
+        "env": "1914"
+      }
+    },
+    "out": {
+      "20179": "__main__.ModelableEntity",
+      "3171": "__main__.ModelableEntity",
+      "3170": "__main__.ModelableEntity",
+      "3172": "__main__.ModelableEntity",
+      "3169": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "20037": "__main__.ModelableEntity",
+      "1915": "__main__.ModelableEntity",
+      "1914": "__main__.ModelableEntity",
+      "1917": "__main__.ModelableEntity",
+      "1916": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3294",
+        "sub": {
+          "9387": {
+            "squeeze": "3295"
+          },
+          "9393": {
+            "squeeze": "3303"
+          },
+          "9392": {
+            "squeeze": "3300"
+          },
+          "9391": {
+            "squeeze": "3299"
+          },
+          "9390": {
+            "squeeze": "3298"
+          },
+          "2493": {
+            "squeeze": "3302"
+          },
+          "2492": {
+            "squeeze": "3301"
+          },
+          "9388": {
+            "squeeze": "3296"
+          },
+          "9389": {
+            "squeeze": "3297"
+          },
+          "3036": {
+            "squeeze": "3357"
+          }
+        },
+        "env": "2097"
+      }
+    },
+    "out": {
+      "3357": "__main__.ModelableEntity",
+      "3298": "__main__.ModelableEntity",
+      "3299": "__main__.ModelableEntity",
+      "3294": "__main__.ModelableEntity",
+      "3295": "__main__.ModelableEntity",
+      "3296": "__main__.ModelableEntity",
+      "3297": "__main__.ModelableEntity",
+      "3302": "__main__.ModelableEntity",
+      "3303": "__main__.ModelableEntity",
+      "3300": "__main__.ModelableEntity",
+      "3301": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9387": "__main__.ModelableEntity",
+      "9393": "__main__.ModelableEntity",
+      "9392": "__main__.ModelableEntity",
+      "9391": "__main__.ModelableEntity",
+      "9390": "__main__.ModelableEntity",
+      "2493": "__main__.ModelableEntity",
+      "2492": "__main__.ModelableEntity",
+      "9388": "__main__.ModelableEntity",
+      "9389": "__main__.ModelableEntity",
+      "2097": "__main__.ModelableEntity",
+      "3036": "__main__.ModelableEntity"
+    }
+  },
+  "cvd_rhd_1_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3346",
+        "sub": {
+          "1811": {
+            "squeeze": "3347"
+          },
+          "1812": {
+            "squeeze": "3348"
+          },
+          "1813": {
+            "squeeze": "3349"
+          },
+          "20027": {
+            "squeeze": "20180"
+          }
+        },
+        "env": "1810"
+      },
+      "copy_env_inc": true
+    },
+    "out": {
+      "3348": "__main__.ModelableEntity",
+      "3349": "__main__.ModelableEntity",
+      "3346": "__main__.ModelableEntity",
+      "3347": "__main__.ModelableEntity",
+      "20180": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1810": "__main__.ModelableEntity",
+      "1811": "__main__.ModelableEntity",
+      "1812": "__main__.ModelableEntity",
+      "1813": "__main__.ModelableEntity",
+      "20027": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_3_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9386",
+        "sub": {
+          "2090": {
+            "squeeze": "3284"
+          }
+        },
+        "env": "2483"
+      }
+    },
+    "out": {
+      "9386": "__main__.ModelableEntity",
+      "3284": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2090": "__main__.ModelableEntity",
+      "2483": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_3_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3343",
+        "sub": {
+          "9386": {
+            "squeeze": "3287"
+          },
+          "2482": {
+            "squeeze": "3286"
+          },
+          "2481": {
+            "squeeze": "3285"
+          }
+        },
+        "env": "3041"
+      }
+    },
+    "out": {
+      "3287": "__main__.ModelableEntity",
+      "3343": "__main__.ModelableEntity",
+      "3285": "__main__.ModelableEntity",
+      "3286": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "3041": "__main__.ModelableEntity",
+      "9386": "__main__.ModelableEntity",
+      "2482": "__main__.ModelableEntity",
+      "2481": "__main__.ModelableEntity"
+    }
+  },
+  "diabetes_type2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "19724",
+        "sub": {
+          "19721": {
+            "squeeze": "19722"
+          },
+          "19728": {
+            "squeeze": "19725"
+          },
+          "19729": {
+            "squeeze": "19726"
+          }
+        },
+        "env": "19723"
+      }
+    },
+    "out": {
+      "19724": "__main__.ModelableEntity",
+      "19722": "__main__.ModelableEntity",
+      "19725": "__main__.ModelableEntity",
+      "19726": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "19723": "__main__.ModelableEntity",
+      "19721": "__main__.ModelableEntity",
+      "19728": "__main__.ModelableEntity",
+      "19729": "__main__.ModelableEntity"
+    }
+  },
+  "diabetes_type1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "19710",
+        "sub": {
+          "19707": {
+            "squeeze": "19708"
+          },
+          "19714": {
+            "squeeze": "19711"
+          },
+          "19715": {
+            "squeeze": "19712"
+          }
+        },
+        "env": "19709"
+      }
+    },
+    "out": {
+      "19710": "__main__.ModelableEntity",
+      "19708": "__main__.ModelableEntity",
+      "19711": "__main__.ModelableEntity",
+      "19712": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "19709": "__main__.ModelableEntity",
+      "19707": "__main__.ModelableEntity",
+      "19714": "__main__.ModelableEntity",
+      "19715": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_2_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9385",
+        "sub": {
+          "2088": {
+            "squeeze": "3277"
+          }
+        },
+        "env": "2480"
+      }
+    },
+    "out": {
+      "9385": "__main__.ModelableEntity",
+      "3277": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2088": "__main__.ModelableEntity",
+      "2480": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalass_2_stage_2": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3345",
+        "sub": {
+          "9385": {
+            "squeeze": "3280"
+          },
+          "2479": {
+            "squeeze": "3279"
+          },
+          "2478": {
+            "squeeze": "3278"
+          }
+        },
+        "env": "3040"
+      }
+    },
+    "out": {
+      "3280": "__main__.ModelableEntity",
+      "3279": "__main__.ModelableEntity",
+      "3278": "__main__.ModelableEntity",
+      "3345": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "9385": "__main__.ModelableEntity",
+      "3040": "__main__.ModelableEntity",
+      "2479": "__main__.ModelableEntity",
+      "2478": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_sickle_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "9393",
+        "sub": {
+          "2099": {
+            "squeeze": "9389",
+            "excess": "9390"
+          },
+          "2098": {
+            "squeeze": "9388",
+            "excess": "9387"
+          },
+          "3008": {
+            "squeeze": "9391",
+            "excess": "9392"
+          }
+        },
+        "env": "2494"
+      }
+    },
+    "out": {
+      "9387": "__main__.ModelableEntity",
+      "9393": "__main__.ModelableEntity",
+      "9392": "__main__.ModelableEntity",
+      "9391": "__main__.ModelableEntity",
+      "9390": "__main__.ModelableEntity",
+      "9388": "__main__.ModelableEntity",
+      "9389": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2494": "__main__.ModelableEntity",
+      "2099": "__main__.ModelableEntity",
+      "2098": "__main__.ModelableEntity",
+      "3008": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_silico_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3156",
+        "sub": {
+          "1885": {
+            "squeeze": "3155"
+          },
+          "1884": {
+            "squeeze": "3154"
+          },
+          "1883": {
+            "squeeze": "3153"
+          },
+          "20033": {
+            "squeeze": "20175"
+          }
+        },
+        "env": "1882"
+      }
+    },
+    "out": {
+      "20175": "__main__.ModelableEntity",
+      "3153": "__main__.ModelableEntity",
+      "3156": "__main__.ModelableEntity",
+      "3155": "__main__.ModelableEntity",
+      "3154": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "20033": "__main__.ModelableEntity",
+      "1885": "__main__.ModelableEntity",
+      "1884": "__main__.ModelableEntity",
+      "1883": "__main__.ModelableEntity",
+      "1882": "__main__.ModelableEntity"
+    }
+  },
+  "hemog_thalasstrait_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3255",
+        "sub": {
+          "2486": {},
+          "2487": {},
+          "2485": {}
+        },
+        "env": "2484"
+      }
+    },
+    "out": {
+      "3255": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "2486": "__main__.ModelableEntity",
+      "2487": "__main__.ModelableEntity",
+      "2484": "__main__.ModelableEntity",
+      "2485": "__main__.ModelableEntity"
+    }
+  },
+  "resp_pneum_asbest_1_stage_1": {
+    "kwargs": {
+      "me_map": {
+        "resid": "3160",
+        "sub": {
+          "1890": {
+            "squeeze": "3157"
+          },
+          "1891": {
+            "squeeze": "3158"
+          },
+          "1892": {
+            "squeeze": "3159"
+          },
+          "20034": {
+            "squeeze": "20176"
+          }
+        },
+        "env": "1889"
+      }
+    },
+    "out": {
+      "3159": "__main__.ModelableEntity",
+      "20176": "__main__.ModelableEntity",
+      "3158": "__main__.ModelableEntity",
+      "3157": "__main__.ModelableEntity",
+      "3160": "__main__.ModelableEntity"
+    },
+    "class": "__main__.Exclusivity",
+    "args": [],
+    "in": {
+      "1889": "__main__.ModelableEntity",
+      "20034": "__main__.ModelableEntity",
+      "1890": "__main__.ModelableEntity",
+      "1891": "__main__.ModelableEntity",
+      "1892": "__main__.ModelableEntity"
+    }
+  }
+}

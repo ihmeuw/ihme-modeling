@@ -1,0 +1,6 @@
+cause_name,gbd_id_type,gbd_id,source,status,gbd_round_id,decomp_step,directory_to_save,year_id,sex_id,age_group_set,n_draws,downsample,parent,target_me_id,measure_id,target_measure_id
+copd,modelable_entity_id,24543,epi,best,6,step4,/ihme/scratch/projects/yld_gbd/resp/copd_severities/,0,,,,,parent,,,
+mild,modelable_entity_id,1873,epi,best,6,step4,/ihme/scratch/projects/yld_gbd/resp/copd_severities/,1,,,,,child,1873,5,5
+moderate,modelable_entity_id,1874,epi,best,6,step4,/ihme/scratch/projects/yld_gbd/resp/copd_severities/,1,,,,,child,1874,5,5
+severe,modelable_entity_id,1875,epi,best,6,step4,/ihme/scratch/projects/yld_gbd/resp/copd_severities/,1,,,,,child,1875,5,5
+asymp,modelable_entity_id,3065,epi,best,6,step4,/ihme/scratch/projects/yld_gbd/resp/copd_severities/,1,,,,,child,3065,"5,6","5,6"

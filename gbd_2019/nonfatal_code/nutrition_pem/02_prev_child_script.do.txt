@@ -1,0 +1,219 @@
+
+//prep stata 
+clear all
+set more off
+set maxvar 32000
+
+// Set OS flexibility 
+	if c(os) == "Unix" {
+		local j "FILEPATH"
+		set odbcmgr unixodbc
+		local h "FILEPATH"
+	}
+	else if c(os) == "Windows" {
+		local j "FILEPATH"
+		local h "FILEPATH"
+	}
+
+qui do "FILEPATH"
+
+//transfer locals
+args code_folder save_folder_whz2_noedema save_folder_whz2_edema save_folder_whz3_noedema save_folder_whz3_edema loc 
+
+// step 0 
+// dismod results for 16406 to get prevalence estimates from multiple parameter model, for use in scaling later on
+get_draws, gbd_id_type(modelable_entity_id) gbd_id(16406) location_id(`loc') measure_id(5) status(best) source(epi) decomp_step(step4) clear
+
+forvalues j=0/999 {
+	quietly rename draw_`j' c_prev_`j'
+}
+
+tempfile meid111641
+save `meid111641'
+
+// STEP 1
+//get dismod results for meid 10553, proportion of edema among severe wasting
+get_draws, gbd_id_type(modelable_entity_id) gbd_id(10553) location_id(`loc') measure_id(18) status(best) source(epi) decomp_step(step4) clear
+
+//rename draws
+forvalues j=0/999 {
+	quietly rename draw_`j' prev_`j'
+}
+
+** meid10553 now prev_`j'
+tempfile meid10553
+save `meid10553'
+
+//get dismod results for meid 8945, wasting
+get_draws, gbd_id_type(modelable_entity_id) gbd_id(8945) location_id(`loc') measure_id(5) status(best) source(epi) decomp_step(step4) clear
+
+
+** meid8945 is draw_`j'
+tempfile meid8945
+save `meid8945'
+
+merge 1:1 year_id age_group_id location_id sex_id using "`meid10553'", nogenerate keep(3)
+
+
+//get and save 1608 values
+forvalues j=0/999 {
+	quietly replace draw_`j' = prev_`j' * draw_`j'
+	quietly replace draw_`j' = 0 if age_group_id > 5
+}
+
+forvalues j=0/999 {
+	quietly replace draw_`j' = 0 if draw_`j' < 0
+}
+
+preserve
+
+*drop prev_* modelable_entity_id model_version_id measure_id location_id
+keep age_group_id sex_id year_id draw_*
+export delim using "`save_folder_whz3_edema'5_`loc'.csv", replace
+
+restore
+drop prev_*
+
+forvalues j=0/999 {
+	quietly rename draw_`j' prev_`j'
+}
+
+** meid1608 now prev
+tempfile meid1608
+save `meid1608'
+
+***********************************************************************************************************************
+// STEP 2
+merge 1:1 year_id age_group_id location_id sex_id using "`meid8945'", nogenerate keep(3)
+
+
+//get and save 1607 values 
+forvalues j=0/999 {
+	  quietly replace draw_`j' = draw_`j' - prev_`j'
+}
+drop prev_* modelable_entity_id model_version_id measure_id
+
+
+forvalues j=0/999 {
+	quietly replace draw_`j' = 0 if draw_`j' < 0
+}
+
+forvalues j=0/999 {
+	quietly rename draw_`j' a_prev_`j'
+}
+
+
+tempfile meid1607
+save `meid1607'
+
+************************************************************************************************************************
+// STEP 3
+// get dismod results for meid 10554, proportion of edema among total wasting
+get_draws, gbd_id_type(modelable_entity_id) gbd_id(10554) location_id(`loc') measure_id(18) status(best) source(epi) decomp_step(step4) clear
+
+merge 1:1 year_id age_group_id location_id sex_id using "`meid10553'", nogenerate keep(3)
+
+// subtract 10554 from 10553 to get and tempfile 10555 values
+forvalues j=0/999 {
+	quietly replace prev_`j' = prev_`j' - draw_`j' 
+}
+
+tempfile meid10555
+save `meid10555' 
+
+**************************************************************************************************************************
+// Step 4
+// get dismod results for meid , child wasting -3_-2
+get_draws, gbd_id_type(modelable_entity_id) gbd_id(8946) location_id(`loc') measure_id(5) status(best) source(epi) decomp_step(step4) clear
+tempfile meid8946
+save `meid8946'
+
+merge 1:1 year_id age_group_id sex_id using "`meid10555'", nogenerate keep(3)
+
+** get meid1606
+forvalues j=0/999 {
+	quietly replace draw_`j' = prev_`j' * draw_`j'
+}
+
+
+forvalues j=0/999 {
+	quietly replace draw_`j' = 0 if draw_`j' < 0
+	quietly replace draw_`j' = 0 if age_group_id > 5
+}
+
+preserve
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz2_edema'5_`loc'.csv", replace
+
+restore
+
+tempfile meid1606
+save `meid1606' 
+
+*****************************************************************************************************
+// Step 5
+use `meid8946'
+forvalues j=0/999 {
+	quietly rename draw_`j' prev_`j'
+}
+save `meid8946', replace
+
+merge 1:1 year_id location_id age_group_id sex_id using "`meid1606'", nogenerate keep(3) 
+
+
+forvalues j=0/999 {
+	quietly replace draw_`j' = prev_`j' - draw_`j' 
+}
+
+drop prev_* modelable_entity_id model_version_id measure_id 
+
+forvalues j=0/999 {
+	quietly replace draw_`j' = 0 if draw_`j' < 0
+}
+
+// Step 6
+// at this point, have meid 10981 (b). merge with 1607 (a) and 111641 (c) to get values, then calc scaled prev for each
+// for A: c(a/(a+b)) 
+// for B: c(b/(a+b))
+
+forvalues j=0/999 {
+	quietly rename draw_`j' b_prev_`j'
+}
+
+merge 1:1 year_id age_group_id location_id sex_id using "`meid1607'", nogenerate keep(3)
+merge 1:1 year_id age_group_id location_id sex_id using "`meid111641'", nogenerate keep(3)
+
+forvalues j=0/999 {
+	quietly gen final_a_`j' = c_prev_`j' * (a_prev_`j' / (a_prev_`j' + b_prev_`j')) if age_group_id > 5
+	quietly replace final_a_`j' = a_prev_`j' if age_group_id <= 5
+}
+
+forvalues j=0/999 {
+	quietly gen final_b_`j' = c_prev_`j' * (b_prev_`j' / (a_prev_`j' + b_prev_`j')) if age_group_id > 5
+	quietly replace final_b_`j' = b_prev_`j' if age_group_id <= 5
+}
+
+preserve
+ 
+keep age_group_id sex_id year_id final_a*
+forvalues j=0/999 {
+	quietly rename final_a_`j' draw_`j'
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz3_noedema'5_`loc'.csv", replace
+
+restore
+
+keep age_group_id sex_id year_id final_b*
+forvalues j=0/999 {
+	quietly rename final_b_`j' draw_`j'
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz2_noedema'5_`loc'.csv", replace 
+

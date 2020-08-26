@@ -1,0 +1,39 @@
+* calculate incidence:prevalence ratio for non-fatal PEM
+** cd FILEPATH
+** git pull origin master
+** cd FILEPATH
+**do "FILEPATH"
+
+
+//prep stata
+clear all
+set more off
+set maxvar 32000 //maximum number of columns stata allows
+
+//Set OS flexibility
+if c(os) == "Unix" {
+	local j "FILEPATH"
+	local h "FILEPATH"
+}
+else if c(os) == "Windows" {
+	local j "FILEPATH"
+	local h "FILEPATH"
+}
+
+
+
+//set locals
+local save_folder_ratio FILEPATH
+local code_folder FILEPATH
+
+//get locations we want
+import delimited "FILEPATH", clear
+
+levelsof location_id, local(location_ids)
+
+//submit jobs
+foreach loc of local location_ids {
+	local loc `loc'
+	!qsub -N "ratio_`loc'" -o "FILEPATH" -e "FILEPATH" -l archive -l m_mem_free=1G -l fthread=1 -q all.q -P "proj_neonatal" "FILEPATH" "`code_folder'/03_ratio_child_script.do" "`code_folder' `save_folder_ratio' `loc'"
+	
+}

@@ -1,0 +1,36 @@
+./ntd_afrtryp
+├── step_4_deathsAndIncidence.do
+└── step_6_submit_process_deaths.do
+./ntd_chagas
+./ntd_cysticer
+└── cysticer_cod.do
+./ntd_dengue
+└── step_3_restrict_deaths.py
+./ntd_ebola
+└── step_1_estimate_deaths.R
+./ntd_echino
+└── echino_cod.do
+./ntd_leish_visc
+./ntd_nema_ascar
+└── nema_cod.do
+./ntd_other
+./ntd_rabies
+├── step_1b_deaths2cases.do
+├── step_1_submit_deaths2cases.do
+└── submit_deaths2cases.sh
+./ntd_schisto
+└── schisto_cod.do
+./ntd_yellowfever
+├── step_5_case_fatality.do
+├── step_7_processModel.do
+├── step_7_submitModel.do
+├── step_7_submitProcessModel.sh
+└── step_8_sep_10_replace_death_uncertainty.R
+./ntd_zika
+├── 05a_deathPrep.do
+├── 05b_submit_death_processing.do
+├── 05c_submit_death_processing.sh
+├── 05d_death_processing.do
+└── Zika_fatal_code.R
+
+0 directories, 21 files

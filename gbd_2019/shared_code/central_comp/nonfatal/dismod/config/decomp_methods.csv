@@ -1,0 +1,10 @@
+﻿Conditions,,,,,,,,,,,
+gbd_round,2017,2019,2019,2019,2019,2019,2020,2020,2020,2020,2020
+decomp_step,iterative,step1,step2,step3,step4,iterative,step1,step2,step3,step4,iterative
+Actions,,,,,,,,,,,
+enable_hybrid_cv,-,-,F,F,F,F,F,F,F,F,F
+enable_emr_csmr_re,-,-,F,T,T,T,T,T,T,T,T
+disable_nonstandard_locations,-,-,F,F,F,F,F,F,F,F,F
+fix_csmr_re,-,-,F,T,T,T,T,T,T,T,T
+enable_csmr_average,-,-,T,F,F,F,F,F,F,F,F
+enable_csmr_fauxcorrect,-,-,F,F,T,T,T,T,T,T,T

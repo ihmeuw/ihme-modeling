@@ -1,0 +1,5 @@
+Very simple, run the run all and then switch branches and run the high income model (you can
+start it at 3 if you ran normal model first). Then run the save_combined.do on hgih income branch which will assign the proper
+parameters to each region and save in the current_draws_combined folder. Note the high income prog is scaled by .5. 
+
+Graph_2017 will compare to previous run need to put in proper compare date.

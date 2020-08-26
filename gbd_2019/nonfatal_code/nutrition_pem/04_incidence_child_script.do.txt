@@ -1,0 +1,87 @@
+* incidence child script
+
+
+//prep stata 
+clear all
+set more off
+set maxvar 32000
+
+// Set OS flexibility 
+	if c(os) == "Unix" {
+		local j "FILEPATH"
+		set odbcmgr unixodbc
+		local h "FILEPATH"
+	}
+	else if c(os) == "Windows" {
+		local j "FILEPATH"
+		local h "FILEPATH"
+	}
+
+do "FILEPATH"
+
+//transfer locals
+args code_folder save_folder_whz2_noedema save_folder_whz2_edema save_folder_whz3_noedema save_folder_whz3_edema loc ratio_folder
+
+
+import delimited using "`ratio_folder'ratio_`loc'.csv", clear
+tempfile ratios
+save `ratios'
+
+****************************************************************************************************************************
+** whz3 no edema
+import delimited using "`save_folder_whz3_noedema'5_`loc'.csv", clear
+
+* merge to get prev:inc ratio, multiply to calculate incidence = prev * ratio 
+merge 1:1 age_group_id year_id sex_id using `ratios'
+keep if _merge == 3
+forvalues j=0/999 {
+	quietly replace draw_`j' = draw_`j' * ratio
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz3_noedema'6_`loc'.csv", replace
+*****************************************************************************************************************************
+** whz3 edema
+import delimited using "`save_folder_whz3_edema'5_`loc'.csv", clear
+
+* merge to get prev:inc ratio, multiply to calculate incidence = prev * ratio 
+merge 1:1 age_group_id year_id sex_id using `ratios'
+keep if _merge == 3
+forvalues j=0/999 {
+	quietly replace draw_`j' = draw_`j' * ratio
+	quietly replace draw_`j' = 0 if age_group_id > 5
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz3_edema'6_`loc'.csv", replace
+******************************************************************************************************************************
+** whz2 no edema
+import delimited using "`save_folder_whz2_noedema'5_`loc'.csv", clear
+
+* merge to get prev:inc ratio, multiply to calculate incidence = prev * ratio 
+merge 1:1 age_group_id year_id sex_id using `ratios'
+keep if _merge == 3
+forvalues j=0/999 {
+	quietly replace draw_`j' = draw_`j' * ratio
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz2_noedema'6_`loc'.csv", replace
+*****************************************************************************************************************************
+** whz2 edema
+import delimited using "`save_folder_whz2_edema'5_`loc'.csv", clear
+
+* merge to get prev:inc ratio, multiply to calculate incidence = prev * ratio 
+merge 1:1 age_group_id year_id sex_id using `ratios'
+keep if _merge == 3
+forvalues j=0/999 {
+	quietly replace draw_`j' = draw_`j' * ratio
+	quietly replace draw_`j' = 0 if age_group_id > 5
+}
+
+keep age_group_id sex_id year_id draw_*
+
+export delim using "`save_folder_whz2_edema'6_`loc'.csv", replace

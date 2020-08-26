@@ -1,0 +1,41 @@
+//prep stata
+clear all
+set more off
+set maxvar 32000 //maximum number of columns stata allows
+
+//Set OS flexibility
+if c(os) == "Unix" {
+	local j "FILEPATH"
+	local h "FILEPATH"
+}
+else if c(os) == "Windows" {
+	local j "FILEPATH"
+	local h "FILEPATH"
+}
+
+qui do "FILEPATH"
+qui do "FILEPATH"
+
+***********************************************************
+***RUN IDIOPATHIC SPLIT IN PARALLEL
+***********************************************************
+
+//set locals
+local save_folder_whz2_noedema FILEPATH
+local save_folder_whz2_edema FILEPATH
+local save_folder_whz3_noedema FILEPATH
+local save_folder_whz3_edema FILEPATH
+local ratio_folder FILEPATH
+local code_folder FILEPATH
+
+//get locations we want
+import delimited "FILEPATH", clear
+
+levelsof location_id, local(location_ids)
+
+//submit jobs
+foreach loc of local location_ids {
+	local loc `loc'
+	!qsub -N "pem_inc_`loc'" -o "FILEPATH" -e "FILEPATH" -l m_mem_free=2G -l fthread=1 -q all.q -P "proj_neonatal" "FILEPATH" "`code_folder'/04_incidence_child_script.do" "`code_folder' `save_folder_whz2_noedema' `save_folder_whz2_edema' `save_folder_whz3_noedema' `save_folder_whz3_edema' `loc' `ratio_folder'"
+
+}

@@ -1,0 +1,74 @@
+{
+  "hemog_thalas__btm_btt": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "2085": "__main__.ModelableEntity"
+    },
+    "out": {
+      "2484": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "btt",
+      "btm_id": "2085",
+      "save_id": "2484"
+    }
+  },
+  "hemog_thalas__hbebt_ett": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "2087": "__main__.ModelableEntity"
+    },
+    "out": {
+      "2488": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "ett",
+      "hbebt_id": "2087",
+      "save_id": "2488"
+    }
+  },
+  "hemog_sickle": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "2097": "__main__.ModelableEntity",
+      "2103": "__main__.ModelableEntity"
+    },
+    "out": {
+      "2501": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "sct",
+      "hscbt_id": "2097",
+      "scbt_id": "2103",
+      "save_id": "2501"
+    }
+  },
+  "hemog_g6pd": {
+    "class": "__main__.HardyWeinberg",
+    "in": {
+      "2112": "__main__.ModelableEntity"
+    },
+    "out": {
+      "2505": "__main__.ModelableEntity"
+    },
+    "args": [],
+    "kwargs": {
+      "hardy_type": "hemi",
+      "cases_id": "2112",
+      "save_id": "2505"
+    }
+  },
+  "process_hook": {
+    "class": "__main__.Hook",
+    "in": {
+      "2484": "__main__.ModelableEntity",
+      "2488": "__main__.ModelableEntity",
+      "2501": "__main__.ModelableEntity",
+      "2505": "__main__.ModelableEntity"
+    },
+    "out": {}
+  }
+}

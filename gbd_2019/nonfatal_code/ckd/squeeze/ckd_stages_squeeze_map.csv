@@ -1,0 +1,5 @@
+cause_name,gbd_id_type,gbd_id,source,status,gbd_round_id,decomp_step,directory_to_save,year_start,year_end,age_group_set,measure_id,n_draws,downsample,parent,target_me_id
+ckd3_5,modelable_entity_id,24683,epi,best,6,step4,FILEPATH,1990,2019,12,5,1000,TRUE,parent,
+ckd3,modelable_entity_id,24684,epi,best,6,step4,FILEPATH,1990,2019,12,5,1000,TRUE,child,10732
+ckd4,modelable_entity_id,24685,epi,best,6,step4,FILEPATH,1990,2019,12,5,1000,TRUE,child,10733
+ckd5,modelable_entity_id,2022,epi,best,6,step4,FILEPATH,1990,2019,12,5,1000,TRUE,child,10734
