@@ -47,7 +47,7 @@ numexpr==2.6.5
 numpy==1.14.5
 packaging==17.1
 pandas==0.23.3
-paramiko==2.4.1
+paramiko==2.4.2
 parse==1.8.4
 partd==0.3.8
 patsy==0.5.0
