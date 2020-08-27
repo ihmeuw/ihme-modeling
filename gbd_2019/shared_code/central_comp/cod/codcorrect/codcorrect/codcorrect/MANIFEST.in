@@ -1,2 +1,0 @@
-include versioneer.py
-include fauxcorrect/_version.py
