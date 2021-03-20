@@ -34,7 +34,7 @@ hierarchies==0.2.3
 idna==2.7
 ihme-dimensions==0.1.8
 imagesize==1.0.0
-Jinja2==2.10
+Jinja2==2.11.3
 jobmon==0.8.1
 jsonpickle==0.9.6
 locket==0.2.0
