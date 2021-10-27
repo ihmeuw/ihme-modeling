@@ -18,7 +18,7 @@ cluster-utils>=0.0.8
 core-maths==0.0.5
 cryptography==2.2.2
 Cython==0.28.4
-dask==0.18.1
+dask==2021.10.0
 dataframe-io==0.2.9
 db-queries==16.7.1
 db-tools==0.6.4
