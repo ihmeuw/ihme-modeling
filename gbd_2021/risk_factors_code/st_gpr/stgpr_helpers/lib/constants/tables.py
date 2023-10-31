@@ -1,0 +1,30 @@
+"""ST-GPR database table names."""
+try:
+    from typing import Final
+except ImportError:
+    from typing_extensions import Final
+
+AMP_NSV: Final[str] = "amp_nsv"
+COVARIATE_LOOKUP: Final[str] = "covariate_lookup"
+CUSTOM_COVARIATE: Final[str] = "custom_covariate"
+DATA_STAGE: Final[str] = "data_stage"
+DEMOGRAPHIC: Final[str] = "demographic"
+DENSITY_CUTOFF: Final[str] = "density_cutoff"
+FINAL_ESTIMATE: Final[str] = "final_estimate"
+FIT_STAT: Final[str] = "fit_stat"
+GBD_COVARIATE_STGPR_VERSION: Final[str] = "gbd_covariate_stgpr_version"
+GPR_AMP_METHOD: Final[str] = "gpr_amp_method"
+GPR_ESTIMATE: Final[str] = "gpr_estimate"
+HYPERPARAMETER_SET: Final[str] = "hyperparameter_set"
+INPUT_DATA: Final[str] = "input_data"
+MODEL_ITERATION: Final[str] = "model_iteration"
+MODEL_STAGE: Final[str] = "model_stage"
+MODEL_STATUS: Final[str] = "model_status"
+MODEL_TYPE: Final[str] = "model_type"
+MODEL_VERSION: Final[str] = "model_version"
+ST_ESTIMATE: Final[str] = "st_estimate"
+ST_VERSION_TYPE: Final[str] = "st_version_type"
+STAGE_1_ESTIMATE: Final[str] = "stage_1_estimate"
+STAGE_1_STATISTICS: Final[str] = "stage_1_statistics"
+STGPR_VERSION: Final[str] = "stgpr_version"
+TRANSFORM_TYPE: Final[str] = "transform_type"

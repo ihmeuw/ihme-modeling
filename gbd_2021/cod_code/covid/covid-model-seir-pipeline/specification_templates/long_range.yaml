@@ -1,0 +1,2010 @@
+data:
+  covariate_version: '2021_05_10.04'
+  fh_subnationals: false
+  output_format: parquet
+  output_root: ''
+  regression_version: '2021_05_10.11'
+scenarios:
+  vaccine_best_booster_mask_return_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_return_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_return_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_return_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_100_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_100_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_100_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_100_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_50_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_50_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_50_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_50_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_80_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_80_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_80_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_80_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_periodic_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_periodic_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_booster_mask_seasonal_periodic_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_booster_mask_seasonal_periodic_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_return_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_return_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_return_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_return_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_100_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_100_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_100_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_100_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_50_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_50_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_50_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_50_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_80_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_80_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_80_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_80_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_periodic_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_periodic_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_best_mask_seasonal_periodic_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_best_mask_seasonal_periodic_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: best
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_return_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_return_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_return_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_return_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_100_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_100_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_100_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_100_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_50_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_50_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_50_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_50_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_80_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_80_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_80_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_80_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_periodic_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_periodic_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_booster_mask_seasonal_periodic_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_booster_mask_seasonal_periodic_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference_booster
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_return_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_return_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_return_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_return_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: return
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_100_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_100_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_100_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_100_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_100
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_50_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_50_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_50_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_50_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_50
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_80_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_80_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_80_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_80_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_80
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_periodic_mobility_average_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_periodic_mobility_average_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: average
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+  vaccine_reference_mask_seasonal_periodic_mobility_return_variant_reference:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: reference
+  vaccine_reference_mask_seasonal_periodic_mobility_return_variant_worse:
+    algorithm: draw_level_mandate_reimposition
+    algorithm_params:
+      death_threshold: 15
+      max_threshold: 30
+      minimum_delay: 7
+      reimposition_duration: 6
+    beta_scaling:
+      average_over_max: 42
+      average_over_min: 7
+      residual_min: -0.5
+      window_size: 42
+    covariates:
+      air_pollution_pm_2_5: reference
+      lri_mortality: reference
+      mask_use: seasonal_periodic
+      mobility: return
+      pneumonia: reference
+      proportion_over_2_5k: reference
+      proportion_under_100m: reference
+      smoking_prevalence: reference
+      testing: reference
+    vaccine_version: reference
+    variant_ifr_scale: 1.29
+    variant_version: worse
+workflow:
+  project: proj_covid_prod
+  queue: all.q

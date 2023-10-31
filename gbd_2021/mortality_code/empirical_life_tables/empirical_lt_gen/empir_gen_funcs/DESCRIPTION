@@ -1,0 +1,12 @@
+Package: empiricalLTs
+Title: Functions to generate empirical lifetable input data based on empirical deaths and other sources of deaths.
+Version: 0.0.0.9000
+Authors@R: AUTHOR
+Description: Functions to import input deaths and population data, calculate lifetable metrics, extend age-group metrics such as ax and qx, and output results
+Depends: R (>= 3.3.2)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Suggests: testthat
+RoxygenNote: 6.1.1

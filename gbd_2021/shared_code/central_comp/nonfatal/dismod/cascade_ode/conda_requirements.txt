@@ -1,0 +1,5 @@
+pandas
+pytables
+scipy
+mysql-python
+blosc

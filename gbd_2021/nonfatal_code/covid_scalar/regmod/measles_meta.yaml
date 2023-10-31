@@ -1,0 +1,227 @@
+default:
+  col_year: year_id
+  col_time: month
+  col_data:
+    - deaths
+    - population
+    - age_name
+    - sex
+    - location_id
+  time_unit: month
+  time_start:
+    year: 2010
+    detailed: 1
+  time_end_0: 
+    year: 2020
+    detailed: 2
+  time_end_1:
+    year: 2021
+    detailed: 4
+  age_groups:
+    - 0 to 125
+  sex_groups:
+    - all
+  knots: [2010, 2011, 2012,2013, 2014, 2015, 2016, 2017, 2018, 2019]
+  smooth_order: 1
+
+
+Locations:
+  age_groups:
+    - 0 to 125
+  sex_groups:
+    - all
+
+VEN: {}
+DMA: {}
+BIH: {}
+CHN: {}
+PRK: {}
+KHM: {}
+IDN: {}
+LAO: {}
+MYS: {}
+MDV: {}
+MMR: {}
+PHL: {}
+LKA: {}
+THA: {}
+TLS: {}
+VNM: {}
+FJI: {}
+KIR: {}
+MHL: {}
+FSM: {}
+PNG: {}
+WSM: {}
+SLB: {}
+TON: {}
+VUT: {}
+ARM: {}
+AZE: {}
+GEO: {}
+KAZ: {}
+KGZ: {}
+MNG: {}
+TJK: {}
+TKM: {}
+UZB: {}
+ALB: {}
+BGR: {}
+HRV: {}
+CZE: {}
+HUN: {}
+MKD: {}
+MNE: {}
+POL: {}
+ROU: {}
+SRB: {}
+SVK: {}
+SVN: {}
+BLR: {}
+EST: {}
+LVA: {}
+LTU: {}
+MDA: {}
+RUS: {}
+UKR: {}
+BRN: {}
+JPN: {}
+KOR: {}
+SGP: {}
+AUS: {}
+NZL: {}
+AND: {}
+AUT: {}
+BEL: {}
+CYP: {}
+DNK: {}
+FIN: {}
+FRA: {}
+DEU: {}
+GRC: {}
+ISL: {}
+IRL: {}
+ISR: {}
+ITA: {}
+LUX: {}
+MLT: {}
+NLD: {}
+NOR: {}
+PRT: {}
+ESP: {}
+SWE: {}
+CHE: {}
+GBR: {}
+ARG: {}
+CHL: {}
+URY: {}
+CAN: {}
+USA: {}
+ATG: {}
+BHS: {}
+BRB: {}
+BLZ: {}
+CUB: {}
+DOM: {}
+GRD: {}
+GUY: {}
+HTI: {}
+JAM: {}
+LCA: {}
+VCT: {}
+SUR: {}
+TTO: {}
+BOL: {}
+ECU: {}
+PER: {}
+COL: {}
+CRI: {}
+SLV: {}
+GTM: {}
+HND: {}
+MEX: {}
+NIC: {}
+PAN: {}
+BRA: {}
+PRY: {}
+DZA: {}
+BHR: {}
+EGY: {}
+IRN: {}
+IRQ: {}
+JOR: {}
+KWT: {}
+LBN: {}
+LBY: {}
+MAR: {}
+OMN: {}
+QAT: {}
+SAU: {}
+SYR: {}
+TUN: {}
+TUR: {}
+ARE: {}
+YEM: {}
+AFG: {}
+BGD: {}
+BTN: {}
+IND: {}
+NPL: {}
+PAK: {}
+AGO: {}
+CAF: {}
+COG: {}
+COD: {}
+GNQ: {}
+GAB: {}
+BDI: {}
+COM: {}
+DJI: {}
+ERI: {}
+ETH: {}
+KEN: {}
+MDG: {}
+MWI: {}
+MUS: {}
+MOZ: {}
+RWA: {}
+SYC: {}
+SOM: {}
+TZA: {}
+UGA: {}
+ZMB: {}
+BWA: {}
+LSO: {}
+NAM: {}
+ZAF: {}
+SWZ: {}
+ZWE: {}
+BEN: {}
+BFA: {}
+CMR: {}
+CPV: {}
+TCD: {}
+CIV: {}
+GMB: {}
+GHA: {}
+GIN: {}
+GNB: {}
+LBR: {}
+MLI: {}
+MRT: {}
+NER: {}
+NGA: {}
+STP: {}
+SEN: {}
+SLE: {}
+TGO: {}
+COK: {}
+MCO: {}
+NRU: {}
+NIU: {}
+PLW: {}
+KNA: {}
+SMR: {}
+TUV: {}
+SSD: {}
+SDN: {}

@@ -1,0 +1,5 @@
+source_meid,target_me_id,year_start,year_end,annual,measure_id,target_measure_id,sex_ids,best,gbd_round_id,decomp_step,directory_to_save,bundle_id,crosswalk_version_id
+10509,20947,1990,2022,TRUE,18,18,"1,2",TRUE,7,iterative,/ihme/temp/sgeoutput/qwr/annual_exposures/,670,29831
+10732,20944,1990,2022,TRUE,5,5,"1,2",TRUE,7,iterative,/ihme/temp/sgeoutput/qwr/annual_exposures/,182,30554
+10733,20945,1990,2022,TRUE,5,5,"1,2",TRUE,7,iterative,/ihme/temp/sgeoutput/qwr/annual_exposures/,183,30446
+10734,20946,1990,2022,TRUE,5,5,"1,2",TRUE,7,iterative,/ihme/temp/sgeoutput/qwr/annual_exposures/,186,29828

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $PWD/miniconda -f
+
+export PATH=$PWD/miniconda/bin:$PATH
+
+command -v conda || { echo conda not found ; exit 1; }
+if [[ ! -f miniconda/bin/activate ]]; then
+    echo No activate file;
+    exit 1;
+fi
+source "$PWD/miniconda/bin/activate"
+
+command -v pip
+command -v python
+
+# install gfortran - which is not installed by limetr but required for it to work
+conda install --yes -c conda-forge fortran-compiler h5py
+git clone https://github.com/zhengp0/limetr.git
+cd limetr && python check_requirements.py && pip install . && cd ..
+git clone https://github.com/zhengp0/SLIME.git
+cd SLIME && pip install . && cd ..

@@ -1,0 +1,15 @@
+severity,var,variant,efficacy,lower_eff,upp_eff,ve_low_upp,numb_stu
+infection,Ancestral and Ancestral,Ancestral,87,73,94,87 (73 - 94),10
+infection,Ancestral and Alpha,Alpha,91,42,98,91 (42 - 98),6
+infection,mixed and Delta,Delta,84,63,93,84 (63 - 93),6
+infection,mixed and Omicron,Omicron,35,21,46,35 (21 - 46),4
+infection,Omicron and Omicron,Omicron and Omicron,89,83,92,89 (83 - 92),1
+symptomatic,Ancestral and Ancestral,Ancestral,94,80,98,94 (80 - 98),2
+symptomatic,Ancestral and Alpha,Alpha,93,60,99,93 (60 - 99),3
+symptomatic,Ancestral and Beta,Beta,85,73,92,85 (73 - 92),1
+symptomatic,mixed and Delta,Delta,87,83,90,87 (83 - 90),3
+symptomatic,mixed and Omicron,Omicron,46,5,69,46 (5 - 69),2
+severe,Ancestral and Alpha,Alpha,46,8,70,46 (8 - 70),3
+severe,Ancestral and Beta,Beta,88,50,97,88 (50 - 97),1
+severe,mixed and Delta,Delta,99,93,100,99 (93 - 100),1
+severe,mixed and Omicron,Omicron,85,82,88,85 (82 - 88),3

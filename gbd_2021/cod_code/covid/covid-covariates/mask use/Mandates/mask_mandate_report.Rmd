@@ -1,0 +1,538 @@
+---
+title: "Mask Use Mandates"
+author: "Chris Troeger"
+date: "8/5/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+## Which version of mask data do you want to use? 
+version <- "best"
+
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(knitr)
+library(data.table)
+library(tidyr)
+library(slime, lib.loc = "/ihme/code/mscm/R/packages/")
+library(forecast)
+library(ggplot2)
+library(openxlsx)
+library(RColorBrewer)
+library(lme4)
+library(plm)
+
+## Get hierarchy
+source("/ihme/cc_resources/libraries/current/r/get_location_metadata.R")
+hierarchy <- get_location_metadata(location_set_version_id = 746, location_set_id = 115)
+
+## Pull in, format data
+## Read in smoothed mask use estimates
+mask_use <- fread(paste0("/ihme/covid-19/mask-use-outputs/",version,"/mask_use.csv"))
+setnames(mask_use, "mask_use","smoothed_mask_use")
+
+## Read in mask data
+mask_data <- fread(paste0("/ihme/covid-19/mask-use-outputs/",version,"/used_data.csv"))
+mask_data$mask_use <- mask_data$prop_always
+mask_data <- subset(mask_data, source %in% c("Facebook","Facebook - US", "Adjusted Premise","Adjusted Website","Week Binned GitHub Always"))
+mask_data <- merge(mask_data, mask_use[,c("location_id","date","smoothed_mask_use")], by=c("location_id","date"))
+
+## Read in daily infections
+seir_version <- "2020_08_05.01"
+inf <- fread(paste0("/ihme/covid-19/hospitalizations/inputs/seir/",seir_version,"/daily_infections_summ.csv")) # Should be current reference
+inf[, date := as.Date(date)]
+
+## Read in population
+pop <- fread("/ihme/covid-19/model-inputs/best/age_pop.csv")
+pop <- pop[, lapply(.SD, sum), by=location_id, .SDcols = "population"]
+
+inf <- merge(inf, pop, by="location_id")
+inf$rate <- inf$inf_mean / inf$pop
+
+# Anticipating some requests from Steve/Chris
+mask_data <- mask_data[order(location_id, source, date)]
+mask_data[, non_mask_use := 1 - mask_use]
+mask_data[, change_use := mask_use - shift(mask_use), by=c("location_id","source")]
+mask_data[, previous_non_use := shift(non_mask_use), by=c("location_id","source")]
+mask_data[, first_diff_ratio := change_use / previous_non_use]
+
+## Read in mandate info
+# New format is terrible
+# Probably want a separate script to process
+mask_mandates_data <- read.xlsx("/ihme/covid-19/snapshot-data/best/covid_onedrive/Decrees for Closures/closure_criteria_sheet_masks.xlsx")
+# mask_mandates_data <- mask_mandates_data[2:nrow(mask_mandates_data),] # First row is informative/legend
+mask_mandates_data$date <- as.Date(mask_mandates_data$date, format = "%d.%m.%Y")
+mask_mandates_data <- data.table(mask_mandates_data)
+
+## Manually add Victoria, AUS https://www.dhhs.vic.gov.au/updates/coronavirus-covid-19/face-coverings-mandatory-melbourne-and-mitchell-shire
+vic <- data.table(location_id = 60403, location_name = "Victoria", date = as.Date("2020-07-23"),
+                  non_compliance_penalty = "Fine", targeted_ihme = "General public")
+
+mask_mandates_data <- rbind(mask_mandates_data, vic, fill=T)
+
+# Create some variables for enforcement
+mask_mandates_data[, penalty := ifelse(non_compliance_penalty %like% "Fine", "Fine",
+                                ifelse(non_compliance_penalty %like% "fine", "Fine",
+                                         ifelse(non_compliance_penalty %like% "etention","Detention",
+                                         ifelse(non_compliance_penalty %like% "Arrest","Detention",
+                                                ifelse(non_compliance_penalty %like% "enalt", "Penalty",
+                                                ifelse(non_compliance_penalty %like% "Legal", "Penalty",
+                                                ifelse(non_compliance_penalty %like% "demeanor", "Penalty",
+                                                ifelse(non_compliance_penalty %like% "itation", "Penalty",
+                                                      ifelse(non_compliance_penalty %like% "None","None",
+                                                      ifelse(non_compliance_penalty %like% "Not known","Other/unknown",
+                                                            ifelse(non_compliance_penalty %like% "Not","None","Other/unknown")))))))))))]
+mask_mandates_data[, penalty_alt := ifelse(penalty %in% c("Detention","Penalty"), "Civil or criminal penalty", penalty)]
+mask_mandates_data[, collapse_penalty := ifelse(penalty_alt %in% c("None","Other/unknown"), "None or other", penalty_alt)]
+mask_mandates_data[, any_penalty := ifelse(penalty %in% c("Fine","Detention","Penalty"),"Any penalty","No penalty")] # & mandate == 1
+
+# What I think is, keep if only 1 by location, if multiple, choose more general (general public)
+mask_mandates_data[, row := 1]
+mask_mandates_data[, date := as.Date(date, format = "%d.%m.%Y")]
+mask_mandates_data[, location_rows := sum(row), by=location_id]
+mask_mandates_data[, public_in_name := ifelse(targeted_ihme %in% c("General public","General Public","general public","Public","public"),1,0)]
+mask_mandates_data[, last_chance := ifelse(public_in_name == 1, 0, 
+                                           ifelse(targeted_ihme %in% c("Public places","public places","Public spaces", "public spaces","All Public Spaces"),1,0))]
+mask_mandates_data[, keep_row := ifelse(location_rows == 1, 1, ifelse(public_in_name == 1, 1, ifelse(last_chance == 1,1,0)))]
+mask_mandates_data[, date_first_mandate := min(date), by=location_id]
+  
+mask_mandates <- mask_mandates_data[keep_row == 1]
+mask_mandates[, first_date := min(date), by=location_id]
+mask_mandates <- mask_mandates[date == first_date] # Keep only the earlier mandate
+
+mask_mandates[, man_date := date]
+mask_mandates[, has_mandate := 1]
+
+mask_df <- merge(mask_data, mask_mandates[,c("location_id","man_date","has_mandate","penalty","date_first_mandate","penalty_alt","collapse_penalty","any_penalty")], by="location_id", all.x=T) # Intentionally allowing locations without matches dropped?
+
+mask_df <- merge(mask_df, hierarchy[,c("location_id","most_detailed","level","parent_id")], by="location_id")
+mask_df <- subset(mask_df, level >= 3)
+mask_df[, date := as.Date(date)]
+mask_df <- merge(mask_df, inf[,c("location_id","date","inf_mean","rate")], by=c("location_id","date"), all.x=T)
+
+mask_df[, man_date := as.character(man_date)]
+mask_df[, use_date := ifelse(is.na(man_date), as.Date("2022-01-01"), as.Date(man_date))]
+mask_df[, man_date := as.Date(man_date)]
+mask_df[, mandate := ifelse(date >= man_date, 1, 0), by=location_id]
+mask_df[, mandate := ifelse(mandate == TRUE, 1, 0)]
+mask_df[, mandate := ifelse(is.na(mandate), 0, mandate)]
+mask_df[, has_mandate := ifelse(is.na(has_mandate), 0, 1)]
+mask_df[, location_day := 1:.N, by=location_id]
+mask_df[, date := as.Date(date)]
+mask_df[, loc_source := paste0(source,"_",location_id)]
+# mask_df[, any_penalty := ifelse(is.na(penalty), NA, ifelse(penalty %in% c("Fine","Detention","Penalty"),"Any penalty","No penalty"))] # & mandate == 1
+mask_df[, any_mandate := ifelse(date >= date_first_mandate, 1, 0), by=location_id]
+mask_df[, any_mandate := ifelse(is.na(any_mandate),0, any_mandate)]
+mask_df[, first_case_date := as.Date(first_case_date)]
+mask_df[, days_since_case1 := date - first_case_date]
+# add a dummy
+mask_df$intercept <- 0
+
+write.csv(mask_df, "/home/j/temp/ctroeger/COVID19/mask_use_estimates_mandates.csv", row.names=F)
+
+## Find locations with largest increase post mandate ##
+has_mandate <- mask_df[has_mandate == 1]
+pre_mandate <- has_mandate[mandate==0]
+post_mandate <- has_mandate[mandate==1]
+means_pre_post <- has_mandate[, lapply(.SD, function(x) mean(x, na.rm=T)), by=c("location_id","location_name","mandate"), .SDcols=c("smoothed_mask_use")]
+diff_pre_post <- means_pre_post[, lapply(.SD, function(x) diff(x)), by=c("location_id","location_name"), .SDcols=c("smoothed_mask_use")]
+diff_pre_post <- diff_pre_post[order(smoothed_mask_use)]
+highlight_bigg_mean <- tail(diff_pre_post$location_id, 10)
+
+means_pre_post <- has_mandate[, lapply(.SD, function(x) head(tail(x, 7),1)), by=c("location_id","location_name","mandate"), .SDcols=c("smoothed_mask_use")]
+diff_pre_post <- means_pre_post[, lapply(.SD, function(x) diff(x)), by=c("location_id","location_name"), .SDcols=c("smoothed_mask_use")]
+tail(diff_pre_post[order(smoothed_mask_use)], 10)
+diff_pre_post <- diff_pre_post[order(smoothed_mask_use)]
+highlight_bigg_tail <- tail(diff_pre_post$location_id, 10)
+
+```
+
+## Summary of mandates
+The mask mandate dataset includes `r nrow(mask_mandates_data)` mandates from `r length(unique(mask_mandates_data$location_id))` locations. One of the challenges is defining the target population, as shown in the first table below. There is some inconsistency in the coding for the target population and there are a wide array of targeted groups in the mandates. 
+
+```{r, echo=F}
+## Make a table of mandate types
+mtypes <- table(mask_mandates_data$targeted_ihme)
+mtypes <- kable(mtypes, col.names = c("Targeted population","Mandates (n)"))
+
+## Make a table of penalty types
+ptypes <- table(mask_mandates_data$penalty)
+ptypes <- kable(ptypes, col.names=c("Enforcement type","Mandates (n)"), caption = "Summary of how I have defined enforcement/penalties for non-compliance")
+```
+
+**Types of targeted populations listed in mandate**  
+
+One challenge is that there are a huge number of unique target populations in the extraction sheet. A full list is provided at the end of the document. Some of the inconsistency is from how the target populations are extracted and some is inherent in the many types. Some examples are *General public*, *Public spaces*, *All areas*, *Grocery shops*, *Indoor public spaces*, *Cafes*, *Churches*, *Maritime workers*, *Service personnel*, etc.  
+
+The current logic is that each location can only have a single mandate so I have implemented a way to rank the available mandates by location. If a location only has a single target population, that is kept. If a location has a mandate for 'General public' or some variation, that is kept. Finally, if a location has 'public' in the target population column, that is kept. After subsetting based on that, some locations still have multiple mandates so I keep the earliest implemented mandate. The resulting dataset is `r nrow(mask_mandates)` location-mandates. 
+
+For example, in the table below, I am currently keeping rows 1, 4, and 5. Keeping row 1 because it is the most general of the target populations. Row 4 because it is the only mandate for Peru in this example. Row 5 because it is the earliest mandate for the general public. **These are examples**
+
+```{r, echo=F}
+#mtypes
+exmpl_table <- data.frame(rownumber = 1:6, location = c("Colorado","Colorado","Colorado","Peru","Ghana","Ghana"), 
+                          target = c("General public","Outdoor spaces","Transit","Indoor business","General public","Public spaces"),
+                          date = c("2020-06-23","2020-06-23","2020-06-20","2020-07-10","2020-07-01","2020-07-12"))
+kable(exmpl_table, col.names = c("Row number", "Location","Target population","Date implemented"),
+      caption = "Example of the way that the mask mandates are extracted and saved")
+```
+
+\pagebreak
+**Enforcement measures**  
+
+The mask mandate dataset has a similar challenge in how enforcement policies are defined. The table below shows the count by enforcement type groupings. Currently these are defined as:  
+
+* If the enforcement column contains the expression 'fine' then the enforcement is a **Fine**  
+  * Unique enforcement types include *`r paste(unique(mask_mandates_data[penalty == "Fine"]$non_compliance_penalty), collapse = " | ")`.*  
+
+* If the enforcement column contains the expression 'detention' or 'arrest' then the enforcement is **Detention**  
+  * Unique enforcement types include *`r paste(unique(mask_mandates_data[penalty == "Detention"]$non_compliance_penalty), collapse = " | ")`.*  
+
+* If the enforcement column contains the expression 'legal', 'penalty', or 'misdemeanor' then the enforcement is **Penalty** 
+  * Unique enforcement types include *`r paste(unique(mask_mandates_data[penalty == "Penalty"]$non_compliance_penalty), collapse = " | ")`.*  
+
+* If the enforcement column contains the expression 'none', 'not applicable', or 'no penalty' then the enforcement is **None**  
+  * Unique enforcement types include *`r paste(unique(mask_mandates_data[penalty == "None"]$non_compliance_penalty), collapse = " | ")`.*  
+
+* All other types are coded as **Other/unknown**  
+  * Unique enforcement types include *`r paste(unique(mask_mandates_data[penalty == "Other/unknown"]$non_compliance_penalty), collapse = " | ")`.*  
+
+\pagebreak
+```{r, echo=F}
+ptypes
+```
+
+## Regressions
+The mandate data are merged onto the Facebook, Yougov, and Premise mask use survey data by location and date. Mandates are a binary indicator for if a mandate is in effect by location-date. I assume that after a mandate is implemented, it is not lifted. 
+
+I am running these as mixed effects (ME) models with a random intercept by location_id. 
+
+```{r, echo=F, warning=F, fig.align="center", fig.height = 4, fig.width=6}
+## Prep for regression
+# Copied from here: https://stash.ihme.washington.edu/projects/CVD19/repos/covid-beta-inputs/browse/src/covid_beta_inputs/mobility/forecast/02_run_mrbrt.R
+# leave observed smoothed metric only and create a se variable
+reg_data <- copy(mask_df)
+#reg_data <- reg_data[parent_id==102]
+# What is the value for the regression?
+reg_data$mean <- reg_data$mask_use
+# reg_data$mean <- reg_data$first_diff_ratio
+reg_data <- reg_data[!is.na(mean)]
+reg_data[, std_se := sqrt(var(mean)/nrow(reg_data))]
+
+# reg_data <- reg_data[,c("location_id","location_name","mean","std_se","mandate","intercept","date","has_mandate","penalty","location_day","source","loc_source","any_penalty","date_first_mandate","any_mandate", "days_since_case1", "inf_mean", "penalty_alt", "rate", "collapse_penalty")]
+
+reg_data$inverse <- 1 - reg_data$mean
+#reg_data$inverse <- 1 - reg_data$smoothed_mask_use
+
+```
+
+There are `r nrow(reg_data)` location-days of mask use data, among which `r nrow(reg_data[mandate==1])` are days with a mask mandate in effect for this analysis. 
+
+\pagebreak
+**Mixed-effects regression where (1-maskuse) is the dependent variable**
+```{r, echo = F, warning = F, message=F}
+res.lme <- lmer(inverse ~ mandate + (1|location_id), data = reg_data)
+s <- summary(res.lme)$coefficients
+rownames(s) <- c("Intercept","Mandate")
+res_table <- kable(s, digits = 3, caption = "Mixed-effects")
+res_table
+
+# Now one with date
+res.date <- lmer(inverse ~ mandate + date + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate","Date")
+res_tabled <- kable(s, digits = 3, caption = "Date covariate")
+res_tabled
+
+# Finally a location-specific index for 1:n data observations
+res.date <- lmer(inverse ~ mandate + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate","Location days (1:n)")
+res_tablel <- kable(s, digits = 3, caption = "Location-day variable")
+res_tablel
+
+# Location-specific days since first case
+res.date <- lmer(inverse ~ mandate + days_since_case1 + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate","Days since 1st case")
+res_tablel <- kable(s, digits = 3, caption = "Time measured as days since first case by location")
+res_tablel
+
+res.penalty <- lmer(inverse ~ mandate:penalty + (1|location_id), data = reg_data)
+s <- summary(res.penalty)$coefficients
+rownames(s) <- c("Intercept","Detention","Fine","None","Other/unknown","Penalty")
+res_table2 <- kable(s, digits = 3, caption = "Interaction with penalty")
+res_table2
+
+res.penalty <- lmer(inverse ~ mandate:penalty_alt + (1|location_id), data = reg_data)
+s <- summary(res.penalty)$coefficients
+rownames(s) <- c("Intercept","Criminal/civil penalty","Fine","None","Other/unknown")
+res_table2 <- kable(s, digits = 3, caption = "More narrowly defined penalty. Criminal/civil penalties is the combination of the 'Detention' and 'Penalty' categories above")
+res_table2
+
+# Very narrow definition
+#reg_data[, collapse_penalty := ifelse(penalty_alt %in% c("None","Other/unknown"), "None or other", penalty_alt)]
+res.penalty <- lmer(inverse ~ mandate:collapse_penalty + (1|location_id), data = reg_data)
+s <- summary(res.penalty)$coefficients
+rownames(s) <- c("Intercept","Criminal/civil penalty","Fine","None or other")
+res_table2 <- kable(s, digits = 3, caption = "Civil or criminal penalty, Fines, anything else. Criminal and civil penalties combine 'Detention' and 'Penalty' above and None or other is a combination of 'None' and 'Other/unknown' above.")
+res_table2
+
+# Penalty type and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:penalty + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Detention","Fine","None","Other/unknown","Penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day variable and penalty interaction")
+res_tablepl
+
+# Penalty type, infections, and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:penalty + location_day + inf_mean + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Daily infections","Detention","Fine","None","Other/unknown","Penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day, daily infections, and penalty interaction")
+res_tablepl
+
+# Penalty type, infections, and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:penalty + location_day + rate + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Daily incidence","Detention","Fine","None","Other/unknown","Penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day, daily incidence, and penalty interaction")
+res_tablepl
+
+# Narrow definition of penalties, infections, and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:collapse_penalty + location_day + inf_mean + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Daily infections","Criminal or civil penalty","Fine","None or other")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day, daily infections, and narrow penalty definitions")
+res_tablepl
+
+# Any penalty
+res.date <- lmer(inverse ~ mandate:any_penalty + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate: any penalty","Mandate: no penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Any penalty interaction")
+res_tablepl
+
+# Any penalty
+res.date <- lmer(inverse ~ mandate:any_penalty + inf_mean + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Daily infections","Mandate: any penalty","Mandate: no penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Any penalty interaction and smoothed daily infections")
+res_tablepl
+
+# Any penalty and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:any_penalty + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Mandate: any penalty","Mandate: no penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day variable and any penalty interaction")
+res_tablepl
+
+# Any penalty, daily infections, and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate:any_penalty + inf_mean + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Daily infections","Location days (1:n)","Mandate: any penalty","Mandate: no penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day, daily infections, and any penalty interaction")
+res_tablepl
+
+# Any mandate, daily infections, and a location-specific days for 1:n data observations
+res.date <- lmer(inverse ~ mandate + inf_mean + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Daily infections","Location days (1:n)","Mandate")
+res_tablepl <- kable(s, digits = 3, caption = "Location-day, daily infections")
+res_tablepl
+
+res.lme <- lmer(inverse ~ any_mandate + (1|location_id), data = reg_data)
+s <- summary(res.lme)$coefficients
+rownames(s) <- c("Intercept","Mandate")
+res_table <- kable(s, digits = 3, caption = "Sensitivity analysis, use earliest imposed mandate, even if it is not general public")
+res_table
+
+res.lme <- lm(inverse ~ mandate:collapse_penalty, data = reg_data)
+s <- summary(res.lme)$coefficients
+rownames(s) <- c("Intercept","Civil or criminal","Fine","None or other")
+res_table <- kable(s, digits = 3, caption = "Sensitivity analysis, linear regression (fixed effects only), narrow penalty definition")
+res_table
+
+res.lme <- lm(inverse ~ mandate:any_penalty, data = reg_data)
+s <- summary(res.lme)$coefficients
+rownames(s) <- c("Intercept","Any penalty","No penalty")
+res_table <- kable(s, digits = 3, caption = "Sensitivity analysis, linear regression (fixed effects only), any penalty")
+res_table
+```
+
+
+\pagebreak
+**Mixed-effects regression where mask use always is the dependent variable**  
+
+$maskuse \sim mandate + (1|location)$  
+
+Mask use is the proportion of people that self-report always wearing a mask while outside their home.
+
+```{r, echo = F, warning=F}
+res.lme <- lmer(mean ~ mandate + (1|location_id), data = reg_data)
+s <- summary(res.lme)$coefficients
+rownames(s) <- c("Intercept","Mandate")
+res_table <- kable(s, digits = 3, caption = "Mixed effects")
+res_table
+
+# Now one with date
+res.date <- lmer(mean ~ mandate + date + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate","Date")
+res_tabled <- kable(s, digits = 3, caption = "Date covariate")
+
+# Finally a location-specific days for 1:n data observations
+res.date <- lmer(mean ~ mandate + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Mandate","Location days (1:n)")
+res_tablel <- kable(s, digits = 3, caption = "Location-day variable")
+
+res.penalty <- lmer(mean ~ mandate:penalty + (1|location_id), data = reg_data)
+s <- summary(res.penalty)$coefficients
+rownames(s) <- c("Intercept","Detention","Fine","None","Other/unknown","Penalty")
+res_table2 <- kable(s, digits = 3, caption = "Interaction with penalty")
+
+# Penalty type and a location-specific days for 1:n data observations
+res.date <- lmer(mean ~ mandate:penalty + location_day + (1|location_id), data=reg_data)
+s <- summary(res.date)$coefficients
+rownames(s) <- c("Intercept","Location days (1:n)","Detention","Fine","None","Other/unknown","Penalty")
+res_tablepl <- kable(s, digits = 3, caption = "Interaction with penalty and location-day days")
+```
+
+```{r, echo = F}
+res_tabled
+
+res_tablel
+```
+
+```{r, echo = F}
+res_table2
+
+res_tablepl
+```
+
+\pagebreak
+**I also wanted to run the analysis as a panel to account for the time series in a different way. To do so, I had to create a new variable for the index because we have different sources of mask use data that sometimes had the same location-date. This new variable is location_source. Sources include Facebook, Yougov, Premise, etc.**  
+
+The panel set up is a random effects model with an index by (date, loc source). 
+
+Including this location_source in the mixed effects model does not seem to meaningfully affect the coefficient on mandates ($maskuse \sim mandate + (1|loc source)$). However, the panel regression set up does seem to affect the coefficient on mask mandates, decreasing it pretty substantially.
+
+**Tables for coefficients in panel regression**
+```{r, echo = F}
+m <- plm(mean ~ mandate, index = c("date","loc_source"), data= reg_data, model = "random")
+s <- summary(m)$coefficients
+rownames(s) <- c("Intercept","Mandate")
+kable(s, digits = 3, caption = "Panel model, indexed by date and location-source")
+```
+
+And really changing the values for the coefficients on the penalties
+```{r, echo = F}
+m <- plm(mean ~ mandate:penalty, index = c("date","loc_source"), data= reg_data, model = "random")
+s <- summary(m)$coefficients
+rownames(s) <- c("Intercept","Detention","Fine","None","Other/unknown","Penalty")
+kable(s, digits = 3, caption = "Panel model, interaction with penalty type")
+```
+
+Which is the better regression set up? Any alternatives?
+
+\pagebreak
+**Here are a few plots showing the distribution of mask use data**
+```{r, echo=F, warning=F, fig.align="center", fig.height = 3, fig.width=5}
+ggplot(reg_data, aes(x=as.Date(date), y=mean, col=factor(mandate))) + geom_point(alpha=0.2) + theme_bw() + 
+  scale_color_manual("Mandate active", values = c("black","red")) + ylab("Mask use") + xlab("")
+ggplot(reg_data[has_mandate==1], aes(x=as.Date(date), y=mean, col=factor(mandate), group=location_id)) + geom_line(alpha=0.4) + theme_bw() + 
+  scale_color_manual("Mandate active", values = c("black","red")) + ylab("Mask use") + xlab("")
+
+## A few key locations
+ggplot(mask_df[location_id %in% highlight_bigg_mean], aes(x=as.Date(date), y=smoothed_mask_use, col=factor(mandate), group=location_id)) + geom_line(alpha=0.4) + theme_bw() + scale_color_manual("Mandate active", values = c("black","red")) + ylab("Mask use") + xlab("") + facet_wrap(~location_name)
+
+ggplot(mask_df[location_id %in% highlight_bigg_tail], aes(x=as.Date(date), y=smoothed_mask_use, col=factor(mandate), group=location_id)) + geom_line(alpha=0.4) + theme_bw() + scale_color_manual("Mandate active", values = c("black","red")) + ylab("Mask use") + xlab("") + facet_wrap(~location_name)
+
+
+ggplot(reg_data[has_mandate==1], aes(x=factor(mandate), y=mean, col=factor(mandate))) + geom_boxplot() + theme_bw() + 
+  scale_color_manual("Mandate active", values = c("black","red")) + ylab("Mask use") + xlab("")
+ggplot(reg_data[has_mandate==1], aes(x=factor(mandate), y=mean, col=penalty, group=location_id)) + geom_point() + theme_bw() +
+  scale_color_discrete("Enforcement type") + ylab("Dependent variable") + xlab("Mandate active") + facet_wrap(~penalty) +
+  stat_smooth(method="lm", se = F) + guides(col=F)
+```
+
+
+```{r, echo=F, warning=F, fig.align="center", fig.height = 4, fig.width=6}
+
+## Previous markdown text
+# \pagebreak
+# ### The second regression has as the dependent variable change in mask use over proportion not wearing a mask.  
+# 
+# <font size="4">$dependent = (maskuse_t - maskuse_{t-1}) / (1-maskuse_{t-1})$</font>  
+# 
+# <font size="3">$dependent \sim mandate + (1|location)$</font>  
+
+reg_data <- copy(mask_df)
+
+# What is the value for the regression?
+reg_data$mean <- reg_data$first_diff_ratio
+# reg_data$mean <- reg_data$first_diff_ratio
+reg_data <- reg_data[!is.na(mean)]
+reg_data[, std_se := sqrt(var(mean)/nrow(reg_data))]
+
+reg_data <- reg_data[,c("location_id","mean","std_se","mandate","intercept","date","has_mandate","penalty","location_day","source","loc_source")]
+
+```
+
+**Results from the mixed-effects regression where dependent variable is $\Delta maskuse / (1-maskuse)$ (not shown)**
+```{r, echo=F, warning = F}
+# res.lme <- lmer(mean ~ mandate + (1|location_id), data = reg_data)
+# s <- summary(res.lme)$coefficients
+# rownames(s) <- c("Intercept","Mandate")
+# res_table <- kable(s, digits = 3)
+# res_table
+# 
+# res.lme <- lmer(mean ~ mandate + date + (1|location_id), data = reg_data)
+# s <- summary(res.lme)$coefficients
+# rownames(s) <- c("Intercept","Mandate","Date")
+# res_table <- kable(s, digits = 3)
+# res_table
+# 
+# res.lme <- lmer(mean ~ mandate + location_day + (1|location_id), data = reg_data)
+# s <- summary(res.lme)$coefficients
+# rownames(s) <- c("Intercept","Mandate","Location index (1:n)")
+# res_table <- kable(s, digits = 3)
+# res_table
+# 
+# res.penalty <- lmer(mean ~ mandate:penalty + (1|location_id), data = reg_data)
+# s <- summary(res.penalty)$coefficients
+# rownames(s) <- c("Intercept","Detention","Fine","None","Other/unknown","Penalty")
+# res_table2 <- kable(s, digits = 3)
+# res_table2
+# 
+# res.penalty <- lmer(mean ~ mandate:penalty + location_day + (1|location_id), data = reg_data)
+# s <- summary(res.penalty)$coefficients
+# rownames(s) <- c("Intercept","Location index (1:n)","Detention","Fine","None","Other/unknown","Penalty")
+# res_table2 <- kable(s, digits = 3)
+# res_table2
+```
+
+
+```{r, echo=F, warning=F, fig.align="center", fig.height = 3, fig.width=5}
+
+## Not shown
+# \pagebreak
+# **Plots showing the distribution of these data**
+#   
+# ggplot(reg_data, aes(x=as.Date(date), y=mean, col=factor(mandate))) + geom_point(alpha=0.2) + theme_bw() + 
+#   scale_color_manual("Mandate active", values = c("black","red")) + ylab("Dependent variable") + xlab("")
+# ggplot(reg_data[has_mandate==1], aes(x=factor(mandate), y=mean, col=factor(mandate))) + geom_boxplot() + theme_bw() + 
+#   scale_color_manual("Mandate active", values = c("black","red")) + ylab("Dependent variable") + xlab("")
+# ggplot(reg_data[has_mandate==1], aes(x=factor(mandate), y=mean, col=penalty, group=location_id)) + geom_point() + theme_bw() +
+#   scale_color_discrete("Enforcement type") + ylab("Dependent variable") + xlab("Mandate active") + facet_wrap(~penalty) +
+#   stat_smooth(method="lm", se = F) + guides(col=F)
+```
+
+\pagebreak
+## Full list of target populations in mask mandates
+
+
+*`r paste(unique(mask_mandates_data$targeted_ihme), collapse = ", ")`*.     
+
+

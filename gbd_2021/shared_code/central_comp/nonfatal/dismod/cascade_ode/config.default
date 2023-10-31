@@ -1,0 +1,7 @@
+{
+    "dismod_ode_bin_dir"   : "FILEPATH",
+    "cascade_ode_out_dir" : "FILEPATH",
+    "diag_out_dir" : "FILEPATH",
+    "log_dir": "FILEPATH",
+    "odbc_filepath": "FILEPATH"
+}

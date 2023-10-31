@@ -1,0 +1,1 @@
+study_id,author,first_dose_only,location_id,location_id2,location_name,location_name2,vac_before_booster,vaccine_developer,variant,symptom_severity,severity,sample_size,age_start,age_end,efficacy_mean,efficacy_lower,efficacy_upper,booster,vemt,mean_time_since_vaccination,start_interval,end_interval,sev_severity,mid_point1,mid_point,study_id2,e_mean,se,mean_logit,sd_logit,in_var

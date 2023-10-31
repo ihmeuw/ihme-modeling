@@ -1,0 +1,21 @@
+modelable_entity_id,acause,grouping,healthstate,modelable_entity_name,functional
+1296,meningitis,cases,_parent,Bacterial meningitis,meningitis
+1298,meningitis_pneumo,cases,_parent,Pneumococcal meningitis proportion,meningitis
+1328,meningitis_hib,cases,_parent,H influenzae type B meningitis proportion,meningitis
+1358,meningitis_meningo,cases,_parent,Meningococcal meningitis proportion,meningitis
+1388,meningitis_other,cases,_parent,Other meningitis proportion,meningitis
+24037,meningitis,long_modsev,motor_cog_sev,Severe motor plus cognitive impairments due to meningitis,meningitis
+24041,meningitis,long_mild,id_bord,Borderline intellectual disability due to meningitis,meningitis
+24044,meningitis,long_modsev,motor_cog_mod,Moderate motor plus cognitive impairments due to meningitis,meningitis
+24048,meningitis,long_mild,motor_cog_mild,Mild motor plus cognitive impairments due to meningitis,meningitis
+24049,meningitis,_hearing,hearing_unsqueezed,Hearing loss due to meningitis unsqueezed,meningitis
+24051,meningitis,long_modsev,motor_sev,Severe motor impairment due to meningitis,meningitis
+24052,meningitis,_epilepsy,epilepsy_any,Epilepsy due to meningitis,meningitis
+24056,meningitis,long_mild,motor_mild,Mild motor impairment due to long term due to meningitis,meningitis
+24057,meningitis,long_mild,vision_mono,Monocular distance vision loss due to meningitis,meningitis
+24059,meningitis,long_modsev,motor_mod,Moderate motor impairment due to meningitis,meningitis
+24062,meningitis,long_mild,adhd,Mild behavioral problems due to meningitis,meningitis
+24066,meningitis,long_modsev,id_mild,Mild intellectual disability due to meningitis,meningitis
+24068,meningitis,cases,inf_sev,Acute Bacterial Meningitis,meningitis
+24161,meningitis,viral,inf_sev,Acute viral meningitis,meningitis
+24189,meningitis,_vision,vision_unsqueezed,Vision impairment due to meningitis unsqueezed,meningitis

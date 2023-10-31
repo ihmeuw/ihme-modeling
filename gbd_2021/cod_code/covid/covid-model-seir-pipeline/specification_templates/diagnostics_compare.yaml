@@ -1,0 +1,73 @@
+data:
+  output_root: ''
+workflow:
+  project: 'proj_covid_prod'
+  queue: 'd.q'
+grid_plots:
+  - name: 'compare_longrange'
+    date_start: '2020-03-01'
+    date_end: '2022-08-31'
+    comparators:
+      - version: &public '2021_08_04.04'
+        scenarios:
+          reference*: 'public reference'
+      - version: &new '2021_08_17.06'
+        scenarios:
+          reference*: 'reference'
+          worse: 'worse'
+          best_masks: 'best masks'
+  - name: 'compare_shortrange'
+    date_start: '2020-03-01'
+    date_end: '2021-09-30'
+    comparators:
+      - version: *public
+        scenarios:
+          reference*: 'public reference'
+      - version: *new
+        scenarios:
+          reference*: 'reference'
+          worse: 'worse'
+          best_masks: 'best masks'
+cumulative_deaths_compare_csv:
+  dates:
+    # Latest data date included automatically.  List other dates to include here
+    - '2021-12-01'
+    - '2021-12-31'
+  comparators:
+    - version: *public
+      scenarios:
+        reference: 'public_reference'
+        worse: 'public_worse'
+        best_masks: 'public_best_masks'
+    - version: *new
+      scenarios:
+        reference: 'reference'
+        worse: 'worse'
+        best_masks: 'best_masks'
+scatters:
+  - name: 'reference_compare_data'
+    x_axis:
+      version: *public
+      scenario: 'reference'
+      # Leave date blank to automatically select the last day of data.
+      date: ''
+      label: 'public_reference'
+    y_axis:
+      version: *new
+      scenario: 'reference'
+      # Leave date blank to automatically select the last day of data.
+      date: ''
+      label: 'reference'
+  - name: 'reference_compare_forecast'
+    x_axis:
+      version: *public
+      scenario: 'reference'
+      # Leave date blank to automatically select the last day of data.
+      date: '2021-12-31'
+      label: 'public_reference'
+    y_axis:
+      version: *new
+      scenario: 'reference'
+      # Leave date blank to automatically select the last day of data.
+      date: '2021-12-31'
+      label: 'reference'

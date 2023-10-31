@@ -1,0 +1,403 @@
+i_epi,i_id_bord,i_id_mild,i_id_mod,i_id_sev,i_id_prof,i_blind,squeeze,stage,me_id,resid_target_me,acause
+,,,,,,1,yes,blind_noepi_noid,1504,,ntd_trachoma
+1,,,,,,,yes,epi,1530,,ntd_foodborne
+,,1,,,,,yes,id_noepi,1582,1583,neonatal_enceph
+,,,,,,1,yes,blind_noepi_noid,1620,,nutrition_vitamina
+,1,,,,,,yes,id_noepi,1972,,mental_alcohol
+,,1,,,,,yes,id_noepi,1973,,mental_alcohol
+,,,1,,,,yes,id_noepi,1974,,mental_alcohol
+,,,,,,1,yes,blind_noepi_noid,2295,,sense_glaucoma
+,,,,,,1,yes,blind_noepi_noid,2300,,sense_cataract
+,,,,,,1,yes,blind_noepi_noid,2305,,sense_macular
+,,,,,,1,yes,blind_noepi_noid,2329,,sense_vision
+1,,,,,,,yes,epi,2656,,ntd_cysticer
+,,,1,,,1,yes,id_noepi,2677,2716,neonatal_hemolytic
+,,,1,,,1,yes,id_noepi,2678,2717,neonatal_preterm
+,,,1,,,1,yes,id_noepi,2679,2719,neonatal_preterm
+,,,1,,,1,yes,id_noepi,2680,2720,neonatal_preterm
+,,,1,,,1,yes,id_noepi,2681,2718,neonatal_enceph
+,,,1,,,1,yes,id_noepi,2682,2714,tetanus
+1,,,1,,,1,yes,epi,2683,2720,neonatal_preterm
+1,,,1,,,1,yes,epi,2684,2719,neonatal_preterm
+1,,,1,,,1,yes,epi,2685,2717,neonatal_preterm
+1,,,1,,,1,yes,epi,2686,2714,tetanus
+1,,,1,,,1,yes,epi,2687,2716,neonatal_hemolytic
+1,,,1,,,1,yes,epi,2688,2718,neonatal_enceph
+1,,,1,,,,yes,epi,2689,2720,neonatal_preterm
+1,,,1,,,,yes,epi,2690,2714,tetanus
+1,,,1,,,,yes,epi,2691,2716,neonatal_hemolytic
+1,,,1,,,,yes,epi,2692,2718,neonatal_enceph
+1,,,1,,,,yes,epi,2693,2719,neonatal_preterm
+1,,,1,,,,yes,epi,2694,2717,neonatal_preterm
+,,,,1,,1,yes,id_noepi,2696,2745,tetanus
+,,,,1,,1,yes,id_noepi,2697,2744,neonatal_preterm
+,,,,1,,1,yes,id_noepi,2698,2743,neonatal_preterm
+,,,,1,,1,yes,id_noepi,2699,2740,neonatal_hemolytic
+,,,,1,,1,yes,id_noepi,2700,2739,neonatal_enceph
+,,,,1,,1,yes,id_noepi,2701,2742,neonatal_preterm
+1,,,,1,,1,yes,epi,2702,2744,neonatal_preterm
+1,,,,1,,1,yes,epi,2703,2742,neonatal_preterm
+1,,,,1,,1,yes,epi,2704,2740,neonatal_hemolytic
+1,,,,1,,1,yes,epi,2705,2739,neonatal_enceph
+1,,,,1,,1,yes,epi,2706,2743,neonatal_preterm
+1,,,,1,,1,yes,epi,2707,2745,tetanus
+1,,,,1,,,yes,epi,2708,2742,neonatal_preterm
+1,,,,1,,,yes,epi,2709,2739,neonatal_enceph
+1,,,,1,,,yes,epi,2710,2740,neonatal_hemolytic
+1,,,,1,,,yes,epi,2711,2743,neonatal_preterm
+1,,,,1,,,yes,epi,2712,2744,neonatal_preterm
+1,,,,1,,,yes,epi,2713,2745,tetanus
+,,,,,,1,yes,blind_noepi_noid,2721,2719,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2722,2717,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2723,2720,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2724,2714,tetanus
+,,,,,,1,yes,blind_noepi_noid,2725,2718,neonatal_enceph
+,,,,,,1,yes,blind_noepi_noid,2726,2716,neonatal_hemolytic
+1,,,,,,1,yes,epi,2727,2716,neonatal_hemolytic
+1,,,,,,1,yes,epi,2728,2718,neonatal_enceph
+1,,,,,,1,yes,epi,2729,2720,neonatal_preterm
+1,,,,,,1,yes,epi,2730,2717,neonatal_preterm
+1,,,,,,1,yes,epi,2731,2719,neonatal_preterm
+1,,,,,,1,yes,epi,2732,2714,tetanus
+1,,,,,,,yes,epi,2733,2720,neonatal_preterm
+1,,,,,,,yes,epi,2734,2714,tetanus
+1,,,,,,,yes,epi,2735,2717,neonatal_preterm
+1,,,,,,,yes,epi,2736,2718,neonatal_enceph
+1,,,,,,,yes,epi,2737,2719,neonatal_preterm
+1,,,,,,,yes,epi,2738,2716,neonatal_hemolytic
+,,,,,,1,yes,blind_noepi_noid,2746,2744,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2747,2745,tetanus
+,,,,,,1,yes,blind_noepi_noid,2748,2740,neonatal_hemolytic
+,,,,,,1,yes,blind_noepi_noid,2749,2742,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2750,2743,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2751,2739,neonatal_enceph
+1,,,,,,1,yes,epi,2752,2745,tetanus
+1,,,,,,1,yes,epi,2753,2742,neonatal_preterm
+1,,,,,,1,yes,epi,2754,2744,neonatal_preterm
+1,,,,,,1,yes,epi,2755,2740,neonatal_hemolytic
+1,,,,,,1,yes,epi,2756,2743,neonatal_preterm
+1,,,,,,1,yes,epi,2757,2739,neonatal_enceph
+1,,,,,,,yes,epi,2758,2739,neonatal_enceph
+1,,,,,,,yes,epi,2759,2743,neonatal_preterm
+1,,,,,,,yes,epi,2760,2745,tetanus
+1,,,,,,,yes,epi,2761,2742,neonatal_preterm
+1,,,,,,,yes,epi,2762,2744,neonatal_preterm
+1,,,,,,,yes,epi,2763,2740,neonatal_hemolytic
+,,1,,,,,yes,id_noepi,2773,2772,tetanus
+1,,,,,,,yes,epi,2796,,ntd_echino
+,,1,,,,,yes,id_noepi,2812,2811,encephalitis
+,1,,,,,,yes,id_noepi,2813,2811,encephalitis
+,,1,,,,,yes,id_noepi,2816,2817,encephalitis
+,,,1,,,,yes,id_noepi,2819,2817,encephalitis
+,,,,1,,,yes,id_noepi,2820,2818,encephalitis
+1,,,,,,,yes,epi,2821,,encephalitis
+,,,,,,1,yes,blind_noepi_noid,2948,,neonatal_preterm
+,,1,,,,,yes,id_noepi,2952,2949,neonatal_preterm
+,,1,,,,,yes,id_noepi,2953,2950,neonatal_preterm
+,,1,,,,,yes,id_noepi,2954,2951,neonatal_preterm
+,,,,,,1,yes,blind_noepi_noid,2955,,encephalitis
+,,,,,,1,yes,blind_noepi_noid,2956,,ntd_oncho
+,,,,,,1,yes,blind_noepi_noid,2968,2967,malaria
+1,,,,,,,yes,epi,2969,2967,malaria
+1,,,,,,1,yes,epi,2970,2967,malaria
+,,,1,,,1,yes,id_noepi,2971,2967,malaria
+1,,,1,,,,yes,epi,2972,2967,malaria
+1,,,1,,,1,yes,epi,2973,2967,malaria
+,,,,,,1,yes,blind_noepi_noid,2975,2974,malaria
+1,,,,,,,yes,epi,2976,2974,malaria
+1,,,,,,1,yes,epi,2977,2974,malaria
+,,,,1,,1,yes,id_noepi,2978,2974,malaria
+1,,,,1,,,yes,epi,2979,2974,malaria
+1,,,,1,,1,yes,epi,2980,2974,malaria
+,,1,,,,,yes,id_noepi,9601,9602,Mild motor plus cognitive impairments due to neonatal sepsis and other neonatal infections
+,,,1,,,1,yes,id_noepi,9603,9609,Moderate motor plus cognitive impairment with blindness due to neonatal sepsis and other neonatal infections
+1,,,1,,,1,yes,epi,9604,9609,Moderate motor plus cognitive impairment with blindness and epilepsy due to neonatal sepsis and other neonatal infections
+1,,,1,,,,yes,epi,9605,9609,Moderate motor plus cognitive impairment with epilepsy due to neonatal sepsis and other neonatal infections
+,,,,1,,1,yes,id_noepi,9606,9613,Severe motor plus cognitive impairment with blindness due to neonatal sepsis and other neonatal infections
+1,,,,1,,1,yes,epi,9607,9613,Severe motor plus cognitive impairment with blindness and epilepsy due to neonatal sepsis and other neonatal infections
+1,,,,1,,,yes,epi,9608,9613,Severe motor plus cognitive impairment with epilepsy due to neonatal sepsis and other neonatal infections
+,,,,,,1,yes,blind_noepi_noid,9610,9609,Moderate motor impairment with blindness due to neonatal sepsis and other neonatal infections
+1,,,,,,1,yes,epi,9611,9609,Moderate motor impairment with blindness and epilepsy due to neonatal sepsis and other neonatal infections
+1,,,,,,,yes,epi,9612,9609,Moderate motor impairment with epilepsy due to neonatal sepsis and other neonatal infections
+,,,,,,1,yes,blind_noepi_noid,9614,9613,Severe motor impairment with blindness due to neonatal sepsis and other neonatal infections
+1,,,,,,1,yes,epi,9615,9613,Severe motor impairment with blindness and epilepsy due to neonatal sepsis and other neonatal infections
+1,,,,,,,yes,epi,9616,9613,Severe motor impairment with epilepsy due to neonatal sepsis and other neonatal infections
+,1,,,,,,no,id_noepi,9808,3067,
+,,1,,,,,no,id_noepi,9809,3067,
+,,,1,,,,no,id_noepi,9810,3067,
+,,,,1,,,no,id_noepi,9811,3067,
+,,,,,1,,no,id_noepi,9812,3067,
+,1,,,,,,no,id_noepi,9813,2907,
+,,1,,,,,no,id_noepi,9814,2907,
+,,,1,,,,no,id_noepi,9815,2907,
+,,,,1,,,no,id_noepi,9816,2907,
+,,,,,1,,no,id_noepi,9817,2907,
+,1,,,,,,no,id_noepi,9832,3068,
+,,1,,,,,no,id_noepi,9833,3068,
+,,,1,,,,no,id_noepi,9834,3068,
+,,,,1,,,no,id_noepi,9835,3068,
+,,,,,1,,no,id_noepi,9836,3068,
+,1,,,,,,no,id_noepi,9837,3071,
+,,1,,,,,no,id_noepi,9838,3071,
+,,,1,,,,no,id_noepi,9839,3071,
+,,,,1,,,no,id_noepi,9840,3071,
+,,,,,1,,no,id_noepi,9841,3071,
+,1,,,,,,yes,id_noepi,10142,9818,"Borderline intellectual disability, mild dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,1,,,,,yes,id_noepi,10143,9818,"Mild intellectual disability, mild dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,1,,,,yes,id_noepi,10144,9818,"Moderate intellectual disability, mild dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,1,,,yes,id_noepi,10145,9818,"Severe intellectual disability, mild dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,,1,,yes,id_noepi,10146,9818,"Profound intellectual disability, mild dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,1,,,,,,yes,id_noepi,10147,9944,"Borderline intellectual disability, moderate dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,1,,,,,yes,id_noepi,10148,9944,"Mild intellectual disability, moderate dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,1,,,,yes,id_noepi,10149,9944,"Moderate intellectual disability, moderate dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,1,,,yes,id_noepi,10150,9944,"Severe intellectual disability, moderate dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,,1,,yes,id_noepi,10151,9944,"Profound intellectual disability, moderate dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,1,,,,,,yes,id_noepi,10152,9945,"Borderline intellectual disability, severe dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,1,,,,,yes,id_noepi,10153,9945,"Mild intellectual disability, severe dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,1,,,,yes,id_noepi,10154,9945,"Moderate intellectual disability, severe dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,1,,,yes,id_noepi,10155,9945,"Severe intellectual disability, severe dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,,,,,1,,yes,id_noepi,10156,9945,"Profound intellectual disability, severe dementia, and congenital heart disease due to Down syndrome pre-squeeze"
+,1,,,,,,yes,id_noepi,10172,9842,"Borderline intellectual disability, mild dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,1,,,,,yes,id_noepi,10173,9842,"Mild intellectual disability, mild dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,1,,,,yes,id_noepi,10174,9842,"Moderate intellectual disability, mild dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,1,,,yes,id_noepi,10175,9842,"Severe intellectual disability, mild dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,,1,,yes,id_noepi,10176,9842,"Profound intellectual disability, mild dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,1,,,,,,yes,id_noepi,10177,9954,"Borderline intellectual disability, moderate dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,1,,,,,yes,id_noepi,10178,9954,"Mild intellectual disability, moderate dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,1,,,,yes,id_noepi,10179,9954,"Moderate intellectual disability, moderate dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,1,,,yes,id_noepi,10180,9954,"Severe intellectual disability, moderate dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,,1,,yes,id_noepi,10181,9954,"Profound intellectual disability, moderate dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,1,,,,,,yes,id_noepi,10182,9955,"Borderline intellectual disability, severe dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,1,,,,,yes,id_noepi,10183,9955,"Mild intellectual disability, severe dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,1,,,,yes,id_noepi,10184,9955,"Moderate intellectual disability, severe dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,1,,,yes,id_noepi,10185,9955,"Severe intellectual disability, severe dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,,1,,yes,id_noepi,10186,9955,"Profound intellectual disability, severe dementia, and congenital heart disease due to other chromosomal abnormalities pre-squeeze"
+,,,,,1,,yes,id_noepi,10233,9938,Profound intellectual disability and mild dementia due to Down syndrome unsqueezed
+,,,,1,,,yes,id_noepi,10234,9938,Severe intellectual disability and mild dementia due to Down syndrome unsqueezed
+,,,1,,,,yes,id_noepi,10235,9938,Moderate intellectual disability and mild dementia due to Down syndrome unsqueezed
+,,1,,,,,yes,id_noepi,10236,9938,Mild intellectual disability and mild dementia due to Down syndrome unsqueezed
+,1,,,,,,yes,id_noepi,10237,9938,Borderline intellectual disability and mild dementia due to Down syndrome unsqueezed
+,,,,,1,,yes,id_noepi,10238,9939,Profound intellectual disability and moderate dementia due to Down syndrome unsqueezed
+,,,,1,,,yes,id_noepi,10239,9939,Severe intellectual disability and moderate dementia due to Down syndrome unsqueezed
+,,,1,,,,yes,id_noepi,10240,9939,Moderate intellectual disability and moderate dementia due to Down syndrome unsqueezed
+,,1,,,,,yes,id_noepi,10241,9939,Mild intellectual disability and moderate dementia due to Down syndrome unsqueezed
+,1,,,,,,yes,id_noepi,10242,9939,Borderline intellectual disability and moderate dementia due to Down syndrome unsqueezed
+,,,,,1,,yes,id_noepi,10243,9940,Profound intellectual disability and severe dementia due to Down syndrome unsqueezed
+,,,,1,,,yes,id_noepi,10244,9940,Severe intellectual disability and severe dementia due to Down syndrome unsqueezed
+,,,1,,,,yes,id_noepi,10245,9940,Moderate intellectual disability and severe dementia due to Down syndrome unsqueezed
+,,1,,,,,yes,id_noepi,10246,9940,Mild intellectual disability and severe dementia due to Down syndrome unsqueezed
+,1,,,,,,yes,id_noepi,10247,9940,Borderline intellectual disability and severe dementia due to Down syndrome unsqueezed
+,,,,,1,,yes,id_noepi,10263,9948,Profound intellectual disability and mild dementia due to other chromosomal abnormalities unsqueezed
+,,,,1,,,yes,id_noepi,10264,9948,Severe intellectual disability and mild dementia due to other chromosomal abnormalities unsqueezed
+,,,1,,,,yes,id_noepi,10265,9948,Moderate intellectual disability and mild dementia due to other chromosomal abnormalities unsqueezed
+,,1,,,,,yes,id_noepi,10266,9948,Mild intellectual disability and mild dementia due to other chromosomal abnormalities unsqueezed
+,1,,,,,,yes,id_noepi,10267,9948,Borderline intellectual disability and mild dementia due to other chromosomal abnormalities unsqueezed
+,,,,,1,,yes,id_noepi,10268,9949,Profound intellectual disability and moderate dementia due to other chromosomal abnormalities unsqueezed
+,,,,1,,,yes,id_noepi,10269,9949,Severe intellectual disability and moderate dementia due to other chromosomal abnormalities unsqueezed
+,,,1,,,,yes,id_noepi,10270,9949,Moderate intellectual disability and moderate dementia due to other chromosomal abnormalities unsqueezed
+,,1,,,,,yes,id_noepi,10271,9949,Mild intellectual disability and moderate dementia due to other chromosomal abnormalities unsqueezed
+,1,,,,,,yes,id_noepi,10272,9949,Borderline intellectual disability and moderate dementia due to other chromosomal abnormalities unsqueezed
+,,,,,1,,yes,id_noepi,10273,9950,Profound intellectual disability and severe dementia due to other chromosomal abnormalities unsqueezed
+,,,,1,,,yes,id_noepi,10274,9950,Severe intellectual disability and severe dementia due to other chromosomal abnormalities unsqueezed
+,,,1,,,,yes,id_noepi,10275,9950,Moderate intellectual disability and severe dementia due to other chromosomal abnormalities unsqueezed
+,,1,,,,,yes,id_noepi,10276,9950,Mild intellectual disability and severe dementia due to other chromosomal abnormalities unsqueezed
+,1,,,,,,yes,id_noepi,10277,9950,Borderline intellectual disability and severe dementia due to other chromosomal abnormalities unsqueezed
+,,1,,,,,yes,id_noepi,11081,11077,cong_digestive
+,,1,,,,,yes,id_noepi,11084,11078,cong_digestive
+,,1,,,,,yes,id_noepi,11086,11079,cong_digestive
+,,1,,,,,yes,id_noepi,11087,11080,cong_digestive
+,,1,,,,,yes,id_noepi,11089,11082,cong_digestive
+,,1,,,,,yes,id_noepi,11090,11083,cong_digestive
+,,1,,,,,yes,id_noepi,11091,11085,cong_digestive
+,,1,,,,,yes,id_noepi,11092,11088,cong_digestive
+,1,,,,,,yes,id_noepi,11189,11185,cong_heart
+,,1,,,,,yes,id_noepi,11190,11185,cong_heart
+,,,1,,,,yes,id_noepi,11191,11185,cong_heart
+,,,,1,,,yes,id_noepi,11192,11185,cong_heart
+,,,,,1,,yes,id_noepi,11193,11185,cong_heart
+,1,,,,,,yes,id_noepi,11269,11268,cong_neural
+,,1,,,,,yes,id_noepi,11270,11268,cong_neural
+,,,1,,,,yes,id_noepi,11271,11268,cong_neural
+,,,,1,,,yes,id_noepi,11272,11268,cong_neural
+,,,,,1,,yes,id_noepi,11273,11268,cong_neural
+,1,,,,,,yes,id_noepi,11275,11274,cong_neural
+,,1,,,,,yes,id_noepi,11276,11274,cong_neural
+,,,1,,,,yes,id_noepi,11277,11274,cong_neural
+,,,,1,,,yes,id_noepi,11278,11274,cong_neural
+,,,,,1,,yes,id_noepi,11279,11274,cong_neural
+,1,,,,,,yes,id_noepi,11283,11280,cong_neural
+,1,,,,,,yes,id_noepi,11284,11281,cong_neural
+,1,,,,,,yes,id_noepi,11285,11282,cong_neural
+,,1,,,,,yes,id_noepi,11286,11280,cong_neural
+,,1,,,,,yes,id_noepi,11287,11281,cong_neural
+,,1,,,,,yes,id_noepi,11288,11282,cong_neural
+,,,1,,,,yes,id_noepi,11289,11280,cong_neural
+,,,1,,,,yes,id_noepi,11290,11281,cong_neural
+,,,1,,,,yes,id_noepi,11291,11282,cong_neural
+,,,,1,,,yes,id_noepi,11292,11280,cong_neural
+,,,,1,,,yes,id_noepi,11293,11281,cong_neural
+,,,,1,,,yes,id_noepi,11294,11282,cong_neural
+,1,,,,,,yes,id_noepi,11295,11307,cong_neural
+,1,,,,,,yes,id_noepi,11296,11308,cong_neural
+,1,,,,,,yes,id_noepi,11297,11309,cong_neural
+,,1,,,,,yes,id_noepi,11298,11307,cong_neural
+,,1,,,,,yes,id_noepi,11299,11308,cong_neural
+,,1,,,,,yes,id_noepi,11300,11309,cong_neural
+,,,1,,,,yes,id_noepi,11301,11307,cong_neural
+,,,1,,,,yes,id_noepi,11302,11308,cong_neural
+,,,1,,,,yes,id_noepi,11303,11309,cong_neural
+,,,,1,,,yes,id_noepi,11304,11307,cong_neural
+,,,,1,,,yes,id_noepi,11305,11308,cong_neural
+,,,,1,,,yes,id_noepi,11306,11309,cong_neural
+,1,,,,,,yes,id_noepi,11397,11393,cong_heart
+,,1,,,,,yes,id_noepi,11398,11393,cong_heart
+,,,1,,,,yes,id_noepi,11399,11393,cong_heart
+,,,,1,,,yes,id_noepi,11400,11393,cong_heart
+,,,,,1,,yes,id_noepi,11401,11393,cong_heart
+,1,,,,,,yes,id_noepi,11402,11394,cong_heart
+,1,,,,,,yes,id_noepi,11403,11395,cong_heart
+,1,,,,,,yes,id_noepi,11404,11396,cong_heart
+,,1,,,,,yes,id_noepi,11405,11394,cong_heart
+,,1,,,,,yes,id_noepi,11406,11395,cong_heart
+,,1,,,,,yes,id_noepi,11407,11396,cong_heart
+,,,1,,,,yes,id_noepi,11408,11394,cong_heart
+,,,1,,,,yes,id_noepi,11409,11395,cong_heart
+,,,1,,,,yes,id_noepi,11410,11396,cong_heart
+,,,,1,,,yes,id_noepi,11411,11394,cong_heart
+,,,,1,,,yes,id_noepi,11412,11395,cong_heart
+,,,,1,,,yes,id_noepi,11413,11396,cong_heart
+,,,,,1,,yes,id_noepi,11414,11394,cong_heart
+,,,,,1,,yes,id_noepi,11415,11395,cong_heart
+,,,,,1,,yes,id_noepi,11416,11396,cong_heart
+,1,,,,,,yes,id_noepi,11421,11417,cong_heart
+,,1,,,,,yes,id_noepi,11422,11417,cong_heart
+,,,1,,,,yes,id_noepi,11423,11417,cong_heart
+,,,,1,,,yes,id_noepi,11424,11417,cong_heart
+,,,,,1,,yes,id_noepi,11425,11417,cong_heart
+,1,,,,,,yes,id_noepi,11426,11418,cong_heart
+,1,,,,,,yes,id_noepi,11427,11419,cong_heart
+,1,,,,,,yes,id_noepi,11428,11420,cong_heart
+,,1,,,,,yes,id_noepi,11429,11418,cong_heart
+,,1,,,,,yes,id_noepi,11430,11419,cong_heart
+,,1,,,,,yes,id_noepi,11431,11420,cong_heart
+,,,1,,,,yes,id_noepi,11432,11418,cong_heart
+,,,1,,,,yes,id_noepi,11433,11419,cong_heart
+,,,1,,,,yes,id_noepi,11434,11420,cong_heart
+,,,,1,,,yes,id_noepi,11435,11418,cong_heart
+,,,,1,,,yes,id_noepi,11436,11419,cong_heart
+,,,,1,,,yes,id_noepi,11437,11420,cong_heart
+,,,,,1,,yes,id_noepi,11438,11418,cong_heart
+,,,,,1,,yes,id_noepi,11439,11419,cong_heart
+,,,,,1,,yes,id_noepi,11440,11420,cong_heart
+,1,,,,,,yes,id_noepi,11445,11441,cong_heart
+,,1,,,,,yes,id_noepi,11446,11441,cong_heart
+,,,1,,,,yes,id_noepi,11447,11441,cong_heart
+,,,,1,,,yes,id_noepi,11448,11441,cong_heart
+,,,,,1,,yes,id_noepi,11449,11441,cong_heart
+,1,,,,,,yes,id_noepi,11450,11442,cong_heart
+,1,,,,,,yes,id_noepi,11451,11443,cong_heart
+,1,,,,,,yes,id_noepi,11452,11444,cong_heart
+,,1,,,,,yes,id_noepi,11453,11442,cong_heart
+,,1,,,,,yes,id_noepi,11454,11443,cong_heart
+,,1,,,,,yes,id_noepi,11455,11444,cong_heart
+,,,1,,,,yes,id_noepi,11456,11442,cong_heart
+,,,1,,,,yes,id_noepi,11457,11443,cong_heart
+,,,1,,,,yes,id_noepi,11458,11444,cong_heart
+,,,,1,,,yes,id_noepi,11459,11442,cong_heart
+,,,,1,,,yes,id_noepi,11460,11443,cong_heart
+,,,,1,,,yes,id_noepi,11461,11444,cong_heart
+,,,,,1,,yes,id_noepi,11462,11442,cong_heart
+,,,,,1,,yes,id_noepi,11463,11443,cong_heart
+,,,,,1,,yes,id_noepi,11464,11444,cong_heart
+,1,,,,,,yes,id_noepi,11469,11465,cong_heart
+,,1,,,,,yes,id_noepi,11470,11465,cong_heart
+,,,1,,,,yes,id_noepi,11471,11465,cong_heart
+,,,,1,,,yes,id_noepi,11472,11465,cong_heart
+,,,,,1,,yes,id_noepi,11473,11465,cong_heart
+,1,,,,,,yes,id_noepi,11474,11466,cong_heart
+,1,,,,,,yes,id_noepi,11475,11467,cong_heart
+,1,,,,,,yes,id_noepi,11476,11468,cong_heart
+,,1,,,,,yes,id_noepi,11477,11466,cong_heart
+,,1,,,,,yes,id_noepi,11478,11467,cong_heart
+,,1,,,,,yes,id_noepi,11479,11468,cong_heart
+,,,1,,,,yes,id_noepi,11480,11466,cong_heart
+,,,1,,,,yes,id_noepi,11481,11467,cong_heart
+,,,1,,,,yes,id_noepi,11482,11468,cong_heart
+,,,,1,,,yes,id_noepi,11483,11466,cong_heart
+,,,,1,,,yes,id_noepi,11484,11467,cong_heart
+,,,,1,,,yes,id_noepi,11485,11468,cong_heart
+,,,,,1,,yes,id_noepi,11486,11466,cong_heart
+,,,,,1,,yes,id_noepi,11487,11467,cong_heart
+,,,,,1,,yes,id_noepi,11488,11468,cong_heart
+,,,,,1,,yes,id_noepi,11523,11280,cong_neural
+,,,,,1,,yes,id_noepi,11524,11281,cong_neural
+,,,,,1,,yes,id_noepi,11525,11282,cong_neural
+,,,,,1,,yes,id_noepi,11526,11307,cong_neural
+,,,,,1,,yes,id_noepi,11527,11308,cong_neural
+,,,,,1,,yes,id_noepi,11528,11309,cong_neural
+,1,,,,,,yes,id_noepi,11531,11530,cong_neural
+,,1,,,,,yes,id_noepi,11532,11530,cong_neural
+,,,1,,,,yes,id_noepi,11533,11530,cong_neural
+,,,,1,,,yes,id_noepi,11534,11530,cong_neural
+,,,,,1,,yes,id_noepi,11535,11530,cong_neural
+,1,,,,,,yes,id_noepi,11537,11536,cong_neural
+,,1,,,,,yes,id_noepi,11538,11536,cong_neural
+,,,1,,,,yes,id_noepi,11539,11536,cong_neural
+,,,,1,,,yes,id_noepi,11540,11536,cong_neural
+,,,,,1,,yes,id_noepi,11541,11536,cong_neural
+,1,,,,,,yes,id_noepi,11543,11542,cong_neural
+,,1,,,,,yes,id_noepi,11544,11542,cong_neural
+,,,1,,,,yes,id_noepi,11545,11542,cong_neural
+,,,,1,,,yes,id_noepi,11546,11542,cong_neural
+,,,,,1,,yes,id_noepi,11547,11542,cong_neural
+,1,,,,,,yes,id_noepi,11549,11548,cong_neural
+,,1,,,,,yes,id_noepi,11550,11548,cong_neural
+,,,1,,,,yes,id_noepi,11551,11548,cong_neural
+,,,,1,,,yes,id_noepi,11552,11548,cong_neural
+,,,,,1,,yes,id_noepi,11553,11548,cong_neural
+,1,,,,,,yes,id_noepi,11555,11554,cong_neural
+,,1,,,,,yes,id_noepi,11556,11554,cong_neural
+,,,1,,,,yes,id_noepi,11557,11554,cong_neural
+,,,,1,,,yes,id_noepi,11558,11554,cong_neural
+,,,,,1,,yes,id_noepi,11559,11554,cong_neural
+,1,,,,,,yes,id_noepi,11561,11560,cong_neural
+,,1,,,,,yes,id_noepi,11562,11560,cong_neural
+,,,1,,,,yes,id_noepi,11563,11560,cong_neural
+,,,,1,,,yes,id_noepi,11564,11560,cong_neural
+,,,,,1,,yes,id_noepi,11565,11560,cong_neural
+,,,,1,,,yes,id_noepi,15814,,Severe intellectual disability due to iodine deficiency
+,,,,,1,,yes,id_noepi,15815,,Profound intellectual disability due to iodine deficiency
+,,,,,,1,yes,blind_noepi_noid,19718,,diabetes_typ1
+,,,,,,1,yes,blind_noepi_noid,19732,,diabetes_typ2
+,1,,,,,,no,id_noepi,19782,,Autism with borderline intellectual disability
+,,1,,,,,no,id_noepi,19783,,Autism with mild intellectual disability
+,,,1,,,,no,id_noepi,19784,,Autism with moderate intellectual disability
+,,,,1,,,no,id_noepi,19785,,Autism with severe intellectual disability
+,,,,,1,,no,id_noepi,19786,,Autism with profound intellectual disability
+,1,,,,,,yes,id_noepi,20105,20093,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze"
+,1,,,,,,yes,id_noepi,20108,20096,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze"
+,1,,,,,,yes,id_noepi,20111,20099,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze"
+,1,,,,,,yes,id_noepi,20114,20102,"Congenital heart disease, borderline intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze"
+,,1,,,,,yes,id_noepi,20117,20093,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze"
+,,1,,,,,yes,id_noepi,20120,20096,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze"
+,,1,,,,,yes,id_noepi,20123,20099,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze"
+,,1,,,,,yes,id_noepi,20126,20102,"Congenital heart disease, mild intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze"
+,,,1,,,,yes,id_noepi,20129,20093,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze"
+,,,1,,,,yes,id_noepi,20132,20099,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze"
+,,,1,,,,yes,id_noepi,20135,20102,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze"
+,,,1,,,,yes,id_noepi,20138,20096,"Congenital heart disease, moderate intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze"
+,,,,,1,,yes,id_noepi,20141,20096,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze"
+,,,,,1,,yes,id_noepi,20144,20102,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze"
+,,,,,1,,yes,id_noepi,20147,20093,"Congenital heart disease, profound intellectual disability and asymptomaticd heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze"
+,,,,,1,,yes,id_noepi,20153,20099,"Congenital heart disease, profound intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze"
+,,,,1,,,yes,id_noepi,20156,20093,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to critical malformations of great vessels, congenital valvular heart disease and patent ductus arteriosus before supersqueeze"
+,,,,1,,,yes,id_noepi,20159,20096,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to severe congenital heart anomalies excluding single ventricle heart defects before supersqueeze"
+,,,,1,,,yes,id_noepi,20162,20099,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to single ventricle and single ventricle pathway heart defects before supersqueeze"
+,,,,1,,,yes,id_noepi,20165,20102,"Congenital heart disease, severe intellectual disability and asymptomatic heart failure due to ventricular septal defect and atrial septal defect before supersqueeze"
+,,,,1,,,yes,id_noepi,24037,24051,meningitis
+,1,,,,,,yes,id_noepi,24041,24056,meningitis
+,,,,,,1,yes,blind_noepi_noid,24042,,meningitis
+,,,1,,,,yes,id_noepi,24044,24059,meningitis
+,,1,,,,,yes,id_noepi,24048,24056,meningitis
+1,,,,,,,yes,epi,24052,24059,meningitis
+,,1,,,,,yes,id_noepi,24066,24059,meningitis

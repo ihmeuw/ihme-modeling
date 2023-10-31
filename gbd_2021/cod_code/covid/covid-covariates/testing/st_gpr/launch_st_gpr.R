@@ -1,0 +1,6 @@
+library(reticulate)
+use_python('FILEPATH')
+stgpr <- import('stgpr')
+stgpr$register_stgpr_model("FILEPATH/covid_config.csv", NULL)
+stgpr$stgpr_sendoff(run_id=10L, project="proj_centralcomp")
+stgpr$model_load(10L, "raked")

@@ -1,0 +1,12 @@
+include AUTHORS.rst
+include CHANGELOG.rst
+include CODE_OF_CONDUCT.rst
+include CONTRIBUTING.rst
+include LICENSE
+include README.rst
+
+recursive-include docs *
+prune docs/_build
+
+recursive-include src/covid_model_seiir_pipeline *.py *.yaml
+recursive-include tests *.py *txt *.yaml

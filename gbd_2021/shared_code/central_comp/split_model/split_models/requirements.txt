@@ -1,0 +1,8 @@
+sphinx
+sphinx_rtd_theme
+pytest
+db_queries>=21.0.0
+gbd>=2.0.0
+db_tools
+core_maths
+jobmon

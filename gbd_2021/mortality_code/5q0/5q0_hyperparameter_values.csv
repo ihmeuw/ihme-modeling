@@ -1,0 +1,6 @@
+data_density_category,zeta,lambda,scale
+0_to_10,0.7,0.7,15
+10_to_20,0.7,0.5,15
+20_to_30,0.8,0.4,15
+30_to_50,0.9,0.3,10
+50_plus,0.99,0.2,5

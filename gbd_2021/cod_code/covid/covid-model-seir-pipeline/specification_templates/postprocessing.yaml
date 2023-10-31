@@ -1,0 +1,58 @@
+data:
+  forecast_version: '2022_03_25.01'
+  mortality_ratio_version: '2021_10_12.01'
+  scenarios:
+    - 'reference'
+#    - 'worse'
+#    - 'best_masks'
+  output_root: ''
+workflow:
+  project: 'proj_covid_prod'
+  queue: 'd.q'
+resampling:
+  reference_scenario: 'reference'
+  reference_date: '2021-12-31'
+  lower_quantile: 0.025
+  upper_quantile: 0.975
+#splicing:
+#- locations:
+#  # Broken India Subnationals
+#  - 43894  # Mizoram, Urban
+#  - 43930  # Mizoram, Rural
+#  # Broken Phillipines Subnationals
+#  - 53577  # Negros Oriental
+#  # Broken Russia Subnationals
+#  - 44906  # Voronezh oblast
+#  - 44907  # Ivanovo oblast
+#  - 44911  # Lipetzk oblast
+#  - 44914  # Ryazan oblast
+#  - 44922  # Komi Republic
+#  - 44923  # Nenets autonomous district
+#  - 44927  # Leningrad oblast
+#  - 44938  # Rostov oblast
+#  - 44946  # Stavropol kray
+#  - 44947  # Republic of Bashkortostan
+#  - 44949  # Republic of Mordovia
+#  - 44950  # Republic of Tatarstan
+#  - 44956  # Orenburg oblast
+#  - 44958  # Samara oblast
+#  - 44966  # Chelyabinsk oblast
+#  - 44970  # Republic of Khakassia
+#  # Norway has untimely data
+#  - 60133  # Agder
+#  - 60135  # Innlandet
+#  - 4923   # More og Romsdal
+#  - 4926   # Nordland
+#  - 4910   # Oslo
+#  - 4920   # Rogaland
+#  - 60137  # Troms og Finmark
+#  - 53432  # Trondelag
+#  - 60134  # Vestfold og Telemark
+#  - 60132  # Vestland
+#  - 60136  # Viken
+#  output_version: /ihme/covid-19/seir-outputs/2022_03_24.08  # Parent Inheritance 
+#- locations:
+#  - 191  # Zambia
+#  output_version: /ihme/covid-19/seir-outputs/2022_03_02.06  # IES paper run
+aggregation:
+  - location_file: '/ihme/covid-19/model-inputs/2022_03_02.03/locations/gbd_analysis_hierarchy.csv'

@@ -1,0 +1,6 @@
+sqlalchemy
+hierarchies
+pytest
+ipython
+jobmon
+pyzmq

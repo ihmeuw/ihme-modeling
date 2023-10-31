@@ -1,0 +1,434 @@
+{
+    "cong_cleft": {
+        "envelope": {
+            "Cleft": {
+                "acause": "cong_cleft",
+                "srcs": {
+                    "pre_sqzd_me_id": 3245,
+                    "bundle_id": 435,
+                    "birthprev_bundle": 226
+                }
+            }
+        }
+    },
+    "cong_urogenital": {
+        "envelope": {
+            "Congenital Urinary": {
+                "acause": "cong_urogenital",
+                "srcs": {
+                    "pre_sqzd_me_id": 10423,
+                    "bundle_id": 616,
+                    "birthprev_bundle": 617,
+                    "custom_data_bundle": 2351
+                }
+            },
+            "Congenital Genital": {
+                "acause": "cong_urogenital",
+                "srcs": {
+                    "pre_sqzd_me_id": 10425,
+                    "bundle_id": 618,
+                    "birthprev_bundle": 619,
+                    "custom_data_bundle": 2351
+                }
+            }
+        }
+    },
+    "cong_neural": {
+        "envelope": {
+            "Total Neural Tube Defects": {
+                "acause": "cong_neural",
+                "srcs": {
+                    "pre_sqzd_me_id": 10415,
+                    "bundle_id": 608,
+                    "birthprev_bundle": 609,
+                    "custom_data_bundle": 2186
+                }
+            }
+        },
+        "sub_group": {
+            "Spina Bifida": {
+                "acause": "cong_neural",
+                "srcs": {
+                    "pre_sqzd_me_id": 10421,
+                    "bundle_id": 614,
+                    "birthprev_bundle": 615,
+                    "custom_data_bundle": 2186
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10940
+                }
+            },
+            "Encephalocele": {
+                "acause": "cong_neural",
+                "srcs": {
+                    "pre_sqzd_me_id": 10419,
+                    "bundle_id": 612,
+                    "birthprev_bundle": 613,
+                    "custom_data_bundle": 2186
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10941
+                }
+            }
+        },
+        "special": {
+            "Anencephaly": {
+                "acause": "cong_neural",
+                "srcs": {
+                    "pre_sqzd_me_id": 10417,
+                    "bundle_id": 610,
+                    "birthprev_bundle": 611,
+                    "custom_data_bundle": 2186
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10942,
+                    "custom": 15791
+                }
+            }
+        }
+    },
+    "cong_msk": {
+        "envelope": {
+            "Total Congenital Musculoskeletal Anomalies": {
+                "acause": "cong_msk",
+                "srcs": {
+                    "pre_sqzd_me_id": 10407,
+                    "bundle_id": 602,
+                    "birthprev_bundle": 603,
+                    "custom_data_bundle": 2171
+                }
+            }
+        },
+        "sub_group": {
+            "Limb reduction": {
+                "acause": "cong_msk",
+                "srcs": {
+                    "pre_sqzd_me_id": 10409,
+                    "bundle_id": 604,
+                    "birthprev_bundle": 605,
+                    "custom_data_bundle": 2171
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10926
+                }
+            },
+            "Polydactyly/syndactyly": {
+                "acause": "cong_msk",
+                "srcs": {
+                    "pre_sqzd_me_id": 10411,
+                    "bundle_id": 606,
+                    "birthprev_bundle": 607,
+                    "custom_data_bundle": 2171
+                },
+                "trgs": {
+                     "post_sqzd_me_id": 10927
+                }
+            }
+        },
+        "other": {
+            "Other MSK": {
+                "acause": "cong_msk",
+                "srcs": {
+                    "pre_sqzd_me_id": 10925,
+                    "bundle_id": 2972,
+                    "custom_data_bundle": 2171
+                },
+				"trgs": {
+					"post_sqzd_me_id": 10928
+				}
+            }
+        }
+    },
+    "cong_digestive": {
+        "envelope": {
+            "Total Congenital Digestive Anomalies": {
+                "acause": "cong_digestive",
+                "srcs": {
+                    "pre_sqzd_me_id": 10427,
+                    "bundle_id": 620,
+                    "birthprev_bundle": 621,
+                    "custom_data_bundle": 2180
+                }
+            }
+        },
+        "sub_group": {
+            "Diaphragmatic Hernia": {
+                "acause": "cong_digestive",
+                "srcs": {
+                    "pre_sqzd_me_id": 10429,
+                    "bundle_id": 622,
+                    "birthprev_bundle": 623,
+                    "custom_data_bundle": 2180
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10930
+                }
+            },
+            "Atresia/Stenosis of the Digestive Tract": {
+                "acause": "cong_digestive",
+                "srcs": {
+                    "pre_sqzd_me_id": 10433,
+                    "bundle_id": 626,
+                    "birthprev_bundle": 627,
+                    "custom_data_bundle": 2180
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10932
+                }
+            },
+            "Malformations of the Abdominal Wall": {
+                "acause": "cong_digestive",
+                "srcs": {
+                    "pre_sqzd_me_id": 10431,
+                    "bundle_id": 624,
+                    "birthprev_bundle": 625,
+                    "custom_data_bundle": 2180
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10931
+                }
+            }
+        },
+        "other": {
+            "Other Digestive": {
+                "acause": "cong_digestive",
+                "srcs": {
+                    "pre_sqzd_me_id": 10929,
+                    "bundle_id": 2975,
+                    "custom_data_bundle": 2180
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10933
+                }
+            }
+        }
+    },
+    "cong_chromo": {
+        "envelope": {
+            "Total Chromosomal": {
+                "acause": "cong_chromo",
+                "srcs": {
+                    "pre_sqzd_me_id": 18654,
+                    "bundle_id": 3029,
+                    "custom_data_bundle": 2183
+                }
+            }
+        },
+        "sub_group": {
+            "Edward Syndrome and Patau Syndrome": {
+                "acause": "cong_chromo",
+                "srcs": {
+                    "pre_sqzd_me_id": 10449,
+                    "bundle_id": 638,
+                    "birthprev_bundle": 639,
+                    "custom_data_bundle": 2183
+                },
+                "trgs": {
+                     "post_sqzd_me_id": 18756
+                }
+            },
+            "Down Syndrome": {
+                "acause": "cong_downs",
+                "srcs": {
+                    "pre_sqzd_me_id": 3246,
+                    "bundle_id": 436,
+                    "birthprev_bundle": 227,
+                    "custom_data_bundle": 2177
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 18752
+                }
+            },
+            "Turner Syndrome": {
+                "acause": "cong_turner",
+                "srcs": {
+                    "pre_sqzd_me_id": 3247,
+                    "bundle_id": 437,
+                    "birthprev_bundle": 228,
+                    "custom_data_bundle": 1421
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 18753
+                }
+            },
+            "Klinefelter Syndrome": {
+                "acause": "cong_klinefelter",
+                "srcs": {
+                    "pre_sqzd_me_id": 3248,
+                    "bundle_id": 438,
+                    "birthprev_bundle": 229,
+                    "custom_data_bundle": 2168
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 18754
+                }
+            }
+        },
+        "other": {
+            "Other Chromosomal": {
+                "acause": "cong_chromo",
+                "srcs": {
+                    "pre_sqzd_me_id": 3249,
+                    "bundle_id": 439,
+                    "birthprev_bundle": 230,
+                    "custom_data_bundle": 2183
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 18755
+                }
+            }
+        }
+    },
+    "cong_heart": {
+        "envelope": {
+            "Total CHD": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10437,
+                    "bundle_id": 628,
+                    "birthprev_bundle": 629,
+                    "custom_data_bundle": 2174
+                }
+            }
+        },
+        "sub_group": {
+            "VSD/ASD": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10443,
+                    "bundle_id": 634,
+                    "birthprev_bundle": 635,
+                    "custom_data_bundle": 2174
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10937
+                }
+            },
+            "Single Ventricle Defects": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10439,
+                    "bundle_id": 630,
+                    "birthprev_bundle": 631,
+                    "custom_data_bundle": 2174
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10935
+                }
+            },
+            "Complex CHD": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10445,
+                    "bundle_id": 636,
+                    "birthprev_bundle": 637,
+                    "custom_data_bundle": 2174
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10938
+                }
+            },
+            "Malformations of Great Vessels": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10441,
+                    "bundle_id": 632,
+                    "birthprev_bundle": 633,
+                    "custom_data_bundle": 2174
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10936
+                }
+            }
+        },
+        "other": {
+            "Other CHD": {
+                "acause": "cong_heart",
+                "srcs": {
+                    "pre_sqzd_me_id": 10934,
+                    "bundle_id": 2978,
+                    "custom_data_bundle": 2174
+                },
+                "trgs": {
+                    "post_sqzd_me_id": 10939
+                }
+            }
+        }
+    },
+    "cong_heart_failure": {
+        "split": {
+            "srcs": {
+                "asymp": 20090,
+                "mild": 2179,
+                "moderate": 2180,
+                "severe": 2181
+            }
+        },
+        "sub_group": {
+            "Malformations of Great Vessels": {
+                "srcs": {
+                    "pre_sqzd_me_id": 10441,
+                    "post_sqzd_me_id": 10936
+                },
+                "trgs": {
+                    "none": 15768,
+                    "asymp": 20021,
+                    "mild": 15769,
+                    "moderate": 15770,
+                    "severe": 15771
+                }
+            },
+            "VSD/ASD": {
+                "srcs": {
+                    "pre_sqzd_me_id": 10443,
+                    "post_sqzd_me_id": 10937
+                },
+                "trgs": {
+                    "none": 15773,
+                    "asymp": 20022,
+                    "mild": 15774,
+                    "moderate": 15775,
+                    "severe": 15776,
+                    "asymp_vsdasd": 11392
+                }
+            },
+            "Single Ventricle Defects": {
+                "srcs": {
+                    "pre_sqzd_me_id": 10439,
+                    "post_sqzd_me_id": 10935
+                },
+                "trgs": {
+                    "none": 15760,
+                    "asymp": 20019,
+                    "mild": 15761,
+                    "moderate": 15762,
+                    "severe": 15763
+                }
+            },
+            "Complex CHD (Not Single Ventricle)": {
+                "srcs": {
+                    "pre_sqzd_me_id": 10445,
+                    "post_sqzd_me_id": 10938
+                },
+                "trgs": {
+                    "none": 15764,
+                    "asymp": 20020,
+                    "mild": 15765,
+                    "moderate": 15766,
+                    "severe": 15767
+                }
+            }
+        },
+        "other": {
+            "Other Heart Failure Due to CHD": {
+                "srcs": {
+                    "pre_sqzd_me_id": 10934,
+                    "post_sqzd_me_id": 10939
+                },
+                "trgs": {
+                    "none": 15756
+                }
+            }
+        }
+    }
+}

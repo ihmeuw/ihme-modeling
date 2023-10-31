@@ -1,0 +1,17 @@
+[tool.coverage.run]
+source = ["codem"]
+omit = [
+    "codem",
+]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.black]
+exclude = """
+/(
+    codem
+    | tests
+)/
+"""
+line_length = 94

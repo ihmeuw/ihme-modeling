@@ -1,0 +1,151 @@
+# Static References YML file
+gbd_round_id : 7
+gbd_year : 2020
+decomp_step : 'step3'
+
+# is now pulled in via shared functions in the launch script
+age_group_ids : [2, 3, 388, 389, 238, 34, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+                 16, 17, 18, 19, 20, 30, 31, 32, 235]
+
+# Leave the below in refs
+gbd_estimation_years : [1990, 1995, 2000, 2005, 2010, 2015, 2019]
+
+# The estimation_years variable is now passed into the pipeline through command line
+estimation_years : [2020, 2021, 2022]
+
+# Input data version is now passed into the command line 
+# Copy/pasted data date tags
+age_sex_specific_input_date : "2021_03_13.02"
+hsp_icu_input_date : "2022_03_29.06"
+infect_death_input_date : "2022_03_29.06"
+# for final GBD 2020 estimates out to 2022 2021_07_14.11
+# for forecasting estimates out to 2023 2021_07_26.02
+# for updated final GBD 2020 estimates out to 2022 and for JAMA submission 2022_03_29.06
+
+# Input Filepaths
+hsp_icu_input_path : "FILEPATH"
+infect_death_input_path : "FILEPATH"
+age_sex_specific_input_path : 'FILEPATH'
+disability_weight_path : "FILEPATH"
+
+# Output filepaths
+jobmon_logs_base : 'FILEPATH'
+data_output :
+  stage_1 : 'FILEPATH'
+  stage_2 : 'FILEPATH'
+  final : 'FILEPATH'
+
+
+# Default multipliers / date lags
+asymp_duration : 14
+incubation_period : 5
+midmod_duration_no_hsp : 9
+comm_die_duration_severe : 13
+infect_to_hsp_admit_duration : 11
+symp_to_hsp_admit_duration : 6
+icu_to_death_duration : 10
+hsp_death_duration : 13
+hsp_no_icu_no_death_duration : 14
+hsp_no_icu_death_duration : 13
+hsp_icu_no_death_duration : 7
+hsp_post_icu_duration : 4
+hsp_icu_death_duration : 3
+icu_no_death_duration : 13
+prop_deaths_icu : 0.169786564
+hsp_midmod_after_discharge_duration : 10
+icu_midmod_after_discharge_duration : 11
+prop_asymp_comm_no_die_no_hsp : 0.8
+# prop_mild and prop_mod are no longer used
+prop_mild : 0.75
+prop_mod : 0.25
+gbs_dur : 365
+
+
+#hhseqid
+short_mild_hhseqid : 207
+short_moderate_hhseqid : 208
+short_severe_hhseqid : 209
+short_icu_hhseqid : 353
+long_cognitive_hhseqid : [25, 26]
+long_fatigue_hhseqid : [210]
+long_respiratory_hhseqid : [138, 139, 140]
+long_gbs_hhseqid : 301
+
+
+# ME IDs
+## Short term
+asymp_me_id : 26771
+mild_me_id : 26774
+moderate_me_id : 26777
+hospital_me_id : 26780
+icu_me_id : 26783
+## Long term
+### Individuals
+cognitive_mild_me_id : 26861                      # Post-acute mild cognitive symptoms due to COVID-19
+cognitive_severe_me_id : 26864                    # Post-acute severe cognitive symptoms due to COVID-19
+fatigue_me_id : 26816                           # Post-acute fatigue syndrome due to COVID19
+respiratory_mild_me_id : 26867                     # Post-acute mild respiratory symptoms due to COVID-19
+respiratory_moderate_me_id : 26870                 # Post-acute moderate respiratory symptoms due to COVID-19
+respiratory_severe_me_id : 26873                   # Post-acute severe respiratory symptoms due to COVID-19
+### cog_fat
+cognitive_mild_fatigue_me_id : 26876                  # Post-acute fatigue syndrome and mild cognitive symptoms due to COVID-19
+cognitive_severe_fatigue_me_id : 26879                # Post-acute fatigue syndrome and severe cognitive symptoms due to COVID-19
+### cog_resp
+cognitive_mild_respiratory_mild_me_id : 26891            # Post-acute mild respiratory and mild cognitive symptoms due to COVID-19
+cognitive_mild_respiratory_moderate_me_id : 26897        # Post-acute moderate respiratory and mild cognitive symptoms due to COVID-19
+cognitive_mild_respiratory_severe_me_id : 26903          # Post-acute severe respiratory and mild cognitive symptoms due to COVID-19
+cognitive_severe_respiratory_mild_me_id : 26894          # Post-acute mild respiratory and severe cognitive symptoms due to COVID-19
+cognitive_severe_respiratory_moderate_me_id : 26900      # Post-acute moderate respiratory and severe cognitive symptoms due to COVID-19
+cognitive_severe_respiratory_severe_me_id : 26906        # Post-acute severe respiratory and severe cognitive symptoms due to COVID-19
+### fat_resp
+fatigue_respiratory_mild_me_id : 26882                 # Post-acute fatigue syndrome and mild respiratory symptoms due to COVID-19
+fatigue_respiratory_moderate_me_id : 26885             # Post-acute fatigue syndrome and moderate respiratory symptoms due to COVID-19
+fatigue_respiratory_severe_me_id : 26888               # Post-acute fatigue syndrome and severe respiratory symptoms due to COVID-19
+### cog_fat_resp
+cognitive_mild_fatigue_respiratory_mild_me_id : 26909        # Post-acute fatigue syndrome and mild respiratory and mild cognitive symptoms due to COVID-19
+cognitive_mild_fatigue_respiratory_moderate_me_id : 26915    # Post-acute fatigue syndrome and moderate respiratory and mild cognitive symptoms due to COVID-19
+cognitive_mild_fatigue_respiratory_severe_me_id : 26921      # Post-acute fatigue syndrome and severe respiratory and mild cognitive symptoms due to COVID-19
+cognitive_severe_fatigue_respiratory_mild_me_id : 26912      # Post-acute fatigue syndrome and mild respiratory and severe cognitive symptoms due to COVID-19
+cognitive_severe_fatigue_respiratory_moderate_me_id : 26918  # Post-acute fatigue syndrome and moderate respiratory and severe cognitive symptoms due to COVID-19
+cognitive_severe_fatigue_respiratory_severe_me_id : 26924    # Post-acute fatigue syndrome and severe respiratory and severe cognitive symptoms due to COVID-19
+### gbs
+gbs_me_id : 26930
+### any
+any_me_id : 26981
+midmod_any_me_id : 26982
+hospital_any_me_id : 26983
+icu_any_me_id : 26984
+
+
+hospital_age_pattern_me_id : 26792
+icu_age_pattern_me_id : 26795
+
+
+# Valid column observations
+valid_col_obs :
+  # TODO: Identify valid columns and observations per stage
+  stage_1 :
+    draw_var : ['roots$draws']
+    year_id : ['roots$estimation_years']
+    sex_id : [1, 2]
+    age_group_id : ['roots$age_groups']
+    # location_id : ['locs[most_detailed==1, location_id]']
+    _inc_rate : [1000.1] 
+    _prev_rate : [1.0] 
+    _YLD : [1000.1] 
+  stage_2 :
+    draw_var : ['roots$draws']
+    year_id : ['roots$estimation_years']
+    sex_id : [1, 2]
+    age_group_id : ['roots$age_groups']
+    # location_id : ['locs[most_detailed==1, location_id]']
+    _inc_rate : [1000.1] 
+    _prev_rate : [1.0] 
+    _YLD : [1000.1] 
+  final :
+    year_id : ['roots$all_gbd_estimation_years']
+    sex_id : [1, 2]
+    age_group_id : ['roots$age_groups']
+    draw_cols : ['wide roots$draws']
+    draw_obs : [1000.1]
+    # location_id : ['locs[most_detailed==1, location_id]']

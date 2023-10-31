@@ -1,0 +1,4 @@
+include codem/linmod/cvSelection.R
+include codem/linmod/lm_model_prototype.R
+include versioneer.py
+include codem/_version.py

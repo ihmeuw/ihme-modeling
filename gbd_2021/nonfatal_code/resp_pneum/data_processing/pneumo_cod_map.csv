@@ -1,0 +1,5 @@
+cause_name,gbd_id_type,gbd_id,source,status,gbd_round_id,decomp_step,directory_to_save,year_id,sex_id,age_group_set,n_draws,downsample,parent,target_me_id,measure_id,target_measure_id
+asbestosis,cause_id,512,codem,best,7,step3,FILEPATH,"1990, 1995, 2000, 2005, 2010, 2015, 2019, 2020, 2021, 2022 ","1,2",19,100,TRUE,child,24989,1,18
+coal,cause_id,513,codem,best,7,step3,FILEPATH,"1990, 1995, 2000, 2005, 2010, 2015, 2019, 2020, 2021, 2022 ","1,2",19,100,TRUE,child,24990,1,18
+silicosis,cause_id,511,codem,best,7,step3,FILEPATH,"1990, 1995, 2000, 2005, 2010, 2015, 2019, 2020, 2021, 2022 ","1,2",19,100,TRUE,child,24991,1,18
+other_pneum,cause_id,514,codem,best,7,step3,FILEPATH,"1990, 1995, 2000, 2005, 2010, 2015, 2019, 2020, 2021, 2022 ","1,2",19,100,TRUE,child,24992,1,18

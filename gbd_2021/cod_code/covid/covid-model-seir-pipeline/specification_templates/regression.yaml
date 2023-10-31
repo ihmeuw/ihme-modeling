@@ -1,0 +1,82 @@
+data:
+  infection_version: '2022_03_23.02'
+  covariate_version: '2022_03_23.04'
+  coefficient_version: ''
+  priors_version: '2021_05_31.01'
+#  location_set_version_id: '1020'
+  location_set_version_id: '/ihme/covid-19/model-inputs/2022_03_02.03/locations/gbd_analysis_hierarchy.csv'
+  output_root: ''
+  output_format: 'parquet'
+  n_draws: 100
+  drop_locations: [191, 505, 518, 298, 25, 380, 43894, 43930, 44906, 44907, 44911, 44914, 44922, 44923, 44927, 44938, 44946, 44947, 44949, 44950, 44956, 44958, 44966, 44970]
+workflow:
+  project: 'proj_covid_prod'
+  queue: 'all.q'
+regression_parameters:
+  # Mixing parameter.  dS/dt = -beta * S * I ** alpha
+  alpha: [0.9, 1.0]
+  # 1 / incubation period.  dE/dt = -dS/dt - sigma * E
+  sigma: [0.2, 0.3333]
+  # 1 / duration pre-symptomatic.  dI1/dt = sigma * E - gamma1 * I1
+  gamma1: [0.5, 0.5]
+  # 1 / duration symptomatic or asymptomatic.  dI2/dt = gamma1 * I1 - gamma2 * I2
+  gamma2: [0.3333, 1.0]
+  # proportion increase in transmission intensity for non-escape variants
+  kappa: [0.2, 0.62]
+  # cross-variant immunity
+  chi: [0.3, 0.7]
+  # proportion increase in transmission for escape variants relative to non-escape variants.
+  # Mean of phi will be chi + phi_mean_shift
+  phi_mean_shift: 0.3
+  phi_sd: 0.15
+  psi_mean_shift: 1.3
+  psi_sd: 0.30
+  # Proportion of current E to send to escape variant E on invasion.
+  pi: [0.01, 0.1]
+hospital_parameters:
+  compute_correction_factors: True
+  hospital_stay_death: 6
+  hospital_stay_recover: 14
+  hospital_stay_recover_icu: 20
+  hospital_to_icu: 3
+  icu_stay_recover: 13
+  icu_ratio: 0.25
+  correction_factor_smooth_window: 14
+  hospital_correction_factor_min: 0.5
+  hospital_correction_factor_max: 25
+  icu_correction_factor_min: 0.05
+  icu_correction_factor_max: 0.95
+  correction_factor_average_window: 42
+  correction_factor_application_window: 42
+covariates:
+  intercept:
+    group_level: 'location_id'
+    gprior: [0.0, 1000.0]
+    bounds: [-1000.0, 1000.0]
+  pneumonia:
+    gprior: [0.0, 1000.0]
+    bounds: [0.8, 1.3]
+  mobility:
+    gprior: [0.0, 1000.0]
+    bounds: [0.0, 1000.0]
+  mask_use:
+    gprior: [0.0, 1000.0]
+    bounds: [-1000.0, -0.5]
+  testing:
+    gprior: [0.0, 1000.0]
+    bounds: [-80.0, 0.0]
+  air_pollution_pm_2_5:
+    gprior: [0.0, 1000.0]
+    bounds: [0.0, 1000.0]
+  smoking_prevalence:
+    gprior: [0.0, 1000]
+    bounds: [0.0, 1.0]
+  lri_mortality:
+    gprior: [0.0, 1000.0]
+    bounds: [0.0, 1000.0]
+  proportion_under_100m:
+    gprior: [0.0, 1000.0]
+    bounds: [0.0, 1000.0]
+  proportion_over_2_5k:
+    gprior: [0.0, 0.001]
+    bounds: [0.0, 1000.0]

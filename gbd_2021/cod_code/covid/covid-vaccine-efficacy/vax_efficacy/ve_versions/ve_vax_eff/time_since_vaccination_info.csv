@@ -1,0 +1,58 @@
+nid,_in_GHDx_(numeric)
+exclude,"Exclude this source from analysis (1 = exclude, 0 = include)"
+study_id ,"One unique identifier for each study, use until sources added to GHDx (numeric)"
+author,Authors of study
+text_description,Short text description of study or source.
+1st_dose,0 = no; 1 = yes
+source,DOI or URL of source. (character)
+location_id,location_id from modeling hierarchy. (numeric)
+location_id2,for rows with more than one location_id which did not run on MR-BRT (character)
+location_name,location_name from modeling hierarchy (character) 
+interval_between_doses,0 = 3-4 weeks; 1 => 4 weeks
+vac_before_booster,
+vaccine_developer,Name of company of vaccine developer
+vaccine_candidate,Name of vaccine candidate
+vaccine_type,
+variant,COVID-19 variant (character)
+variant_b1351,0 = no; 1 =yes
+symptom_severity,"Severity of COVID-19 symptoms (mild, moderate, severe, asymptomatic)"
+symptom_severity_description,Describe the study's definition of symptom severity level (character)
+severity,"infection, hosp, death, and symptomatic"
+IHME_symptom_classification,"infection, severe, Mild, Moderate + Severe"
+severe_vs_all,Empty 
+severe,Dummy variable (all 1s)
+moderate,Dummy variable (0 and 1s)
+mild,Dummy variable (0 and 1s)
+asymptomatic,Dummy variable (0 and 1s)
+sex_id,"Sex of study participants (1 = male, 2 = female, 3 = all sex)"
+age_start,Minimum age of study participants (numeric)
+age_end,Maximum age of study participants (numeric)
+age_mean,Mean age of study participants (numeric)
+over_65,Dummy of whether the study was subset to persons over 65? (1 = yes; 0 = no)
+is_main_analysis,Is this the study's main analysis?
+is_sub_analysis,Is this a subanalysis?
+sample_size,How many people were included in this main or subanalysis? (combining both intervention and control arm) (numeric)
+efficacy_mean,mean efficacy (decimal [0-1])
+efficacy_lower,lower 95% CI of efficacy (decimal [0-1])
+efficacy_upper,upper 95% CI of efficacy (decimal [0-1])
+booster,0 = no; 1 = yes
+vemt,0 = weeks after second dose and 1 = average time
+mean_time_since_vaccination,
+start_interval,weeks
+end_interval,weeks
+Period reported in the study,
+past_infection_evaluation,text
+events_vaccine,"events in the vaccinated arm, only needed if no upper/lower (numeric)"
+events_control,"events in the control arm, only needed if no upper/lower (numeric)"
+ss_vaccine,"sample size of the vaccinated arm, only needed if no upper/lower (numeric)"
+ss_control,"sample size of the control arm, only needed if no upper/lower (numeric)"
+hiv_flag,"Does this study have HIV stratification? (0 = no, 1 = yes)"
+obesity_flag,"Does this study have obesity stratification? (0 = no, 1 = yes)"
+comorbidity_flag,"Does this study have comorbidity stratification (other than obesity)? (0 = no, 1 = yes)"
+ethnicity_flag,"Does this study have ethnicity stratification? (0 = no, 1 = yes)"
+race_flag,"Does this study have race stratification? (0 = no, 1 = yes)"
+dose_flag,"Does this study have outcomes stratified by number of vaccine doses? (0 = no, 1 = yes)"
+high_risk_flag,"Does this study stratify by those at high risk (defined as older age OR comorbidities OR high risk worker)? (0 = no, 1 = yes)"
+infectious_flag,"Does this study have data regarding the efficacy of the vaccine in preventing transmission? (0 = no, 1 = yes)"
+notes,"Comments about fields that couldn't be found, unique characteristics of studies not captured in fields (character)"
+extractor_id,UWnet id of extractor (character)

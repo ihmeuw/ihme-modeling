@@ -1,0 +1,18 @@
+data:
+  output_root: ''
+workflow:
+  project: 'proj_covid_prod'
+  queue: 'd.q'
+grid_plots:
+  - name: 'compare_longrange'
+    date_start: '2020-03-01'
+    date_end: '2021-12-31'
+    comparators:
+      - version: '2021_07_29.05'
+        scenarios:
+          reference*: 'public reference'
+      - version: '2021_08_14.01'
+        scenarios:
+          reference*: 'reference'
+#          worse: 'worse'
+#          best_masks: 'best masks'

@@ -1,0 +1,32 @@
+data:
+  regression_version: '2022_03_25.03'
+  covariate_version: '2022_03_23.04'
+  output_root: ''
+  output_format: 'parquet'
+workflow:
+  project: 'proj_covid_prod'
+  queue: 'd.q'
+scenarios:
+  reference:
+    algorithm: normal
+    algorithm_params:
+      death_threshold: 8  # per million
+      max_threshold: 15 # per million
+      reimposition_duration: 6 # weeks
+      minimum_delay: 7 # days
+    beta_scaling:
+      window_size: 42
+      average_over_min: 7
+      average_over_max: 42
+    vaccine_version: 'reference'
+    variant_version: 'reference'
+    covariates:
+      pneumonia: 'reference'
+      mobility: 'reference'
+      mask_use: 'reference'
+      testing: 'reference'
+      air_pollution_pm_2_5: 'reference'
+      smoking_prevalence: 'reference'
+      lri_mortality: 'reference'
+      proportion_under_100m: 'reference'
+      proportion_over_2_5k: 'reference'

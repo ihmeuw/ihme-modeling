@@ -1,0 +1,14 @@
+site_name: COVID19 SEIIR Modeling Pipeline
+nav:
+    - Home: 'index.md'
+theme:
+    name: 'material'
+    palette:
+        primary: 'green'
+        accent: 'green'
+markdown_extensions:
+    - mdx_math
+    - admonition
+    - codehilite
+    - footnotes
+    - mkautodoc

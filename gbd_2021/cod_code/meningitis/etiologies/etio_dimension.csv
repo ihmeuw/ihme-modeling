@@ -1,0 +1,22 @@
+rei_id,modelable_entity_name,me_id,model_type,cause_id,source,pathogen,bundle_id,rei_name,rei
+187,Influenza PAF,9337,custom,322,dismod,flu,20,Influenza,eti_lri_flu
+190,Respiratory Syncytial Virus PAF,9340,custom,322,"",rsv,,Respiratory syncytial virus,eti_lri_rsv
+393,Group B Streptococcus PAF,27187,custom,"322,332","",group_b_strep,,Group B streptococcus,eti_gbs
+414,Acinetobacter baumanii PAF,27182,custom,322,"",acinetobacter_baumanii,,Acinetobacter baumannii,eti_acinetobacter
+415,Chlamydia spp PAF,27183,custom,322,"",chlamydia_spp,,Chlamydia spp,eti_chlamydia
+416,Enterobacter spp PAF,27184,custom,322,"",enterobacter_spp,,Enterobacter spp,eti_enterobacter
+417,Escherichia coli PAF,27185,custom,"322,332","",escherichia_coli,,Escherichia coli,eti_escherichia
+418,Fungus PAF,27186,custom,322,"",fungus,,Fungus,eti_fungus
+419,Haemophilus Influenzae PAF,27191,custom,"322,332","",haemophilus_influenzae,,Haemophilus influenzae,eti_haemophilus
+420,Klebsiella pneumoniae PAF,27188,custom,"322,332","",klebsiella_pneumoniae,,Klebsiella pneumoniae,eti_klebsiella
+421,Legionella spp PAF,27189,custom,322,"",legionella_spp,,Legionella spp,eti_legionella
+422,Listeria monocytogenes PAF,27197,custom,332,"",listeria,,Listeria monocytogenes,eti_listeria
+423,Mycoplasma PAF,27190,custom,322,"",mycoplasma,,Mycoplasma,eti_mycoplasma
+424,Other bacterial pathogen,27192,custom,"322,332","",other,,Other bacterial pathogen,eti_otherbacteria
+425,Other viral etiologies of LRI,27196,custom,322,"",virus,,Other viral etiologies of LRI,eti_lri_othervirus
+426,Polymicrobial PAF,27193,custom,322,"",poly_other,,Polymicrobial,eti_polymicrobial
+427,Pseudomonas aeruginosa PAF,27194,custom,322,"",pseudomonas_aeruginosa,,Pseudomonas aeruginosa,eti_pseudomonas
+428,Staphylococcus aureus PAF,27195,custom,"322,332","",staphylococcus_aureus,,Staphylococcus aureus,eti_staphylococcus
+429,Viral etiologies of meningitis PAF,27198,custom,332,"",virus,,Viral etiologies of meningitis,eti_meningitis_virus
+430,Streptococcus pneumoniae PAF,9338,custom,"322,332","",streptococcus_pneumoniae,,Streptococcus pneumoniae,eti_streptococcus_pneumoniae
+431,Neisseria meningitidis PAF,10495,custom,332,"",neisseria_meningitidis,,Neisseria meningitidis,eti_neisseria_meningitidis

@@ -1,0 +1,17 @@
+[tool.coverage.run]
+source = ["hybridizer"]
+omit = [
+    "hybridizer",
+]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.black]
+exclude = """
+/(
+    hybridizer
+    | tests
+)/
+"""
+line_length = 94

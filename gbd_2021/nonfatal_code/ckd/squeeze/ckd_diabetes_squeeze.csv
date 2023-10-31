@@ -1,0 +1,4 @@
+cause_name,gbd_id_type,gbd_id,source,status,gbd_round_id,decomp_step,directory_to_save,year_start,year_end,age_group_set,measure_id,n_draws,downsample,parent,target_me_id
+diabetes,modelable_entity_id,9971,epi,best,6,step4,FILEPATH,1990,2019,12,18,1000,TRUE,parent,
+t1_diabetes,modelable_entity_id,18723,epi,best,6,step4,FILEPATH,1990,2019,12,18,1000,TRUE,child,18725
+t2_diabetes,modelable_entity_id,18724,epi,best,6,step4,FILEPATH,1990,2019,12,18,1000,TRUE,child,18726
