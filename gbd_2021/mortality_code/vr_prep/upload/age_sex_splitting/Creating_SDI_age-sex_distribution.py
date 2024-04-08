@@ -24,12 +24,7 @@ from db_tools.ezfuncs import query
 
 def get_distribution_set_version(distribution_set_version_id):
     q = """
-        SELECT 
-            * 
-        FROM 
-            cod.distribution_cause_age_sex
-        WHERE 
-            distribution_set_version_id = {}
+	QUERY
         """.format(distribution_set_version_id)
     
     return query(q, conn_def='cod')

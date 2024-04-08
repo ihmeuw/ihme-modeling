@@ -92,7 +92,7 @@ def map_extract_type_id(df):
     With addition of extract_type_id 167, there are now (correctly)
     duplicates by source/nid. So keep it! and map to something intelligible.
     """
-    query = """SELECT * FROM cod.claude_extract_type"""
+    query = """QUERY"""
     eid_dict = \
         ezfuncs.query(
             query, conn_def='cod'

@@ -244,9 +244,6 @@ migration[, source := "posterior"]
 posterior_total_migration <- migration[measure_id == 19 & sex_id == 3 & age_group_id == 22]
 posterior_migration_proportion <- migration[measure_id == 18 & sex_id %in% 1:2 & age_group_id %in% age_groups[(plot_migration), age_group_id]]
 
-# migration data
-# migration_data <- fread(paste0(output_dir, loc_id, "/inputs/demographic/migration.csv"))
-
 # current GBD round's best migration estimates
 if (!is.na(migration_current_round_run_id)) {
   gbd_migration_current <- fread(paste0(output_dir, "/database/gbd_migration_current_round_best.csv"))[location_id == loc_id]
@@ -351,7 +348,6 @@ names(age_group_type_shape_values) <- age_group_type_shape_names
 
 # make subtitle containing version information
 current_round_last_drop_above_age <- fread(paste0("FILEPATH", pop_current_round_run_id, "/versions_best.csv"))[ihme_loc_id == ihme_loc, drop_age]
-# TODO: for GBD2020 update this path to pull previous GBD round version
 if (gbd_year_previous == 2017) {
   previous_round_last_drop_above_age <- readRDS(paste0(output_dir, "/database/GBD2019_best_versions.RDS"))
   previous_round_last_drop_above_age <- previous_round_last_drop_above_age[ihme_loc_id == ihme_loc, as.numeric(gsub("v", "", model_version))]

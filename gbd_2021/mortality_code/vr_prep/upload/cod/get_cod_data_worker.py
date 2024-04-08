@@ -59,7 +59,7 @@ if __name__ == "__main__":
     # replace age_group_id -1 with 283
     df.loc[df.age_group_id == -1, 'age_group_id'] = 283
 
-    # HOTFIX: replace age group 308 with 26
+    
     df.loc[df.age_group_id == 308, 'age_group_id'] = 26
 
     assert df.shape[0] > 0, "DataFrame has no data!"

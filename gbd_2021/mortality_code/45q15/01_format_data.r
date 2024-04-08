@@ -3,8 +3,6 @@
 ##              stage models
 ################################################################################
 
-# TODO (ask Naris for more details): re-evaluate assignment of type variable to determine if it's deprecated and can be removed
-
 rm(list=ls())
 
 library(foreign); library(plyr); library(argparse); library(reshape); library(data.table); library(haven); library(assertable); library(readr)

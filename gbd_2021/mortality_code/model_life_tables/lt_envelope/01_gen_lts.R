@@ -356,14 +356,12 @@ if(!grepl("ZAF", current_ihme)) {
 
 ## LT Match map
 ## Determines the number of closest empirical life tables to keep for weighted collapsing
-## TODO: right now this is 100 for all locs -- we should just remove this file dependency
   assert_colnames(lt_match_map, c("ihme_loc_id", "match"))
   assert_values(lt_match_map, colnames(lt_match_map), "not_na")
   lt_match_map <- lt_match_map[ihme_loc_id == current_ihme,]
 
 ## LT Weights
 ## Weights for all of the life tables
-## TODO: regenerate this? Make sure code for weights is saved to git
 ## NOTE: LTs from 0 or 1 year lag and same sex-location are weighted MUCH more s.t. location-sex-years with ELTs end up being empirical, essentially
   setnames(lt_weights, "region", "region_cat")
   lt_weights[region_cat == "gbd", region_cat := "region"] # Silly naming conventions

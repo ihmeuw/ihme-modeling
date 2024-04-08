@@ -253,10 +253,7 @@ submit_fit_model <- function(jobname) {
                                               task_map_dir = task_map_fpath,
                                               test = test,
                                               USER = USER),
-                         # LBD image is currently used as current scicomp images
-                         # have issues with model convergence
-                         # tickets: CCMHD-17659, SCICOMP-520
-                         pass_shell = list(i = "/ihme/singularity-images/lbd/r_pkgs3.4.3gcc7mkl.simg"),
+                         pass_shell = list(i = "FILEPATH"),
                          hold = paste(c(paste0("prep_demographic_inputs_", pop_reporting_vid),
                                         paste0("prep_population_inputs_", "_", pop_reporting_vid)), collapse = ","),
                          num_tasks = nrow(tasks),
@@ -540,32 +537,17 @@ step_worked <- submit_with_resubs(step_description = "preps population data inpu
                                   tasks = data.table(output_file = paste0(output_dir, "/inputs/population.csv")),
                                   submission_function = submit_prep_population_inputs, resubmission_attempts = 2)
 
-# TODO: option to kill remaining fit jobs as soon as one drop age finishes for each location, would need to confirm that the job has finished writing the model output file
-# TODO: option to continue running next steps or break the submission script
 step_worked <- submit_with_resubs(step_description = "fits population model for each location-drop_age combination",
                                   jobname = paste0("fit_model_", pop_reporting_vid),
                                   tasks = generate_tasks_fit_model(return_only_unfinished_tasks = F),
                                   submission_function = submit_fit_model, resubmission_attempts = 1,
                                   stop_submissions_on_error = F)
 
-# determine which locations have not finished
-# check_loc_done <- generate_tasks_fit_model(return_only_unfinished_tasks = F)
-# check_loc_done[, output_file_exists := file.exists(output_file)]
-# check_loc_done[, list(loc_exists = any(output_file_exists)), by = c("ihme_loc_id", "location_id")][!(loc_exists)]
-# check_loc_done[, task := .I]
-
-# TODO: option to only check outputs for locations where the model actually fit
 step_worked <- submit_with_resubs(step_description = "predicts from the fitted population model for each location-drop_age combination",
                                   jobname = paste0("predict_model_", pop_reporting_vid),
                                   tasks = generate_tasks_predict_model(return_only_unfinished_tasks = F),
                                   submission_function = submit_predict_model, resubmission_attempts = 2,
                                   stop_submissions_on_error = F)
-
-# Determine which prediction locations have not finished
-# check_loc_predict_done <- generate_tasks_predict_model(return_only_unfinished_tasks = F)
-# check_loc_predict_done[, output_file_exists := file.exists(output_file)]
-# check_loc_predict_done[, list(loc_exists = any(output_file_exists)), by = c("ihme_loc_id", "location_id")][!(loc_exists)]
-# check_loc_predict_done[, task := .I]
 
 step_worked <- submit_with_resubs(step_description = "selects best drop-age version for each location",
                                   jobname = paste0("select_best_versions_", pop_reporting_vid),
@@ -601,14 +583,6 @@ step_worked <- submit_with_resubs(step_description = "plots location specific di
                                   jobname = paste0("plot_diagnostics_best_", pop_reporting_vid),
                                   tasks = generate_tasks_plot_diagnostics(best_ages = T, return_only_unfinished_tasks = F),
                                   submission_function = submit_plot_diagnostics, best_ages = T)
-
-## NOTE:
-#  This is a helpful bash command that will find all the best model fit graph
-#  files that were created, but are empty (fooling the submit script):
-#
-#  find diagnostics/location_best/ -type f -size 0c
-#
-#  You can add the `-delete` option to also remove them so you can relaunch.
 
 step_worked <- submit_with_resubs(step_description = "plots percent change heatmap diagnostics",
                                   jobname = paste0("pct_change_heatmaps_", pop_reporting_vid),

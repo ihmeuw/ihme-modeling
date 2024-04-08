@@ -19,7 +19,6 @@ agg_u5_env <- function(u5_env, gbd_year) {
 	u5_env <- copy(u5_env)
 	
 	# split differently based on gbd year.
-	# TODO: modify to be based on a "age_breaks" argument not "gbd_year" to be more flexible.
 	if(gbd_year >= 2020){
 	  u5_env[age %in% c("3", "4"), age := "2"]  # 1 and 2-4
 	} else {

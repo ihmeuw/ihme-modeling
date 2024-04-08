@@ -210,7 +210,6 @@ array<Type> ccmpp(array<Type> n0_female, array<Type> n0_male,
     pop_female(0, y + 1) = ((pop_female(0, y + 1) + half_new_born_migrants_female) * s_female(0, y)) + half_new_born_migrants_female;
   }
 
-  // TODO: return from this function a tuple or pair. Returning a pair messes with the first two values in each pair's array.
   if (female) {
     return pop_female;
   } else {

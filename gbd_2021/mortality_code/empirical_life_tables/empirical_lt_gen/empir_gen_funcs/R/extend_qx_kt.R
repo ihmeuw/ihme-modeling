@@ -2,16 +2,6 @@
 ## AUTHOR
 ## October 2019
 
-# all these packages are needed for disrEx... find a better way to get all of them
-# libr <- "/ihme/scratch/users/krpaul/packages"
-# library(startupmsg, lib.loc = libr)
-# library(sfsmisc, lib.loc = libr)
-# library(SweaveListingUtils, lib.loc = libr)
-# library(distr, lib.loc = libr)
-# library(distrEx, lib.loc = libr)
-
-
-
 #' Kannisto-Thatcher model, in force of mortality (mu) space
 #' mux = [a * exp(bx)] / [1 + a * exp(bx)]
 #'

@@ -55,20 +55,6 @@ mape_tolerance <- 5
 old_mig_index_tolerance <- 0.005
 
 
-# Figure out which location-ages are still running ------------------------
-# 
-# running_locations <- data.table(qstat_output = system("qstat -xml", intern = T))
-# running_locations <- running_locations[grepl("fit_model_", qstat_output)]
-# running_locations[, job_name := gsub(" ", "", qstat_output)]
-# running_locations[, job_name := gsub("<JB_name>", "", job_name)]
-# running_locations[, job_name := gsub("</JB_name>", "", job_name)]
-# running_locations <- running_locations[grepl(paste0("_", pop_reporting_vid, "$"), job_name)]
-# running_locations[, job_name := gsub(paste0("_", pop_reporting_vid, "$"), "", job_name)]
-# running_locations[, ihme_loc_id := gsub("fit_model_", "", job_name)]
-# running_locations[, ihme_loc_id := gsub("_drop[0-9]+", "", ihme_loc_id)]
-# running_locations[, drop_age := as.numeric(gsub("fit_model_[A-Z]+_[0-9_]*drop", "", job_name))]
-
-
 # Read in data to compare model versions ----------------------------------
 
 compare_versions <- lapply(location_hierarchy[is_estimate == 1, location_id], function(loc_id) {
@@ -89,7 +75,6 @@ compare_versions <- lapply(location_hierarchy[is_estimate == 1, location_id], fu
 
       error <- fread(error_file_dir)
 
-      # TODO: update to properly calculate the aggregated migration proportions
       migration <- fread(migration_file_dir)
       ages <- c(-age_int, seq(-0, terminal_age, 5))
       migration[
@@ -116,13 +101,7 @@ compare_versions <- lapply(location_hierarchy[is_estimate == 1, location_id], fu
 compare_versions <- rbindlist(compare_versions)
 
 # classify status of each location-age
-# if (nrow(running_locations) > 0) {
-#   running_locations <- running_locations[, list(ihme_loc_id, drop_age, still_running = T)]
-#   compare_versions <- merge(compare_versions, running_locations, by = c("ihme_loc_id", "drop_age"), all.x = T)
-#   compare_versions[is.na(still_running), still_running := F]
-# } else {
-  compare_versions[, still_running := F]
-#}
+compare_versions[, still_running := F]
 
 compare_versions[, submitted := ihme_loc_id %in% location_hierarchy[is_estimate == 1, ihme_loc_id]]
 compare_versions[, completed := !(is.na(mape) & !is.na(old_mig_index))]

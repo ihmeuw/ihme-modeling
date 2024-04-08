@@ -151,7 +151,7 @@ if (!copy_results) {
   net_migrants[, age_group_years_start := as.integer(age_group_years_start)]
 
   counts <- rbind(counts, deaths, net_migrants, use.names = T)
-  counts[, age_group_years_start := as.integer(age_group_years_start)] # TODO: figure out why these are all integers before the rbind and then converted to numeric, messes up code later
+  counts[, age_group_years_start := as.integer(age_group_years_start)]
   counts <- mortcore::age_start_to_age_group_id(counts, id_vars = c("location_id", "year_id", "sex_id", "variable"), keep_age_group_id_only = F)
 
 
@@ -276,7 +276,7 @@ if (!copy_results) {
 
   # useful if testing just post model fit code and want to reduce run time from fitting the whole population model
   # or if just rerunning a subset of locations
-  copy_output_dir <- paste0("/mnt/team/fertilitypop/pub/population/popReconstruct/", copy_vid, "/")
+  copy_output_dir <- paste0("FILEPATH", copy_vid, "/")
   file.copy(from = paste0(copy_output_dir, loc_id, "/outputs/model_fit/net_migration_posterior_drop", drop_above_age, ".csv"),
             to = paste0(output_dir, loc_id, "/outputs/model_fit/net_migration_posterior_drop", drop_above_age, ".csv"), overwrite = T)
   file.copy(from = paste0(copy_output_dir, loc_id, "/outputs/model_fit/net_migration_prior_drop", drop_above_age, ".csv"),

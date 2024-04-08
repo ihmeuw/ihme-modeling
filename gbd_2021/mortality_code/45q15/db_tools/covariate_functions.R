@@ -11,25 +11,10 @@ get_best_covariate_version <- function(covariate_id = NULL, covariate_name_short
 
 
   # Create the query
-  q <- paste("SELECT
-             c.covariate_name_short,
-             dv.covariate_id,
-             mv.model_version_id,
-             mv.best_start,
-             mv.date_inserted,
-             mv.description
-             FROM
-             covariate.model_version mv
-             JOIN
-             covariate.data_version dv USING (data_version_id)
-             JOIN
-             shared.covariate c USING (covariate_id)
-             WHERE", where_clause,
-             "AND mv.is_best = 1 AND mv.gbd_round_id = ",
-             gbd_round_id)
+  q <- paste("QUERY")
 
   # Run query
-  return(query(q, conn_def = "modeling-mortality-db"))
+  return(query(q, conn_def = "HOST"))
 }
 
 get_covariate_estimate <- function(covariate_name_short = NULL, covariate_id = NULL,
@@ -55,42 +40,10 @@ get_covariate_estimate <- function(covariate_name_short = NULL, covariate_id = N
   where_clause <- paste0("model_version.model_version_id = ", model_version)
 
   # Craft the query
-  q <- paste0("SELECT
-              model.model_version_id,
-              covariate.covariate_id,
-              covariate.covariate_name_short,
-              model.location_id,
-              location.location_name,
-              model.year_id,
-              model.age_group_id,
-              age_group.age_group_name,
-              model.sex_id,
-              model.mean_value,
-              model.lower_value,
-              model.upper_value
-              FROM
-              covariate.model
-              JOIN
-              covariate.model_version
-              ON model.model_version_id=model_version.model_version_id
-              JOIN
-              covariate.data_version
-              ON model_version.data_version_id=data_version.data_version_id
-              JOIN
-              shared.covariate
-              ON data_version.covariate_id=covariate.covariate_id
-              JOIN
-              shared.location
-              ON model.location_id=location.location_id
-              JOIN
-              shared.age_group
-              ON model.age_group_id=age_group.age_group_id
-              WHERE
-              covariate.last_updated_action!='delete' AND ",
-              where_clause)
+  q <- paste0("QUERY")
 
   # Check output
-  output <- query(q, conn_def = "modeling-mortality-db")
+  output <- query(q, conn_def = "HOST")
   assertthat::assert_that(length(unique(output$model_version_id)) == 1)
 
   return(output)

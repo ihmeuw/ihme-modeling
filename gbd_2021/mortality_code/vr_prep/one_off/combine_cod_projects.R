@@ -1,7 +1,7 @@
 #
 # TITLE: Combine CoD versions to fill missing locations
 #
-# HOTFIX: CoD project id 14 does not have updated data since it was moved to 
+
 #   project id 15 which drops a lot of locations needed for GBD 2021. This 
 #   combines both versions by keeping only the nids missing from 14 that are 
 #   in 15. 

@@ -40,7 +40,7 @@ parser$add_argument('--task_map_dir', type="character",
                     help="The filepath to the task map file that specifies other arguments to run for")
 parser$add_argument("--test", type = "character",
                     help = "Whether this is a test run of the process")
-parser$add_argument("--USER", type = "character", # TODO: only keeping here because LBD singularity does not return USER information
+parser$add_argument("--USER", type = "character",
                     help = "User to access appropriate code directory")
 args <- parser$parse_args()
 if (interactive()) { # set interactive defaults, should never commit changes away from the test version to be safe
@@ -450,7 +450,7 @@ if (!copy_results) {
 
   # useful if testing just post model fit code and want to reduce run time from fitting the whole population model
   # or if just rerunning a subset of locations
-  copy_output_dir <- paste0("/mnt/team/fertilitypop/pub/population/popReconstruct/", copy_vid, "/")
+  copy_output_dir <- paste0("FILEPATH", copy_vid, "/")
   file.copy(from = paste0(copy_output_dir, loc_id, "/outputs/model_fit/fit_drop", drop_above_age, "_diagnostics.txt"),
             to = paste0(output_dir, loc_id, "/outputs/model_fit/fit_drop", drop_above_age, "_diagnostics.txt"), overwrite = T)
   file.copy(from = paste0(copy_output_dir, loc_id, "/outputs/model_fit/fit_drop", drop_above_age, ".rdata"),
@@ -466,5 +466,3 @@ if (!copy_results) {
   if (!fix_migration) file.copy(from = paste0(copy_output_dir, loc_id, "/outputs/model_fit/migration_proportion_drop", drop_above_age, ".csv"),
                                 to = paste0(output_dir, loc_id, "/outputs/model_fit/migration_proportion_drop", drop_above_age, ".csv"), overwrite = T)
 }
-
-

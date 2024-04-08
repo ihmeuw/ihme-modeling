@@ -62,7 +62,6 @@ reset_terminal_ages <- function(dt, reset_dt, source_ids) {
 
   return_dt <- rbindlist(list(
     dt[sources_to_keep, on = source_ids],
-    # new_higher_dt, TODO: add later or just fix VRP
     new_lower_dt
   ), use.names = TRUE)
 

@@ -79,7 +79,6 @@ Type objective_function<Type>::operator() () {
   }
 
   // Reformat completeness parameters to be all years and all-ages no matter what parameters you are estimating
-  // TODO: update to estimate age-specific completeness parameters if needed
   array<Type> full_c_female(n_ages, n_periods);
   array<Type> full_c_male(n_ages, n_periods);
   for (int y = 0; y < n_periods; y++) {

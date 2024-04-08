@@ -122,7 +122,6 @@ census_data[, drop := F]
 # age misreporting and undercounts
 census_data <- merge(census_data, location_hierarchy[, list(location_id, super_region_name)], by = "location_id", all.x = T)
 census_data[, age_middle_floor := floor(age_group_years_start + (n / 2))]
-# TODO: I think this is a bug and causes these older age groups to get dropped (BOL with drop age 95)
 census_data[age_group_years_end == age_group_table_terminal_age, age_middle_floor := (terminal_age - age_group_years_start) / 2]
 census_data[super_region_name %in% super_regions_to_drop_under5_counts & age_middle_floor <= 5, drop := T]
 census_data[, c("age_middle_floor", "super_region_name") := NULL]
@@ -142,7 +141,6 @@ setkeyv(census_data, c(census_data_id_vars, "sex_id", "age_group_years_start", "
 
 ## CHECK
 # check baseline populations
-#assertable::assert_ids(census_data[year_id == year_start & outlier_type == "not outliered"], id_vars = baseline_id_vars)
 # check non-baseline populations
 assertable::assert_ids(census_data[year_id != year_start & outlier_type == "not outliered"], id_vars = census_id_vars, assert_dups = F)
 # check all populations

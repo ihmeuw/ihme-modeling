@@ -1,2 +1,2 @@
-source /ihme/code/mortality/mort_central_conda/miniconda/bin/activate current
+source FILEPATH current
 python "$@"

@@ -204,9 +204,7 @@ assert_values(est[estimate_stage_id == 9], c("mean", "lower", "upper"), "not_na"
 assert_values(est[estimate_stage_id == 10], c("mean", "lower", "upper"), "not_na")
 assert_values(est[estimate_stage_id == 2], c("mean", "lower", "upper"), "not_na")
 
-# HOTFIX - temporary for GBD 2021
 source(paste0(code_dir, "/hotfixes/replace_adult_ddm_vrp_wshock.R"))
-# End HOTFIX
 
 ## Save in upload folder
 write_csv(est, paste0(main_dir, "upload/ddm_estimates.csv"), na = "")

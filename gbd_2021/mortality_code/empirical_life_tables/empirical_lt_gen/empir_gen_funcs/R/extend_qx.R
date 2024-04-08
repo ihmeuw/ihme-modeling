@@ -24,7 +24,6 @@ extend_qx <- function(empir_lt, hmd_qx_results, by_vars) {
 
     ## Drop old age groups after qx starts to decrease, if this happens
     
-    #HOTFIX, do not do this for RUS 2020-2021
     if(!unique(empir_lt$year) %in% 2020:2021) {
       empir_lt[age >= 65, qx_change := shift(qx, 1, type = "lead") - qx, by = by_vars]
       empir_lt[age >= 65 & qx_change < 0, min_age_qx_change_neg := min(age), by= by_vars]

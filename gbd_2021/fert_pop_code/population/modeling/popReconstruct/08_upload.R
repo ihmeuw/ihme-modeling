@@ -87,7 +87,7 @@ net_migration <- parallel::mclapply(location_hierarchy[is_estimate == 1, locatio
   return(summary)
 }, mc.cores = MKL_NUM_THREADS)
 net_migration <- rbindlist(net_migration)
-net_migration <- net_migration[year_id != year_end] # TODO remove this once the NAs are dropped earlier in the process
+net_migration <- net_migration[year_id != year_end]
 
 # save the single year age groups for HIV use
 readr::write_csv(net_migration[age_group_id %in% age_groups[(single_year_model), age_group_id]], path = paste0(output_dir, "/upload/net_migration_single_year.csv"))
@@ -108,7 +108,7 @@ pop_reporting_id_vars <- list(location_id = location_hierarchy[, location_id], y
 assertable::assert_ids(pop_reporting, pop_reporting_id_vars)
 assertable::assert_values(pop_reporting, colnames = "mean", test = "gt", test_val = 0)
 
-net_migration_id_vars <- list(location_id = location_hierarchy[is_estimate == 1, location_id], year_id = years[years != max(years)], # TODO remove this once we are estimating migration for the last year
+net_migration_id_vars <- list(location_id = location_hierarchy[is_estimate == 1, location_id], year_id = years[years != max(years)],
                               sex_id = 1:3, age_group_id = age_groups[(reporting_migration), age_group_id], measure_id = c(18, 19))
 assertable::assert_ids(net_migration, net_migration_id_vars)
 assertable::assert_values(net_migration, colnames = "mean", test = "not_na")
@@ -133,7 +133,7 @@ if (!test) mortdb::upload_results(filepath = net_migration_upload_dir, model_nam
 
 if (best & !test) {
   mortdb::update_status(model_name = "population single year", model_type = "estimate", run_id = pop_single_vid, new_status = "best", hostname = hostname)
-  mortdb::update_status(model_name = "population", model_type = "estimate", run_id = pop_reporting_vid, new_status = "best", assert_parents = F, hostname = hostname) # TODO: this check for parent estimate is wrong and needs to be fixed
+  mortdb::update_status(model_name = "population", model_type = "estimate", run_id = pop_reporting_vid, new_status = "best", assert_parents = F, hostname = hostname)
   mortdb::update_status(model_name = "migration", model_type = "estimate", run_id = migration_vid, new_status = "best", hostname = hostname)
 }
 

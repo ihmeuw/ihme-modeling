@@ -1,0 +1,44 @@
+default:
+
+  dir:
+    base: "FILEPATH"
+    mlt: "FILEPATH"
+    u5: "FILEPATH"
+    finalizer: "FILEPATH"
+    shocks: "FILEPATH"
+    log: "FILEPATH"
+
+  constant_inputs:
+    hiv_metadata_dir: "FILEPATH"
+    hiv_spectrum_draws: "FILEPATH"
+    hiv_stgpr: "FILEPATH"
+    flt_regression : "FILEPATH"
+
+  special_location_sets:
+    - "SDI"
+    - "WHO"
+    - "World Bank"
+    - "EU"
+    - "Commonwealth"
+    - "Four World Regions"
+    - "World Bank Income Levels"
+    - "OECD"
+    - "G20"
+    - "African Union (AU)"
+    - "Nordic Region"
+    - "Custom PAHO sub-regions"
+    - "Arab World"
+    - "Organization of Islamic Cooperation"
+    - "Association of Southeast Asian Nations"
+    - "Gulf Cooperation Council"
+    - "Sahel Region"
+    - "GBD Macro Regions"
+    - "Health System Capacity GBD"
+
+  draw_range: [0, 999]
+
+  hiv_year_start: 1980
+  hiv_decomp_step: "step3"
+
+  shell: "FILEPATH"
+  image: "FILEPATH"

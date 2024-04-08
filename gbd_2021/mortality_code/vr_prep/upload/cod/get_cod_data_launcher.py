@@ -259,20 +259,7 @@ def drop_overlapping_cod_years(df):
 def get_code_ids(run_id):
     
     code_ids = ezfuncs.query(
-    """SELECT DISTINCT mc.code_id
-        FROM  AS mcs
-        INNER JOIN AS mcscsmt
-            ON mcs.code_system_id=mcscsmt.code_system_id
-        INNER JOIN engine_room.maps_codemapversion AS mcmv
-            ON mcmv.cscsmt_id=mcscsmt.cscsmt_id
-        INNER JOIN engine_room.maps_codemap AS mcm
-            ON mcm.code_map_version_id = mcmv.code_map_version_id
-        INNER JOIN  mclh
-            ON mcm.code_list_code_id = mclh.code_list_code_id
-        INNER JOIN engine_room.maps_code mc
-            ON mc.code_id = mclh.code_id
-        WHERE mcmv.code_map_version_status_id = 2
-        AND mcm.cause_id IN (920, 744)""", conn_def="engine")
+    """QUERY""", conn_def="engine")
     # Output so we can read in parallel
     code_ids.to_csv("".format(run_id), index=False)
     return None

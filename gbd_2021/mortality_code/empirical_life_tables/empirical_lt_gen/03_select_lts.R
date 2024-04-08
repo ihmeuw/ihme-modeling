@@ -181,7 +181,7 @@ over_1 <- empir_deaths[(qx > 1 | lx < 0 | qx < 0 | is.na(qx)) & outlier_type_id 
 over_1 <- unique(over_1[, .SD, .SDcols = output_empir_ids])
 over_1[, drop := 1]
 empir_deaths <- merge(empir_deaths, over_1, by = output_empir_ids, all.x = T)
-empir_deaths[drop == 1, outlier_type_id := 4] # TODO: make new outlier_type for this
+empir_deaths[drop == 1, outlier_type_id := 4]
 empir_deaths[, drop := NULL]
 
 ## Generate 5q0, 45q15, and other summary metrics

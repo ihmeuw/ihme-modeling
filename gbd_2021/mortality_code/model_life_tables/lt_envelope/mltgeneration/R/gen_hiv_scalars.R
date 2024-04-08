@@ -18,7 +18,7 @@ gen_hiv_scalars <- function(run_id_45q15_est = "best") {
 
   selected_45q15_run_id <- get_proc_version("45q15", "estimate", run_id_45q15_est)
   prepped_45q15 <- get_mort_outputs("45q15", "estimate", run_id = selected_45q15_run_id, locations = hiv_locations, estimate_stage_id = 3)
-  prepped_hiv <- fread(paste0("/mnt/team/mortality/pub/45q15/", selected_45q15_run_id, "/data/hiv_covariate.csv"))
+  prepped_hiv <- fread(paste0("FILEPATH", selected_45q15_run_id, "/data/hiv_covariate.csv"))
 
   create_scaled_hiv <- function(hiv_cdr, scalar) {
     scaled_hiv <- copy(hiv_cdr)

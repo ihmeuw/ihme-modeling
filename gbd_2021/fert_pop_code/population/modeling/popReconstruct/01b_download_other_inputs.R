@@ -122,10 +122,9 @@ rm(previous_round_best_run); gc()
 
 # WPP net migration -------------------------------------------------------
 
-# TODO: these should be in a database
 wpp_years <- c(2017, 2019)
 wpp_total_migration <- lapply(c(wpp_years), function(wpp_year) {
-  data <- fread(paste0("/mnt/team/mortality/pub/comparators/wpp_", wpp_year, "/un_wpp_", wpp_year, "_net_migration.csv"))
+  data <- fread(paste0("FILEPATH"))
   data <- data[, list(ihme_loc_id, year_id, sex_id = 3, age_group_id = 22,
                       measure_id = 19, source = paste0("WPP", wpp_year), mean = value)]
   return(data)

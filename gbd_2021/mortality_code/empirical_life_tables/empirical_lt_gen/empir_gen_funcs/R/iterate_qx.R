@@ -67,7 +67,6 @@ iterate_qx <- function(dt, ax_params, id_vars, n_iterations = 50) {
   #   4. mx is NA for ages before terminal_age_start, indicating some qx
   #      values were removed prior to qx extention
   #
-  #  TODO: make these exclusions more flexible with the function args
 
   dt[is.na(mx_term), holdout := TRUE]
   dt[mx_term < 0.05, holdout := TRUE]

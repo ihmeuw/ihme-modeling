@@ -1,9 +1,8 @@
 #' Generate Starting ax Values for Ages 10-100
 #'
-#' Generate starting ax (average years lived in age interval for those who die in the age interval) values 
+#' Generate starting ax (average years lived in age interval for those who die in the age interval) values
 #' for ages 10-100 based on dx values in the age and surrounding ages.
 #' This implements ax graduation (however, not-iterated) based on bracketing values of dx/
-#' See an alternate implementation here: https://stash.ihme.washington.edu/projects/UC/repos/mortality/browse/sae_models/demog/lifetables.r?at=refs%2Fheads%2Ffeature%2Fladwyer-model_by_race
 #' After this, 80+ ax gets modified by gen_80plus_ax, and under-10 gets calculated in recalc_u10_nlx_mx_ax
 #'
 #' @param dt data.table with variables: ihme_loc_id, sex, age, sim, dx

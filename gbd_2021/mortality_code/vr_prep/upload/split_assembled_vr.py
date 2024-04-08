@@ -246,12 +246,7 @@ def collapse_small_age_groups(df):
 
     # get age start and age end for the bad age groups
     age_query = """
-                SELECT
-                    age_group_id, age_group_years_start, age_group_years_end
-                FROM
-                    shared.age_group
-                WHERE
-                    age_group_id IN ({});
+		QUERY
                 """.format(", ".join(str(a) for a in bad_age_group_ids))
     age_metadata = ezfuncs.query(age_query, conn_def="shared")
 
@@ -280,12 +275,7 @@ def collapse_small_age_groups(df):
 
     # good_age_group_ids
     age_query = """
-                SELECT
-                    age_group_id, age_group_years_start, age_group_years_end
-                FROM
-                    shared.age_group
-                WHERE
-                    age_group_id IN ({})
+		QUERY
                 """.format(", ".join(str(a) for a in good_age_group_ids))
     good_age_metadata = ezfuncs.query(age_query, conn_def="shared")
 

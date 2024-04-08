@@ -68,7 +68,7 @@
 ###############################################################################################################
 ## Create Directory structure
 
-  out_dir         <- paste0("/mnt/team/mortality/pub/model_life_tables/", mlt_lt_run_id)
+  out_dir         <- paste0("FILEPATH", mlt_lt_run_id)
   diag_dir        <- paste0(out_dir, "/diagnostics")
   input_dir       <- paste0(out_dir, "/inputs")
   out_dir_lt_free <- paste0(out_dir, "/lt_hiv_free")

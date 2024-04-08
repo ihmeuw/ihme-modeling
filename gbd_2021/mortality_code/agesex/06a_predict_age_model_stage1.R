@@ -414,7 +414,6 @@ d[, lnn := (no_hiv_qx * lnn) / ((1 - enn))]
 d[, pnn := (q_u5 * pnn) / ((1 - enn) * (1 - lnn))]
 d[, pna := (q_u5 * pna) / ((1 - enn) * (1 - lnn))]
 d[, pnb := (q_u5 * pnb) / ((1 - enn) * (1 - lnn) * (1 - pna))]
-# TODO: compare replacing (1-pnn) with (1-pna)*(1-pnb) in ch calculation below
 d[, ch := (q_u5 * ch)  / ((1 - enn) * (1 - lnn) * (1 - pnn))]
 d[, cha := (q_u5 * cha) / ((1 - enn) * (1 - lnn) * (1 - pnn))]
 d[, chb := (q_u5 * chb) / ((1 - enn) * (1 - lnn) * (1 - pnn) * (1 - cha))]

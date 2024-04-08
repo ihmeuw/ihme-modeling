@@ -90,7 +90,7 @@ settings <- list(
   census_data_id_vars = c("location_id", "year_id", "nid", "underlying_nid", "source_name",
                           "outlier_type", "record_type", "method_short", "pes_adjustment_type", "data_stage"),
   age_group_table_terminal_age = 125,
-  reporting_age_groups_migration = c(1, 21:26, 28, 157:159, 162), # TODO move this to get_age_map
+  reporting_age_groups_migration = c(1, 21:26, 28, 157:159, 162),
   heatmap_age_groups = c(22, 1, 23, 24, 41, 234),
   modeling_hierarchy = ifelse(gbd_year == 2017, "mortality", "population"), # mortality hierarchy was used for 2017 since the population hierarchy was created late and incorrectly
   reporting_hierarchies <- list("sdi", "who", "world bank", "eu",
@@ -263,7 +263,6 @@ readr::write_csv(all_hierarchies, paste0(output_dir, "/database/all_location_hie
 
 # Location and census specific settings -----------------------------------
 
-# TODO: add check for all locations and required settings
 location_specific_settings <- data.table::fread(location_specific_settings_dir, na.strings=c("NA", ""))
 census_specific_settings <- data.table::fread(census_specific_settings_dir, na.strings=c("NA", ""))
 location_specific_settings[is.na(pooling_ages), pooling_ages := "seq(65,95,10)"]
@@ -311,14 +310,13 @@ get_model_inputs <- function(model_name, model_type, run_id) {
   on.exit(tryCatch(DBI::dbDisconnect(myconn), error=function(e){}, warning = function(w) {}))
 
   # get all the run ids, comments, statuses etc.
-  select_command <- paste0("SELECT proc_version_id, run_id, process_id, process_name, status, gbd_round_id, comment, best_start_date, best_end_date, pv.date_inserted, pv.last_updated, pv.last_updated_by ",
-                           "FROM mortality.process_version pv LEFT JOIN mortality.process using(process_id) LEFT JOIN mortality.lookup_run_status rs ON pv.status_id=rs.run_status_id")
+  select_command <- paste0("QUERY")
   proc_versions <- setDT(DBI::dbGetQuery(myconn, select_command))
   proc_versions <- proc_versions[, list(parent_process_name = process_name, parent_run_id = run_id,
                                         status, comment, best_start_date, best_end_date, date_inserted, last_updated, last_updated_by)]
 
   # get the parent-child mappings
-  select_command <- paste0("SELECT * FROM mortality.vw_process_version_map")
+  select_command <- paste0("QUERY")
   pv_map <- setDT(DBI::dbGetQuery(myconn,select_command), key = c("parent_process_name", "child_process_name"))
   inputs <- pv_map[child_process_name == process_name & child_run_id == run_id, list(parent_process_name, parent_run_id)]
 

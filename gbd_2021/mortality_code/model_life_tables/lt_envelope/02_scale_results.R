@@ -78,7 +78,6 @@ zaf_locs      <- loc_map[parent_ihme == "ZAF", location_id]
 zaf_id        <- loc_map[ihme_loc_id == "ZAF", location_id]
 
 ## determine whether this run has only level-3 locations... in which case don't scale/agg
-## TODO: setup a more robust way to pass information about whether to agg/scale
 subnat_included <- any(run_countries %like% "_")
 
 ## Resample run countries so that all of the parallel jobs aren't hitting the same HDF at the same time

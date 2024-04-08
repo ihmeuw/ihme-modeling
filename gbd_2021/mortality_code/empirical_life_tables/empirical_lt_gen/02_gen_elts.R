@@ -37,7 +37,6 @@ code_dir <- args$code_dir
 moving_average_weights <- c(1, 1.5, 2, 6, 2, 1.5, 1)
 
 # import process-specific functions
-# TODO: make into a formal compiled package
 empir_lt_func_dir <- paste0(code_dir, "/empirical_lt_gen/empir_gen_funcs/R")
 empir_funcs <- list.files(empir_lt_func_dir)
 for(func in empir_funcs) {
@@ -45,7 +44,7 @@ for(func in empir_funcs) {
 }
 
 # set working folders
-elt_folder        <- paste0("/mnt/team/mortality/pub/empirical_life_tables")
+elt_folder        <- paste0("FILEPATH")
 run_folder        <- paste0(elt_folder, "/", empir_run_id)
 run_input_folder  <- paste0(run_folder, "/inputs")
 run_output_folder <- paste0(run_folder, "/outputs")

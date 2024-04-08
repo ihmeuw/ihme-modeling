@@ -149,12 +149,6 @@ rm(asfr); gc()
 lt_parameter_ids <- mortdb::get_mort_ids("life_table_parameter")[, list(life_table_parameter_id, life_table_parameter_name = parameter_name)]
 full_lt_age_groups <- mortdb::get_age_map(type = "single_year")[, list(age_group_id, age = age_group_years_start)]
 
-## HOTFIX March 2020:
-#  Add in old age_group_id 49 to catch potential uses in FLT files
-#
-#  Its okay to add a duplicate age group here because this object isn't
-#  used anywhere else and the extra row will be dropped in the merge.
-
 if (gbd_year > 2019) {
   full_lt_age_groups <- rbindlist(list(full_lt_age_groups, list(49, 1)))
 }
@@ -165,7 +159,6 @@ full_lifetables <- parallel::mclapply(location_hierarchy[is_estimate == 1, locat
   lt_file <- lt_files[grepl(paste0("summary_full_", loc_id, ".csv"), lt_files) | grepl(paste0("summary_full_", loc_id, "_aggregated.csv"), lt_files)]
   lt <- fread(lt_file)
 
-  # TODO: this is only needed because the aggregated files are formatted differently, would be nice to get rid of
   if (grepl("aggregated", lt_file)) {
     lt <- merge(lt, lt_parameter_ids, by = "life_table_parameter_id", all.x = T)
     lt <- merge(lt, full_lt_age_groups, by = "age_group_id", all.x = T)
