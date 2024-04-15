@@ -1,10 +1,5 @@
-#
-# TITLE: Combine CoD versions to fill missing locations
-#
 
-#   project id 15 which drops a lot of locations needed for GBD 2021. This 
-#   combines both versions by keeping only the nids missing from 14 that are 
-#   in 15. 
+# TITLE: Combine CoD versions to fill missing locations
 
 library(data.table)
 
