@@ -1,0 +1,46 @@
+xmodel:
+  spaces:
+  - dims:
+    - dim_type: numerical
+      name: age_mid
+    name: age_mid
+  - dims:
+    - dim_type: categorical
+      name: region_id
+    - dim_type: numerical
+      name: age_mid
+    name: region_id*age_mid
+  - dims:
+    - dim_type: categorical
+      name: national_id
+    - dim_type: numerical
+      name: age_mid
+    name: national_id*age_mid
+  var_builders:
+  - lam: 10.0
+    name: intercept
+    space: age_mid
+  - lam: 25.0
+    name: intercept
+    space: region_id*age_mid
+  - lam: 50.0
+    name: intercept
+    space: national_id*age_mid
+  - lam: 10.0
+    name: trend
+    space: age_mid
+  - lam: 25.0
+    name: trend
+    space: region_id*age_mid
+  - lam: 50.0
+    name: trend
+    space: national_id*age_mid
+xmodel_fit:
+  options:
+    cg_maxiter: 5000
+    cg_maxiter_incr: 200
+    cg_maxiter_init: 1000
+    gtol: 1.0e-06
+    maxiter: 100
+    precon_builder: lbfgs
+    verbose: true

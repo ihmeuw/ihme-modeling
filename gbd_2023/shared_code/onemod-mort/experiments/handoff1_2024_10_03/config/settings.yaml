@@ -1,0 +1,37 @@
+handoff: 1
+data: /path/to/workdir/productions/handoff1_2024_10_03/1950_component/data/raw_data.parquet
+loc_meta: /path/to/workdir/data/location_metadata.parquet
+age_meta: /path/to/workdir/data/age_metadata.parquet
+handoff_predictions: /path/to/results/mortality_data/2024_10_03
+handoff_figures: /path/to/results/mortality_figures/2024_10_03
+
+predictions:
+  - - /path/to/workdir/data/gbd_results/without_shock/gbd_data.parquet
+    - GBD21:
+        col: gbd_mx_21
+        color: [tab20, 14]
+        linestyle: "-"
+  - - /path/to/results/mortality_data/2024_10_03/predictions.parquet
+    - spxmod_new:
+        col: spxmod
+        color: [tab20, 1]
+        linestyle: ":"
+      kreg_new:
+        col: kreg
+        color: [tab20, 0]
+        linestyle: "-"
+  - - /path/to/results/mortality_data/2024_09_26/predictions.parquet
+    - spxmod_2024_09_26:
+        col: spxmod
+        color: [tab20, 3]
+        linestyle: ":"
+      kreg_2024_09_26:
+        col: kreg
+        color: [tab20, 2]
+        linestyle: "-"
+
+  - - /path/to/workdir/data/wpp.parquet
+    - WPP:
+        col: mx
+        color: [tab10, 4]
+        linestyle: "-"

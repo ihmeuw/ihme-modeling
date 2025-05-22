@@ -1,0 +1,11 @@
+handoff: 2
+raw_data: /path/to/data/test_2024-08-30-14-07_xxx/outputs/onemod_handoff_2_with_covariates_1950.parquet
+gbd_results: /path/to/workdir/data/gbd_results/without_shock/gbd_data.parquet
+loc_meta: /path/to/workdir/data/location_metadata.parquet
+age_meta: /path/to/workdir/data/age_metadata.parquet
+handoff_predictions: /path/to/results/mortality_data/2024_09_05
+handoff_figures: /path/to/results/mortality_figures/2024_09_05
+
+# sex_id:
+# super_region_id:
+# location_id:

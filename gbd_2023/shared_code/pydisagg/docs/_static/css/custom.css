@@ -1,0 +1,19 @@
+/* reduce the size of the main text */
+p {
+  font-size: 0.95rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+.sidebar-brand-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: auto;
+}

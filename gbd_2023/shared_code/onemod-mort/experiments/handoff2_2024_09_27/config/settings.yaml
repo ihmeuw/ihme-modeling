@@ -1,0 +1,54 @@
+handoff: 2
+data: /path/to/workdir/productions/handoff2_2024_09_27/1950_component/data/post_raw_data.parquet
+loc_meta: /path/to/workdir/data/location_metadata.parquet
+age_meta: /path/to/workdir/data/age_metadata.parquet
+handoff_predictions: /path/to/results/mortality_data/2024_09_27
+handoff_figures: /path/to/results/mortality_figures/2024_09_27/post
+
+predictions:
+  - - /path/to/workdir/data/gbd_results/without_shock/gbd_data.parquet
+    - GBD21:
+        col: gbd_mx_21
+        color: [tab20, 14]
+        linestyle: "-"
+  - - /path/to/results/mortality_data/2024_09_27/predictions.parquet
+    - spxmod:
+        col: spxmod
+        color: [tab20, 1]
+        linestyle: ":"
+      kreg:
+        col: kreg
+        color: [tab20, 0]
+        linestyle: "-"
+
+  # - - /path/to/workdir/productions/handoff2_2024_09_27/predictions.parquet
+  #   - spxmod_new:
+  #       col: spxmod
+  #       color: [tab20, 1]
+  #       linestyle: ":"
+
+  - - /path/to/results/mortality_data/2024_09_27/1990_component/predictions.parquet
+    - spxmod_1990:
+        col: spxmod
+        color: [tab20, 3]
+        linestyle: ":"
+      kreg_1990:
+        col: kreg
+        color: [tab20, 2]
+        linestyle: "-"
+      
+  - - /path/to/results/mortality_data/2024_09_27/1950_component/predictions.parquet
+    - spxmod_1950:
+        col: spxmod
+        color: [tab20, 5]
+        linestyle: ":"
+      kreg_1950:
+        col: kreg
+        color: [tab20, 4]
+        linestyle: "-"
+
+  - - /path/to/workdir/data/wpp.parquet
+    - WPP:
+        col: mx
+        color: [tab10, 4]
+        linestyle: "-"

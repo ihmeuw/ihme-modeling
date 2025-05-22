@@ -1,0 +1,10 @@
+numpy
+pandas
+jupyter
+matplotlib
+jax
+tqdm
+pplkit
+fire
+seaborn
+db_queries

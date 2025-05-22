@@ -1,0 +1,7 @@
+Package: ensemble.density
+Version: 0.1
+Imports:
+  actuar,
+  data.table,
+  pracma,
+  zipfR

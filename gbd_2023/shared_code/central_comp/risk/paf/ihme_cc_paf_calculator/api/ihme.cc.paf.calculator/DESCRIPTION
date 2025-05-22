@@ -1,0 +1,10 @@
+Package: ihme.cc.paf.calculator
+Title: PAF Calculator
+Version: 0.1.1
+Description: R functions for calculating PAFs at IHME
+URL: 
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+  reticulate
+RoxygenNote: 7.3.2

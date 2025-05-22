@@ -1,0 +1,23 @@
+Package: crosswalk
+Type: Package
+Title: Adjusting non-standard observations using (network) meta-regression 
+Version: 0.1.0
+Author: USERNAME
+Maintainer: USERNAME
+Description: In meta-analysis and other forms of data synthesis, the quantity of interest might be measured in different ways. 
+    For example, estimates of a population's obesity prevalence could be based on self-reported height/weight or anthropomorphic measurements. 
+    Crosswalking is the process of estimating what a non-standard (e.g. self-reported) observation would be had it been measured with the gold standard method. 
+    This package is an implementation of crosswalking methods used in the Global Burden of Disease Study at IHME.  
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+Depends:
+    reticulate
+Imports:
+    reticulate
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0

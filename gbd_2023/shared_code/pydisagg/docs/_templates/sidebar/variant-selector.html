@@ -1,0 +1,15 @@
+<div class="sidebar-tree">
+  <ul>
+  <li class="toctree-l1 has-children"><a class="reference internal" href="">Versions</a>
+    <input class="toctree-checkbox" id="toctree-checkbox-version" name="toctree-checkbox-version" role="switch" type="checkbox"/>
+    <label for="toctree-checkbox-version"><div class="visually-hidden">Toggle navigation of Versions</div>
+      <i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i>
+    </label>
+    <ul>
+    {% for version in versions %}
+      <li class="toctree-l2"><a class="reference internal" href="{{ pathto('/'.join(['..', version, pagename])) }}">{{ version }}</a></li>
+    {% endfor %}
+    </ul>
+  <li>
+  </ul>
+</div>

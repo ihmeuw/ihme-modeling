@@ -1,0 +1,66 @@
+diet_veg-cvd_ihd:
+  fit_signal_model:
+    cov_model:
+      prior_spline_monotonicity: "decreasing"
+    knots_samples:
+      num_samples: 5
+  select_bias_covs:
+    cov_finder:
+      pre_selected_covs: ["em_dummy"]
+
+
+default:
+  # random seed
+  seed: 0
+  fit_signal_model:
+    # signal model covariate model settings, contains configurations of the spline and its priors
+    cov_model:
+      # the value of these knots won't be used in the actual model fitting, but the number of knots will be used
+      # the actual values of the knots will be sampled using the settings in "knots_samples"
+      spline_knots: [0.0, 0.25, 0.5, 0.75, 1.0]
+      spline_knots_type: "domain"
+      spline_degree: 2
+      spline_r_linear: True
+      spline_l_linear: False
+      # if you are working with monotonic curves, choice from ["increasing", "decreasing"]
+      prior_spline_monotonicity: null
+      prior_spline_maxder_gaussian: [[0.0, 0.0, 0.0, 0.0], [0.01, 0.01, 0.01, 0.001]]
+    # settings of how to sample knots
+    knots_samples:
+      # the bounds for interior knots
+      knot_bounds: [[0.1, 0.3], [0.4, 0.6], [0.7, 0.9]]
+      # the distance between the knots / size of the intervals
+      min_dist: [0.0, 0.0, 0.0, 0.0]
+      # number of knots samples used in ensemble model
+      num_samples: 50
+    # other settings of the model
+    signal_model:
+      # trimming settings, inlier percentage default to be 90%, if you don't want to trim, use 1.0
+      inlier_pct: 0.9
+  select_bias_covs:
+    # settings for covariate selection
+    cov_finder:
+      # please put the pre-selected covariates in list
+      pre_selected_covs: []
+  complete_summary:
+    # draws configuration
+    draws:
+      # lower and upper bounds of the risk exposures for prediction
+      # if do not provide, will infer from the data set for lower and upper bounds
+      risk_lower:
+      risk_upper:
+      # number of points for risk exposures, evenly distributed between the lower and upper bounds
+      num_points: 100
+      # number of draws
+      num_draws: 1000
+      # additional quantiles for accurate estimation of quantiles rather than rely on draws
+      quantiles: [0.05, 0.5, 0.95]
+    score:
+      # if we normalize the risk curve to the lowest point on the curve
+      # for monotonic curve this is usually false
+      # only for j-shaped this can be true
+      normalize_to_tmrel: false
+  figure:
+    # if we want to show the connection between the reference and alternative exposure
+    show_ref: true
+

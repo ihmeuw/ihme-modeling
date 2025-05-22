@@ -1,0 +1,35 @@
+smoking_direct-hip_fracture:
+  select_bias_covs:
+    cov_finder:
+      pre_selected_covs: ["cov_dummy"]
+
+default:
+  # random seed
+  seed: 0
+  fit_signal_model:
+    signal_model:
+      inlier_pct: 0.9
+  select_bias_covs:
+    # settings for covariate selection
+    cov_finder:
+      # please put the pre-selected covariates in list
+      pre_selected_covs: []
+  complete_summary:
+    # draws configuration
+    draws:
+      # lower and upper bounds of the risk exposures for prediction
+      # if do not provide, will infer from the data set for lower and upper bounds
+      risk_lower:
+      risk_upper:
+      # number of points for risk exposures, evenly distributed between the lower and upper bounds
+      num_points: 100
+      # number of draws
+      num_draws: 1000
+      # additional quantiles for accurate estimation of quantiles rather than rely on draws
+      quantiles: [0.05, 0.5, 0.95]
+    score:
+      # if we normalize the risk curve to the lowest point on the curve
+      # for monotonic curve this is usually false
+      # only for j-shaped this can be true
+      normalize_to_tmrel: false
+

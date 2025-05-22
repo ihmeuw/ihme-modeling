@@ -1,0 +1,106 @@
+age_pattern:
+  xmodel:
+    spaces:
+    - name: age_mid
+      dims:
+      - name: age_mid
+        dim_type: numerical
+    - name: super_region_id*age_mid
+      dims:
+        - name: super_region_id
+          dim_type: categorical
+        - name: age_mid
+          dim_type: numerical
+    - name: region_id*age_mid
+      dims:
+        - name: region_id
+          dim_type: categorical
+        - name: age_mid
+          dim_type: numerical
+    var_builders:
+    - name: intercept
+      space: age_mid
+      lam: 25.0
+    - name: intercept
+      space: super_region_id*age_mid
+      lam: 1000.0
+    - name: intercept
+      space: region_id*age_mid
+      lam:
+        region_id: 10_000_000.0
+        age_mid: 1000.0
+    - name: covid_asdr
+      space: age_mid
+      lam: 2000.0
+      uprior:
+        lb: 0.0
+        ub: inf
+    - name: hiv_mort_intermediate
+      space: age_mid
+      lam: 2000.0
+      uprior:
+        lb: 0.0
+        ub: inf
+    - name: sdi
+      space: age_mid
+      lam: 2000.0
+      uprior:
+        lb: -inf
+        ub: 0.0
+  xmodel_fit:
+    options:
+      verbose: true
+      gtol: 0.000001
+      max_iter: 200
+      m_freq: 3
+      a_scale: 0.1
+      # precon_builder: lbfgs
+      # cg_maxiter_init: 1000
+      # cg_maxiter_incr: 200
+      # cg_maxiter: 5000
+
+time_pattern:
+  xmodel:
+    spaces:
+    - name: age_mid
+      dims:
+      - name: age_mid
+        dim_type: numerical
+    - name: super_region_id*age_mid
+      dims:
+        - name: super_region_id
+          dim_type: categorical
+        - name: age_mid
+          dim_type: numerical
+    - name: region_id*age_mid
+      dims:
+        - name: region_id
+          dim_type: categorical
+        - name: age_mid
+          dim_type: numerical
+    var_builders:
+    - name: trend
+      space: age_mid
+      lam: 25.0
+    - name: super_region_id_31_trend
+      space: age_mid
+      lam: 1000.0
+    - name: intercept
+      space: age_mid
+      lam: 25.0
+    - name: intercept
+      space: super_region_id*age_mid
+      lam: 1000.0
+    - name: intercept
+      space: region_id*age_mid
+      lam: 1000.0
+    
+  xmodel_fit:
+    options:
+      verbose: true
+      gtol: 0.000001
+      maxiter: 100
+      precon_builder: lbfgs
+      cg_maxiter_init: 1000
+      cg_maxiter_incr: 200
+      cg_maxiter: 5000

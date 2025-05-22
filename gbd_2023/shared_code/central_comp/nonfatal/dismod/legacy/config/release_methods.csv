@@ -1,0 +1,6 @@
+﻿release_id,8,9,10,11,12,13,14,15
+enable_hybrid_cv,F,F,F,F,F,F,F,F
+enable_emr_csmr_re,T,T,T,T,T,T,T,T
+disable_nonstandard_locations,F,F,F,F,F,F,F,F
+fix_csmr_re,T,T,T,T,T,T,T,T
+enable_csmr_average,F,F,F,F,F,F,F,F

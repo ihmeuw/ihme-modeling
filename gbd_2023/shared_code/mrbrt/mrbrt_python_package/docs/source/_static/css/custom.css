@@ -1,0 +1,15 @@
+/* font face */
+body, p {
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+code {
+    font-family: SFMono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier,monospace;
+}
+
+h1, h2, h3 {
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    font-weight: normal;
+}

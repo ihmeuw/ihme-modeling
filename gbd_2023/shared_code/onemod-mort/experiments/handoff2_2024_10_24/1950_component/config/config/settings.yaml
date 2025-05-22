@@ -1,0 +1,17 @@
+handoff: 2
+covid_cov: covid_age_sex
+raw_data: /path/to/data/test_2024-10-11-10-05_xxx/outputs/onemod_handoff_2_with_covariates_1950_v3.parquet
+post_raw_data: /path/to/data/onemod_handoff_2_with_covariates_1950_v3-updated-test_2024-10-11-10-05_xxx.parquet
+gbd_results: /path/to/workdir/data/gbd_results/without_shock/gbd_data.parquet
+wpp_results: /path/to/workdir/data/wpp.parquet
+loc_meta: /path/to/workdir/data/location_metadata.parquet
+age_meta: /path/to/workdir/data/age_metadata.parquet
+handoff_predictions: /path/to/results/mortality_data/2024_10_24/1950_component
+handoff_figures: /path/to/results/mortality_figures/2024_10_24/1950_component
+# covs: [covid_asdr, hiv_mort_intermediate, sdi]
+coef_compare:
+  coef_2024_10_17: /path/to/workdir/productions/handoff2_2024_10_17/1950_component
+
+# sex_id:
+# super_region_id:
+# location_id:

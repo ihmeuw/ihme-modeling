@@ -1,0 +1,50 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61",
+]
+
+[project]
+name = "pydisagg"
+version = "0.6.0"
+description = ""
+readme = "README.md"
+license = { text = "BSD 2-Clause License" }
+authors = [{ name = "IHME Math Sciences", email = "ihme.math.sciences@gmail.com" }]
+requires-python = ">=3.6"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "matplotlib",
+  "numpy<2.0.0",
+  "pandas",
+  "scipy",
+  "pydantic",
+]
+[project.urls]
+homepage = "https://github.com/ihmeuw-msca/pydisagg"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration"]
+addopts = "-v -ra -q"
+log_cli = true
+log_cli_level = "INFO"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+minversion = "6.0"
+filterwarnings = "ignore"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+docs = ["sphinx", "sphinx-autodoc-typehints", "furo"]

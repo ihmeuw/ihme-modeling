@@ -1,0 +1,11 @@
+default: 
+  queue: all.q
+  cores: 2
+  memory: 5G
+  runtime: 00:05:00
+  project: proj_mscm
+# global_model: max 802 MiB 00:01:05
+# national_model: max 325 MiB 00:03:24
+# location_model: max 1.4 GiB 00:05:02
+# calibrate_uncertainty:  # max 0 GiB 00:00:15
+# combine_predictions: max 4.9 GiB 00:06:25

@@ -1,0 +1,5 @@
+data: /path/to/workdir/data/handoff1_2024_07_24.parquet
+handoff: 1
+# sex_id:
+# super_region_id:
+# location_id:
