@@ -1,0 +1,16 @@
+﻿cluster_cat,start_elevation,end_elevation
+elevation_cat_0,-400,0
+elevation_cat_1,0,400
+elevation_cat_2,400,800
+elevation_cat_3,800,1200
+elevation_cat_4,1200,1600
+elevation_cat_5,1600,2000
+elevation_cat_6,2000,2400
+elevation_cat_7,2400,2800
+elevation_cat_8,2800,3200
+elevation_cat_9,3200,3600
+elevation_cat_10,3600,4000
+elevation_cat_11,4000,4400
+elevation_cat_12,4400,4800
+elevation_cat_13,4800,5200
+elevation_cat_14,5200,5600

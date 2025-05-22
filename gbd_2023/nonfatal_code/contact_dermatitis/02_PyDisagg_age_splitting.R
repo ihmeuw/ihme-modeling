@@ -1,0 +1,238 @@
+library(reticulate)
+library(tidyverse)
+reticulate::use_python("FILEPATH")
+splitter <- import("pydisagg.ihme.splitter")
+source("FILEPATH")
+source("FILEPATH")
+
+
+# Read in data to split. this is the data after sex splitting.
+data <- read.csv(paste0(modeling_dir,"FILEPATH",cause_name,".csv"))
+
+
+
+# Get age metadata
+age_mt <- get_age_metadata(release_id = 16)
+
+age_mt <- select(age_mt, age_group_years_start, age_group_years_end, age_group_id, age_group_name)
+
+# add age_id to data and mutate age_group_year_start and end to align with age_mt
+data_age_end_adjusted <- data %>% mutate(age_end = age_end + 1)
+# any data that does not have GBD aligned age groups should be split.
+## we find rows in data that can't be joined with age_mt_selected based on age_start and age_end
+data_to_split <-anti_join(data_age_end_adjusted, age_mt, by = c("age_start" = "age_group_years_start",
+                                                                 "age_end" = "age_group_years_end"))
+# Data that does not need age splitting, to join with splitted data later:
+age_specific_data <-inner_join(data_age_end_adjusted, age_mt %>% select(age_group_years_start, age_group_years_end),
+                           by = c("age_start" = "age_group_years_start", "age_end" = "age_group_years_end"))
+age_specific_data <- age_specific_data %>% mutate(age_end = age_end - 1)
+
+# add age_group_years_start&end to data_to_split
+data_to_split <- data_to_split %>% mutate(age_group_years_start = age_start,
+                                          age_group_years_end = age_end)
+data_to_split <- data_to_split %>% mutate(age_end=age_end-1)
+
+# Mutate age_lwr and age_upr to align with sex split function
+data_to_split <- data_to_split %>% mutate(age_lwr = age_group_years_start,
+                                          age_upr = age_group_years_end)
+
+# adding uid column to create unique identifiers where there are multiple data points for a set of (nid,loc,sex,year):
+data_to_split <- data_to_split %>% mutate(uid=1:nrow(data_to_split))
+
+# when gae_start=age_end, add 1 to age_end:
+data_to_split <- data_to_split %>% mutate(age_end = if_else(age_start == age_end, age_end + 1, age_end))
+
+min_age_to_split <- data_to_split %>% filter(data_to_split$age_start<2)
+# Exclude instances were age_start & age_end<2,
+## since Psoriasis is rare in ages<5 and reference data does not support age_start<2:
+data_to_split <- data_to_split %>% filter(!(age_start<2 & age_end<=2))
+
+# # check and exclude uids with age_start and age_end <=1 years, since contact refrence data does not support age_start<1 and is age restricted to >1 years.
+uid_to_exclude <- data_to_split %>% filter(age_start<1 & age_end<=1) %>% pull(uid)
+data_to_split <- data_to_split %>% filter(!uid %in% uid_to_exclude)
+
+# The cause is rare in young ages.
+# Thus, our reference data, clinical from Poland, does not have age_start<2.
+# so the pattern can not handle age_start<2. when age_start<2, we change the age_start to 2.
+data_to_split <- data_to_split %>% mutate(age_start = if_else(age_start <2, 2, age_start))
+
+## Select reference data, age specific data and data to split from data ------------------------------------------------------
+Poland_locs <- c(53660,53661, 53662, 53663, 53664, 53665, 53666, 53667, 53668, 53669,
+                 53670, 53671, 53672, 53673, 53674, 53675)
+
+# Reference data is Clinical data from Polnad
+ref_df <- data %>% filter(location_id %in% Poland_locs & clinical_data_type=='claims')
+
+# add age_id to ref_df and mutate age_group_year_start and end to align with age_mt
+ref_df <- ref_df %>% mutate(age_end = age_end + 1)
+ref_df <-left_join(ref_df, age_mt, by = c("age_start" = "age_group_years_start",
+                                                                 "age_end" = "age_group_years_end"))
+ref_df <- ref_df %>% mutate(age_group_years_start = age_start,
+                                          age_group_years_end = age_end)
+ref_df <- ref_df %>% mutate(age_end=age_end-1)
+
+min(ref_df$age_start)
+min(data_to_split$age_start)
+min(ref_df$age_end)
+min(data_to_split$age_end)
+## Create the pattern df. ------------------------------------------------------
+
+pattern <- ref_df
+#load in draws_df
+draws_df <- read.csv(paste0(modeling_dir,"FILEPATH","ct_draws_df.csv"))
+
+draw_cols <- grep("^draw_", names(draws_df), value = TRUE)
+# concatenate pattern and draws_df
+pattern <- cbind(pattern, draws_df) %>% select(sex_id, year_id, age_start, age_end, age_group_id, age_group_years_start, age_group_years_end, all_of(draw_cols))
+
+# find average draws over all ages for each sex:
+pattern <- pattern %>%
+  group_by(age_group_id, sex_id, age_group_years_start, age_group_years_end) %>%
+  summarise(across(everything(), mean, na.rm = TRUE), .groups = "drop")
+# converting logits to probabilities
+pattern <- pattern %>% mutate(across(all_of(draw_cols), ~ 1 / (1 + exp(-.x))))
+
+
+# target years for splitting
+unique(ref_df$year_id)
+to_split_years <-sort(unique(data_to_split$year_id))
+to_split_years
+
+# Repeat the pattern2 for each year in to_split_years
+pattern_over_years <- data.frame()
+for(year in to_split_years) {
+  # Create a modified version of pattern2 with the current year
+  temp_df <- pattern %>% mutate(year_id = year)
+  # Concatenate this modified df to the pattern2_years
+  pattern_over_years <- bind_rows(pattern_over_years, temp_df)
+}
+#pattern2_years <- pattern2_years %>% select(-age_start, -age_end)
+
+#pattern2_years <- pattern2_years %>% mutate(age_begining = age_group_years_start,
+                                            #age_ending = age_group_years_end-0.01)
+
+
+
+pop_df <- get_population(age_group_id = 'all', year_id=to_split_years, sex_id=1:2,
+                          release_id=16,location_id=unique(data_to_split$location_id))
+
+
+
+
+# Age_Splitting: ------------------------------------------------------
+age_data_config <- splitter$AgeDataConfig(
+  index=c("nid","seq", "location_id", "year_id", "sex_id", "uid"),
+  age_lwr="age_start",
+  age_upr="age_end",
+  val="mean",
+  val_sd="standard_error"
+)
+
+#Will look for column names with "draw_" at the beginning
+draw_cols <- grep("^draw_", names(pattern), value = TRUE)
+
+age_pattern_config <- splitter$AgePatternConfig(
+  by=list("sex_id", "year_id"),
+  age_key="age_group_id",
+  age_lwr="age_group_years_start",
+  age_upr="age_group_years_end",
+  draws=draw_cols, #Either draw columns OR val & val_sd can be provided
+)
+
+age_pop_config <- splitter$AgePopulationConfig(
+  index=c("age_group_id", "location_id", "year_id", "sex_id"),
+  val="population"
+)
+
+age_splitter <- splitter$AgeSplitter(
+  data=age_data_config, pattern=age_pattern_config, population=age_pop_config
+)
+
+result <- age_splitter$split(
+  data=data_to_split,
+  pattern=pattern_over_years,
+  population=pop_df,
+  model="logodds", #model can be "rate" or "logodds"
+  output_type="count") #or "count"
+
+#---------------------------------------
+
+result_to_merge <- result %>% select(-age_start, -age_end, -standard_error, -mean, -pat_val, -pat_val_sd, -pop_population, -pat_val_aligned,
+                                     -pat_val_sd_aligned, -pop_population_aligned, -pop_population_total, -pop_population_proportion) %>% rename(age_start = pat_age_group_years_start,
+                                                                                                                                                 age_end = pat_age_group_years_end,
+                                                                                                                                                 mean = age_split_result,
+                                                                                                                                                 standard_error = age_split_result_se)
+
+# adjust standard_error>1:
+result_to_merge$standard_error[result_to_merge$standard_error>1] <- 1
+
+#calculate lower and upper bounds:
+result_to_merge <- result_to_merge %>% mutate(lower = mean - 1.96 * standard_error,
+                                              upper = mean + 1.96 * standard_error)
+
+
+## replacing values in min(lower) and max(upper), since not in rage. 
+
+# Step 1: Calculate half the lowest non-zero value in 'lower'
+half_lowest_non_zero_res_lower <- min(result_to_merge$lower[result_to_merge$lower > 0]) / 5
+# Step 2: Replace zeros with this value in 'lower'
+result_to_merge <- result_to_merge %>%
+  mutate(lower = ifelse(lower <= 0, half_lowest_non_zero_res_lower, lower))
+# check if there is any instance of lower>=mean:
+result_to_merge %>% filter(lower>mean)
+
+# Replacing lower with mean when lower>mean
+result_to_merge$lower[result_to_merge$lower>result_to_merge$mean] <- result_to_merge$mean[result_to_merge$lower>result_to_merge$mean]
+
+
+# check if there is any instance of upper<=mean:
+result_to_merge %>% filter(upper<=mean)
+
+# age_group_years_start and end was added to the data_to_split, so we need to remove them.
+## we should also remove pre-split values of age_start&end, mean, standard_error, upper, lower:
+data_to_split <- data_to_split %>% select(-age_start, -age_end, -age_group_years_start, -age_group_years_end, -mean, -upper, -lower, -standard_error)
+
+# join result_to_merge and data_to_split on indices to make splitted_data
+splitted_data <- inner_join(data_to_split, result_to_merge, by = c("nid","seq", "location_id", "year_id","sex_id", "uid"))
+
+splitted_data <- splitted_data %>%
+  mutate(sex = case_when(
+    sex_id == 1 ~ "Male",
+    sex_id == 2 ~ "Female",
+    TRUE ~ "Both" # it should never happen for  sex splitted data
+  ))
+
+check <- splitted_data %>% filter(!is.na(crosswalk_parent_seq) & crosswalk_parent_seq != "")
+
+# Move values from seq to crosswalk_parent_seq column, where we do age splitting.
+
+## a few of old crosswalk_parent_seq values are not character from old extractions, we turn all values to integer, since we dont need those old crosswalk_parent_seq values.
+splitted_data <- splitted_data %>% mutate(crosswalk_parent_seq = as.integer(crosswalk_parent_seq))
+
+splitted_data <- splitted_data %>% mutate(crosswalk_parent_seq = if_else(!is.na(seq), seq, crosswalk_parent_seq),
+                                          seq = if_else(!is.na(seq), NA, seq))
+
+
+# comparing age_specific_data and splitted_data columns:
+setdiff(names(splitted_data),names(age_specific_data))
+setdiff(names(age_specific_data),names(splitted_data))
+
+#removing age_lwr, age_upr columns
+splitted_data <- splitted_data %>% select(-age_lwr, -age_upr, -age_group_id, -uid)
+
+# merging splitted data with sex specific proportion of data
+age_splitted_data <- rbind(splitted_data, age_specific_data)
+
+
+#adjust standard_error>1:
+age_splitted_data$standard_error[age_splitted_data$standard_error>1] <- 1
+
+nrow(subset(age_splitted_data, location_id==62))
+unique(age_splitted_data$nid[age_splitted_data$location_id==62])
+
+#saving the age_splitted_data to csv:
+write.csv(age_splitted_data,
+          paste0(modeling_dir,"standard_error>1",cause_name,".csv"), row.names = FALSE)
+
+write.csv(age_splitted_data,
+          paste0(modeling_dir, "standard_error>1",cause_name,".csv"))

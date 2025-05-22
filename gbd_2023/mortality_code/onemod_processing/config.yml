@@ -1,0 +1,38 @@
+default:
+
+  run_id: !expr format(Sys.time(), "%Y_%m_%d_%H")
+
+  wf_args: !expr format(Sys.time(), "%Y_%m_%d_%H_%M_%S") # change if you want the same workflow
+
+  queue: "all.q"
+
+  dir_processing_onemod: "FILEPATH"
+  dir_canonizer: "FILEPATH"
+
+  draw_resample_pct: 0
+  gbd_year: 2023
+  years: !expr 1950:2024
+
+  ex_plots:
+    age_starts: !expr c(0, 5, 15, 60)
+    onemod_cols: !expr c("kreg")
+
+  run_ids_parents:
+    pop: 408
+    pop_sy: 342
+
+  run_ids_previous_round:
+    canonizer: 463
+    dir_best_no_shock: "FILEPATH"
+
+  fp_inputs:
+    handoff_2: "FILEPATH"
+    onemod_means: "FILEPATH"
+    onemod_draws: "FILEPATH"
+    onemod_means_msca_unadjusted: "FILEPATH"
+    wpp_comparator: "FILEPATH"
+    hdss_pt1: "FILEPATH"
+    hdss_pt2: "FILEPATH"
+
+  image_path: "FILEPATH"
+  shell_path: "FILEPATH"

@@ -1,0 +1,18 @@
+﻿sample_size_description,level_1,level_2,level_3,level_4,hierarchy_value,adult_flag
+Adolescents,Children (all),,,,1,0
+Children (all),,,,,0,0
+School-age children,Children (all),,,,1,0
+Elderly,,,,,0,1
+Men,,,,,0,1
+Non-pregnant women (NPW),Women of reproductive age,,,,1,1
+Pregnant women,Women of reproductive age,,,,1,1
+Preschool-age children,Children (all),,,,1,0
+Women,,,,,0,1
+Adults,,,,,0,1
+Women of reproductive age,Women,,,,1,1
+Lactating women (LW),Women of reproductive age,,,,1,1
+"Non-pregnant, non-lactating women (NPNLW)",Non-pregnant women (NPW),Women of reproductive age,,,2,1
+Young infants (0-5 months),Children (all),,,,1,0
+Children (24-59 months),Children (all),,,,1,0
+Children (12-23 months),Children (all),,,,1,0
+Infants (1-11 months),Children (all),,,,1,0

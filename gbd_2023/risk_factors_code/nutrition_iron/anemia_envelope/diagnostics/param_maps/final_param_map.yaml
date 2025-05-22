@@ -1,0 +1,50 @@
+who:
+  mean_hemoglobin:
+    id_type: 'epi'
+    modelable_entity_id: 10487
+    current_model_version_id: 834871
+    previous_model_version_id: 806308
+    release_id: 16
+  mild_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10489
+    current_model_version_id: 835119
+    previous_model_version_id: 806304
+    release_id: 16
+  moderate_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10490
+    current_model_version_id: 835121
+    previous_model_version_id: 806303
+    release_id: 16
+  severe_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10491
+    current_model_version_id: 835118
+    previous_model_version_id: 806306
+    release_id: 16
+brinda:
+  mean_hemoglobin:
+    id_type: 'epi'
+    modelable_entity_id: 10487
+    current_model_version_id: 861646
+    previous_model_version_id: 806308
+    release_id: 16
+  mild_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10489
+    current_model_version_id: 861649
+    previous_model_version_id: 806304
+    release_id: 16
+  moderate_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10490
+    current_model_version_id: 861648
+    previous_model_version_id: 806303
+    release_id: 16
+  severe_anemia:
+    id_type: 'epi'
+    modelable_entity_id: 10491
+    current_model_version_id: 861652
+    previous_model_version_id: 806306
+    release_id: 16

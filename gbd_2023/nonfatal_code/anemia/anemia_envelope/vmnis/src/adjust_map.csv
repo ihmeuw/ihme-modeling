@@ -1,0 +1,11 @@
+me_type,adj_type,var
+total_anemia_prev,unadjusted,anemia_anemic_raw
+total_anemia_prev,survey_adjusted,anemia_anemic_adj
+mild_anemia_prev,survey_adjusted,anemia_mild_adj
+mod_anemia_prev,survey_adjusted,anemia_moderate_adj
+mean_adj_hb,survey_adjusted,hemoglobin_alt_adj
+mild_anemia_prev,unadjusted,anemia_mild_raw
+mod_anemia_prev,unadjusted,anemia_moderate_raw
+mean_adj_hb,unadjusted,hemoglobin_raw
+sev_anemia_prev,survey_adjusted,anemia_severe_adj
+sev_anemia_prev,unadjusted,anemia_severe_raw

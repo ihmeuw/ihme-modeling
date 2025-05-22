@@ -1,0 +1,196 @@
+who:
+  mean_hemoglobin:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27594
+      model_version_id: 221250
+      crosswalk_version_id: 47340
+      release_id: 16
+    previous:
+      id_type: 'epi'
+      modelable_entity_id: 10487
+      model_version_id: 750464
+      release_id: 9
+  total_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27600
+      model_version_id: 221242
+      crosswalk_version_id: 47343
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25318
+      model_version_id: 163271
+      release_id: 9
+  mod_sev_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27606
+      model_version_id: 221251
+      crosswalk_version_id: 47342
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25322
+      model_version_id: 192154
+      release_id: 9
+  severe_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27612
+      model_version_id: 221252
+      crosswalk_version_id: 47341
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25321
+      model_version_id: 163277
+      release_id: 9
+brinda:
+  mean_hemoglobin:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27596
+      model_version_id: 219460
+      crosswalk_version_id: 46241
+      release_id: 16
+    previous:
+      id_type: 'epi'
+      modelable_entity_id: 10487
+      model_version_id: 750464
+      release_id: 9
+  total_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27602
+      model_version_id: 219461 
+      crosswalk_version_id: 46242
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25318
+      model_version_id: 163271
+      release_id: 9
+  mod_sev_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27608
+      model_version_id: 219462 
+      crosswalk_version_id: 46244
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25322
+      model_version_id: 192154
+      release_id: 9
+  severe_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27614
+      model_version_id: 219463
+      crosswalk_version_id: 46243
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25321
+      model_version_id: 163277
+      release_id: 9
+raw:
+  mean_hemoglobin:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27592
+      model_version_id: 213182
+      crosswalk_version_id: 44039
+      release_id: 16
+    previous:
+      id_type: 'epi'
+      modelable_entity_id: 10487
+      model_version_id: 750464
+      release_id: 9
+  total_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27598
+      model_version_id: 213183
+      crosswalk_version_id: 44038
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25318
+      model_version_id: 163271
+      release_id: 9
+  mod_sev_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27604
+      model_version_id: 213193
+      crosswalk_version_id: 44036
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25322
+      model_version_id: 192154
+      release_id: 9
+  severe_anemia_prevalence:
+    current:
+      id_type: 'stgpr'
+      modelable_entity_id: 27610
+      model_version_id: 213192
+      crosswalk_version_id: 44037
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 25321
+      model_version_id: 163277
+      release_id: 9
+final:
+  mean_hemoglobin:
+    current:
+      id_type: 'epi'
+      modelable_entity_id: 10487
+      model_version_id: 882457 
+      crosswalk_version_id: 46341
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 27596
+      model_version_id: 219611
+      release_id: 16
+  total_anemia_prevalence:
+    current:
+      id_type: 'epi'
+      modelable_entity_id: 10507
+      model_version_id: 882405 
+      crosswalk_version_id: 46343
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 27602
+      model_version_id: 219612
+      release_id: 16
+  mod_sev_anemia_prevalence:
+    current:
+      id_type: 'epi'
+      modelable_entity_id: 10992
+      model_version_id: 882404 
+      crosswalk_version_id: 46344
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 27608
+      model_version_id: 219613
+      release_id: 16
+  severe_anemia_prevalence:
+    current:
+      id_type: 'epi'
+      modelable_entity_id: 10491
+      model_version_id: 882402
+      crosswalk_version_id: 46342
+      release_id: 16
+    previous:
+      id_type: 'stgpr'
+      modelable_entity_id: 27614
+      model_version_id: 219614
+      release_id: 16

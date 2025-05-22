@@ -1,0 +1,51 @@
+Last updated: 2025-03-12
+
+# Overview
+This code produces all-cause inpatient utilization estimates applied to inpatient sources that are not complete for the populations they represent. launch_envelope_run.R sets up the pipeline; inputs and corrections launchers are linked to their workers, respectively. ST-GPR standalone launcher sources central computation functions to execute Spatiotemporal Gaussian Process Regression (ST-GPR) model providing final estimates.
+
+# Workflow
+1. Set up the environment
+2. Format inputs
+3. Upload formatted collated dataset to the server
+4. Age-sex split aggregate data points
+5. Outlier select data
+6. Launch ST-GPR model
+
+# Code structure
+
+.
+└── Inpatient/
+    └── Envelope/
+        └── envelope_gbd2023/
+            ├── launchers/
+            │   ├── launch_envelope_run.R
+            │   ├── launcher_inputs.R
+            │   ├── launcher_corrections.R
+            │   └── launcher_stgpr.R
+            ├── utils/
+            │   ├── env_setup.R
+            │   ├── input_data_paths.R
+            │   ├── inputs_utils.R
+            │   └── split_utils.R
+            └── workers/
+                ├── inputs/
+                │   ├── format/
+                │   │   ├── extract_inpatient_runs.py
+                │   │   ├── format_eurostat.R
+                │   │   ├── format_extraction_sheet_reports.R
+                │   │   ├── format_health_for_all.R
+                │   │   ├── format_inpatient_run.R
+                │   │   ├── format_mng_h_info.R
+                │   │   ├── format_oecd.R
+                │   │   ├── format_pol_nhf.R
+                │   │   ├── format_sgp_claims.R
+                │   │   └── format_surveys.R
+                │   └── upload/
+                │       ├── prepare_for_upload_bundle.R
+                │       └── upload_to_bundle.R
+                └── corrections/
+                    ├── format_split_inputs.R
+                    ├── run_models_interactive.R
+                    ├── apply_split.R
+                    ├── apply_outliering_sheet.R
+                    └── save_crosswalk_version.R

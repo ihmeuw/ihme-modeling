@@ -1,0 +1,18 @@
+default:
+
+  dir:
+    rs_data: "FILEPATH"
+    onemod: "FILEPATH"
+    pop: "FILEPATH"
+    onemod_updated: "FILEPATH"
+
+  version:
+    rs_data: "VERSION"
+    onemod: "VERSION"
+    pop_base: 406
+    pop_adj: 408
+
+  min_age_start: 55
+  years: !expr 1950:2024
+
+  gbd_year: 2023

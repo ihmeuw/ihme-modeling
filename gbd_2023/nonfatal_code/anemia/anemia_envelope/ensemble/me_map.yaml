@@ -1,0 +1,26 @@
+who:
+  mean_hemoglobin:
+    modelable_entity_id: 27594
+    model_version_id: 221250
+  total_anemia:
+    modelable_entity_id: 27600
+    model_version_id: 221242 
+  mod_sev_anemia:
+    modelable_entity_id: 27606
+    model_version_id: 221251 
+  severe_anemia:
+    modelable_entity_id: 27612
+    model_version_id: 221252
+brinda:
+  mean_hemoglobin:
+    modelable_entity_id: 27596
+    model_version_id: 219611 
+  total_anemia:
+    modelable_entity_id: 27602
+    model_version_id: 219612
+  mod_sev_anemia:
+    modelable_entity_id: 27608
+    model_version_id: 219613
+  severe_anemia:
+    modelable_entity_id: 27614
+    model_version_id: 219614

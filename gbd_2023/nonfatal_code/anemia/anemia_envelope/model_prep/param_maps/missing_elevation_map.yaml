@@ -1,0 +1,79 @@
+hemoglobin_raw:
+  - brinda_adj_hemog
+  - who_adj_hemog
+  - hemoglobin_alt_adj
+
+hemoglobin_alt_adj:
+  - who_adj_hemog
+  - hemoglobin_raw
+  - brinda_adj_hemog
+
+who_adj_hemog:
+  - hemoglobin_raw
+  - brinda_adj_hemog
+  - hemoglobin_alt_adj
+
+brinda_adj_hemog:
+  - hemoglobin_raw
+  - who_adj_hemog
+  - hemoglobin_alt_adj
+  
+anemia_anemic_raw:
+  - anemia_anemic_adj
+  - anemia_anemic_brinda
+  - anemia_anemic_who
+  
+anemia_mod_sev_raw:
+  - anemia_mod_sev_adj
+  - anemia_mod_sev_brinda
+  - anemia_mod_sev_who
+  
+anemia_severe_raw:
+  - anemia_severe_adj
+  - anemia_severe_brinda
+  - anemia_severe_who
+  
+anemia_anemic_adj:
+  - anemia_anemic_raw
+  - anemia_anemic_brinda
+  - anemia_anemic_who
+  
+anemia_mod_sev_adj:
+  - anemia_mod_sev_raw
+  - anemia_mod_sev_brinda
+  - anemia_mod_sev_who
+  
+anemia_severe_adj:
+  - anemia_severe_raw
+  - anemia_severe_brinda
+  - anemia_severe_who
+  
+anemia_anemic_who:
+  - anemia_anemic_raw
+  - anemia_anemic_adj
+  - anemia_anemic_brinda
+  
+anemia_mod_sev_who:
+  - anemia_mod_sev_raw
+  - anemia_mod_sev_adj
+  - anemia_mod_sev_brinda
+  
+anemia_severe_who:
+  - anemia_severe_raw
+  - anemia_severe_adj
+  - anemia_severe_brinda
+  
+anemia_anemic_brinda:
+  - anemia_anemic_raw
+  - anemia_anemic_adj
+  - anemia_anemic_who
+  
+anemia_mod_sev_brinda:
+  - anemia_mod_sev_raw
+  - anemia_mod_sev_adj
+  - anemia_mod_sev_who
+  
+anemia_severe_brinda:
+  - anemia_severe_raw
+  - anemia_severe_adj
+  - anemia_severe_who

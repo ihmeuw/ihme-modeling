@@ -1,0 +1,51 @@
+race_cd,race_name,column_name
+0,UNKNOWN,bene_race_cd
+1,WHITE,bene_race_cd
+2,BLACK,bene_race_cd
+3,OTHER,bene_race_cd
+4,ASIAN,bene_race_cd
+5,HISPANIC,bene_race_cd
+6,NORTH AMERICAN NATIVE,bene_race_cd
+0,UNKNOWN,rti_race_cd
+1,NON-HISPANIC WHITE,rti_race_cd
+2,BLACK,rti_race_cd
+3,OTHER,rti_race_cd
+4,ASIAN/PACIFIC ISLANDER,rti_race_cd
+5,HISPANIC,rti_race_cd
+6,AMERICAN INDIAN/ALASKA NATIVE,rti_race_cd
+0,UNKNOWN,mdcr_race_ethncy_cd
+1,WHITE,mdcr_race_ethncy_cd
+2,BLACK,mdcr_race_ethncy_cd
+3,OTHER,mdcr_race_ethncy_cd
+4,ASIAN,mdcr_race_ethncy_cd
+5,HISPANIC,mdcr_race_ethncy_cd
+6,NORTH AMERICAN NATIVE,mdcr_race_ethncy_cd
+1,WHITE,el_race_ethncy_cd
+2,BLACK,el_race_ethncy_cd
+3,AMERICAN INDIAN OR ALASKAN NATIVE,el_race_ethncy_cd
+4,ASIAN OR PACIFIC ISLANDER,el_race_ethncy_cd
+5,HISPANIC,el_race_ethncy_cd
+6,NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER,el_race_ethncy_cd
+7,HISPANIC OR LATINO AND ONE OR MORE RACES (NEW CODE BEGINNING 10/98),el_race_ethncy_cd
+8,MORE THAN ONE RACE (HISPANIC OR LATINO NOT INDICATED),el_race_ethncy_cd
+9,UNKNOWN,el_race_ethncy_cd
+1,"WHITE, MALE",el_sex_race_cd
+2,"WHITE, FEMALE",el_sex_race_cd
+3,"NON-WHITE, MALE",el_sex_race_cd
+4,"NON-WHITE, FEMALE",el_sex_race_cd
+5,"RACE UNKNOWN, MALE",el_sex_race_cd
+6,"RACE UNKNOWN, FEMALE",el_sex_race_cd
+7,"SEX UNKNOWN, WHITE",el_sex_race_cd
+8,"SEX UNKNOWN, NON-WHITE",el_sex_race_cd
+9,SEX AND RACE UNKNOWN,el_sex_race_cd
+0,NON-WHITE OR RACE UNKNOWN,race_code_1
+1,WHITE,race_code_1
+9,NO ELIGIBILITY INFORMATION,race_code_1
+0,NON-BLACK/AFRICAN-AMERICAN OR RACE UNKNOWN,race_code_2
+1,BLACK OR AFRICAN AMERICAN,race_code_2
+0,NON-AMERICAN INDIAN/ALASKA NATIVE OR RACE UNKNOWN,race_code_3
+1,AMERICAN INDIAN/ALASKAN NATIVE,race_code_3
+0,NON-ASIAN OR RACE UNKNOWN,race_code_4
+1,ASIAN,race_code_4
+0,NON-NATIVE HAWAIIAN/OTHER PACIFIC ISLANDER OR RACE UNKNOWN,race_code_5
+1,NATIVE HAWAIIAN/OTHER PACIFIC ISLANDER,race_code_5

@@ -1,0 +1,60 @@
+Sample_Size:
+  Specific:
+    Men:
+      - Men
+    Women: 
+      Nonpregnant:
+        - Non-pregnant, non-lactating women (NPNLW)
+        - Non-pregnant women (NPW)
+      Unspecified:
+        - Women of reproductive age
+        - Women
+    Children:
+      Infants:
+        - Young infants (0-5 months)
+        - Infants (1-11 months)
+      PSC:
+        - Children (12-23 months)
+        - Children (24-59 months)
+      Adolescents:
+        - Adolescents
+  All:
+    - Elderly
+    - Adults
+    - Children (all)
+    - Preschool-age children
+    - School-age children
+
+Adolescents:
+  root:
+    - Adolescents
+  level_1:
+    - Children (all)
+Children (all):
+  root:
+  - Children (all)
+School-age children:
+  root:
+    - School-age children
+  level_1:
+    - Adolescents
+  level_2:
+    - Children (all)
+Elderly:
+  root:
+    - Elderly
+Men:
+  root:
+    - Men
+  level_1:
+    - Adults
+Non-pregnant women (NPW):
+  root:
+    - Non-pregnant women (NPW)
+  level_1:
+    - Women of reproductive age
+  level_2:
+    - Women
+  level_3:
+    - Adults
+Pregnant women

@@ -1,0 +1,33 @@
+name,id,var,elevation_adj_type,cv_pregnant,debug,update,clear_bundle,bv_id,measure,xwalk_id,me_id
+Mean Hemoglobin,4754,hemoglobin_alt_adj,survey,0,FALSE,TRUE,TRUE,47955,continuous,46786,27985
+Prevalence of Total Anemia,8108,anemia_anemic_adj,survey,0,FALSE,TRUE,TRUE,47956,proportion,46787,
+Prevalence of Severe Anemia,8117,anemia_severe_adj,survey,0,FALSE,TRUE,TRUE,47953,proportion,46788,
+"Mean Hemoglobin, Pregnant Women (g/L, altitude adjusted)",8342,hemoglobin_alt_adj,survey,1,FALSE,TRUE,TRUE,47932,continuous,42963,26138
+Prevalence of total anemia in pregnant women,8123,anemia_anemic_adj,survey,1,FALSE,TRUE,TRUE,47935,proportion,42962,
+Prevalence of severe anemia in pregnant women,8132,anemia_severe_adj,survey,1,FALSE,TRUE,TRUE,47929,proportion,24851,
+Mean hemoglobin (g/L - unadjusted),10276,hemoglobin_raw,raw,0,FALSE,TRUE,TRUE,47944,continuous,44039,27592
+Mean hemoglobin in pregnant women (g/L - unadjusted),10277,hemoglobin_raw,raw,1,FALSE,TRUE,TRUE,47931,continuous,,27593
+Mean hemoglobin (g/L - WHO adjusted),10278,who_adj_hemog,who,0,FALSE,TRUE,TRUE,47947,continuous,47340,27594
+Mean hemoglobin in pregnant women (g/L - WHO adjusted),10279,who_adj_hemog,who,1,FALSE,TRUE,TRUE,47933,continuous,43057,27595
+Mean hemoglobin in pregnant women (g/L - BRINDA adjusted),10281,brinda_adj_hemog,brinda,1,FALSE,TRUE,TRUE,47926,continuous,46382,27597
+Mean hemoglobin (g/L - BRINDA adjusted),10280,brinda_adj_hemog,brinda,0,FALSE,TRUE,TRUE,47948,continuous,46341,27596
+Total anemia prevalence (unadjusted),10282,anemia_anemic_raw,raw,0,FALSE,TRUE,TRUE,47945,proportion,44038,27598
+Total anemia prevalence in pregnant women (unadjusted),10283,anemia_anemic_raw,raw,1,FALSE,TRUE,TRUE,47930,proportion,,
+Total anemia prevalence (WHO adjusted),10284,anemia_anemic_who,who,0,FALSE,TRUE,TRUE,47946,proportion,47343,27600
+Total anemia prevalence in pregnant women (WHO adjusted),10285,anemia_anemic_who,who,1,FALSE,TRUE,TRUE,47927,proportion,43056,27601
+Total anemia prevalence (BRINDA adjusted),10286,anemia_anemic_brinda,brinda,0,FALSE,TRUE,TRUE,47949,proportion,46343,27602
+Total anemia prevalence in pregnant women (BRINDA adjusted),10287,anemia_anemic_brinda,brinda,1,FALSE,TRUE,TRUE,47934,proportion,46383,
+Severe anemia prevalence (unadjusted),10294,anemia_severe_raw,raw,0,FALSE,TRUE,TRUE,47942,proportion,44037,27610
+Severe anemia prevalence in pregnant women (unadjusted),10295,anemia_severe_raw,raw,1,FALSE,TRUE,TRUE,47928,proportion,,
+Severe anemia prevalence (WHO adjusted),10296,anemia_severe_who,who,0,FALSE,TRUE,TRUE,47943,proportion,47341,27612
+Severe anemia prevalence in pregnant women (WHO adjusted),10297,anemia_severe_who,who,1,FALSE,TRUE,TRUE,47939,proportion,43059,27613
+Severe anemia prevalence (BRINDA adjusted),10298,anemia_severe_brinda,brinda,0,FALSE,TRUE,TRUE,47954,proportion,46342,27614
+Severe anemia prevalence in pregnant women (BRINDA adjusted),10299,anemia_severe_brinda,brinda,1,FALSE,TRUE,TRUE,47938,proportion,46384,
+Moderate-severe anemia prevalence (unadjusted),10288,anemia_mod_sev_raw,raw,0,FALSE,TRUE,TRUE,47951,proportion,44036,27604
+Moderate-severe anemia prevalence in pregnant women (unadjusted),10289,anemia_mod_sev_raw,raw,1,FALSE,TRUE,TRUE,47936,proportion,,
+Prevalence of Moderate and Severe Anemia,8120,anemia_mod_sev_adj,survey,0,FALSE,TRUE,TRUE,47957,proportion,46789,
+Prevalence of Moderate and Severe Anemia in Pregnant Women,8135,anemia_mod_sev_adj,survey,1,FALSE,TRUE,TRUE,47940,proportion,24848,
+Moderate-severe anemia prevalence (WHO adjusted),10290,anemia_mod_sev_who,who,0,FALSE,TRUE,TRUE,47952,proportion,47342,27606
+Moderate-severe anemia prevalence in pregnant women (WHO adjusted),10291,anemia_mod_sev_who,who,1,FALSE,TRUE,TRUE,47941,proportion,43058,27607
+Moderate-severe anemia prevalence (BRINDA adjusted),10292,anemia_mod_sev_brinda,brinda,0,FALSE,TRUE,TRUE,47950,proportion,46344,27608
+Moderate-severe anemia prevalence in pregnant women (BRINDA adjusted),10293,anemia_mod_sev_brinda,brinda,1,FALSE,TRUE,TRUE,47937,proportion,46385,

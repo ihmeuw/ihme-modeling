@@ -1,0 +1,8 @@
+output_me_id,measure_id,bundle_id,xwalk_version_id,subfolder,me_col_names
+10487,19,10278,47340,mean_hb,mean_hb
+10488,19,10278,47340,sd_hb,stdev
+10489,5,10284,47343,mild,prop_mild
+10490,5,10290,47342,moderate,prop_mod
+10491,5,10296,47341,severe,prop_severe
+10507,5,10284,47343,total,prop_total
+10992,5,10290,47342,mod_sev,prop_mod_sev

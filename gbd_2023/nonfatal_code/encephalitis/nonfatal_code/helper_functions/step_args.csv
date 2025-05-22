@@ -1,0 +1,11 @@
+step_num,step_name
+02a,cfr_draws
+02b,acute_survive
+03a,outcome_prop
+03b,outcome_split
+04a,dismod_prep_wmort
+04b,outcome_prev_womort
+04d,outcome_prev_wmort_woseiz
+05a,sequela_prop
+05b,sequela_split_woseiz
+09,collate_outputs

@@ -1,0 +1,43 @@
+default:
+
+  dir:
+    base: "FILEPATH"
+    onemod: "FILEPATH"
+    finalizer: "FILEPATH"
+    shocks: "FILEPATH"
+    log: "FILEPATH"
+
+  special_location_sets:
+    - "SDI"
+    - "WHO"
+    - "World Bank"
+    - "EU"
+    - "Commonwealth"
+    - "World Bank Income Levels"
+    - "OECD"
+    - "G20"
+    - "African Union (AU)"
+    - "Nordic Region"
+    - "Arab World"
+    - "Organization of Islamic Cooperation"
+    - "Association of Southeast Asian Nations"
+    - "Gulf Cooperation Council"
+    - "Sahel Region"
+    - "GBD Macro Regions"
+    - "Health System Capacity GBD"
+    - "Oceania"
+
+  draw_range: [0, 999]
+
+  terminal_age: 95
+
+  max_nonterminal_qx: 0.99999
+
+  # Age start at and above which qx should be calculated from mx instead of
+  # mx and ax
+  ax_age_boundary: 1
+
+  max_expected_age: 110
+
+  shell: "FILEPATH"
+  image: "FILEPATH"
