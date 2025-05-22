@@ -1,0 +1,34 @@
+task_template_resources:
+  initialize_results:
+    slurm:
+      memory: 1G
+      runtime: 00:05:00
+  collect_results:
+    slurm:
+      cores: 2
+      memory: 20G
+      runtime: 01:00:00
+  rover_covsel_model:
+    slurm:
+      memory: 1G
+      runtime: 01:00:00
+  spxmod_model:
+    slurm:
+      memory: 2G
+      runtime: 02:00:00
+  kreg_model:
+    slurm:
+      memory: 1G
+      runtime: 04:00:00
+  kreg_uncertainty:
+    slurm:
+      cores: 10
+      memory: 4G
+      runtime: 04:00:00
+tool_resources:
+  slurm:
+    cores: 1
+    memory: 4G
+    project: proj_rapidresponse
+    queue: all.q
+    runtime: 12:00:00

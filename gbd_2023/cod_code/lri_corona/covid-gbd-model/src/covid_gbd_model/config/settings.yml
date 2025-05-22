@@ -1,0 +1,151 @@
+input_path: ''
+ids: [location_id, year_id, age_group_id, sex_id]
+groupby: [sex_id]
+obs: obs
+pred: pred
+mtype: binomial
+weights: weights
+holdouts: [holdout1,holdout2,holdout3,holdout4,holdout5,holdout6,holdout7,holdout8,holdout9,holdout10]
+test: test
+rover_covsel:
+  groupby: [age_group_id]
+  rover:
+    cov_exploring:
+    - total_covid_asdr
+    - cum_eff_vacc
+    - cum_inf
+    - obesity
+    - smoking
+    - haq
+    - uhc
+    - cancer
+    - cvd
+    - copd
+    - diabetes
+    - ckd
+    cov_fixed:
+    - intercept
+    - inf_ancestral  # this is now total infections
+    - inf_alpha
+    - inf_beta
+    - inf_gamma
+    - inf_delta
+    - inf_alpha_beta_gamma_delta
+    - inf_omicron
+    - inf_ba5
+    - inf_omicron_ba5
+    ## IDR
+    - idr
+  rover_fit:
+    strategies: [forward]
+    top_pct_learner: 0.5
+    top_pct_score: 1.0
+    coef_bounds:
+      total_covid_asdr: [0, 10]
+      cum_eff_vacc: [-10, 0]
+      cum_inf: [-10, 0]
+      obesity: [0, 10]
+      smoking: [0, 10]
+      haq: [-10, 0]
+      uhc: [-10, 0]
+      cancer: [0, 10]
+      cvd: [0, 10]
+      copd: [0, 10]
+      diabetes: [0, 10]
+      ckd: [0, 10]
+      inf_ancestral: [0, 10]  # this is now total infections
+      inf_alpha: [0, 10]
+      inf_beta: [0, 10]
+      inf_gamma: [0, 10]
+      inf_delta: [0, 10]
+      inf_alpha_beta_gamma_delta: [0, 10]
+      inf_omicron: [-10, 0]
+      inf_ba5: [-10, 0]
+      inf_omicron_ba5: [-10, 0]
+      idr: [0, 10]
+  t_threshold: 0.25
+spxmod:
+  xmodel:
+    lam: 1000.0
+    spaces:
+    - name: age_mid
+      dims:
+      - name: age_mid
+        dim_type: numerical
+    - name: super_region_id*age_mid
+      dims:
+      - name: super_region_id
+        dim_type: categorical
+      - name: age_mid
+        dim_type: numerical
+    - name: region_id*age_mid
+      dims:
+      - name: region_id
+        dim_type: categorical
+      - name: age_mid
+        dim_type: numerical
+    - name: location_id*age_mid
+      dims:
+      - name: location_id
+        dim_type: categorical
+      - name: age_mid
+        dim_type: numerical
+    var_builders:
+    - name: intercept
+      space: age_mid
+      lam: 1.0
+    - name: intercept
+      space: super_region_id*age_mid
+      lam: 2.5
+    - name: intercept
+      space: region_id*age_mid
+      lam: 5.0
+    - name: intercept
+      space: location_id*age_mid
+      lam: 10.0
+    - name: spline
+      space: age_mid
+      lam: 1.0
+    - name: spline
+      space: super_region_id*age_mid
+      lam: 2.5
+    - name: spline
+      space: region_id*age_mid
+      lam: 5.0
+    - name: spline
+      space: location_id*age_mid
+      lam: 10.0
+    spline_config:
+      name: year_id
+      knots: [0.0, 0.25, 0.5, 0.75, 1.0]
+      degree: 1
+      # l_linear: true
+      # r_linear: true
+      include_first_basis: false
+  xmodel_fit:
+    options:
+      verbose: true
+      maxiter: 100
+      precon_builder: lbfgs
+      cg_maxiter_init: 1000
+      cg_maxiter_incr: 200
+      cg_maxiter: 5000
+kreg:
+  groupby: [super_region_id]
+  kreg_model:
+    age_scale: 0.1
+    gamma_age: 8
+    gamma_year: 12
+    exp_location: 0.05
+    lam: 10
+    nugget: 0.0001
+  kreg_fit:
+    gtol: 5e-4
+    max_iter: 20
+    cg_maxiter: 100
+    cg_maxiter_increment: 0
+    nystroem_rank: 10
+  kreg_uncertainty:
+    num_samples: 1000
+    lanczos_order: 150
+    save_draws: True
